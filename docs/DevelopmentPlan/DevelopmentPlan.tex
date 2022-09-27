@@ -86,18 +86,7 @@ detect.
 	\item Additionally there will be a Gitlab continuous integration (CI) test to see if the incoming changes are acceptable (passing a linter test and unit tests). Furthermore, reviewers will be added to assess the changes and leave any comments which will be documented to review and store thought processes at that current stage of development. Once the CI test passes and the reviewers are satisfied with the changes, the reviewers can accept the changes and the branch can be merged into main. 
 	
 	\item Track issues within Github (Kanban Board) which will reference the issue to designated branch during the pull request. We can tag issues by priority (low, medium, high), by milestone (hardware, application, firmware, etc) and labels. Issues can be assigned to designated group members, and have reviewers to check up on status and work. 
-	
-		Summarized Github workflow:
-	Create and assign issues using GitHub Issues 
-	Pull required changes from main branch
-	Create a new branch for revision purposes
-	Commit change to branch
-	Create a pull request for the new changes
-	Add required description for the PR and link
-	Have assigned members approve changes
-		  -     Merge changes after Gitlab continuous integration approves
-		  -     Upon approval, remove branch and issue
-	
+
 \end{itemize}
 
 \section{Proof of Concept Demonstration Plan}
@@ -106,12 +95,10 @@ The major areas where the project could face issues are
 \begin{itemize}
 	\item \textbf{Sound recognition} - We might not be able to isolate or classify signals accurately. This is especially hard when there is a lot of background noise. 
 	\item \textbf{Vibration motor} - There is a risk of the motor not being powerful enough to get the user’s attention. This may seem easy to tackle by increasing the size and power of the motor but this issues a new issue of power consumption and size increase.
-	\item \textbf{Integration of hardware onto a small footprint} - This is the biggest risk with our project. We might not be able to fit all the components i.e the microcontroller, motor, microphone and battery in the small footprint that we desire. The reason why this is hard to tackle is that the smaller we go with our hardware, especially microcontroller and battery, the more cautious we have to be with power consumption and resource allocation.
-	The risks associated with our project may change as our development is still ongoing. 
+	\item \textbf{Integration of hardware onto a small footprint} - This is the biggest risk with our project. We might not be able to fit all the components i.e the microcontroller, motor, microphone and battery in the small footprint that we desire. The reason why this is hard to tackle is that the smaller we go with our hardware, especially microcontroller and battery, the more cautious we have to be with power consumption and resource allocation. 
 \end{itemize} 
-
 The risks associated with our project may change as our development is still ongoing. 
-Our POC will try to focus on the integration of major features into a small footprint (still bigger than the final prototype). The main features of the POC will be sound recognition for three different sounds, vibration alerts and app communication. The successful  demonstration of the POC will certainly reduce the likelihood of not being able to deliver on a final product. The risks that will be difficult to mitigate is the risk of being able to compress our functioning hardware into a small footprint. The main issue here is the size of batteries and the required power consumption for our hardware. A big battery will certainly increase the footprint of our device. At the same time it also has to be sufficient to supply the power that the hardware requires.  
+Our PoC (Proof of Concept) will try to focus on the integration of major features into a small footprint (still bigger than the final prototype). The main features of the PoC will be sound recognition for three different sounds, vibration alerts and app communication. The proof of concept targets the above risks. Sound recognition will be first tested on a computer using the computer microphone and then transferred to our PoC. The vibration motor also will be tested out on a person through the thickness of a wristband. The PoC will also give us an idea of how small we can compress the device without losing functionality. The successful demonstration of the PoC will certainly reduce the likelihood of not being able to deliver on a final product.
 
 
 \section{Technology}
