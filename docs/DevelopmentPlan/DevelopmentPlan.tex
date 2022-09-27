@@ -104,16 +104,12 @@ Our PoC (Proof of Concept) will try to focus on the integration of major feature
 \section{Technology}
 
 \begin{itemize}
-\item Specific programming language
-\item Specific linter tool (if appropriate)
-\item Specific unit testing framework
-\item Investigation of code coverage measuring tools
-\item Specific plans for Continuous Integration (CI), or an explanation that CI
-  is not being done
-\item Specific performance measuring tools (like Valgrind), if
-  appropriate
-\item Libraries you will likely be using?
-\item Tools you will likely be using?
+	\item \textbf{Programming Languages} - C will be used for the embedded software on the microcontroller for the signal processing. A potential drawback of using C is that the libraries used for classification can be quite low level, making it difficult to integrate within our code. Although, by using C, we can assure that our code will be more efficient since it is programmed at a lower level. Additionally, Java will be used to create the application for the end user. It will be easy for our team members to review the C and Java code, since their syntax is quite similar.
+	\item \textbf{Integrated Development Environment (IDE)} - Visual Studio Code will be used for software development, and primarily for the application. A benefit of using Visual Studio Code is that it includes several extensions, such as linters and git tracking. To add, Eclipse will be used for embedded programming. A potential issue will be using different IDEs for software, although they are two separate modules.
+	\item \textbf{Linters} - Linters will be used to keep the code format consistent throughout our various modules. For C, we will use the Clang Format linter. For Java, we will use the Checkstyle linter.
+	\item \textbf{Continuous Integration (CI)} - CI will be included within our project. We will apply the linter during the CI to see if there are any issues with the format or obvious errors. Additionally, the C code can be compiled and built during the CI. The latter CI step may be redundant, as you can build the C code locally, although this will be determined after it is tested.
+	\item \textbf{Hardware} - Hardware that will be used include a microcontroller, analog-to-digital converter, microphone, motor, and a battery. The risks with the hardware components are finding small enough components that meet our goals. Additionally, we need to find a microcontroller with high enough processing power.
+	\item \textbf{Testing} - Unit tests will be conducted on the modules that are added to the project. Unit tests will be done in both C and in Java.
 \end{itemize}
 
 \section{Coding Standard}
