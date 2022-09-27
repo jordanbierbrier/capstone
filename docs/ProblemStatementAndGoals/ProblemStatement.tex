@@ -31,26 +31,133 @@ Date2 & Name(s) & Description of changes\\
 
 \section{Problem Statement}
 
-\wss{You should check your problem statement with the
-\href{https://github.com/smiths/capTemplate/blob/main/docs/Checklists/ProbState-Checklist.pdf}
-{problem statement checklist}.}
-\wss{You can change the section headings, as long as you include the required information.}
-
 \subsection{Problem}
-
+In this day and age, communication is a very significant part of our day to day lives. 
+So, people who have difficulty in recognizing sounds within their surroundings are not 
+able to live their lives to their fullest. For instance, hard of hearing (HoH) individuals 
+are not able to always respond promptly whenever their loved ones are calling their name or
+when a doorbell rings out for a package delivery. As a result, this can be rather unfortunate
+for the HoH individual as inconveniencing loved ones for another appeal or missing a delivery
+are both not ideal scenarios to be in. This can especially be the case for life-and-death 
+situations where the importance of sound awareness is highlighted. With all this in mind, 
+a device which will monitor your surroundings for you would encourage confidence within 
+the users to complete daily tasks as well as notably improve their quality of life.
 \subsection{Inputs and Outputs}
 
-\wss{Characterize the problem in terms of ``high level'' inputs and outputs.  
-Use abstraction so that you can avoid details.}
+\subsubsection {Inputs}
+\begin{itemize}
+    \item Environment Sounds
+    \item App Settings/Configurations
+\end{itemize}
+\subsubsection {Outputs}
+\begin{itemize}
+    \item Noise Detection Feedback
+\end{itemize}
+
 
 \subsection{Stakeholders}
+\begin{itemize}
+    \item Individuals who are hard of hearing or that are in an environment where hearing can be obstructed
+    \item Long term care homes
+\end{itemize}
 
 \subsection{Environment}
-
-\wss{Hardware and software}
+\subsubsection{Software}
+\begin{itemize}
+    \item Visual Studio Code
+    \item C
+    \item Python
+    \item Speech Recognition Library
+\end{itemize}
+\subsubsection{Hardware}
+\begin{itemize}
+    \item Vibration Motor
+    \item Bluetooth module
+    \item Microphone
+    \item Microcontroller
+    \item Battery
+    \item 3D Printer
+\end{itemize}
 
 \section{Goals}
+\begin{tabularx}{1.3\textwidth} { 
+    | >{\raggedright\arraybackslash}X 
+    | >{\centering\arraybackslash}X 
+    | >{\raggedleft\arraybackslash}X | }
+   \hline
+   Goal & Importance \\
+   \hline
+   Finished device can withstand above moderate environmental conditions such as moisture and heat  & 
+   \begin{itemize}
+    \item The device will be a wearable technology which makes it a necessity that the user does not need to worry about damage in average daily conditions.  
+   \end{itemize} 
+   \\
+   \hline
+  Device can collect and process data in real time while filtering out noise  & 
+  \begin{itemize}
+    \item A core functional aspect of the device is to process a continuous stream of data and react once a key data point is found.
+    \item This permits our device to provide the necessary sensory outputs to the user.
+  \end{itemize} 
+   \\
+   \hline
+   Finished product can communicate with an external device &   
+   \begin{itemize}
+    \item A core functional aspect of the device is to process a continuous stream of data and react once a key data point is found.
+  \end{itemize}  
+  \\
+   \hline
+   Data collected will be processed and then deleted in real time &    
+   \begin{itemize}
+    \item A core functional aspect of the device is to process a continuous stream of data and react once a key data point is found.
+  \end{itemize}  
+   \\
+   \hline
+   Finished product will retain all functionalities in a form factor that is wearable &    
+   \begin{itemize}
+    \item A core functional aspect of the device is to process a continuous stream of data and react once a key data point is found.
+  \end{itemize}   
+  \\
+   \hline
+   Finished product will be rechargeable and reusable &    
+   \begin{itemize}
+    \item A core functional aspect of the device is to process a continuous stream of data and react once a key data point is found.
+  \end{itemize}   
+  \\
+   \hline
+   The finished product will have sufficient distinct sensory outputs such that the user can distinguish between them &    
+   \begin{itemize}
+    \item A core functional aspect of the device is to process a continuous stream of data and react once a key data point is found.
+  \end{itemize}  
+   \\
+   \hline
+  \end{tabularx}
 
 \section{Stretch Goals}
-
+\begin{tabularx}{1.3\textwidth} { 
+    | >{\raggedright\arraybackslash}X 
+    | >{\centering\arraybackslash}X 
+    | >{\raggedleft\arraybackslash}X | }
+   \hline
+   Goal & Importance \\
+   \hline
+   Finished product will have a water resistance rating of IPX5 & 
+   \begin{itemize}
+    \item This will increase usability of the product
+    \item This will also avoid the possibility that the device will become malfunctional under certain wet weather conditions.
+   \end{itemize} 
+   \\
+   \hline
+   Finished product can actively filter out noise in particularly loud environments   & 
+   \begin{itemize}
+    \item This will expand the environments where the product can function as intended. This will also lead to more reliable outputs from the device in situations where hearing is more obstructed by noises in the surroundings
+   \end{itemize}
+   \\
+   \hline
+   Finished product will support over the air firmware updates & 
+   \begin{itemize}
+    \item As the product develops and is used in real world applications we predict that the noise detection algorithm we use will keep improving. Having the option to upgrade prior devices with better signal processing through software will aid in extending the usability of older products.
+   \end{itemize}
+   \\
+   \hline
+\end{tabularx}
 \end{document}
