@@ -38,6 +38,7 @@ The team will meet in-person on Wednesdays at 4:30pm on a weekly basis. These me
 The team will have two primary sources of communication which include a Discord server as well as a Facebook messenger group chat. The Discord server is used for hosting virtual meetings as well as sharing files and useful links. Communication will also occur through commit messages and issues when collaborating on deliverables through Github. The purpose of using Github will also be for team collaboration as well as changing history and reverting opportunities. 
 
 \section{Team Member Roles}
+Although we are split up into different roles, whcih are based on the workload and our skills, we will work closely with one another and review each other's work thoroughly. It is important to communicate with other team members as all of our modules will be linked together. Additionally, roles can change depending on the amount of work and time required. 
 % Please add the following required packages to your document preamble:
 % \usepackage{graphicx}
 \begin{comment}
@@ -54,22 +55,21 @@ The team will have two primary sources of communication which include a Discord 
 	\end{tabular}
 \end{table}
 \end{comment}
-\subsection*{Abraham Taha}
-\textbf{Application Developer} - This position is focused on creating a web application for the
-end user. This will allow the end user to interface with the hardware and change the sounds to
-detect.
 
 \subsection*{Jordan Bierbrier}
-\textbf{Signal Processing / Embedded Systems Developer} - 
-
-\subsection*{Taranjit Lotey}
-\textbf{Application Developer} - Communication between application and hardware / backend development to send physical signals to user                                     
+\textbf{Embedded Systems Developer Lead} - The role of this position is to create the software for the microcontroller.
 
 \subsection*{Azriel Gingoyon}
-\textbf{Signal Processing / Embedded Systems Developer} - Cost-effective component research, wristband design, motor/microcontroller integration                                                                                                                               
+\textbf{Hardware Developer} - The focus of this position is to handle and design all of the hardware components for the project.
 
+\subsection*{Taranjit Lotey}
+\textbf{Application Developer} - The role of this position is to assist in the creation of the application for the end user.
+                                
 \subsection*{Udeep Shah}
-\textbf{Signal Processing / Embedded Systems Developer} - Noise filtering, signal isolation resource optimization and power optimization 
+\textbf{Embedded Systems Developer} - The focus of this position is to create the software for the microcontroller.
+
+\subsection*{Abraham Taha}
+\textbf{Application Developer Lead} - The focus of this position is to create the application for the end user.
 
 
 \section{Workflow Plan}
@@ -91,7 +91,7 @@ detect.
 
 \section{Proof of Concept Demonstration Plan}
 
-The major areas where the project could face issues are 
+The major areas where the project could face issues include: 
 \begin{itemize}
 	\item \textbf{Sound recognition} - We might not be able to isolate or classify signals accurately. This is especially hard when there is a lot of background noise. 
 	\item \textbf{Vibration motor} - There is a risk of the motor not being powerful enough to get the user’s attention. This may seem easy to tackle by increasing the size and power of the motor but this issues a new issue of power consumption and size increase.
@@ -107,7 +107,7 @@ Our PoC (Proof of Concept) will try to focus on the integration of major feature
 	\item \textbf{Programming Languages} - C will be used for the embedded software on the microcontroller for the signal processing. A potential drawback of using C is that the libraries used for classification can be quite low level, making it difficult to integrate within our code. Although, by using C, we can assure that our code will be more efficient since it is programmed at a lower level. Additionally, Java will be used to create the application for the end user. It will be easy for our team members to review the C and Java code, since their syntax is quite similar.
 	\item \textbf{Integrated Development Environment (IDE)} - Visual Studio Code will be used for software development, and primarily for the application. A benefit of using Visual Studio Code is that it includes several extensions, such as linters and git tracking. To add, Eclipse will be used for embedded programming. A potential issue will be using different IDEs for software, although they are two separate modules.
 	\item \textbf{Linters} - Linters will be used to keep the code format consistent throughout our various modules. For C, we will use the Clang Format linter. For Java, we will use the Checkstyle linter.
-	\item \textbf{Continuous Integration (CI)} - CI will be included within our project. We will apply the linter during the CI to see if there are any issues with the format or obvious errors. Additionally, the C code can be compiled and built during the CI. The latter CI step may be redundant, as you can build the C code locally, although this will be determined after it is tested.
+	\item \textbf{CI} - CI will be included within our project. We will apply the linter during the CI to see if there are any issues with the format or obvious errors. Additionally, the C code can be compiled and built during the CI. The latter CI step may be redundant, as you can build the C code locally, although this will be determined after it is tested.
 	\item \textbf{Hardware} - Hardware that will be used include a microcontroller, analog-to-digital converter, microphone, motor, and a battery. The risks with the hardware components are finding small enough components that meet our goals. Additionally, we need to find a microcontroller with high enough processing power.
 	\item \textbf{Testing} - Unit tests will be conducted on the modules that are added to the project. Unit tests will be done in both C and in Java.
 \end{itemize}
