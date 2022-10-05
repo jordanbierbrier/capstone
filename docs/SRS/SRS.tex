@@ -24,6 +24,11 @@
 \usepackage{tree-dvips}
 \usepackage{multirow}
 \usepackage{blindtext}
+\usepackage{colortbl}%For FR tables
+\usepackage{hyperref}%For advanced hyperlinks
+\usepackage{enumitem}%For advanced lists
+\usepackage{pdfpages}
+
 %\usepackage{refcheck}
 
 \hypersetup{
@@ -205,17 +210,21 @@ asdasdaasd
 Asasd
 
 \subsubsection{Context Diagram}
+\includegraphics{WC.pdf}
 
 \subsubsection{Individual Product use Cases}
 
 \subsection{Functional Requirements}
+\newcounter{FR}
+\setcounter{FR}{0}
 %FR1
-\begin{table}
+\stepcounter{FR}
+\begin{table}[H]
   \centering
   \arrayrulecolor{white}
   \begin{tabular}{|p{3cm}|p{11cm}|} 
   \hline
-  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-001}                                           \\ 
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-\arabic{FR}}                                           \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & The device is able to pick up sounds in the environment of the user.  \\ 
   \hline
@@ -228,12 +237,13 @@ Asasd
   \arrayrulecolor{black}
 \end{table}
 %FR2
-\begin{table}
+\stepcounter{FR}
+\begin{table}[H]
   \centering
   \arrayrulecolor{white}
   \begin{tabular}{|p{3cm}|p{11cm}|} 
   \hline
-  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-002}                                             \\ 
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-\arabic{FR}}                                             \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & The device has to be able to classify different sounds.  \\ 
   \hline
@@ -263,12 +273,13 @@ Asasd
 \end{table}
 \end{comment}
 %FR3
-\begin{table}
+\stepcounter{FR}
+\begin{table}[H]
   \centering
   \arrayrulecolor{white}
   \begin{tabular}{|p{3cm}|p{11cm}|} 
   \hline
-  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-003}                                             \\ 
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-\arabic{FR}}                                             \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & The device has to be able to set or change its classification.  \\ 
   \hline
@@ -280,12 +291,13 @@ Asasd
   \arrayrulecolor{black}
 \end{table}
 %FR4
-\begin{table}
+\stepcounter{FR}
+\begin{table}[H]
   \centering
   \arrayrulecolor{white}
   \begin{tabular}{|p{3cm}|p{11cm}|} 
   \hline
-  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-004}                                             \\ 
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-\arabic{FR}}                                             \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & The device is able to provide feedback to the user.  \\ 
   \hline
@@ -297,12 +309,13 @@ Asasd
   \arrayrulecolor{black}
 \end{table}
 %FR5
-\begin{table}
+\stepcounter{FR}
+\begin{table}[H]
   \centering
   \arrayrulecolor{white}
   \begin{tabular}{|p{3cm}|p{11cm}|} 
   \hline
-  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-005}                                             \\ 
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-\arabic{FR}}                                             \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & The feedback provided is the appropriate feedback.  \\ 
   \hline
@@ -314,91 +327,661 @@ Asasd
   \arrayrulecolor{black}
 \end{table}
 \section{Non-Functional Requirements}
+\newcounter{NFR}
+\setcounter{NFR}{0}
 
 \subsection{Look and Feel Requirements}
 
 \subsubsection{Appearance Requirements}
+%NFR-001
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & \begin{itemize}[leftmargin=*] 
+    \item The UI of the application will contain a home page that displays the company logo and an option to pair the device.
+    \item The UI of the application will have buttons which will have different colors for different functionalities.
+    \item The UI will have a separate page for pairing the device and a page for configuring which voices you want to be alerted by. 
+    \item The device will be a uniform material finish and contain an on button and Bluetooth pairing button. 
+    \item The device will have a distinguished charging port built into the finished material.
+  \end{itemize}  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that the UI and Device satisfy mandated requirements.                      \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
 \subsubsection{Style Requirements}
+%NFR-002
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & \begin{itemize}[leftmargin=*] 
+    \item The UI will use consistent buttons, fonts, and color palette.
+    \item The device will automatically begin the pairing process when button is pressed 
+ \item Buttons on the UI should be easily identified and responsive.
+ \end{itemize}  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
 \subsection{Usability and Humanity Requirement}
 
-
 \subsubsection{Ease of Use Requirements}
+%NFR-003
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & \begin{itemize}[leftmargin=*] 
+    \item The Device shall be usable by any user with basic understanding of mobile applications and bluetooth devices. 
+    \item The product should provide support that assists users in avoiding mistakes. 
+    \end{itemize}  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & \textbf{Need To add content here!!}
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
-\subsubsection{Personalization and Internationalization Requirements }
-
+\subsubsection{Personalization and Internationalization Requirements}
+%NFR-004
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & \begin{itemize}[leftmargin=*] 
+    \item Devices should allow users to pick and choose their desired sounds to be notified by.
+    \item Application of the product should allow users to choose preferred language
+    \item User Manual for the device will be written in primary language of each region device is sold
+    \end{itemize}  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & \textbf{Need To add content here!!}
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 \subsubsection{Learning Requirements}
-
+%NFR-005
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & This Device and the corresponding application shall be able to be used by users with no prior training within 5 minutes.   \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & \textbf{Need To add content here!!}
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 \subsubsection{Understandability and Politeness Requirements}
-
+%NFR-006
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & The device and the application will use icons when the icon is commonly associated with a standard action such as a bluetooth logo for pairing.   \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & \textbf{Need To add content here!!}
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 \subsubsection{Accessibility Requirements}
-
+%NFR-007
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & Anybody who can operate a mobile device and is capable of wearing a ring/bracelet will be able to operate the device.    \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & \textbf{Need To add content here!!}
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 \subsubsection{Convenience Requirements} 
-
-\subsubsection{Performance Requirements}
+%NFR-008
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & If the phone falls out of range, the device should automatically re-pair to a known device when the device is back in range.    \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & \textbf{Need To add content here!!}
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
+\subsection{Performance Requirements}
 
 \subsubsection{Speed and Latency Requirements} 
+%NFR-009
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & \begin{itemize}[leftmargin=*] 
+    \item The device shall process sound and react, with haptic feedback, if keywords are found in 1 second of response time
+\item Interactions between the user and UI should have a response time of 1ms
+\item First time pairing of the device should take no longer than 1 minute
+\item Recurring connections of the device should take no longer than 10 seconds.  
+\end{itemize}  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
 \subsubsection{Safety-Critical Requirements}   
+%NFR-010
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & Battery of the device should be shielded to prevent any direct contact with the user.  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
 \subsubsection{Precision or Accuracy Requirements}
+%NFR-011
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & Devices shall only miss-process noise or give a false haptic feedback once in every x amount of processes (Where x is determined by the team).   \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
 \subsubsection{Reliability and Availability Requirements}
+%NFR-012
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & \begin{itemize}[leftmargin=*] 
+    \item Battery life of the device should last for 12 hours of use.
+\item Sound sensor should be listening for keywords at all times while the device is powered on.
+\item Application should have an uptime of 24 hours a day, 365 days a year.
+\end{itemize}  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
 \subsubsection{Robustness or Fault-Tolerance Requirements} 
+%NFR-013
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & \begin{itemize}[leftmargin=*] 
+   \item  Device should be able to filter out noise in loud environments while still picking up on keywords.
+    \item Device should still function even if the bluetooth gets disconnected from the user's mobile device.
+    \end{itemize}  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
 \subsubsection{Capacity Requirements}  
+%NFR-014
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & \begin{itemize}[leftmargin=*] 
+    \item System should only record the 5 keywords as chosen by the user of the device.
+    \item Application should record the inputted keywords by the user even if the application is closed.
+    \end{itemize}  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
 \subsubsection{ Scalability or Extensibility Requirements } 
+%NFR-015
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & The device should be capable of processing the current 5 keywords and upwards of 5 additional keywords two years after launch.   \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
 \subsubsection{ Longevity Requirements } 
+%NFR-016
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & The Device should have an expected lifetime of 5 years considering regular maintenance and use cases.   \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
 \subsection{Operational and Environmental Requirements} 
 
 \subsubsection{Expected Physical Environment} 
-
-\subsubsection{ Wider Environment Requirements} 
+%NFR-017
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & \begin{itemize}[leftmargin=*] 
+    \item The device will be used by individuals in normal day to day activities.
+    \item The product dimensions should allow fitment on either wrist or finger of the user. 
+    \item The application shall run on any mobile device that is using an IOS or Android operating system. 
+    \end{itemize}  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
 \subsubsection{ Requirements for Interfacing with Adjacent Systems} 
+%NFR-018
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & The device will be able to interface with an application running on the user's mobile device.
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
-\subsubsection{Productization Requirements } 
-
-\subsubsection{Release Requirements } 
+\subsubsection{Productization Requirements} 
+\textbf{N/A}
+\subsubsection{Release Requirements} 
+%NFR-019
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & Yearly software releases will be deployed to improve the signal processing of the device as well as to maintain the corresponding application of the device.\\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
 \subsection{Maintainability and Support Requirements}
 
 \subsubsection{Maintenance Requirements}  
-asdasdaasd
-asdasda
-asdasd
+%NFR-020
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & Updates to the software of the device should only require the application to be down for one day at a time.  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
+
 \subsubsection{Supportability Requirements } 
+\textbf{N/A}
 
 \subsubsection{Adaptability Requirements}  
+%NFR-021
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & Product is expected to interface with Android and IOS mobile devices.   \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
 \subsection{Security Requirements }
-asdasdasd
+
 \subsubsection{Access Requirements }  
+%NFR-022
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & \begin{itemize}[leftmargin=*] 
+    \item Nobody will have access to the signals being processed. Sounds should be processed and deleted in real time.
+    \item Any user will have access to the UI of the application but only developers will have access to the backend of the code. 
+    \end{itemize}  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
 \subsubsection{Integrity Requirements }  
+%NFR-023
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & The device will filter out redundant external noise in order to improve the integrity of our signal processing.  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
 \subsubsection{Privacy Requirements }  
+%NFR-024
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & The product will protect the users right to privacy by not keeping a record of the data it takes in for the signal processing.  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
 \subsubsection{Audit Requirements }  
-
+\textbf{N/A}
 \subsubsection{Immunity Requirements}  
-
+\textbf{N/A}
 \subsection{Cultural Requirements }
 
 \subsubsection{Cultural Requirements} 
-ran dom content
+%NFR-025
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & \begin{itemize}[leftmargin=*] 
+    \item The product will only support English at launch but will strive to include more languages based on regions of purchase.
+    \item The application and the device will both have zero references pertaining to religions, ethinic groups or any cultures. 
+    \end{itemize}  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
+
 \subsection{Legal Requirements}
 
 \subsubsection{Legal Compliance Requirements } 
+%NFR-026
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & The product will comply with all laws and regulations pertaining to regions where it is sold and distributed.  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
 \subsubsection{Standards Compliance Requirements}  
+%NFR-027
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & Product will adhere to any Open License agreements.  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
 \subsection{Health and Safety Requirements}
+%NFR-028
+\stepcounter{NFR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & \begin{itemize}[leftmargin=*] 
+    \item Product will use certified batteries.
+    \item Product will use haptic feedback that is not intrusive to the user.
+    \end{itemize}  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
 \section{Monitor and Control variables - Taranjit }
 
