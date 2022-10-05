@@ -16,7 +16,7 @@
 \usepackage{caption}
 \usepackage{pdflscape}
 \usepackage{afterpage}
-
+\usepackage{verbatim}
 \usepackage[round]{natbib}
 
 %\usepackage{refcheck}
@@ -138,7 +138,7 @@
 
 \tableofcontents
 
-~\newpage
+\pagebreak
 
 \section*{Revision History}
 
@@ -150,76 +150,194 @@ Date 2 & 1.1 & Notes\\
 \bottomrule
 \end{tabularx}
 
-~\newpage
+\pagenumbering{arabic}
 
-\section{Reference Material}
+\section{Project Drivers}
 
-This section records information for easy reference.
+\subsection{The Purpose of the Project}
 
-\subsection{Table of Units}
+\subsection{The Stakeholders}
 
-Throughout this document SI (Syst\`{e}me International d'Unit\'{e}s) is employed
-as the unit system.  In addition to the basic units, several derived units are
-used as described below.  For each unit, the symbol is given followed by a
-description of the unit and the SI name.
-~\newline
+\subsubsection{The Client}
 
-\renewcommand{\arraystretch}{1.2}
-%\begin{table}[ht]
-  \noindent \begin{tabular}{l l l} 
-    \toprule		
-    \textbf{symbol} & \textbf{unit} & \textbf{SI}\\
-    \midrule 
-    \si{\metre} & length & metre\\
-    \si{\kilogram} & mass	& kilogram\\
-    \si{\second} & time & second\\
-    \si{\celsius} & temperature & centigrade\\
-    \si{\joule} & energy & joule\\
-    \si{\watt} & power & watt (W = \si{\joule\per\second})\\
-    \bottomrule
-  \end{tabular}
-  %	\caption{Provide a caption}
-%\end{table}
+\subsubsection{The Customers}
 
-\plt{Only include the units that your SRS actually uses.}
+\subsubsection{Other Stakeholders}
 
-\plt{Derived units, like newtons, pascal, etc, should show their derivation
-    (the units they are derived from) if their constituent units are in the
-    table of units (that is, if the units they are derived from are used in the
-    document).  For instance, the derivation of pascals as
-    $\si{\pascal}=\si{\newton\per\square\meter}$ is shown if newtons and m are
-    both in the table.  The derivations of newtons would not be shown if kg and
-    s are not both in the table.}
+\subsection{Constraints}
 
-\plt{The symbol for units named after people use capital letters, but the name
-  of the unit itself uses lower case.  For instance, pascals use the symbol Pa,
-  watts use the symbol W, teslas use the symbol T, newtons use the symbol N,
-  etc.  The one exception to this is degree Celsius.  Details on writing metric
-  units can be found on the 
-  \href{https://www.nist.gov/pml/weights-and-measures/writing-metric-units}
-  {NIST} web-page.}
+\subsubsection{Solution Constraints}
 
-\subsection{Table of Symbols}
+\subsubsection{Implementation Enviroment of the Current System}
 
-The table that follows summarizes the symbols used in this document along with
-their units.  The choice of symbols was made to be consistent with the heat
-transfer literature and with existing documentation for solar water heating
-systems.  The symbols are listed in alphabetical order.
+\subsubsection{Partner or Collaborative Applications} 
 
-\renewcommand{\arraystretch}{1.2}
-%\noindent \begin{tabularx}{1.0\textwidth}{l l X}
-\noindent \begin{longtable*}{l l p{12cm}} \toprule
-\textbf{symbol} & \textbf{unit} & \textbf{description}\\
-\midrule 
-$A_C$ & \si[per-mode=symbol] {\square\metre} & coil surface area
-\\
-$A_\text{in}$ & \si[per-mode=symbol] {\square\metre} & surface area over 
-which heat is transferred in
-\\ 
-\bottomrule
-\end{longtable*}
-\plt{Use your problems actual symbols.  The si package is a good idea to use for
-  units.}
+\subsubsection{Anticipated Workplace Environment}
+
+\subsubsection{Schedule Constraints}
+
+\subsubsection{Budget Constraints}
+
+\subsubsection{Enterprise Constraints}
+
+\subsection{Naming Conventions and Terminology}
+
+\subsubsection{Definitions of All Terms, Including Acronyms, Used by Stakeholders Involved in the Project }
+
+\subsubsection{Relevant Facts and Assumptions}
+
+\subsubsection{Relevant Facts}
+
+\subsubsection{Assumptions}
+
+\section{Functional Requirements}
+random content
+\subsection{The Scope of the work and the Product}
+randome rsonksand
+asdasda
+asdasdaasd
+Asasd
+
+\subsubsection{Context Diagram}
+
+\subsubsection{Individual Product use Cases}
+
+\subsection{Functional Requirements}
+
+\section{Non-Functional Requirements}
+
+\subsection{Look and Feel Requirements}
+
+\subsubsection{Appearance Requirements}
+
+\subsubsection{Style Requirements}
+
+\subsection{Usability and Humanity Requirement}
+
+
+\subsubsection{Ease of Use Requirements}
+
+\subsubsection{Personalization and Internationalization Requirements }
+
+\subsubsection{Learning Requirements}
+
+\subsubsection{Understandability and Politeness Requirements}
+
+\subsubsection{Accessibility Requirements}
+
+\subsubsection{Convenience Requirements} 
+
+\subsubsection{Performance Requirements}
+
+\subsubsection{Speed and Latency Requirements} 
+
+\subsubsection{Safety-Critical Requirements}   
+
+\subsubsection{Precision or Accuracy Requirements}
+
+\subsubsection{Reliability and Availability Requirements}
+
+\subsubsection{Robustness or Fault-Tolerance Requirements} 
+
+\subsubsection{Capacity Requirements}  
+
+\subsubsection{ Scalability or Extensibility Requirements } 
+
+\subsubsection{ Longevity Requirements } 
+
+\subsection{Operational and Environmental Requirements} 
+
+\subsubsection{Expected Physical Environment} 
+
+\subsubsection{ Wider Environment Requirements} 
+
+\subsubsection{ Requirements for Interfacing with Adjacent Systems} 
+
+\subsubsection{Productization Requirements } 
+
+\subsubsection{Release Requirements } 
+
+\subsection{Maintainability and Support Requirements}
+
+\subsubsection{Maintenance Requirements}  
+asdasdaasd
+asdasda
+asdasd
+\subsubsection{Supportability Requirements } 
+
+\subsubsection{Adaptability Requirements}  
+
+\subsection{Security Requirements }
+asdasdasd
+\subsubsection{Access Requirements }  
+
+\subsubsection{Integrity Requirements }  
+
+\subsubsection{Privacy Requirements }  
+
+\subsubsection{Audit Requirements }  
+
+\subsubsection{Immunity Requirements}  
+
+\subsection{Cultural Requirements }
+
+\subsubsection{Cultural Requirements} 
+ran dom content
+\subsection{Legal Requirements}
+
+\subsubsection{Legal Compliance Requirements } 
+
+\subsubsection{Standards Compliance Requirements}  
+
+\subsection{Health and Safety Requirements}
+
+\section{Monitor and Control variables - Taranjit }
+
+\section{Traceability  Everyone at end, needs 2 and 3 done first}
+ 	
+\subsection{Traceability Matrix }
+
+\section{Project Issues Taranjit Jordan}
+
+\subsection{Requirements Likely/Unlikely to Change}
+
+\subsection{Off-the-Shelf Solutions} 
+
+\subsection{Tasks}
+
+\subsubsection{Project Planning}
+
+\subsubsection{Planning of the Development Phases}
+
+\subsection{Costs}
+
+\subsection{User Documentation and Training}
+
+\subsection{Risks}
+
+\subsection{Future Developments}
+
+\pagebreak
+
+\section*{References}
+
+\section*{Reflection Appendix}
+Please include an Appendix in your SRS documents that reflects on the graduate attribute of lifelong learning.  The reflection should answer two questions:
+
+What knowledge and skills will the team collectively need to acquire to successfully complete this capstone project? Examples of possible knowledge to acquire include domain-specific knowledge from the domain of your application, software engineering knowledge, mechatronics knowledge or computer science knowledge. Skills may be related to technology, writing, presentation, team management, etc. You should look to identify at least one item for each team member.
+
+For each of the knowledge areas and skills identified in the previous question, what are at least two approaches to acquiring the knowledge or mastering the skill? From the identified approaches, which will each team member pursue, and why did they make this choice?
+
+The Appendix does not need to be long.  One or two pages should be adequate.
+
+
+
+
+
+%below is the content of the old template do not write or add stuff here
+%it is there just in case anyone need to refer a part of it
+\begin{comment}
+
 
 \subsection{Abbreviations and Acronyms}
 
@@ -259,8 +377,6 @@ which heat is transferred in
   people outside of your domain.  It should be explained.}
 
 \newpage
-
-\pagenumbering{arabic}
 
 \plt{This SRS template is based on \citet{SmithAndLai2005, SmithEtAl2007}.  It
   will get you started.  You should not modify the section headings, without
@@ -1332,5 +1448,5 @@ graduate attribute of Lifelong Learning.  Please answer the following questions:
   mastering the skill?  Of the identified approaches, which will each team
   member pursue, and why did they make this choice?
 \end{enumerate}
-
+\end{comment}
 \end{document}
