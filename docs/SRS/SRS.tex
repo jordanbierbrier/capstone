@@ -18,6 +18,8 @@
 \usepackage{afterpage}
 \usepackage{verbatim}
 \usepackage[round]{natbib}
+\usepackage{colortbl}
+\usepackage{hyperref}
 
 %\usepackage{refcheck}
 
@@ -168,7 +170,7 @@ Date 2 & 1.1 & Notes\\
 
 \subsubsection{Solution Constraints}
 
-\subsubsection{Implementation Enviroment of the Current System}
+\subsubsection{Implementation Environment of the Current System}
 
 \subsubsection{Partner or Collaborative Applications} 
 
@@ -191,7 +193,8 @@ Date 2 & 1.1 & Notes\\
 \subsubsection{Assumptions}
 
 \section{Functional Requirements}
-random content
+Definitions of All Terms, Including Acronyms, Used by Stakeholders Involved in the Project. Definitions of All Terms, Including Acronyms, Used by Stakeholders Involved in the Project
+Definitions of All Terms, Including Acronyms, Used by Stakeholders Involved in the Project. Definitions of All Terms, Including Acronyms, Used by Stakeholders Involved in the Project in 
 \subsection{The Scope of the work and the Product}
 randome rsonksand
 asdasda
@@ -203,7 +206,110 @@ Asasd
 \subsubsection{Individual Product use Cases}
 
 \subsection{Functional Requirements}
-
+%FR1
+\begin{table}
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-001}                                           \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & The device is able to pick up sounds in the environment of the user.  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion                                              & The data received by the device shall match the sounds supplied to the device's surroundings.                       \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies                                           & N/A                                                                   \\ 
+  \hline
+  \end{tabular}
+  \label{FR-001}
+  \arrayrulecolor{black}
+\end{table}
+%FR2
+\begin{table}
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-002}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & The device has to be able to classify different sounds.  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion                                              & Will compare test sounds and the device classifications shall match the true classification of the sounds.                         \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies                                           &  FR-001, FR-003                                                                   \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
+\begin{comment}
+\begin{table}
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-003}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & The device is able to receive data from an external device.  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion                                              & The received data shall agree with the sent data.                        \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies                                           & N/A                                                                   \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
+\end{comment}
+%FR3
+\begin{table}
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-003}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & The device has to be able to set or change its classification.  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion                                              & The sound classifications shall match the sent classifications.                       \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies                                           & N/A                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
+%FR4
+\begin{table}
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-004}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & The device is able to provide feedback to the user.  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion                                              & The feedback should alert the user that the device is trying to communicate some information.                       \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies                                           & N/A                                                                   \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
+%FR5
+\begin{table}
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-005}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & The feedback provided is the appropriate feedback.  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion                                              & The feedback shall convey what signal classification was detected.                      \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies                                           & FR-002, FR-004                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 \section{Non-Functional Requirements}
 
 \subsection{Look and Feel Requirements}
@@ -337,7 +443,6 @@ The Appendix does not need to be long.  One or two pages should be adequate.
 %below is the content of the old template do not write or add stuff here
 %it is there just in case anyone need to refer a part of it
 \begin{comment}
-
 
 \subsection{Abbreviations and Acronyms}
 
