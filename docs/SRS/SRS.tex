@@ -20,6 +20,8 @@
 \usepackage[round]{natbib}
 \usepackage{colortbl}
 \usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows, positioning}
 
 %\usepackage{refcheck}
 
@@ -128,7 +130,7 @@
 
 \begin{document}
 
-\title{Software Requirements Specification for \progname: subtitle describing software} 
+\title{Software Requirements Specification for \progname: Hearing Aid Bracelet} 
 \author{\authname}
 \date{\today}
 	
@@ -147,59 +149,169 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Date 1 & 1.0 & Notes\\
+October 3, 2022 & 1.0 & Added Section 1 - Project Drivers\\
 Date 2 & 1.1 & Notes\\
 \bottomrule
 \end{tabularx}
 
+\vspace{5mm}
+This document describes the requirements for Synthesia Wear.
+The template for the Software Requirements Specification (SRS)
+is a subset of the Volere template (Robertson and Robertson, 2012).
 \pagenumbering{arabic}
 
 \section{Project Drivers}
 
 \subsection{The Purpose of the Project}
+The purpose of this project is to create an inexpensive and non-intrusive hearing aid 
+bracelet that provides an alternate channel for sound recognition for our users in their 
+surroundings. First of all, Synesthesia Wear's main goal is to be able to provide an 
+improved quality of life for our users by instilling within them a sense of comfort 
+knowing that our bracelet can help alleviate their hearing difficulties in many environments. 
+For this project, there will be 3 main aspects that must be done for its overall completion. 
+The first one is to be able to design and create a small and lightweight bracelet that 
+is comfortable for our users to wear while encompassing all the hardware needed for 
+overall functionality. Simultaneously, the second aspect is one where the bracelet's 
+sound detection is able to reliably detect as many significant sounds in our users' daily 
+lives as possible. Lastly, an app is going to be made so that it has a user-friendly 
+UI that is easy to use and will allow users to easily be able to configure their sound 
+detection settings for their bracelets.
 
 \subsection{The Stakeholders}
 
 \subsubsection{The Client}
+N/A
 
 \subsubsection{The Customers}
+The customers of this project would be people in the general public who would want or 
+need an inexpensive and non-intrusive bracelet that helps with their hearing. Furthermore, 
+people who are in loud environments may want to purchase Synesthesia Wear as well since 
+hearing is likely obstructed and sound recognition through touch/vibration would be very 
+appealing.
 
 \subsubsection{Other Stakeholders}
+The Developers:
+The developers of this project are the members of Strone. Our job is to develop a 
+bracelet that is capable of assisting in the sound recognition of users within their 
+surroundings. Throughout this project's entirety, we will test and change/improve 
+aspects that we may deem necessary.
 
 \subsection{Constraints}
 
 \subsubsection{Solution Constraints}
+The Synesthesia Wear application should be able to run on many computers, laptops, and
+phones. For phones, the application will be supported on IOS and Android OS. 
+Furthermore, for laptops/computers, the application will be supported by macOS and Windows 
+OS. With all this in mind, it is assumed that implementing for other mobile/laptop/computer 
+OS's would be unprofitable and wasteful to maintain.   
 
 \subsubsection{Implementation Environment of the Current System}
+\begin{figure}[h]
+  \caption{Implementation Environment}
+  \centering
+  \begin{tikzpicture}[node distance = 3cm]
+  \tikzstyle{terminator} = [rectangle, draw, text centered, rounded corners, minimum height=2em]
+  \tikzstyle{decision} = [diamond, draw, text centered, minimum height=2em]
+  \tikzstyle{data}=[trapezium, draw, text centered, trapezium left angle=60, trapezium right angle=120, minimum height=2em]
+  \tikzstyle{connector} = [draw, -latex']
+  \node [terminator, fill=green!20] (start) {\textbf{Developers}};
+  \node [data, fill=blue!20, right = 1.5cm of start] (app) {Application};
+  \node [data, fill=blue!20, below of=app] (bracelet) {Bracelet};
+  \node [decision, fill=blue!20, right = 1.5cm of app] (device) {Device};
+  \node [terminator, fill=green!20, right = 1.5cm of device] (user) {\textbf{User}};
+  \path [connector] (start) -- (app);
+  \path [connector] (start) |- (bracelet);
+  \path [connector] (app) -- (bracelet); 
+  \path [connector] (device) -- (app);
+  \path [connector] (user) -- (device);
+  \path [connector] (user) |- (bracelet);
+  \end{tikzpicture}
+\end{figure}
 
-\subsubsection{Partner or Collaborative Applications} 
+\subsubsection{Partner or Collaborative Applications}
+Synesthesia Wear does not have any partner or collaborative applications. However, it 
+does rely upon the fact that the user is using the application on a device that supports
+IOS, Android, macOS, or Windows OS. 
 
 \subsubsection{Anticipated Workplace Environment}
+There is no specific anticipated workplace environment for this product. Ideally, this 
+bracelet and corresponding app can be used anywhere so long as they have a device that 
+supports IOS, Android, macOS, or Windows OS.
 
 \subsubsection{Schedule Constraints}
+It has been decided that this project is to be completed by the week of April 5th, 2022.
+As a result, this project's scheduling will be executed over a timespan of a bit more 
+than 7 months.
 
 \subsubsection{Budget Constraints}
+For this project, the budget has been dictated to be no more than \$ 750 from the entirety 
+of all group members. With this in mind, there is no issues with the application as all 
+software tools and resources are expected to use open-source material found online. Thus, 
+most/all of the budget will likely be spent towards designing and creating the lightweight, 
+non-intrusive, and comfortable bracelet.
 
 \subsubsection{Enterprise Constraints}
+The finished application will be available for anyone to use. However, the Synesthesia Wear 
+bracelet will need to be purchased as it costs money and time to buy all the components and 
+build it. 
 
 \subsection{Naming Conventions and Terminology}
-
 \subsubsection{Definitions of All Terms, Including Acronyms, Used by Stakeholders Involved in the Project }
+\begin{table} [h]
+  \caption{Definitions}
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{7cm}|p{8.5cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{ACRONYNM/ABBREVIATION} & \textcolor{white}{INTENDED MEANING}\\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} \centering SYWR & Synesthesia Wear\\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} \centering UI & User Interface\\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} \centering OS & Operating System\\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} \centering Etc & Et Cetera\\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} \centering Wi-Fi & Wireless Fidelity\\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} \centering IDE & Integrated Development Environment\\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} \centering GL & Gitlab\\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} \centering Product & The bracelet and appliction being developed as a whole, in its finished state\\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} \centering Project & The development of the bracelet and application\\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} \centering Customer & Ther person(s) that will use the finished product\\ 
+  \hline
+  \end{tabular}
+  \label{Definitions}
+\end{table}
 
-\subsubsection{Relevant Facts and Assumptions}
+\subsection{Relevant Facts and Assumptions}
 
 \subsubsection{Relevant Facts}
+There are a few rules that the team must adhere to during the development of this
+project. Firstly, each developer must attend the group meeting before the submission
+of a deliverable to ensure that everyone has given their opinions and approval of the
+work, sort out any discrepancies, correct errors, and then satisfactorily submit with
+some time to spare. Furthermore, another rule that must be adhered is the fact that 
+each developer has the right to question and ask for further explanations from others 
+on their work. This is because both/all parties' work is related in some way or another 
+and so the extra clarification and effort would be to all developers' benefit. 
 
 \subsubsection{Assumptions}
+The developers are assuming that all software resources that will be used in the 
+creation of the project will be open source software that is free for us to use. 
+Furthermore, it is assumed that the majority/all of our users will have access to 
+a device that supports macOS, Windows OS, IOS, or Android OS.
 
 \section{Functional Requirements}
 Definitions of All Terms, Including Acronyms, Used by Stakeholders Involved in the Project. Definitions of All Terms, Including Acronyms, Used by Stakeholders Involved in the Project
 Definitions of All Terms, Including Acronyms, Used by Stakeholders Involved in the Project. Definitions of All Terms, Including Acronyms, Used by Stakeholders Involved in the Project in 
 \subsection{The Scope of the work and the Product}
 randome rsonksand
-asdasda
-asdasdaasd
-Asasd
 
 \subsubsection{Context Diagram}
 
@@ -207,7 +319,7 @@ Asasd
 
 \subsection{Functional Requirements}
 %FR1
-\begin{table}
+\begin{table} [h]
   \centering
   \arrayrulecolor{white}
   \begin{tabular}{|p{3cm}|p{11cm}|} 
@@ -225,7 +337,7 @@ Asasd
   \arrayrulecolor{black}
 \end{table}
 %FR2
-\begin{table}
+\begin{table} [h]
   \centering
   \arrayrulecolor{white}
   \begin{tabular}{|p{3cm}|p{11cm}|} 
@@ -260,7 +372,7 @@ Asasd
 \end{table}
 \end{comment}
 %FR3
-\begin{table}
+\begin{table} [h]
   \centering
   \arrayrulecolor{white}
   \begin{tabular}{|p{3cm}|p{11cm}|} 
@@ -277,7 +389,7 @@ Asasd
   \arrayrulecolor{black}
 \end{table}
 %FR4
-\begin{table}
+\begin{table} [h]
   \centering
   \arrayrulecolor{white}
   \begin{tabular}{|p{3cm}|p{11cm}|} 
@@ -294,7 +406,7 @@ Asasd
   \arrayrulecolor{black}
 \end{table}
 %FR5
-\begin{table}
+\begin{table} [h]
   \centering
   \arrayrulecolor{white}
   \begin{tabular}{|p{3cm}|p{11cm}|} 
