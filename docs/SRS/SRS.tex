@@ -158,8 +158,13 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-October 3, 2022 & 1.0 & Added Section 1 - Project Drivers\\
-Date 2 & 1.1 & Notes\\
+October 2, 2022 & 1.0 & Added Section 1 - Project Drivers\\
+
+October 3, 2022 & 2.0 & Added Section 2,3 - Functional and Non-Functional Requirements\\
+
+October 4, 2022 & 3.0 & Added Section 4,5 - Monitor and Controlled Variables, Traceability  \\
+October 5, 2022 & 4.0 & Added Section 6 -  Project Issues \\
+October 6, 2022 & 5.0 & Added References -  Reflection Appendix \\
 \bottomrule
 \end{tabularx}
 
@@ -182,8 +187,7 @@ The first one is to be able to design and create a small and lightweight bracele
 is comfortable for our users to wear while encompassing all the hardware needed for 
 overall functionality. Simultaneously, the second aspect is one where the bracelet's 
 sound detection is able to reliably detect as many significant sounds in our users' daily 
-lives as possible. Lastly, an app is going to be made so that it has a user-friendly 
-UI that is easy to use and will allow users to easily be able to configure their sound 
+lives as possible. Lastly, an app is going to be made so that it has a user-friendly user interface (UI) that is easy to use and will allow users to easily be able to configure their sound 
 detection settings for their bracelets.
 
 \subsection{The Stakeholders}
@@ -356,7 +360,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \rowcolor[rgb]{0.675,0.827,0.902} Dependencies                                           & N/A                                                                   \\ 
   \hline
   \end{tabular}
-  \label{FR-001}
+  \label{FR-1}
   \arrayrulecolor{black}
 \end{table}
 %FR2
@@ -372,7 +376,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion                                              & Will compare test sounds and the device classifications shall match the true classification of the sounds.                         \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies                                           &  FR-001, FR-003                                                                   \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies                                           &  FR-1, FR-3                                                                   \\ 
   \hline
   \end{tabular}
   \arrayrulecolor{black}
@@ -383,7 +387,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \arrayrulecolor{white}
   \begin{tabular}{|p{3cm}|p{11cm}|} 
   \hline
-  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-003}                                             \\ 
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-3}                                             \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & The device is able to receive data from an external device.  \\ 
   \hline
@@ -444,7 +448,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion                                              & The feedback shall convey what signal classification was detected.                      \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies                                           & FR-002, FR-004                                                                  \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies                                           & FR-2, FR-4                                                                  \\ 
   \hline
   \end{tabular}
   \arrayrulecolor{black}
@@ -473,7 +477,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
     \item The device will have a distinguished charging port built into the finished material.
   \end{itemize}  \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that the UI and Device satisfy mandated requirements.                      \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that the UI and device satisfy mandated requirements.                      \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & NFR-2                                                                \\ 
   \hline
@@ -497,7 +501,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
  \item Buttons on the UI should be easily identified and responsive.
  \end{itemize}  \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the device correctly communicate back.
   \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & NFR-1                                                                 \\ 
@@ -519,7 +523,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Description  & \begin{itemize}[leftmargin=*] 
-    \item The Device shall be usable by any user with basic understanding of mobile applications and bluetooth devices. 
+    \item The device shall be usable by any user with basic understanding of mobile applications and bluetooth devices. 
     \item The product should provide support that assists users in avoiding mistakes. 
     \end{itemize}  \\ 
   \hline
@@ -566,7 +570,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \hline
   \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Description  & This Device and the corresponding application shall be able to be used by users with no prior training within 5 minutes.   \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & This device and the corresponding application shall be able to be used by users with no prior training within 5 minutes.   \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & A sample group shall take less than 5 minutes to start using the product.
   \\ 
@@ -588,10 +592,10 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Description  & The device and the application will use icons when the icon is commonly associated with a standard action such as a bluetooth logo for pairing.   \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that the UI and Device satisfy mandated requirements.
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that the UI and device satisfy mandated requirements.
   \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & NFR-1, NFR-2                                                                  \\ 
   \hline
   \end{tabular}
   \arrayrulecolor{black}
@@ -810,7 +814,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \hline
   \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Description  & The Device should have an expected lifetime of 5 years considering regular maintenance and use cases.   \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & The device should have an expected lifetime of 5 years considering regular maintenance and use cases.   \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & The estimated battery lifecycle shall be above 5 years.
   \\ 
@@ -842,7 +846,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Using a study group check that the device operates during normal day activities, fits on all users, and runs on their desired phones. 
   \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & NFR-12, NFR-13, NFR-1, NFR-2                                                                 \\ 
   \hline
   \end{tabular}
   \arrayrulecolor{black}
@@ -861,10 +865,10 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \rowcolor[rgb]{0.675,0.827,0.902} Description  & The device will be able to interface with an application running on the user's mobile device.
   \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that the device correctly pairs and reacts with updates from the application.
   \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & NFR-8, NFR-14, NFR-15                                                                  \\ 
   \hline
   \end{tabular}
   \arrayrulecolor{black}
@@ -884,7 +888,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Description  & Yearly software releases will be deployed to improve the signal processing of the device as well as to maintain the corresponding application of the device.\\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Ensure software updates have been deployed on a year to year basis.
   \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
@@ -907,7 +911,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Description  & Updates to the software of the device should only require the application to be down for one day at a time.  \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & If an update is pushed, check to ensure application down time does not exceed 24 hours.
   \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
@@ -931,10 +935,10 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Description  & Product is expected to interface with Android and IOS mobile devices.   \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Using mobile devices running Android and IOS attempt to pair the device.
   \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & NFR-18                                                                 \\ 
   \hline
   \end{tabular}
   \arrayrulecolor{black}
@@ -957,7 +961,8 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
     \item Any user will have access to the UI of the application but only developers will have access to the backend of the code. 
     \end{itemize}  \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that nobody has access to signals after processing is complete and ensure anybody has access to the UI.
+
   \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
@@ -978,10 +983,10 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Description  & The device will filter out redundant external noise in order to improve the integrity of our signal processing.  \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & N/A
   \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & FR-1, FR-2, NFR-13, NFR-15                                                                  \\ 
   \hline
   \end{tabular}
   \arrayrulecolor{black}
@@ -999,10 +1004,10 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Description  & The product will protect the users right to privacy by not keeping a record of the data it takes in for the signal processing.  \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & N/A
   \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & NFR-22                                                                  \\ 
   \hline
   \end{tabular}
   \arrayrulecolor{black}
@@ -1029,10 +1034,10 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
     \item The application and the device will both have zero references pertaining to religions, ethinic groups or any cultures. 
     \end{itemize}  \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the device correctly communicate back.
   \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & FR-2, FR-3                                                                  \\ 
   \hline
   \end{tabular}
   \arrayrulecolor{black}
@@ -1052,7 +1057,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Description  & The product will comply with all laws and regulations pertaining to regions where it is sold and distributed.  \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Take a law professional's opinion that the product follows all laws and regulations.
   \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
@@ -1073,7 +1078,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Description  & Product will adhere to any Open License agreements.  \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Consult the license agreement to ensure no breach of license. 
   \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
@@ -1097,22 +1102,43 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
     \item Product will use haptic feedback that is not intrusive to the user.
     \end{itemize}  \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the Device correctly communicate back.
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check haptic feedback on a group study of people and ensure all batteries have been certified.
   \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & N/A                                                                  \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & NFR-26                                                                  \\ 
   \hline
   \end{tabular}
   \arrayrulecolor{black}
 \end{table}
 
-\section{Monitor and Control variables - Taranjit }
+\section{Monitor and Control Variables}
 
-\section{Traceability  Everyone at end, needs 2 and 3 done first}
+\center
+
+\begin{tabular}{|p{3cm}|p{3cm}|p{6cm}|p{3cm}| }
+ \hline
+ \multicolumn{4}{|c|}{Variables} \\
+ \hline
+ Monitored& Description & Controlled & Description\\
+ \hline
+ Pairing Command  &  Start the pairing process  & Key Word Selection & Sound selection  \\
+ \hline
+External Sound &  Monitor the incoming sounds & Haptic Feedback & Motor signals \\
+\hline
+User Selection & If device is active & Mode Selection & What mode is required \\
+\hline
+
+
+\end{tabular}
+\captionof{table}{Monitor and Control Variables}
+
+\raggedright
+
+\section{Traceability}
  	
-\subsection{Traceability Matrix }
+\subsection{Traceability Matrix}
 
-\section{Project Issues Taranjit Jordan}
+\section{Project Issues}
 
 \subsection{Requirements Likely/Unlikely to Change}
 
