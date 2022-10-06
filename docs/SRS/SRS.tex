@@ -28,6 +28,7 @@
 \usepackage{hyperref}%For advanced hyperlinks
 \usepackage{enumitem}%For advanced lists
 \usepackage{pdfpages}
+\usepackage{array}
 \usepackage{tikz}
 \usetikzlibrary{shapes, arrows, positioning}
 
@@ -269,29 +270,29 @@ build it.
   \caption{Definitions}
   \centering
   \arrayrulecolor{white}
-  \begin{tabular}{|p{7cm}|p{8.5cm}|} 
+  \begin{tabular}{|>{\centering\arraybackslash}p{7cm}|>{\centering\arraybackslash}p{8cm}} 
   \hline
   \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{ACRONYNM/ABBREVIATION} & \textcolor{white}{INTENDED MEANING}\\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} \centering SYWR & Synesthesia Wear\\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} SYWR & Synesthesia Wear\\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} \centering UI & User Interface\\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} UI & User Interface\\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} \centering OS & Operating System\\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} OS & Operating System\\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} \centering Etc & Et Cetera\\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Etc & Et Cetera\\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} \centering Wi-Fi & Wireless Fidelity\\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Wi-Fi & Wireless Fidelity\\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} \centering IDE & Integrated Development Environment\\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} IDE & Integrated Development Environment\\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} \centering GL & Gitlab\\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} GL & Gitlab\\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} \centering Product & The bracelet and appliction being developed as a whole, in its finished state\\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Product & The bracelet and appliction being developed as a whole, in its finished state\\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} \centering Project & The development of the bracelet and application\\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Project & The development of the bracelet and application\\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} \centering Customer & The person(s) that will use the finished product\\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Customer & The person(s) that will use the finished product\\ 
   \hline
   \end{tabular}
   \label{Definitions}
@@ -316,14 +317,7 @@ Furthermore, it is assumed that the majority/all of our users will have access t
 a device that supports macOS, Windows OS, IOS, or Android OS.
 
 \section{Functional Requirements}
-Definitions of All Terms, Including Acronyms, Used by Stakeholders Involved in the Project. Definitions of All Terms, Including Acronyms, Used by Stakeholders Involved in the Project
-Definitions of All Terms, Including Acronyms, Used by Stakeholders Involved in the Project. Definitions of All Terms, Including Acronyms, Used by Stakeholders Involved in the Project in 
 \subsection{The Scope of the work and the Product}
-randome rsonksand
-asdasda
-asdasdaasd
-Asasd
-
 \subsubsection{Context Diagram}
 
 \begin{figure}[H]
@@ -332,7 +326,7 @@ Asasd
   \caption{Context Diagram}
   \label{ContextDiagram} 
   \end{center}
-  \end{figure}
+\end{figure}
 
 \subsubsection{Individual Product use Cases}
 
@@ -1237,16 +1231,39 @@ Future developments will be conducted in different versions, listed below are th
 
 \section*{Reflection Appendix}
 
-Jordan Bierbrier - Knowledge of signals/systems along with memory management \\
-Azriel Gingoyon - Knowledge of electrical circuitry and mechanical design  \\
-Taranjit Lotey - Knowledge of object-orientated programming for application development \\
-Udeep Shah - 
-Abraham Taha - 
+\subsection*{Jordan Bierbrier}
+Knowledge of signals/systems along with memory management \\
+
+\subsection*{Azriel Gingoyon}
+The knowledge that Azriel needs to acquire for this project will be that of electrical 
+circuitry and mechanical design. This is because he needs to be able to understand and 
+learn of feasible, efficient, and effective ways to design the bracelet so that it can 
+incorporate all of the necessary hardware for overall functionality while being non-intrusive 
+for the user's comfortability. In terms of skills, it is most likely that he will need to 
+become more proficient in CAD design, PCB design, circuit diagrams, and component research for 
+cost-effective hardware to be used in the project.\\
+In regards to approaches to acquiring said knowledge or mastering these skills, one of the 
+main ones will be to scour the internet for resources, videos, websites, blogs, or any 
+other notable sources for relevant information. Another approach would be to look through 
+books at McMaster's library to see if there is any applicable details that could be used 
+for this project. 
+
+\subsection*{Taranjit Lotey}
+Knowledge of object-orientated programming for application development \\
+Will be utilizing the web to master skills needed to have a deployable application.
+Main focus will be on retaining information on certain functions and header files 
+needed to create a user interface. Proxy communication will be required to communicate 
+between the backend embedded system and frontend application.\\
+
+\subsection*{Udeep Shah}
+
+
+\subsection*{Abraham Taha}
+
 
 
 The two methods of acquiring this knowledge will be textbooks and the web. Textbooks will be used to grasp general knowledge or concepts where as the web will be needed to put our knowledge into practice.
 
-Taranjit Lotey - Will be utilizing the web to master skills needed to have a deployable application. Main focus will be on retaining information on certain functions and header files needed to create a user interface. Proxy communication will be required to communicate between the backend embedded system and frontend application.\\
 
 Please include an Appendix in your SRS documents that reflects on the graduate attribute of lifelong learning.  The reflection should answer two questions:
 
