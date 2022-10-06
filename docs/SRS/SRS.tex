@@ -169,6 +169,7 @@ October 6, 2022 & 5.0 & Added References -  Reflection Appendix \\
 \end{tabularx}
 
 \vspace{5mm}
+\noindent
 This document describes the requirements for Synthesia Wear.
 The template for the Software Requirements Specification (SRS)
 is a subset of the Volere template (Robertson and Robertson, 2012).
@@ -193,7 +194,7 @@ detection settings for their bracelets.
 \subsection{The Stakeholders}
 
 \subsubsection{The Client}
-N/A
+\textbf{N/A}
 
 \subsubsection{The Customers}
 The customers of this project would be people in the general public who would want or 
@@ -1136,11 +1137,40 @@ User Selection & If device is active & Mode Selection & What mode is required \\
 
 \section{Traceability}
  	
-\subsection{Traceability Matrix}
+\subsection{Traceability Diagram}
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics{T-Matrix.pdf}
+  \caption{Traceability Diagram}
+  \label{TraceDiagram} 
+  \end{center}
+\end{figure}
+
+\subsection{Phase in Diagram}
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics{P-diagram.pdf}
+  \caption{Phase in Diagram}
+  \label{PhaseDiagram} 
+  \end{center}
+\end{figure}
+
+\noindent
+The number of check marks within the Priority column in Figure \ref{PhaseDiagram} corresponds to the level of priority. Three check marks has a higher priority than two, and two check marks has a higher priority than one check mark.
+
 
 \section{Project Issues}
 
 \subsection{Requirements Likely/Unlikely to Change}
+\begin{itemize}
+  \item \textbf{FR} The functional requirements that were stated above are likely to remain the same as they are fundamental to the creation of the product. If any functional requirement happens to change, it would only be a slight deviation from the current requirements.
+  \item \textbf{NFR-9} This non-functional requirement is likely to change as the processing time depends on the microcontroller we use. Ideally, we would use a high-speed microcontroller, however, cost and size are trade offs here. As a result, the processing times may change.
+  \item \textbf{NFR-12} The battery life may vary according to the size and cost of the battery. Additionally, power consumption from the microcontroller will have to be considered when calculating the battery life. After further research into batteries and power consumption, will we be able to adjust this non-functional requirement to see if 12 hours of use is feasible.
+  \item \textbf{NFR-14} this non-functional requirement may need to be adjusted to more or less keywords being able to detect. This is dependent on the size of memory the microcontroller has.
+  \item \textbf{NFR-21} this non-functional requirement may be changed to only interface with IOS mobile devices as we have limited development time.
+\end{itemize}
 
 \subsection{Off-the-Shelf Solutions} 
 
@@ -1155,7 +1185,7 @@ User Selection & If device is active & Mode Selection & What mode is required \\
 \subsubsection{Reusable Components}
 \begin{itemize}
   \item Small scale motors
-  \item Speech recognition library, for example Google’s Speech API
+  \item Speech recognition library, for example Google’s Speech application programming interface
   \item CNN model trained on speech recognition (pretrained weights included) 
   \item Small scale microcontroller
   \item Small scale microphone
