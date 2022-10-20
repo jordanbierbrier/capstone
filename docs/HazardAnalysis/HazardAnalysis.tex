@@ -104,10 +104,10 @@ correlated to them.
 
 \section{Critical Assumptions}
 
-\wss{These assumptions that are made about the software or system.  You should
-minimize the number of assumptions that remove potential hazards.  For instance,
-you could assume a part will never fail, but it is generally better to include
-this potential failure mode.}
+CA1. The battery will not need to be replaced during product lifespan
+\\CA2. Signal input devices will be consistent with the results they produce
+\\CA3. Software application failure will not diminish usage of product 
+\\CA4. Failure of one electrical components will allow user to continue use of product
 
 \section{Failure Mode and Effect Analysis}
 \newgeometry{left=2.5cm,bottom=2.5cm,right=2.5cm,top=2.5cm}
@@ -158,12 +158,35 @@ this potential failure mode.}
 
 \section{Safety and Security Requirements}
 
-\wss{Newly discovered requirements.  These should also be added to the SRS.  (A
-rationale design process how and why to fake it.)}
+Bold statements are an extension of the SRS document safety requirements which should have been included in revision 1.
+
+\subsection{System Isolation Requirements}
+
+SIR1. Product is isolated from electrical components at contact locations
+\\SIR2. Auto shut-off when water penetration detected
+
+\subsection{Access Requirements}
+
+\textbf{ACR1.} Authorized users can access preferred vibration/sensitivity settings through application site.
+\\ACR2. Authorized users can retrain the watch through watch interface. 
+
+\subsection{Integrity Requirements}
+
+IR1. Only required variables will be given access to change
+\\IR2. Data will be accessible by authorized users
+\\\textbf{IR3.} After synchronization, a copy of data is loaded to system application   
+\\IR4. No pairs of modes allowed identical settings
+\\IR5. Stored data overridden only at synchronization request
+
+\subsection{Privacy Requirements}
+
+PPR1. Personalized access code will be created for user application accessibility 
+\\PRR2. Data is not transferable between accounts
+\\PRR3. Watch interface locked if user application connection not established
+
 
 \section{Roadmap}
 
-\wss{Which safety requirements will be implemented as part of the capstone timeline?
-Which requirements will be implemented in the future?}
+The requirements implemented according to the hardware research milestone created in the development plan are as listed are the following, system isolation requirements and privacy requirements. With access requirements, integrity requirements and privacy requirements being researched in the future development plan.
 
 \end{document}
