@@ -59,10 +59,10 @@ Date2 & Name(s) & Description of changes\\
 \section{Introduction}
 This document is the hazard analysis for the entirety of Synesthesia Wear.
 For context, Synesthesia Wear is an inexpensive and non-intrusive hearing aid 
-bracelet with a purpose of improving quality of life by providing users with 
+wearable device with a purpose of improving quality of life by providing users with 
 an alternate channel for sound recognition within their surroundings. Furthermore, 
-this bracelet will have a corresponding application that will be made to be 
-user-friendly so that users can easily access and configure their bracelets to 
+this wearable device will have a corresponding application that will be made to be 
+user-friendly so that users can easily access and configure their wearable devices to 
 whatever settings they so desire. Lastly, for the purposes of this document, the 
 Synesthesia Wear developers believe that the definition of a hazard is one that is 
 derived from Nancy Leveson's work. With that in mind, a hazard is any property or 
@@ -79,16 +79,17 @@ that have resulted from the overall analysis.
 The hazard analysis will be conducted on the Synesthesia Wear system which will be 
 comprised of the following components:
 \begin{enumerate}
-    \item The Bracelet which also consists of:
+    \item The wearable device consists of:
     \begin{enumerate}
         \item Vibration Motor
-        \item Sound Sensor
+        \item Microphone
         \item Microcontroller
+        \item Bluetooth module
     \end{enumerate}
-    \item The Application to be installed on the users' devices which consists of:
+    \item The Application to be installed on the users' devices consists of:
     \begin{enumerate}
         \item User Interface
-        \item Bracelet Settings Configuration
+        \item Wearable device Settings Configuration
     \end{enumerate}
     \item The Device that runs the application
     \begin{enumerate}
@@ -96,7 +97,7 @@ comprised of the following components:
     \end{enumerate}
 \end{enumerate}
 
-With the above in mind, the system boundary is limited to the above 3 components with 
+\noindent With the above in mind, the system boundary is limited to the above 3 components with 
 each having their own respective subcomponents. Furthermore, it is important to note 
 that not all components in the above list can be controlled (i.e. Device's Operating 
 System) by the Synesthesia Wear developers. However, these components still needed to 
@@ -105,10 +106,10 @@ correlated to them.
 
 \section{Critical Assumptions}
 
-CA1. The battery will not need to be replaced during product lifespan
-\\CA2. Signal input devices will be consistent with the results they produce
-\\CA3. Software application failure will not diminish usage of product 
-\\CA4. Failure of one electrical components will allow user to continue use of product
+CA1. The battery will not need to be replaced during product lifespan.
+\\CA2. Signal input devices will be consistent with the results they produce.
+\\CA3. Software application failure will not diminish usage of product.
+\\CA4. The microphone is not blocked and has full access to the environment. 
 
 \section{Failure Mode and Effect Analysis}
 \hspace*{-1cm}
@@ -125,13 +126,13 @@ CA1. The battery will not need to be replaced during product lifespan
 
     Battery & Power the various components of the device  & Battery stops delivering power to the device & Device loses all functionalities & 1.Battery was not charged \newline 2.Battery fails and stops holding charge. \newline 3.Battery gets disconnected from the controller & 1.Inform users of best charging practices to avoid battery failure i.e (only charge to 80\%, don't leave it plugged in when battery is full etc.) \newline 2.Microcontroller should throw error code if it detects battery disconnection \newline 3.Have CMOS battery in the Micocontroller incase of power loss &  & \hyperref[SR1]{SR1},\hyperref[SR2]{SR2}, FR9 & H1-1 \\ \cline{3-9}
     
-     & & Battery supplies incorrect power & Devices may lose some functionality or may work incorrectly. The internal components may get damaged. & 1.Battery Failure \newline 2.Low charge in the battery \newline 3.Issue in the battery management system (BMS) & 1.Hardware should be able to cut off the battery in case of excess current draw. \newline 2.Microcontroller can signal the user in case of low battery. &  &  & H1-2 \\ \cline{3-9}
+     & & Battery supplies incorrect power & Devices may lose some functionality or may work incorrectly. The internal components may get damaged. & 1.Battery Failure \newline 2.Low charge in the battery \newline 3.Issue in the battery management system (BMS) & 1.Hardware should be able to cut off the battery in case of excess current draw. \newline 2.Microcontroller can signal the user in case of low battery. &  & SIR2 & H1-2 \\ \cline{3-9}
 
-     & & Battery overheats & 1.Device container can melt \newline 2.Battery can melt other components of wearable device \newline 3.Burn the user \newline 4.Damage future battery performance & 1.Device operates in temperatures outside the operating conditions of the battery \newline 2.Battery failure \newline 3.Excessive current draw \newline 4.Loose connections  & 1.Insure proper cooling or heat dissipation of the microcontroller \newline 2.Refer to H1-2 a \newline 3.Install a battery that can operate in the working conditions of the device. \newline 4.refer to H1-1 b. &  &  & H1-3 \\ \hline
+     & & Battery overheats & 1.Device container can melt \newline 2.Battery can melt other components of wearable device \newline 3.Burn the user \newline 4.Damage future battery performance & 1.Device operates in temperatures outside the operating conditions of the battery \newline 2.Battery failure \newline 3.Excessive current draw \newline 4.Loose connections  & 1.Insure proper cooling or heat dissipation of the microcontroller \newline 2.Refer to H1-2 a \newline 3.Install a battery that can operate in the working conditions of the device. \newline 4.refer to H1-1 b. &  & SIR3 & H1-3 \\ \hline
 
-     Microphone & Sound detection & Sound is not detected & Device is not able to perform the primary function & 1.Loose connections \newline 2.Microphone is damaged  & 1.Microcontroller can throw an error code in case of microphone disconnect. \newline 2.User can check the microphone output on the app to see if it is functioning correctly &  &  & H2-1 \\ \cline{3-9}
+     Microphone & Sound detection & Sound is not detected & Device is not able to perform the primary function & 1.Loose connections \newline 2.Microphone is damaged  & 1.Microcontroller can throw an error code in case of microphone disconnect. \newline 2.User can check the microphone output on the app to see if it is functioning correctly &  & IR6  & H2-1 \\ \cline{3-9}
 
-     & & Sound is falsely detected & Device functions incorrectly & 1.Loose connections \newline 2.Microphone is damaged & Refer to H2-1 b. &  &  & H2-2 \\ \hline
+     & & Sound is falsely detected & Device functions incorrectly & 1.Loose connections \newline 2.Microphone is damaged & Refer to H2-1 b. &  & IR6 & H2-2 \\ \hline
 
      Bluetooth Module & Provide a communication stream between mobile phone and wearable device. & Mobile device loses connection with  bluetooth module & 1.Sound processing capabilities are lost \newline 2.Vibration motor wont receive signal to provide/not provide haptic feedback  & 1.Signal between mobile phone and  device is lost due to higher than rated distances. \newline 2.Signal is blocked due to external factors such as a faraday cage \newline 3.Other signals such as wifi, microwave etc. cause interference with bluetooth signal \newline 4.Connected phone loses power  & 1.Provide a notification to the user when the signal strength is diminished \newline 2.Include auto-reconnection with the device and phone when signal is found \newline 3.Ensure final design of the product has adequate clearing for the bluetooth antennas such that it maximizes signal strength.  &  &  & H3-1 \\ \cline{3-9}
 
@@ -183,31 +184,32 @@ Bold statements are an extension of the SRS document safety requirements which s
 
 \subsection{System Isolation Requirements}
 
-SIR1. Product is isolated from electrical components at contact locations
-\\SIR2. Auto shut-off when water penetration detected
+SIR1. Product is isolated from electrical components at contact locations.
+\\SIR2. Auto shut-off when electrical malfunction detected.
+\\SIR3. Product has sufficient heat dissipation such that all the electrical components stay in their working temperatures.
 
 \subsection{Access Requirements}
 
 \textbf{ACR1.} Authorized users can access preferred vibration/sensitivity settings through application site.
-\\ACR2. Authorized users can retrain the watch through watch interface. 
+\\ACR2. Authorized users can retrain the device through application site. 
 
 \subsection{Integrity Requirements}
 
-IR1. Only required variables will be given access to change
-\\IR2. Data will be accessible by authorized users
-\\\textbf{IR3.} After synchronization, a copy of data is loaded to system application   
-\\IR4. No pairs of modes allowed identical settings
-\\IR5. Stored data overridden only at synchronization request
+IR1. Only required variables will be given access to change.
+\\IR2. Data will be accessible by authorized users.
+\\\textbf{IR3.} After synchronization, a copy of data is loaded to system application.  
+\\IR4. No pairs of modes allowed identical settings.
+\\IR5. Stored data overridden only at synchronization request.
+\\IR6. Application can detect if there is an issue with the microphone.
 
 \subsection{Privacy Requirements}
 
-PPR1. Personalized access code will be created for user application accessibility 
-\\PRR2. Data is not transferable between accounts
-\\PRR3. Watch interface locked if user application connection not established
+PPR1. Personalized access code will be created for user application accessibility. 
+\\PRR2. Data is not transferable between accounts.
 
 
 \section{Roadmap}
 
-The requirements implemented according to the hardware research milestone created in the development plan are as listed are the following, system isolation requirements and privacy requirements. With access requirements, integrity requirements and privacy requirements being researched in the future development plan.
+The requirements implemented according to the hardware research milestone created in the development plan are as listed, system isolation requirements and privacy requirements. With access requirements, integrity requirements and privacy requirements being researched in the future development plan.
 
 \end{document}
