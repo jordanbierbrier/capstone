@@ -71,83 +71,81 @@ This document ... \wss{provide an introductory blurb and roadmap of the
 
 \section{General Information}
 
-\subsection{Summary}
+\subsection{General Information}
 
-\wss{Say what software is being tested.  Give its name and a brief overview of
-  its general functions.}
+Synesthesia Wear goal is to create a wearable product that allows users to get assisted with certain vocal tasks needing attention. These tasks can be generic or custom to the user as needed. The product will use signal processing to gather information and make a calculated prediction of the required action. This will let the user reach a peace of mind, knowing that if an important call is being directed towards the user then the Synesthesia Wear will alert them.
 
 \subsection{Objectives}
 
-\wss{State what is intended to be accomplished.  The objective will be around
-  the qualities that are most important for your project.  You might have
-  something like: ``build confidence in the software correctness,''
-  ``demonstrate adequate usability.'' etc.  You won't list all of the qualities,
-  just those that are most important.}
+The objective of the document is to prove correctness of the system requirements and the system design documents by using unit and system testing for adequate usability. Often software may have bugs that is experienced by end-user. The tests stated in the document will show signs of mitigating those issues which will ensure the underlying logic for the subsystems. This will be completed by rigorous unit testing on the functional and non-functional requirements. The code and the circuitry tested will be the underlying logic which interact with the database.
 
 \subsection{Relevant Documentation}
 
-\wss{Reference relevant documentation.  This will definitely include your SRS
-  and your other project documents (MG, MIS, etc).  You can include these even
-  before they are written, since by the time the project is done, they will be
-  written.}
+The relevant documents include:
+\begin{itemize}
+\item Hazard Analysis Document
+\item Systems Design Document
 
-\citet{SRS}
+\end{itemize}
+
 
 \section{Plan}
 
-\wss{Introduce this section.   You can provide a roadmap of the sections to
-  come.}
 
 \subsection{Verification and Validation Team}
 
-\wss{You, your classmates and the course instructor.  Maybe your supervisor.
-  You shoud do more than list names.  You should say what each person's role is
-  for the project.  A table is a good way to summarize this information.}
+The following project members are responsible for all procedures of the verification and validation. Responsibilities can be executing and writing tests :
+\begin{itemize}
+    \item Jordan Bierbrier 
+    \item Udeep Shah
+    \item Taranjit Lotey
+    \item Abraham Taha
+    \item Azriel Gingoyon
+\end{itemize}
 
 \subsection{SRS Verification Plan}
 
-\wss{List any approaches you intend to use for SRS verification.  This may just
-  be ad hoc feedback from reviewers, like your classmates, or you may have
-  something more rigorous/systematic in mind..}
-
-\wss{Remember you have an SRS checklist}
+The following plans indicate what our team intends to do for SRS verification:
+\begin{itemize}
+    \item \textbf{Review by teammates:} This plan will make each member go through each SRS and verify if each SRS is still within our usability scope.
+    \item \textbf{Review by stakeholders:} This will let our stakeholders to go through each SRS and get their perspective on the usage of the product.
+    \item \textbf{Checklist:} This plan involves using previously set checklists in our SRS document which will verify conditions being met.
+\end{itemize}
 
 \subsection{Design Verification Plan}
 
-\wss{Plans for design verification}
-
-\wss{The review will include reviews by your classmates}
-
-\wss{Remember you have MG and MIS checklists}
+The following show our plan to review the Design verification :
+\begin{itemize}
+    \item \textbf{Review by teammates:} The planned objective is to go through a high-fidelity prototype or functional prototype to verify if the design meets expected data of the SRS.
+    \item \textbf{Review by stakeholders:} This plan involves going through the design of the project with our stakeholders to see if the prototype meets expectations set in the SRS.
+    \item \textbf{Checklist:} This plan involves using previously set checklists in our SRS document which will verify conditions being met. 
+\end{itemize}
 
 \subsection{Implementation Verification Plan}
-
-\wss{You should at least point to the tests listed in this document and the unit
-  testing plan.}
-
-\wss{In this section you would also give any details of any plans for static verification of
-  the implementation.  Potential techniques include code walkthroughs, code
-  inspection, static analyzers, etc.}
+The following plans indicate our Implementation verification plan:
+\begin{itemize}
+    \item \textbf{Static Analysis:} Test plans in sections 5.1.2 and 5.1.3 will be using this for test plans.
+    \item \textbf{Code Inspection:} This will be used for the test plans in section 5.1.1.
+    \item \textbf{Non-functional Testing:} Non-functional Requirements test plans are written in details in section 5.2.
+\end{itemize}
 
 \subsection{Automated Testing and Verification Tools}
-
-\wss{What tools are you using for automated testing.  Likely a unit testing
-  framework and maybe a profiling tool, like ValGrind.  Other possible tools
-  include a static analyzer, make, continuous integration tools, test coverage
-  tools, etc.  Explain your plans for summarizing code coverage metrics.
-  Linters are another important class of tools.  For the programming language
-  you select, you should look at the available linters.  There may also be tools
-  that verify that coding standards have been respected, like flake9 for
-  Python.}
-
-\wss{The details of this section will likely evolve as you get closer to the
-  implementation.}
+Automated Testing Tools:
+\begin{itemize}
+    \item \textbf{Mocha:} Mocha is the oldest testing frameworks for Node.js and hence will be used for our project. It has also evolved with Node.js and the JavaScript language, giving user the opportunity for callbacks, promises and async/await. 
+    \item \textbf{Mongo Orchestration:} Mongo Orchestration will be used to test our MongoDB database using the MongoDB process management.
+\end{itemize}
+Verification Tools:
+\begin{itemize}
+    \item \textbf{EsLint:} ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with a goal to make our code consistent and avoiding bugs.
+\end{itemize}
 
 \subsection{Software Validation Plan}
 
-\wss{If there is any external data that can be used for validation, you should
-  point to it here.  If there are no plans for validation, you should state that
-  here.}
+Currently there is no available data that can help validate the software.
+
+
+\end{document}
 
 \section{System Test Description}
 	
