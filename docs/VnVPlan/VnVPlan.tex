@@ -11,13 +11,14 @@
     urlcolor=blue
 }
 \usepackage[round]{natbib}
+\usepackage{enumitem}
 
 \input{../Comments}
 \input{../Common}
 
 \begin{document}
 
-\title{Project Title: System Verification and Validation Plan for \progname{}} 
+\title{Synesthesia Wear: System Verification and Validation Plan for \progname{}} 
 \author{\authname}
 \date{\today}
 	
@@ -28,9 +29,9 @@
 \section{Revision History}
 
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
-\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\toprule {\bf Date } & {\bf Version} & {\bf Notes}\\
 \midrule
-Date 1 & 1.0 & Notes\\
+10/31/2022 & 1.0 & Added Section 6 - Unit Test Description\\
 Date 2 & 1.1 & Notes\\
 \bottomrule
 \end{tabularx}
@@ -58,10 +59,8 @@ Date 2 & 1.1 & Notes\\
   \bottomrule
 \end{tabular}\\
 
-\wss{symbols, abbreviations or acronyms --- you can simply reference the SRS
+\wss{symbols, abbreviations or acronyms -- you can simply reference the SRS
   \citep{SRS} tables, if appropriate}
-
-\wss{Remove this section if it isn't needed}
 
 \newpage
 
@@ -88,9 +87,9 @@ This document ... \wss{provide an introductory blurb and roadmap of the
 \subsection{Relevant Documentation}
 
 \wss{Reference relevant documentation.  This will definitely include your SRS
-  and your other project documents (design documents, like MG, MIS, etc).  You
-  can include these even before they are written, since by the time the project
-  is done, they will be written.}
+  and your other project documents (MG, MIS, etc).  You can include these even
+  before they are written, since by the time the project is done, they will be
+  written.}
 
 \citet{SRS}
 
@@ -101,17 +100,17 @@ This document ... \wss{provide an introductory blurb and roadmap of the
 
 \subsection{Verification and Validation Team}
 
-\wss{Your teammates.  Maybe your supervisor.
+\wss{You, your classmates and the course instructor.  Maybe your supervisor.
   You shoud do more than list names.  You should say what each person's role is
-  for the project's verification.  A table is a good way to summarize this information.}
+  for the project.  A table is a good way to summarize this information.}
 
 \subsection{SRS Verification Plan}
 
-\wss{List any approaches you intend to use for SRS verification.  This may include
-  ad hoc feedback from reviewers, like your classmates, or you may plan for 
-  something more rigorous/systematic.}
+\wss{List any approaches you intend to use for SRS verification.  This may just
+  be ad hoc feedback from reviewers, like your classmates, or you may have
+  something more rigorous/systematic in mind..}
 
-\wss{Maybe create an SRS checklist?}
+\wss{Remember you have an SRS checklist}
 
 \subsection{Design Verification Plan}
 
@@ -119,15 +118,7 @@ This document ... \wss{provide an introductory blurb and roadmap of the
 
 \wss{The review will include reviews by your classmates}
 
-\wss{Create a checklists?}
-
-\subsection{Verification and Validation Plan Verification Plan}
-
-\wss{The verification and validation plan is an artifact that should also be verified.}
-
-\wss{The review will include reviews by your classmates}
-
-\wss{Create a checklists?}
+\wss{Remember you have MG and MIS checklists}
 
 \subsection{Implementation Verification Plan}
 
@@ -149,9 +140,6 @@ This document ... \wss{provide an introductory blurb and roadmap of the
   that verify that coding standards have been respected, like flake9 for
   Python.}
 
-\wss{If you have already done this in the development plan, you can point to
-that document.}
-
 \wss{The details of this section will likely evolve as you get closer to the
   implementation.}
 
@@ -160,12 +148,6 @@ that document.}
 \wss{If there is any external data that can be used for validation, you should
   point to it here.  If there are no plans for validation, you should state that
   here.}
-
-\wss{You might want to use review sessions with the stakeholder to check that
-the requirements document captures the right requirements.  Maybe task based
-inspection?}
-
-\wss{This section might reference back to the SRS verification section.}
 
 \section{System Test Description}
 	
@@ -176,12 +158,12 @@ inspection?}
   level of document structure can be removed.}
 
 \wss{Include a blurb here to explain why the subsections below
-  cover the requirements.  References to the SRS would be good here.}
+  cover the requirements.  References to the SRS would be good.}
 
 \subsubsection{Area of Testing1}
 
 \wss{It would be nice to have a blurb here to explain why the subsections below
-  cover the requirements.  References to the SRS would be good here.  If a section
+  cover the requirements.  References to the SRS would be good.  If a section
   covers tests for input constraints, you should reference the data constraints
   table in the SRS.}
 		
@@ -227,14 +209,10 @@ How test will be performed:
 
 \wss{The nonfunctional requirements for accuracy will likely just reference the
   appropriate functional tests from above.  The test cases should mention
-  reporting the relative error for these tests.  Not all projects will
-  necessarily have nonfunctional requirements related to accuracy}
+  reporting the relative error for these tests.}
 
 \wss{Tests related to usability could include conducting a usability test and
-  survey.  The survey will be in the Appendix.}
-
-\wss{Static tests, review, inspections, and walkthroughs, will not follow the
-format for the tests given below.}
+  survey.}
 
 \subsubsection{Area of Testing1}
 		
@@ -244,7 +222,7 @@ format for the tests given below.}
 
 \item{test-id1\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: 
 					
 Initial State: 
 					
@@ -279,18 +257,16 @@ How test will be performed:
 
 \section{Unit Test Description}
 
-\wss{Reference your MIS (detailed design document) and explain your overall
-  philosophy for test case selection.}  
-\wss{This section should not be filled in until after the MIS (detailed design
-  document) has been completed.}
+\wss{Reference your MIS and explain your overall philosophy for test case
+  selection.}  
+\wss{This section should not be filled in until after the MIS has
+  been completed.}
 
 \subsection{Unit Testing Scope}
-
-\wss{What modules are outside of the scope.  If there are modules that are
-  developed by someone else, then you would say here if you aren't planning on
-  verifying them.  There may also be modules that are part of your software, but
-  have a lower priority for verification than others.  If this is the case,
-  explain your rationale for the ranking of module importance.}
+The scope of the unit testing will involve evaluating the microphone, bluetooth, 
+classification, feedback, noise filter, and interface modules to see if they adhere 
+to respective functional and non-functional requirements found in Synesthesia Wear’s 
+SRS document.
 
 \subsection{Tests for Functional Requirements}
 
@@ -298,7 +274,7 @@ How test will be performed:
   appropriate specific modules can be verified by a non-testing based
   technique.  That can also be documented in this section.}
 
-\subsubsection{Module 1}
+\subsubsection{Microphone Module}
 
 \wss{Include a blurb here to explain why the subsections below cover the module.
   References to the MIS would be good.  You will want tests from a black box
@@ -309,41 +285,133 @@ How test will be performed:
 
 \item{test-id1\\}
 
-Type: \wss{Functional, Dynamic, Manual, Automatic, Static etc. Most will
-  be automatic}
-					
-Initial State: 
-					
-Input: 
-					
-Output: \wss{The expected result for the given inputs}
-
-Test Case Derivation: \wss{Justify the expected value given in the Output field}
-
-How test will be performed: 
-					
-\item{test-id2\\}
-
-Type: \wss{Functional, Dynamic, Manual, Automatic, Static etc. Most will
-  be automatic}
-					
-Initial State: 
-					
-Input: 
-					
-Output: \wss{The expected result for the given inputs}
-
-Test Case Derivation: \wss{Justify the expected value given in the Output field}
-
-How test will be performed: 
-
-\item{...\\}
+\begin{tabular}{ |p{5cm}||p{7cm}| }
+    \hline
+    Type & Functional, Dynamic, and Manual. \\
+    \hline
+    Initial State  &  No data in buffer and requesting microphone input.\\
+    \hline
+    Input &   Sample Recording.  \\
+    \hline
+    Output &   The sample recording in the memory buffer.  \\
+    \hline
+    Test Case Derivation &   The output has to be the digital representation of the input.\\
+    \hline
+    How test will be performed & 3 Different sample sounds will be supplied near the microphone. Will compare the output with expected output. The test succeeds if all the outputs match the expected outputs within some tolerance.     \\
+    \hline
+\end{tabular}
     
 \end{enumerate}
 
-\subsubsection{Module 2}
+\subsubsection{Bluetooth Module}
 
-...
+\begin{enumerate}
+
+\item{test-id1\\}
+
+\begin{tabular}{ |p{5cm}||p{7cm}| }
+    \hline
+    Type & Functional, Dynamic, and Manual. \\
+    \hline
+    Initial State  &  Data in buffer and send request received. \\
+    \hline
+    Input &   Digital sound recording.  \\
+    \hline
+    Output &   The same digital sound recording at the receiver.  \\
+    \hline
+    Test Case Derivation &   The module is a communication module and no change has been made to the data. Hence the data has to be the same as the output.\\
+    \hline
+    How test will be performed & A large audio recording will be sent to the data buffer of the sender and send request will be asserted. The receiver should receive the data. The data will be compared manually to check if the test was passed.\\
+    \hline
+\end{tabular}
+
+\item{test-id2\\}
+
+\begin{tabular}{ |p{5cm}||p{7cm}| }
+    \hline
+    Type & Functional, Dynamic, and Manual. \\
+    \hline
+    Initial State  &  Classification detected asserted. \\
+    \hline
+    Input &   Sample classification signal asserted on software.  \\
+    \hline
+    Output &   Feedback signal asserted on hardware.  \\
+    \hline
+    Test Case Derivation &   The module is a communication module, and the classification signal received from the software has to tie into its respective feedback signal.\\
+    \hline
+    How test will be performed & A classification signal will be asserted manually in the software, its respective feedback signal needs to be asserted in the hardware for the test to pass.\\
+    \hline
+\end{tabular}
+
+\end{enumerate}
+
+
+\subsubsection{Classification Module}
+
+\begin{enumerate}
+
+\item{test-id1\\}
+
+\begin{tabular}{ |p{5cm}||p{7cm}| }
+    \hline
+    Type & Functional, Dynamic, and Automatic. \\
+    \hline
+    Initial State  &  Sound classification settings already preconfigured.\\
+    \hline
+    Input &   Stored sound data in the memory buffer.  \\
+    \hline
+    Output &   Classified sound data.  \\
+    \hline
+    Test Case Derivation &   The output should be digital sound data that has been classified under one of the categories that were preconfigured in the sound classification settings.\\
+    \hline
+    How test will be performed & Sound data from the Microphone module testing will be used for this test. The classification code ingrained in the Synesthesia Wear app will automatically try to classify stored sound data in memory. The test succeeds if all outputs are classified under their expected categories.\\
+    \hline
+\end{tabular}
+
+\item{test-id2\\}
+
+\begin{tabular}{ |p{5cm}||p{7cm}| }
+    \hline
+    Type & Functional, Dynamic, and Manual. \\
+    \hline
+    Initial State  &  Sound classification settings are empty or already preconfigured. \\
+    \hline
+    Input &   New classification settings.  \\
+    \hline
+    Output &   Classification settings have been changed.  \\
+    \hline
+    Test Case Derivation &   The output should match the new sound classification settings verbatim.\\
+    \hline
+    How test will be performed & New sound classification settings will be inputted into a menu on the Synesthesia Wear app and a save button will be used to preserve those settings. The test succeeds if after going back to the sound classification settings menu, the newly inputted settings are displayed.\\
+    \hline
+\end{tabular}
+
+\end{enumerate}
+
+
+\subsubsection{Feedback Module}
+
+\begin{enumerate}
+
+\item{test-id1\\}
+
+\begin{tabular}{ |p{5cm}||p{7cm}| }
+    \hline
+    Type & Functional, Dynamic, and Manual. \\
+    \hline
+    Initial State  &  Classification received. \\
+    \hline
+    Input &   A feedback signal is asserted.  \\
+    \hline
+    Output &   Vibration detected at the end that coincides with the feedback signal.  \\
+    \hline
+    Test Case Derivation &   Tests how our feedback structure performs. \\
+    \hline
+    How test will be performed & A feedback signal pertaining to a particular classification is asserted, the output has to be equal to the set vibration specified by the classification. \\
+    \hline
+\end{tabular}
+
+\end{enumerate}
 
 \subsection{Tests for Nonfunctional Requirements}
 
@@ -354,40 +422,228 @@ How test will be performed:
 \wss{These tests may involve collecting performance data from previously
   mentioned functional tests.}
 
-\subsubsection{Module ?}
-		
+\subsubsection{Microphone Module}
+
 \begin{enumerate}
 
 \item{test-id1\\}
 
-Type: \wss{Functional, Dynamic, Manual, Automatic, Static etc. Most will
-  be automatic}
-					
-Initial State: 
-					
-Input/Condition: 
-					
-Output/Result: 
-					
-How test will be performed: 
-					
+\begin{tabular}{ |p{5cm}||p{7cm}| }
+    \hline
+    Type & Dynamic and Manual. \\
+    \hline
+    Initial State  &  No data in buffer. \\
+    \hline
+    Input &   Sample recording. \\
+    \hline
+    Output &   The sample recording in the memory buffer.  \\
+    \hline
+    Test Case Derivation &   The output has to be within at least a 95\% confidence level of the input. \\
+    \hline
+    How test will be performed & 3 different sounds found online will be taken and played on some speakers that will project the sounds into the microphone. Taking the initial sound files and the sound data from the microphone, an online software tool will compare the sound data and measure their similarities/confidence level. The test succeeds if the similarities/confidence level is at least 95\%. \\
+    \hline
+\end{tabular}
+
 \item{test-id2\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
-					
-Initial State: 
-					
-Input: 
-					
-Output: 
-					
-How test will be performed: 
+\begin{tabular}{ |p{5cm}||p{7cm}| }
+    \hline
+    Type & Dynamic and Automatic. \\
+    \hline
+    Initial State  &  No data in buffer and the device is powered on. \\
+    \hline
+    Input &   Random ambient sound. \\
+    \hline
+    Output &   Continuously updated sound buffer with sampling frequency fs.  \\
+    \hline
+    Test Case Derivation &   Tests if the device is able to continuously update when turned on. \\
+    \hline
+    How test will be performed & Random sounds will be inserted into the microphone. The sound buffer will be copied at the frequency of the sampling frequency into a file. The device has to be able to update the sound buffer continuously until the device is turned off to receive a conditional pass. For a complete pass, all the sound data has to have a distortion of less than 5\%. \\
+    \hline
+\end{tabular}
 
 \end{enumerate}
 
-\subsubsection{Module ?}
 
-...
+\subsubsection{Bluetooth Module}
+
+\begin{enumerate}
+
+\item{test-id1\\}
+
+\begin{tabular}{ |p{5cm}||p{7cm}| }
+    \hline
+    Type & Dynamic and Manual. \\
+    \hline
+    Initial State  &  Bluetooth device not paired. \\
+    \hline
+    Input &   Introduce a new bluetooth connection. \\
+    \hline
+    Output &   Connect with the bluetooth connection in under a minute.  \\
+    \hline
+    Test Case Derivation &   The device has to be able to connect with the hardware easily. \\
+    \hline
+    How test will be performed & A new bluetooth device will be introduced to the hardware, on performing the bluetooth connection procedure the connection should be established within a minute for the test to pass. \\
+    \hline
+\end{tabular}
+
+\item{test-id2\\}
+
+\begin{tabular}{ |p{5cm}||p{7cm}| }
+    \hline
+    Type & Dynamic and Manual. \\
+    \hline
+    Initial State  &  Bluetooth device not connected but paired. \\
+    \hline
+    Input &   Disconnect bluetooth abruptly. \\
+    \hline
+    Output &   Auto-reconnection of the bluetooth.  \\
+    \hline
+    Test Case Derivation &   The device has to be able to reconnect without any issues. \\
+    \hline
+    How test will be performed & The device will be paired to the hardware initially, by taking the device out of range we will simulate abrupt interruption. It should automatically connect back when back in range, this should not take any longer than 10 seconds after the device is back in range. \\
+    \hline
+\end{tabular}
+
+\end{enumerate}
+
+
+\subsubsection{Noise Filter Module}
+
+\begin{enumerate}
+
+\item{test-id1\\}
+
+\begin{tabular}{ |p{5cm}||p{7cm}| }
+    \hline
+    Type & Dynamic and Automatic. \\
+    \hline
+    Initial State  &  Is empty and waiting for an input to process. \\
+    \hline
+    Input &   Digital data with one or more sounds. \\
+    \hline
+    Output &   The same digital sound recording but with less noise.  \\
+    \hline
+    Test Case Derivation &   The background noise in the sound file is reduced/removed and a main/singular sound is more notable than others. \\
+    \hline
+    How test will be performed & After receiving sound data over bluetooth, Synesthesia Wear’s app will automatically send this data over to the corresponding device’s noise filtering hardware that will process and return a filtered version of the data. This test passes if it is clear that there is notably less noise in the filtered sound file compared to the original one. \\
+    \hline
+\end{tabular}
+
+\end{enumerate}
+
+
+\subsubsection{Classification Module}
+
+\begin{enumerate}
+
+\item{test-id1\\}
+
+\begin{tabular}{ |p{5cm}||p{7cm}| }
+    \hline
+    Type & Dynamic and Automatic. \\
+    \hline
+    Initial State  &  Waiting for sound input and classification settings to be preconfigured. \\
+    \hline
+    Input &   Sample sounds that fall into classifications and those that do not. \\
+    \hline
+    Output &   Classification signals asserted for sounds that are in the classification.  \\
+    \hline
+    Test Case Derivation &   Tests the performance and effectiveness of the classification module to be able to distinguish classified and non-classified signals. \\
+    \hline
+    How test will be performed & A sample set of different sounds (6 different types of sounds with each one supplied 20 times, each time with a random distortion added to make them all digitally different) will be run through a pre-configured classification set. If the output of the module is correct 90\% of the time, it is considered to be a pass. \\
+    \hline
+\end{tabular}
+
+\end{enumerate}
+
+
+\subsubsection{Feedback Module}
+
+\begin{enumerate}
+
+\item{test-id1\\}
+
+\begin{tabular}{ |p{5cm}||p{7cm}| }
+    \hline
+    Type & Dynamic and Manual. \\
+    \hline
+    Initial State  &  Classification received. \\
+    \hline
+    Input &   A feedback signal is asserted. \\
+    \hline
+    Output &   Vibration detected at the end that coincides with the feedback signal and is not intrusive.  \\
+    \hline
+    Test Case Derivation &   Tests how our feedback structure performs. \\
+    \hline
+    How test will be performed & A feedback signal pertaining to a particular classification is asserted such that the output has to be equal to the set vibration specified by the classification. A sample group of 5 will be asked to feel the vibration and then reply if said vibration was sufficient and non-intrusive. If 4 of the 5 answers are yes, the test is passed. \\
+    \hline
+\end{tabular}
+
+\end{enumerate}
+
+
+
+\subsubsection{Interface Module}
+
+\begin{enumerate}
+
+\item{test-id1\\}
+
+\begin{tabular}{ |p{5cm}||p{7cm}| }
+    \hline
+    Type & Structural, Dynamic and Manual. \\
+    \hline
+    Initial State  &  N/A. \\
+    \hline
+    Input &   Sample group user inputs. \\
+    \hline
+    Output &   UI should behave as required in terms of appearance and style.  \\
+    \hline
+    Test Case Derivation &   Gathering information on the wants of the users to ensure that the interface adheres to their preferences and that they are pleased with their user experiences. \\
+    \hline
+    How test will be performed & A sample group of 5 people will have the opportunity to interact with the UI and device first. They will later be asked questions regarding certain features of the product. These questions are listed in the appendix. If a satisfying result is obtained over the sample group, then the test is passed. This test has multiple subsections where each can be passed or failed separately. \\
+    \hline
+\end{tabular}
+
+\item{test-id2\\}
+
+\begin{tabular}{ |p{5cm}||p{7cm}| }
+    \hline
+    Type & Dynamic and Automatic. \\
+    \hline
+    Initial State  &  User interface opened up. \\
+    \hline
+    Input &   User input. \\
+    \hline
+    Output &   UI response within 1ms.  \\
+    \hline
+    Test Case Derivation &   The device has to be able to respond quickly to any user input. \\
+    \hline
+    How test will be performed & It will be too hard to measure the response time manually as most humans have a response time greater than 1ms. Hence this test will be done with the help of helper code which will calculate the time between a user input detected and a corresponding change in the UI. \\
+    \hline
+\end{tabular}
+
+\item{test-id3\\}
+
+\begin{tabular}{ |p{5cm}||p{7cm}| }
+    \hline
+    Type & Dynamic and Manual. \\
+    \hline
+    Initial State  &  User interface opened up. \\
+    \hline
+    Input &   User input. \\
+    \hline
+    Output &   Expected UI response on all the different devices.  \\
+    \hline
+    Test Case Derivation &   The UI has to be able to work the same on all platforms. \\
+    \hline
+    How test will be performed & The UI will be installed on different systems (Android, Windows, IOS). If it is capable of all functionality within all the platforms, it receives a pass. \\
+    \hline
+\end{tabular}
+
+\end{enumerate}
+
 
 \subsection{Traceability Between Test Cases and Modules}
 
@@ -410,7 +666,69 @@ Their values are defined in this section for easy maintenance.
 
 \subsection{Usability Survey Questions?}
 
-\wss{This is a section that would be appropriate for some projects.}
+\subsubsection{Appearance Requirements}
+
+\begin{enumerate}[noitemsep, nolistsep]
+\item{How did the finish and look of the device appeal to you?\\}
+\item{How was the appearance of different pages in the UI software?\\}
+
+\end{enumerate}
+
+\noindent Expected answers for pass condition: Satisfied or better for both questions above.
+
+
+\subsubsection{Style Requirements}
+
+\begin{enumerate}[noitemsep, nolistsep]
+\item{Did you feel that there was consistency between different elements of the UI?\\}
+
+\end{enumerate}
+
+\noindent Expected answers for pass condition: Yes.
+
+
+\subsubsection{Ease of Use Requirements}
+
+\begin{enumerate}[noitemsep, nolistsep]
+\item{Out of 10, how easy do you find it to interact with the UI?\\}
+\item{Out of 10, what would you rate the usability of the system?\\}
+\item{What do you find most frustrating about the system?\\}
+
+\end{enumerate}
+
+\noindent Expected answers for pass condition: For the first two questions, the average score has to be greater than 7. The last question should not have the same answer repeated between different members. If so, it would suggest an issue with the system. 
+
+
+\subsubsection{Personalization and Internationalization Requirements}
+
+\begin{enumerate}[noitemsep, nolistsep]
+\item{Were you satisfied with the personalization choices of the UI?\\}
+
+\end{enumerate}
+
+\noindent Expected answers for pass condition: Should be yes for 85\% of the sample group. 
+
+
+\subsubsection{Learning Requirements}
+
+\begin{enumerate}[noitemsep, nolistsep]
+\item{How long did it take you to understand and use the software on your own?\\}
+
+\end{enumerate}
+
+\noindent Expected answers for pass condition: Should not be longer than 5 minutes for each person in the sample group. 
+
+
+\subsubsection{Understandability and Politeness Requirements}
+
+\begin{enumerate}[noitemsep, nolistsep]
+\item{How difficult was it to read information off the screen?\\}
+\item{Were you satisfied with the arrangement of content on the screen?\\}
+\item{Were you displeased with the language or content used on the UI?\\}
+
+\end{enumerate}
+
+\noindent Expected answers for pass condition: For the first condition, the difficulty should not be more than 6 out of 10. For the second condition, it should be yes for 85\% of the sample group. For the third condition, it should be no for all members of the sample group.
 
 \newpage{}
 \section*{Appendix --- Reflection}
@@ -418,22 +736,22 @@ Their values are defined in this section for easy maintenance.
 The information in this section will be used to evaluate the team members on the
 graduate attribute of Lifelong Learning.  Please answer the following questions:
 
-\newpage{}
-\section*{Appendix --- Reflection}
+This section deals with what knowledge and experiences each team member will need 
+to acquire so that the capstone project can be completed successfully. With that in 
+mind, before identifying what each member is going to learn/master, some approaches 
+of learning need to be established. Firstly, we believe that one of our main approaches 
+to learning/mastering new skills is by scouring the internet for resources, videos, websites, 
+blogs, or any other notable sources for relevant information. Another approach would be to 
+look through books at McMaster's library to see if there is any applicable details that could 
+be used for this project. Furthermore, one could also master their new skills via practice 
+and trial-and-error by following tutorials and then trying to do them in real-time. Lastly, a 
+final approach could be to find someone with relevant expertise and ask them for advice or 
+some lessons on relevant skills/knowledge that would be beneficial for the project as a whole.
 
-The information in this section will be used to evaluate the team members on the
-graduate attribute of Lifelong Learning.  Please answer the following questions:
 
 \begin{enumerate}
-  \item What knowledge and skills will the team collectively need to acquire to
-  successfully complete the verification and validation of your project?
-  Examples of possible knowledge and skills include dynamic testing knowledge,
-  static testing knowledge, specific tool usage etc.  You should look to
-  identify at least one item for each team member.
-  \item For each of the knowledge areas and skills identified in the previous
-  question, what are at least two approaches to acquiring the knowledge or
-  mastering the skill?  Of the identified approaches, which will each team
-  member pursue, and why did they make this choice?
+  \item 
+  \item 
 \end{enumerate}
 
 \end{document}
