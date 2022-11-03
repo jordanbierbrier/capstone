@@ -151,102 +151,346 @@ Currently there is no available data that can help validate the software.
 	
 \subsection{Tests for Functional Requirements}
 
-\wss{Subsets of the tests may be in related, so this section is divided into
-  different areas.  If there are no identifiable subsets for the tests, this
-  level of document structure can be removed.}
-
 \wss{Include a blurb here to explain why the subsections below
   cover the requirements.  References to the SRS would be good.}
 
-\subsubsection{Area of Testing1}
+\begin{itemize}
 
-\wss{It would be nice to have a blurb here to explain why the subsections below
-  cover the requirements.  References to the SRS would be good.  If a section
-  covers tests for input constraints, you should reference the data constraints
-  table in the SRS.}
-		
-\paragraph{Title for Test}
+\item{FRT1}
 
-\begin{enumerate}
+\textbf{Control:} Manual versus Automatic
 
-\item{test-id1\\}
+\textbf{Refrences FR:} FR1 					
 
-Control: Manual versus Automatic
+\textbf{Initial State:} 
 					
-Initial State: 
+\textbf{Input:} 
 					
-Input: 
+\textbf{Output:} \wss{The expected result for the given inputs}
+
+\textbf{Test Case Derivation:} \wss{Justify the expected value given in the Output field}
 					
-Output: \wss{The expected result for the given inputs}
+\textbf{How test will be performed:} Tester will input randomized sound clips into the device and the device will react x amount of times for x amount of keywords found in the sound clips
+ 
 
-Test Case Derivation: \wss{Justify the expected value given in the Output field}
+\item{FRT2}
+
+\textbf{Control:} Manual versus Automatic
+
+\textbf{Refrences FR:} FR1 					
+
+\textbf{Initial State:} 
 					
-How test will be performed: 
+\textbf{Input:} 
 					
-\item{test-id2\\}
+\textbf{Output:} \wss{The expected result for the given inputs}
 
-Control: Manual versus Automatic
+\textbf{Test Case Derivation:} \wss{Justify the expected value given in the Output field}
 					
-Initial State: 
+\textbf{How test will be performed:} Tester will input the same sound clips into the device in differing environments and manually check that the device reacts to the same amount of keywords in each environment 
+
+\item{FRT3}
+
+\textbf{Control:} Manual versus Automatic
+
+\textbf{Refrences FR:} FR1 					
+
+\textbf{Initial State:} 
 					
-Input: 
+\textbf{Input:} 
 					
-Output: \wss{The expected result for the given inputs}
+\textbf{Output:} \wss{The expected result for the given inputs}
 
-Test Case Derivation: \wss{Justify the expected value given in the Output field}
+\textbf{Test Case Derivation:} \wss{Justify the expected value given in the Output field}
+					
+\textbf{How test will be performed:}  Tester will play same sound at specific distances away from device and check if device picks up sound and reacts
 
-How test will be performed: 
+\item{FRT4}
 
-\end{enumerate}
+\textbf{Control:} Manual versus Automatic
 
-\subsubsection{Area of Testing2}
+\textbf{Refrences FR:} FR1 					
 
-...
+\textbf{Initial State:} 
+					
+\textbf{Input:} 
+					
+\textbf{Output:} \wss{The expected result for the given inputs}
+
+\textbf{Test Case Derivation:} \wss{Justify the expected value given in the Output field}
+					
+\textbf{How test will be performed:} Tester will keep device in a quiet environment and see if device reacts to no noise environments, exposing a false microphone input 
+
+\item{FRT5}
+
+\textbf{Control:} Manual versus Automatic
+
+\textbf{Refrences FR:} FR2 					
+
+\textbf{Initial State:} 
+					
+\textbf{Input:} 
+					
+\textbf{Output:} \wss{The expected result for the given inputs}
+
+\textbf{Test Case Derivation:} \wss{Justify the expected value given in the Output field}
+					
+\textbf{How test will be performed:} Tester will input sound clips into the device while constant background noises are being played i.e with a ambient noise from a car in the background
+
+\item{FRT6}
+
+\textbf{Control:} Manual versus Automatic
+
+\textbf{Refrences FR:} FR2 					
+
+\textbf{Initial State:} 
+					
+\textbf{Input:} 
+					
+\textbf{Output:} \wss{The expected result for the given inputs}
+
+\textbf{Test Case Derivation:} \wss{Justify the expected value given in the Output field}
+					
+\textbf{How test will be performed:} Tester will speak into the device and determine if keywords are correctly classified by the device by observing that the device gives feedback when the keyword is spoken.
+
+\item{FRT7}
+
+\textbf{Control:} Manual versus Automatic
+
+\textbf{Refrences FR:} FR2 					
+
+\textbf{Initial State:} 
+					
+\textbf{Input:} 
+					
+\textbf{Output:} \wss{The expected result for the given inputs}
+
+\textbf{Test Case Derivation:} \wss{Justify the expected value given in the Output field}
+					
+\textbf{How test will be performed:} Tester will input sounds from different people saying same words to see if device can correctly classify between people 
+
+\item{FRT8}
+
+\textbf{Control:} Manual versus Automatic
+
+\textbf{Refrences FR:} FR2 					
+
+\textbf{Initial State:} 
+					
+\textbf{Input:} 
+					
+\textbf{Output:} \wss{The expected result for the given inputs}
+
+\textbf{Test Case Derivation:} \wss{Justify the expected value given in the Output field}
+					
+\textbf{How test will be performed:} Tester will input words that rhyme with keyword or sound similar to device can correctly classify as not the keyword
+
+\item{FRT9}
+
+\textbf{Control:} Manual versus Automatic
+
+\textbf{Refrences FR:} FR3 					
+
+\textbf{Initial State:} 
+					
+\textbf{Input:} 
+					
+\textbf{Output:} \wss{The expected result for the given inputs}
+
+\textbf{Test Case Derivation:} \wss{Justify the expected value given in the Output field}
+					
+\textbf{How test will be performed:} Tester will change the keyword classification of the device and input the sound clip with the newly set keyword. Tester will determine if the device correctly reacts to the spoken keyword.
+
+
+\item{FRT10}
+
+\textbf{Control:} Manual versus Automatic
+
+\textbf{Refrences FR:} FR3 					
+
+\textbf{Initial State:} 
+					
+\textbf{Input:} 
+					
+\textbf{Output:} \wss{The expected result for the given inputs}
+
+\textbf{Test Case Derivation:} \wss{Justify the expected value given in the Output field}
+					
+\textbf{How test will be performed:} Tester will change the keyword and then check to see that the prior set keyword no longer causes the device to react.
+
+\item{FRT11}
+
+\textbf{Control:} Manual versus Automatic
+
+\textbf{Refrences FR:} FR3 					
+
+\textbf{Initial State:} 
+					
+\textbf{Input:} 
+					
+\textbf{Output:} \wss{The expected result for the given inputs}
+
+\textbf{Test Case Derivation:} \wss{Justify the expected value given in the Output field}
+					
+\textbf{How test will be performed:} Tester will delete all classifications and check that device never reacts
+
+
+\item{FRT12}
+
+\textbf{Control:} Manual versus Automatic
+
+\textbf{Refrences FR:} FR3 					
+
+\textbf{Initial State:} 
+					
+\textbf{Input:} 
+					
+\textbf{Output:} \wss{The expected result for the given inputs}
+
+\textbf{Test Case Derivation:} \wss{Justify the expected value given in the Output field}
+					
+\textbf{How test will be performed:}Tester will add x amount of classifications sequentially then input those x keywords (in any order) to see device correctly reacts to all keywords
+
+\item{FRT13}
+
+\textbf{Control:} Manual versus Automatic
+
+\textbf{Refrences FR:} FR3 					
+
+\textbf{Initial State:} 
+					
+\textbf{Input:} 
+					
+\textbf{Output:} \wss{The expected result for the given inputs}
+
+\textbf{Test Case Derivation:} \wss{Justify the expected value given in the Output field}
+					
+\textbf{How test will be performed:} Tester will set the classification then reboot the device and check that the keywords are still correctly reacted to. 
+
+\item{FRT14}
+
+\textbf{Control:} Manual versus Automatic
+
+\textbf{Refrences FR:} FR4 					
+
+\textbf{Initial State:} 
+					
+\textbf{Input:} 
+					
+\textbf{Output:} \wss{The expected result for the given inputs}
+
+\textbf{Test Case Derivation:} \wss{Justify the expected value given in the Output field}
+					
+\textbf{How test will be performed:} Tester will input a sound clip to the device which contains a keyword. The tester will be wearing the device and will manually ensure that the device provides haptic feedback. 
+
+\item{FRT15}
+
+\textbf{Control:} Manual versus Automatic
+
+\textbf{Refrences FR:} FR4 					
+
+\textbf{Initial State:} 
+					
+\textbf{Input:} 
+					
+\textbf{Output:} \wss{The expected result for the given inputs}
+
+\textbf{Test Case Derivation:} \wss{Justify the expected value given in the Output field}
+					
+\textbf{How test will be performed:} Tester will repeat the same test with a sample size of 10 people and check if all the participants can notice the haptic feedback from the device. A total of 9/10 participants must conclude that they have felt the feedback for the test to be a success.
+
+\item{FRT16}
+
+\textbf{Control:} Manual versus Automatic
+
+\textbf{Refrences FR:} FR4 					
+
+\textbf{Initial State:} 
+					
+\textbf{Input:} 
+					
+\textbf{Output:} \wss{The expected result for the given inputs}
+
+\textbf{Test Case Derivation:} \wss{Justify the expected value given in the Output field}
+					
+\textbf{How test will be performed:} Tester will wear device at different orientations and places along wrist and keyword will be inputted to ensure device can provide noticeable feedback to user at different positions on wrist
+
+
+\item{FRT17}
+
+\textbf{Control:} Manual versus Automatic
+
+\textbf{Refrences FR:} FR4 					
+
+\textbf{Initial State:} 
+					
+\textbf{Input:} 
+					
+\textbf{Output:} \wss{The expected result for the given inputs}
+
+\textbf{Test Case Derivation:} \wss{Justify the expected value given in the Output field}
+					
+\textbf{How test will be performed:} Tester will wear device on top of clothing article on wrist and keyword will be inputted to verify sufficient feedback from device to the user
+
+\item{FRT18}
+
+\textbf{Control:} Manual versus Automatic
+
+\textbf{Refrences FR:} FR5 					
+
+\textbf{Initial State:} 
+					
+\textbf{Input:} 
+					
+\textbf{Output:} \wss{The expected result for the given inputs}
+
+\textbf{Test Case Derivation:} \wss{Justify the expected value given in the Output field}
+					
+\textbf{How test will be performed:} Tester will input sound clip to device that contains a specific keyword and will manually ensure that device provides specific corresponding haptic feedback. Test is repeated 10 times to ensure consistent haptic feedback. Test is a success if 9/10 times the correct haptic feedback is recorded.
+
+\item{FRT19}
+
+\textbf{Control:} Manual versus Automatic
+
+\textbf{Refrences FR:} FR5 					
+
+\textbf{Initial State:} 
+					
+\textbf{Input:} 
+					
+\textbf{Output:} \wss{The expected result for the given inputs}
+
+\textbf{Test Case Derivation:} \wss{Justify the expected value given in the Output field}
+					
+\textbf{How test will be performed:} Tester will add multiple keywords to the device. Following, the tester will input sound that matches the keyword and manually ensure each haptic feedback is different.
+
+
+\end{itemize}
 
 \subsection{Tests for Nonfunctional Requirements}
-
-\wss{The nonfunctional requirements for accuracy will likely just reference the
-  appropriate functional tests from above.  The test cases should mention
-  reporting the relative error for these tests.}
 
 \wss{Tests related to usability could include conducting a usability test and
   survey.}
 
-\subsubsection{Area of Testing1}
-		
-\paragraph{Title for Test}
+\begin{itemize}
 
-\begin{enumerate}
+\item{NFRT1}
 
-\item{test-id1\\}
+\textbf{Type:} 
 
-Type: 
+\textbf{Refrences} NFR1
 					
-Initial State: 
+\textbf{Initial State:} 
 					
-Input/Condition: 
+\textbf{Input/Condition:} 
 					
-Output/Result: 
+\textbf{Output/Result:} 
 					
-How test will be performed: 
-					
-\item{test-id2\\}
+\textbf{How test will be performed:} 
 
-Type: Functional, Dynamic, Manual, Static etc.
-					
-Initial State: 
-					
-Input: 
-					
-Output: 
-					
-How test will be performed: 
 
-\end{enumerate}
+\end{itemize}
 
-\subsubsection{Area of Testing2}
-
-...
 
 \subsection{Traceability Between Test Cases and Requirements}
 
