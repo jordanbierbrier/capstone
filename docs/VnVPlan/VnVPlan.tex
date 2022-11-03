@@ -1,5 +1,5 @@
 \documentclass[12pt, titlepage]{article}
-
+\usepackage{longtable}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{hyperref}
@@ -1006,12 +1006,69 @@ Currently there is no available data that can help validate the software.
 
 \end{itemize}
 
-
+\newpage
 \subsection{Traceability Between Test Cases and Requirements}
 
-\wss{Provide a table that shows which test cases are supporting which
-  requirements.}
-
+\begin{longtable}{| p{.20\textwidth} | p{.50\textwidth} |} 
+  \hline
+  \textbf{Tests}    &   \textbf{Requirements} \\ \hline
+  FRT1 &  FR-1, NFR-12 \\ \hline          
+  FRT2 &  FR-1  \\ \hline
+  FRT3 &   FR-1, NFR-12, NFR-13 \\ \hline
+   FRT4 &   FR-1 \\ \hline
+   FRT5 &  FR-2  \\ \hline
+   FRT6 &  FR-2  \\ \hline
+  FRT7  &  FR-2  \\ \hline
+  FRT8 &  FR-2  \\ \hline
+  FRT9 &  FR-3, NFR-14, NFR-18  \\ \hline
+  FRT10 &  FR-3, NFR-18  \\ \hline
+  FRT11 &  FR-3  \\ \hline
+  FRT12 &  FR-3, NFR-15  \\ \hline
+  FRT13 &  FR-3, NFR-14  \\ \hline
+  FRT14 &  FR-4, NFR-18, NFR-28  \\ \hline
+  FRT15 &  FR-4  \\ \hline
+  FRT16 &  FR-4  \\ \hline
+  FRT17 &  FR-4  \\ \hline
+  FRT18 &  FR-5  \\ \hline
+  FRT19 &  FR-5  \\ \hline
+  NFRT1 &  NFR-1  \\ \hline
+  NFRT2 &  NFR-1  \\ \hline
+  NFRT3 &  NFR-1  \\ \hline
+  NFRT4 &  NFR-1  \\ \hline
+  NFRT5 &  NFR-1  \\ \hline
+  NFRT6 &  NFR-1  \\ \hline
+  NFRT7 &  NFR-2  \\ \hline
+  NFRT8 &  NFR-3  \\ \hline
+  NFRT9 &   NFR-3 \\ \hline
+  NFRT10 &  NFR-3  \\ \hline
+  NFRT11 &  NFR-3  \\ \hline
+  NFRT12 &  NFR-4, NFR-25  \\ \hline
+  NFRT13 &  NFR-4  \\ \hline
+  NFRT14 &  NFR-4  \\ \hline
+  NFRT15 &  NFR-4  \\ \hline
+  NFRT16 &  NFR-5, NFR-7  \\ \hline
+  NFRT17 &  NFR-6  \\ \hline
+  NFRT18 &  NFR-8  \\ \hline
+  NFRT19 &   NFR-9 \\ \hline
+  NFRT20 &  NFR-9  \\ \hline
+  NFRT21 &  NFR-9  \\ \hline
+  NFRT22&  NFR-9  \\ \hline
+  NFRT23 &  NFR-10  \\ \hline
+  NFRT24 &  NFR-11  \\ \hline
+  NFRT25 &  NFR-12  \\ \hline
+  NFRT26 &  NFR-12  \\ \hline
+  NFRT27 &  NFR-12  \\ \hline
+  NFRT28 &  NFR-15 \\ \hline
+  NFRT29 &   NFR-16 \\ \hline
+  NFRT30 &  NFR-17  \\ \hline
+  NFRT31 &   NFR-17 \\ \hline
+  NFRT32 &  NFR-17, NFR-21 \\ \hline
+  NFRT33 &  NFR-20  \\ \hline
+  NFRT34 &  NFR-25  \\ \hline
+  NFRT35 &   NFR-26, NFR-27 \\ \hline
+  \caption{Traceability Between Test Cases and Requirements} % needs to go inside longtable environment
+  \label{tab:myfirstlongtable}
+  \end{longtable}
 \section{Unit Test Description}
 
 \wss{Reference your MIS and explain your overall philosophy for test case
