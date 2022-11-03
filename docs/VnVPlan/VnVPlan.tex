@@ -41,10 +41,6 @@ Date 2 & 1.1 & Notes\\
 \tableofcontents
 
 \listoftables
-\wss{Remove this section if it isn't needed}
-
-\listoffigures
-\wss{Remove this section if it isn't needed}
 
 \newpage
 
@@ -55,19 +51,13 @@ Date 2 & 1.1 & Notes\\
   \toprule		
   \textbf{symbol} & \textbf{description}\\
   \midrule 
-  T & Test\\
+  Age groups & (15-30, 31-50, 51-75, 75+)\\
   \bottomrule
 \end{tabular}\\
-
-\wss{symbols, abbreviations or acronyms -- you can simply reference the SRS
-  \citep{SRS} tables, if appropriate}
 
 \newpage
 
 \pagenumbering{arabic}
-
-This document ... \wss{provide an introductory blurb and roadmap of the
-  Verification and Validation plan}
 
 \section{General Information}
 
@@ -150,9 +140,6 @@ Currently there is no available data that can help validate the software.
 \section{System Test Description}
 	
 \subsection{Tests for Functional Requirements}
-
-\wss{Include a blurb here to explain why the subsections below
-  cover the requirements.  References to the SRS would be good.}
 
 \begin{itemize}
 
@@ -500,9 +487,6 @@ Currently there is no available data that can help validate the software.
 
 \subsection{Tests for Nonfunctional Requirements}
 
-\wss{Tests related to usability could include conducting a usability test and
-  survey.}
-
 \begin{itemize}
 
 
@@ -591,8 +575,6 @@ Currently there is no available data that can help validate the software.
 					
 \textbf{How test will be performed:} A survey will be conducted to a group of 10 participants and they will rate the finish of the product out of 10, they will also rate the accessibility/findability of the buttons on a scale of 10. They will also be asked about the distinguishability of the charging port and its ease of use.  Answers will be averaged out and an average score of 8 will be considered a pass for the test. 
 
-\wss{Need to create and add Survey: - Jordan. Not}
-
 \item{NFRT7}
 
 \textbf{Type:} Manual
@@ -605,8 +587,7 @@ Currently there is no available data that can help validate the software.
 					
 \textbf{Output/Result:} N/A
 					
-\textbf{How test will be performed:} The style requirements of the device/application will all be tested through a participant study where they will be asked the following questions see appendix x. An average score of 4 out of all the questions from the participants will be considered a pass.
-\wss{Need to add Survey: - Jordan. Not}
+\textbf{How test will be performed:} The style requirements of the device/application will all be tested through a participant study where they will be asked the following questions see appendix 7.2.7. An average score of 4 out of all the questions from the participants will be considered a pass.
 
 \item{NFRT8}
 
@@ -746,7 +727,7 @@ Currently there is no available data that can help validate the software.
 					
 \textbf{Output/Result:} N/A
 					
-\textbf{How test will be performed:} Test will be conducted with 4 participants from each age group. Participants will be given an application and asked which icon corresponds to which action/function. For each icon they answer correctly, they will receive one point. A total of 5 icons will be asked. A pass is achieved if all 5 icons are named by 3/4 participants from each age group.
+\textbf{How test will be performed:} Test will be conducted with 4 participants from each age group. Participants will be given an application and asked which icon corresponds to which action/function. For each icon they answer correctly, they will receive one point. A total of 5 icons will be asked see appendix 7.2.8. A pass is achieved if all 5 icons are named by 3/4 participants from each age group.
 
 \item{NFRT18}
 
@@ -1543,6 +1524,27 @@ Their values are defined in this section for easy maintenance.
 \end{enumerate}
 
 \noindent Expected answers for pass condition: For the first condition, the difficulty should not be more than 6 out of 10. For the second condition, it should be yes for 85\% of the sample group. For the third condition, it should be no for all members of the sample group.
+
+\subsubsection{Additional Material for Non-Functional Requirement Test 7}
+\noindent Answer all questions on a scale of 1-6 
+\begin{enumerate}
+  \item Does the application contain consistent buttons throughout?
+  \item Does the device have a uniform finish and consistent buttons?
+  \item Do the colors of the application and the device follow a consistent color palette?
+  \item Does the device automatically begin a pairing process when the corresponding buttons are inputted?
+  \item Is the differing parts of the UI including different pages, buttons etc. easily identifiable and responsive? 
+\end{enumerate}
+
+\subsubsection{Additional Material for Non-Functional Requirement Test 17}
+\noindent Specific icons participants will be asked to name:
+\begin{itemize}
+  \item Bluetooth/setup icon
+  \item Settings icon
+  \item Go back icon
+  \item Login icon
+  \item Logout icon
+\end{itemize}
+
 
 \newpage{}
 \section*{Appendix --- Reflection}
