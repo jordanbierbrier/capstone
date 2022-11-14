@@ -76,6 +76,3 @@ print('Beginning training...')
 neigh.fit(X_train, Y_train)
 y_pred_val = neigh.predict(X_val)
 print(f'Validation accuracy: {accuracy_score(Y_val,y_pred_val)}')
-
-
-
