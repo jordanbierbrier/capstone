@@ -208,8 +208,6 @@ The following are in reference to the critical assumptions in Synesthesia Wear's
   \label{ContextDiagram} 
 \end{figure}
 
-\newpage
-
 \section{Project Overview}
 
 \subsection{Normal Behaviour}
@@ -222,18 +220,53 @@ match it with the sounds configured in the settings. Lastly, once a detected sou
 alert signal will be sent to the built-in vibration motor which will notify the user that their attention is needed.
 
 \subsection{Undesired Event Handling}
-For undesired events, 
+Currently, there are only a few undesired events that can be indentified. However, as time progresses, more undesired events will be recognized and dealt with appropriately. 
+So for now, any undesired events not yet discovered will be resolved by setting the Synesthesia Wear system into a dormant state and alerting the user. This makes it so that potential system issues are prevented while also keeping the user informed that the system is in a dormant state and needs a reset for continued use. \\ \\ 
+With the above in mind, an undesired event that has been identified is in regards to the bracelet trying to detect/process sounds before sound configuration settings have been set.
+To deal with this, similar to unidentified events, the Synesthesia Wear system will be created such that it is in a dormant/inactive state until sound configuration settings have been inputted.
+However, one exception would be that there is no need to alert the user for a reset since they have just started using Synesthesia Wear in its refreshed/new state. \\\\
+Another undesired event would be in regards to the components breaking or malfunctioning. In these cases, the system will be made such that it tests connections/signals between components (like microncontroller, application, etc.) and alerts the user when a connection test has consistently failed.
+Afterwards, the user would need to contact the Synesthesia Wear team and they would then try to fix the components or order new parts to replace the broken ones. \\\\
+A third undesired event would be in regards to intentionally covering/hindering the bracelet to detect sounds via holding the bracelet or going into a anechoic (soundless) chamber.
+In this situation, the microphone in the bracelet will be unable to accurately detect sounds in the environment while its functionality is obstructed. With this in mind, it is believed that there is not really any resolution needed for this situation considering once the user reenters a ``normal'' or unhindered environment, so long as the components are undamaged, the system's functionality should still work as intended. 
+
 
 \subsection{Component Diagram}
+\begin{figure}[H]
+  \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{ComponentDiagram.pdf}
+  \caption{Component Diagram}
+  \label{ComponentDiagram} 
+\end{figure}
 
 \subsection{Connection Between Requirements and Design} \label{SecConnection}
 
-\wss{The intention of this section is to document decisions that are made
-  ``between'' the requirements and the design.  To satisfy some requirements,
-  design decisions need to be made.  Rather than make these decisions implicit,
-  they are explicitly recorded here.  For instance, if a program has security
-  requirements, a specific design decision may be made to satisfy those
-  requirements with a password.}
+The following requirements were taken from Synesthesia Wear's
+\href{https://github.com/jordanbierbrier/capstone/blob/main/docs/SRS/SRS.pdf}{\textit{SRS.pdf}} document:
+
+\begin{table}[H]
+  \centering
+  \caption{Requirements and Design Connections Table}
+  \label{table:Connections Table} 
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{7cm}|p{7cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirements} & \textcolor{white}{Design Decision}                                          \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Capability to pick up sounds.              & Need to purchase and integrate a microphone.\\
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Capability to classify different sounds.              & Need to purchase and integrate a programmable microcontroller that can run machine learning classification algorithms.\\
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Ability to set/change sound classifications.            & Need to create an application that allows users to change classification settings.\\    
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Ability to effectively give the user feedback on a sound classification match.           & Need to purchase and integrate a vibration motor into the Synesthesia Wear bracelet.\\
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Battery of the device should be shielded to prevent any direct contact with the user.           & Need to design/build/purchase a case around the bracelet where the battery will be stored to prevent damage and any contact between user and battery.\\
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} The product dimensions should allow fitment on wrist of the user.           & Need to purchase and integrate a microcontroller with built-in modules (bluetooth, microphone, etc.) to reduce product dimensions as much as possible.\\
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
 \section{System Variables}
 
@@ -258,6 +291,30 @@ needed. Drawings, Sketches, Figma}
 \wss{Include appendices as appropriate, possibly with sketches, drawings, CAD, etc}
 
 \section{Design of Electrical Components}
+\vspace*{-0.5cm}
+\begin{table}[H]
+  \caption{Electrical Components List}
+  \scriptsize	
+  \vspace*{-0.5cm}
+  \begin{center}
+  \begin{tabular}{| p{0.25\textwidth} | p{0.08\textwidth}  | p{0.10\textwidth} | p{0.15\textwidth} | p{0.30\textwidth} |}
+   \hline
+  \textbf{Component} & \textbf{Amount} & \textbf{Cost \quad \quad (in CAD\$)} & \textbf{Dimensions} & \textbf{Link} \\ \hline
+
+  Arduino Nano 33 BLE	& 2 & 80 & 48 * 18 & 	\url{https://www.amazon.ca/Arduino-Nano-33-BLE-Sense/dp/B07WV5GF17} \\ \hline
+  Lithium-Ion Polymer (LiPo) Battery (3.7V 1000mAh)	& 1	& 10 & 50*32*5 & 	\url{https://www.canadarobotix.com/products/588} \\ \hline
+  0.1 microfarad capacitor	& 2 &	1.11 &	5*3	& \url{https://rb.gy/vyewya} \\ \hline
+  resistor 1000 ohm	& 1	& NA &	5*3 &	At home \\ \hline
+  resistor 20 ohm &	1 &	NA &	5*3 &	At home \\ \hline
+  vibration motor &	5 &	10 &	10*2 &	\url{https://www.amazon.ca/dp/B089NTLLWB?ref_=cm_sw_r_apin_dp_YEQ7CS0SNQV7HKHZZVFD} \\ \hline
+  Transistor NPN - PN2222 &	1 &	NA &	5*3 &	At home \\ \hline
+  Diode - IN4007 &	1 & 	NA &	5*3 &	At home \\ \hline
+  Power Management module & 2 &	17.5 &	35*22 &	\url{https://www.digikey.com/en/products/detail/sparkfun-electronics/PRT-14411/1568-1723-ND/7725301} \\ \hline
+
+  \end{tabular}
+  \end{center}
+  \hspace*{-1cm}
+  \end{table}
 
 \wss{Most relevant for mechatronics projects}
 \wss{Show what will be acquired}
@@ -266,15 +323,22 @@ needed. Drawings, Sketches, Figma}
 circuit diagrams, etc}
 
 \section{Design of Communication Protocols}
+In regards to communication protocols, the only relevant aspect of Synesthesia Wear would revolve around the bluetooth functionality of the system.
+As stated in \autoref{table:Connections Table}, the microcontroller used for Synesthesia Wear has a built-in bluetooth module that was purchased for the purposes of reducing product dimensions as much as possible.
+With this in mind, the system was set up so that this same bluetooth module would be able to connect to the Synesthesia Wear application on the user's device and thus be able to communicate between each other.
 
-\wss{If appropriate}
+\begin{figure}[H]
+  \vspace*{-2cm}
+  \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{BluetoothConnection.pdf}
+  \vspace*{-4cm}
+  \caption{Bluetooth Connection between device and microcontroller}
+  \label{Bluetooth Connection} 
+\end{figure}
 
 \section{Timeline}
 
 \wss{Schedule of tasks and who is responsible}
 
-% \bibliographystyle {plainnat}
-% \bibliography{../../../refs/References}
 
 \newpage{}
 
@@ -289,9 +353,6 @@ circuit diagrams, etc}
   
   \section{Electrical Components}
   \label{appendix:electrical}
-  
-  \section{Communication Protocols}
-  \label{appendix:protocols}
   
   \section{Reflection}
   \label{appendix:reflection}
