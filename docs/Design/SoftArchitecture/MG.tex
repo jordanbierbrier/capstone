@@ -157,11 +157,13 @@ adapted here is called design for
 change.
 
 \begin{description}
-\item[\refstepcounter{acnum} \actheacnum \label{acHardware}:] The specific
-  hardware on which the software is running.
-\item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The format of the
-  initial input data.
-\item ...
+\item[\refstepcounter{acnum} \actheacnum \label{ac1}:] Upgraded microcontroller to higher specifications (i.e. more RAM, better processor) will require revisions of the code.
+\item[\refstepcounter{acnum} \actheacnum \label{ac2}:] Sound recognition algorithm will likely improve / be more efficient over time (better algorithm).
+\item[\refstepcounter{acnum} \actheacnum \label{ac3}:] Code will be modified to run on IOS.
+\item[\refstepcounter{acnum} \actheacnum \label{ac4}:] More efficient battery.
+\item[\refstepcounter{acnum} \actheacnum \label{ac5}:] Bluetooth handler may change with newer bluetooth implementations are adopted.
+\item[\refstepcounter{acnum} \actheacnum \label{ac6}:] Code adjusted for higher resolution microphone.
+\item[\refstepcounter{acnum} \actheacnum \label{ac7}:] Upgrading encryption algorithm for user login information.
 \end{description}
 
 \subsection{Unlikely Changes} \label{SecUchange}
@@ -174,9 +176,10 @@ will potentially need to be modified. Hence, it is not intended that these
 decisions will be changed.
 
 \begin{description}
-\item[\refstepcounter{ucnum} \uctheucnum \label{ucIO}:] Input/Output devices
-  (Input: File and/or Keyboard, Output: File, Memory, and/or Screen).
-\item ...
+  \item[\refstepcounter{ucnum} \uctheucnum \label{uc1}:] Input data i.e. sound that is processed by software.
+  \item[\refstepcounter{ucnum} \uctheucnum \label{uc2}:] Output data being in the form of haptic feedback.
+  \item[\refstepcounter{ucnum} \uctheucnum \label{uc3}:] Bluetooth being the sole communication method between phone application and microcontroller code.
+  \item[\refstepcounter{ucnum} \uctheucnum \label{uc4}:] Signal processing done on microcontroller as opposed to phone.
 \end{description}
 
 \section{Module Hierarchy} \label{SecMH}
@@ -188,7 +191,15 @@ actually be implemented.
 
 \begin{description}
 \item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Hardware-Hiding Module
-\item ...
+\item [\refstepcounter{mnum} \mthemnum \label{mLogin}:] Login Module
+\item [\refstepcounter{mnum} \mthemnum \label{mBluetooth}:] Bluetooth Connection Module
+\item [\refstepcounter{mnum} \mthemnum \label{mKeyword}:] Keyword Selection Module
+\item [\refstepcounter{mnum} \mthemnum \label{mOutput}:] Output Signal Module
+\item [\refstepcounter{mnum} \mthemnum \label{mProfile}:] Profile Module
+\item [\refstepcounter{mnum} \mthemnum \label{mBattery}:] Battery Status Module
+\item [\refstepcounter{mnum} \mthemnum \label{mSound}:] Sound Classification Module
+\item [\refstepcounter{mnum} \mthemnum \label{mComm}:] Bluetooth Communication Module
+\item [\refstepcounter{mnum} \mthemnum \label{mMicrophone}:] Microphone Module
 \end{description}
 
 
@@ -202,19 +213,19 @@ actually be implemented.
 {Hardware-Hiding Module} & ~ \\
 \midrule
 
-\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\ 
-& ?\\
+\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module}
+& Login Module\\
+& Bluetooth connection module\\
+& Keyword Selection Module\\
+& Output Signal Module\\
+& Profile Module\\
+& Battery Status Module\\ 
 \midrule
 
-\multirow{3}{0.3\textwidth}{Software Decision Module} & {?}\\
-& ?\\
-& ?\\
+\multirow{3}{0.3\textwidth}{Software Decision Module} 
+& Sound Classification Module\\
+& Bluetooth Communication Module\\
+& Microphone Module\\
 \bottomrule
 
 \end{tabular}
@@ -267,18 +278,47 @@ to be implemented.
 \item[Implemented By:] --
 \end{description}
 
-\subsubsection{Input Format Module (\mref{mInput})}
-
+\subsubsection{Login Module (\mref{mLogin})}
 \begin{description}
-\item[Secrets:]The format and structure of the input data.
-\item[Services:]Converts the input data into the data structure used by the
-  input parameters module.
-\item[Implemented By:] [Your Program Name Here]
-\item[Type of Module:] [Record, Library, Abstract Object, or Abstract Data Type]
-  [Information to include for leaf modules in the decomposition by secrets tree.]
+\item[Secrets:] Login authentication algorithm and profile data. 
+\item[Services:] Login capabilities into the application.
+\item[Implemented By:] Synesthesia Wear
 \end{description}
 
-\subsubsection{Etc.}
+\subsubsection{Bluetooth Connection Module (\mref{mBluetooth})}
+\begin{description}
+  \item[Secrets:] How the Bluetooth connection is established with the application.
+  \item[Services:] Module is used to connect the application to the microcontroller on the wearable device. User clicks the pairing button and the application establishes a connection with an external device.
+  \item[Implemented By:] Arduino Library and Android Studio Library
+  \end{description}
+
+\subsubsection{Keyword Selection Module (\mref{mKeyword})}
+\begin{description}
+  \item[Secrets:] How the user’s keyword communicated to the microcontroller/device and their profile data is updated.
+  \item[Services:] Provides user with option of keyword selection and corresponding custom haptic feedback.
+  \item[Implemented By:] Synesthesia Wear
+  \end{description}
+
+\subsubsection{Output Signal Module (\mref{mOutput})}
+\begin{description}
+  \item[Secrets:] How and when the microcontroller communicates with the vibration motor.
+  \item[Services:] Provide haptic feedback to the user through the use of a vibration motor.
+  \item[Implemented By:] Synesthesia Wear and Arduino Library
+  \end{description}
+
+\subsubsection{Profile Module (\mref{mProfile})}
+\begin{description}
+  \item[Secrets:] The database structure which contains the data for the users.
+  \item[Services:] Allows users to login, logout, and update profile settings (keywords, age, name, date of registration).
+  \item[Implemented By:] Synesthesia Wear
+  \end{description}
+
+\subsubsection{Battery Status Module (\mref{mBattery})}
+\begin{description}
+  \item[Secrets:] Algorithm using voltage measurements to estimate the remaining battery life.
+  \item[Services:] Displays remaining battery life of wearable device on the user application. Additionally, alerts user on application when battery below 10\% remaining life.
+  \item[Implemented By:] Synesthesia Wear
+  \end{description}
 
 
 \subsection{Software Decision Module}
@@ -294,7 +334,26 @@ to be implemented.
 \item[Implemented By:] --
 \end{description}
 
-\subsubsection{Etc.}
+\subsubsection{Sound Classification Module (\mref{mSound})}
+\begin{description}
+  \item[Secrets:] Algorithm used for sound classification. Additionally, filters out sound below specified intensity.
+  \item[Services:] Provides output to vibration motor if keyword is classified.
+  \item[Implemented By:] Synesthesia Wear and Arduino Library
+  \end{description}
+
+\subsubsection{Bluetooth Communication Module (\mref{mComm})}
+\begin{description}
+  \item[Secrets:] Communication protocol using preexisting connection to communicate between application and microcontroller.
+  \item[Services:] Updates microcontroller with selected keywords, feedback preferences, and battery voltage.
+  \item[Implemented By:] Arduino Library and Android Studio Library
+  \end{description}
+
+\subsubsection{Microphone Module (\mref{mMicrophone})}
+\begin{description}
+  \item[Secrets:] Method of converting analog signal to digital signal, and relaying this signal to the microcontroller processor.
+  \item[Services:] Provides microcontroller with some of the input data.
+  \item[Implemented By:] Arduino Library
+  \end{description}
 
 \section{Traceability Matrix} \label{SecTM}
 
@@ -317,9 +376,6 @@ R5 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver
 R6 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
 R7 & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
 R8 & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
-R9 & \mref{mVerifyOut}\\
-R10 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}\\
-R11 & \mref{mOutput}, \mref{mODEs}, \mref{mEnergy}, \mref{mControl}\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Requirements and Modules}
