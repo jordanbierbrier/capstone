@@ -251,16 +251,66 @@ For undesired events,
 needed. Drawings, Sketches, Figma}
 
 \section{Design of Mechanical Hardware}
+For our project there is limited mechanical hardware required. Most of the components are electrical componets. Regardless the non-electrical componets required are. 
+\begin{table}[H]
+\centering
+\begin{tabular}{lllll}
+S.No & Component        & Material & Link              & Cost  \\ \hline
+1    & Base enclosure   & PLA      & In house          & 5     \\
+2    & Base lid         & PLA      & In house          & 3     \\
+3    & 20mm Watch strap & Silicon  & shorturl.at/hEFM1 & 16.99 \\
+4    & Super glue       & Glue     & shorturl.at/CFG09 & 6.27 
+\end{tabular}
+\caption{List of non-electrical components required}
+\label{tab:my-table}
+\end{table}
 
-\wss{Most relevant for mechatronics projects}
-\wss{Show what will be acquired}
-\wss{Show what will be built, with detail on fabrication and materials}
-\wss{Include appendices as appropriate, possibly with sketches, drawings, CAD, etc}
+\subsection{Base Enclosure}
+This is main housing for all the electrical componets. It houses the microcontroller, the vibration motor, the battery and the battery management system. It will be 3D printed using PLA as the Material. This housing also provides the additional abilityto attach 20 mm watch straps to it.
+Below are two isometric of the Base enclosure. 
+\begin{figure}[H]
+  \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Base_ISO.png}
+  \caption{Enclosure isometric figures}
+  \label{EnclosureISO} 
+\end{figure}
+There are specifc slots for all the major componets like the microcontroller, vibration motor, battery, etc. There are also cutouts for the usb C charging port for the battery and a cutout for the battery enable switch. For a detailed drawing refer to the \hyperref[appendix:hardware:enclosureDWG]{Appendix}. The drawing does not show all the dimensions for clarity reasons but it does show the outer dimensions. An explosed diagram with all the components will be shown later in the section. 
+ 
+\subsection{Enclosure lid}
+This is the lid for the enclosure that was shown above. It will also be made in house on a 3D printer with PLA plastic. It will be secured to the enclosure using super glue once proper functioning of all the components is achieved. 
+Below is an isometric diagram for the lid.
+\begin{figure}[H]
+  \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Lid_ISO.png}
+  \caption{lid isometric figure}
+  \label{Lid ISO} 
+\end{figure}
+ For a detailed drawing refer to the \hyperref[appendix:hardware:lidDWG]{Appendix}. The drawing does not show all the dimensions for clarity reasons but it does show the outer dimensions.
+
+\subsection{Watch straps}
+A pair of standard 20 mm watch straps will be aquired from external sources. For the material, we have selected silicone rubber as it would be the most durable along with it being cost effective. It is estimated to cost 16.99 CAD. This will attach to the base enclosure using standard 1.5 mm spring jumper lugs that come included with the watch straps. This should enable the user to have the device mounted on the user without the user having to carry it in the user's hand.
+
+\subsection{Super glue}
+Super glue will be used to secure most of the componets in place either directly or indirectly. For the lid it can be directly attached using super glue. However for the PCBs they have to be attached using plastic dowels with a lid and super glue. There are already holes placed in the enlosure for these fastners. The use of threaded fasterners was not used due to the difficulty of adding threads accuratly to the plastic enclosure. The disadvange of using the super glue along with the plastic dowels is that once secured they are permenent.   
+
+\subsection{Complete assembly}
+The entire hardware is enclosed between the enslosure and the lid. An isometric of the complete assembly is shown below. 
+\begin{figure}[H]
+  \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Assembly_ISO.png}
+  \caption{Assembly isometric figure}
+  \label{Assembly ISO} 
+\end{figure}
+The exploded assembly is shown below. 
+\begin{figure}[H]
+\centering
+  \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Exploded_view.png}
+  \caption{Exploded view of the assembly}
+  \label{Exploded} 
+\end{figure}
+ For a detailed drawing refer to the \hyperref[appendix:hardware:assembly]{Appendix}. The drawing does not show all the dimensions for clarity reasons but it does show the outer dimensions.
 
 \section{Design of Electrical Components}
-\vspace*{-0.5cm}
+A list of electrical components required is listed below.
 \begin{table}[H]
-  \caption{Electrical Components List}
+
   \scriptsize	
   \vspace*{-0.5cm}
   \begin{center}
@@ -271,17 +321,62 @@ needed. Drawings, Sketches, Figma}
   Arduino Nano 33 BLE	& 2 & 80 & 48 * 18 & 	\url{https://www.amazon.ca/Arduino-Nano-33-BLE-Sense/dp/B07WV5GF17} \\ \hline
   Lithium-Ion Polymer (LiPo) Battery (3.7V 1000mAh)	& 1	& 10 & 50*32*5 & 	\url{https://www.canadarobotix.com/products/588} \\ \hline
   0.1 microfarad capacitor	& 2 &	1.11 &	5*3	& \url{https://rb.gy/vyewya} \\ \hline
-  resistor 1000 ohm	& 1	& NA &	5*3 &	At home \\ \hline
-  resistor 20 ohm &	1 &	NA &	5*3 &	At home \\ \hline
-  vibration motor &	5 &	10 &	10*2 &	\url{https://www.amazon.ca/dp/B089NTLLWB?ref_=cm_sw_r_apin_dp_YEQ7CS0SNQV7HKHZZVFD} \\ \hline
+  Resistor 1000 ohm	& 1	& NA &	5*3 &	At home \\ \hline
+  Resistor 20 ohm &	1 &	NA &	5*3 &	At home \\ \hline
+  Vibration motor &	5 &	10 &	10*2 &	\url{https://www.amazon.ca/dp/B089NTLLWB?ref_=cm_sw_r_apin_dp_YEQ7CS0SNQV7HKHZZVFD} \\ \hline
   Transistor NPN - PN2222 &	1 &	NA &	5*3 &	At home \\ \hline
   Diode - IN4007 &	1 & 	NA &	5*3 &	At home \\ \hline
   Power Management module & 2 &	17.5 &	35*22 &	\url{https://www.digikey.com/en/products/detail/sparkfun-electronics/PRT-14411/1568-1723-ND/7725301} \\ \hline
-
+  E-Switch Slide switch & 1 &	1.04 &	19*6*5 &	\url{https://www.shorturl.at/jMN791} \\ \hline
   \end{tabular}
+  \caption{Electrical Components List}
   \end{center}
   \hspace*{-1cm}
   \end{table}
+
+\subsection{Complete electrical layout}
+The entire electrical system can be split into 3 parts
+\begin{itemize}
+  \item Microcontroller
+  \item Battery System 
+  \item Vibration motor and related electrical components
+\end{itemize}
+
+The complete layout of the electrical componets are shown below, explanations for the components will come in the later sections.
+\begin{figure}[H]
+\centering
+  \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Schematic.png}
+  \caption{Complete electrical schematic}
+  \label{schematic} 
+\end{figure}
+
+\subsection{Microcontroller}
+The microcontroller is responsible for most of the the application of the device. It will handle audio dectection, audio processing classification and bluetooth communication. The microcontroller selected is an arduino nano 33 BLE. This was selected as it is relatively compact with bluetooth and microphone already built into the device. It will be supplied by an external power source of 5V connected directly to the +5V and GND of the arduino. A digital pin (D3) will be used to control the vibration motor. Below is the schematic of the microcontroller.
+ \begin{figure}[H]
+\centering
+  \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{NanoSchematic.png}
+  \caption{Arduino schematic}
+  \label{Nanoschematic} 
+\end{figure}
+
+\subsection{Battery/Power System}
+The arduino will be powered by a 5 Volt battery system that can supply up to 1A of current. This should be well within the operating region of the arduino. The battery system consists of a 3.7 Volt 1000mAh  LiPo battery, a SparkFun LiPo Charger/Booster and a small slide switch. The 3.7 Volt LiPo was selected as it is small enough to fit within the design and has enough capacity for 3 days of usage. The SparkFun LiPo Charger/Booster is used to boost the voltage from 3.7 to 5 Volts as that is required by the arduino. It also provides the additional benifit of protecting the battery from high currents. The battery can also be charged using the usb C port on the SparkFun LiPo Charger/Booster. A switch will be soldered on to the enable pin of the charger/booster, this will provide a way to isolate the battery from the microcontroller and can act like a reset switch. The ardunio power input will have to be soldered onto the booster output connection. The battery can either be attached using a JST connector or can be soldered on. Below is the schematic for the battery system.   
+ \begin{figure}[H]
+\centering
+  \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{BatterySchematic.png}
+  \caption{Battery system schematic}
+  \label{batteryschematic} 
+\end{figure}
+
+\subsection{Vibration motor and related components}
+The user will be alerted using the vibration motor that is recessed into the enclosure. The vibration motor needs a significant amount of current that the digital output pin cannot supply. Hence the digital pin is just used as a enable pin and the current for the motor is drawn from the 5V pin. To achieve this a NPN transistor (PN2222) is used as a switch with the digital output pin being its enable. Resistors are also used to limit the current draw of the motor. A capacitor is used to protect from high current impluses and a diode is used to protect the arduino from backflow in case the motor stalls. The schematic for the circuit is given below. The components will be soldered together with little wires and heat shrink will be used over them to prevent shorts. The componets will be placed next to vibration motor right below the battery booster board. 
+
+ \begin{figure}[H]
+\centering
+  \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{MotorSchematic.png}
+  \caption{Vibration motor schematic}
+  \label{Vibration motor schematic} 
+\end{figure}
 
 \wss{Most relevant for mechatronics projects}
 \wss{Show what will be acquired}
@@ -310,7 +405,19 @@ circuit diagrams, etc}
   
   \section{Mechanical Hardware}
   \label{appendix:hardware}
-  
+\subsection{Enclosure Drawings}
+	\label{appendix:hardware:enclosureDWG}
+
+  \includepdf[pages=-]{Base_drawing.pdf}
+\subsection{Lid Drawings}
+	\label{appendix:hardware:lidDWG}
+
+  \includepdf[pages=-]{Lid_drawing.pdf}
+\subsection{Assembly}
+	\label{appendix:hardware:assembly}
+
+  \includepdf[pages=-]{Assembly_drawing.pdf}
+
   \section{Electrical Components}
   \label{appendix:electrical}
   
