@@ -368,14 +368,15 @@ requirements and between the modules and the anticipated changes.
 \toprule
 \textbf{Req.} & \textbf{Modules}\\
 \midrule
-R1 & \mref{mHH}, \mref{mInput}, \mref{mParams}, \mref{mControl}\\
-R2 & \mref{mInput}, \mref{mParams}\\
-R3 & \mref{mVerify}\\
-R4 & \mref{mOutput}, \mref{mControl}\\
-R5 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-R6 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-R7 & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
-R8 & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
+
+R1 & \mref{mMicrophone}\\
+R2 & \mref{mSound}\\
+R3 & \mref{mLogin}, \mref{mBluetooth}, \mref{mKeyword}, \mref{mComm} \\
+R4 & \mref{mOutput}\\
+R5 & \mref{mSound}\\
+R6 & \mref{mBluetooth}\\
+R7 &  \mref{mLogin}, \mref{mProfile}\\
+R8 & \mref{mBluetooth}, \mref{mBattery}\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Requirements and Modules}
@@ -388,18 +389,13 @@ R8 & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot
 \toprule
 \textbf{AC} & \textbf{Modules}\\
 \midrule
-\acref{acHardware} & \mref{mHH}\\
-\acref{acInput} & \mref{mInput}\\
-\acref{acParams} & \mref{mParams}\\
-\acref{acVerify} & \mref{mVerify}\\
-\acref{acOutput} & \mref{mOutput}\\
-\acref{acVerifyOut} & \mref{mVerifyOut}\\
-\acref{acODEs} & \mref{mODEs}\\
-\acref{acEnergy} & \mref{mEnergy}\\
-\acref{acControl} & \mref{mControl}\\
-\acref{acSeqDS} & \mref{mSeqDS}\\
-\acref{acSolver} & \mref{mSolver}\\
-\acref{acPlot} & \mref{mPlot}\\
+\acref{ac1} & \mref{mSound}, \mref{mMicrophone}\\
+\acref{ac2} & \mref{mSound}\\
+\acref{ac3} & \mref{mLogin}, \mref{mBluetooth}, \mref{mKeyword}, \mref{mProfile}, \mref{mBattery}\\
+\acref{ac4} & \mref{mBattery}\\
+\acref{ac5} & \mref{mBluetooth}, \mref{mComm}\\
+\acref{ac6} & \mref{mSound}, \mref{mMicrophone}\\
+\acref{ac7} & \mref{mLogin}\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Anticipated Changes and Modules}
