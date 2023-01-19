@@ -157,6 +157,125 @@ The following table is taken directly from the \href{https://github.com/jordanbi
 \newpage
 ~\newpage
 
+\section{MIS of Battery Status} \label{Module}
+
+\subsection{Module}
+
+Battery Status
+
+\subsection{Uses}
+
+Indicator
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+
+N/A
+
+\subsubsection{Exported Access Programs}
+
+\begin{center}
+\begin{tabular}{p{2cm} p{4cm} p{4cm} p{2cm}}
+\hline
+\textbf{Name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions} \\
+\hline
+Low Battery & N/A & Low Status & Low Battery \\
+\hline
+Battery Level & N/A & Percentage & Battery Status \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+
+N/A
+
+\subsubsection{Environment Variables}
+
+keyOutput : {key.Low Battery, key.Battery Status}
+
+\subsubsection{Assumptions}
+
+Battery will always have some charge on it.
+
+\subsubsection{Access Routine Semantics}
+
+\noindent \wss{accessProg}():
+\begin{itemize}
+\item transition: N/A 
+\item output: Battery level
+\item exception: N/A
+\end{itemize}
+
+\subsubsection{Local Functions}
+\begin{itemize}
+\item get level(int level)
+\item battery condition(int cond)
+\end{itemize}
+
+\section{MIS of Battery Status} \label{Module}
+
+\subsection{Module}
+
+Sound Classification
+
+\subsection{Uses}
+
+Categorize detected sounds
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+
+N/A
+
+\subsubsection{Exported Access Programs}
+
+\begin{center}
+\begin{tabular}{p{2cm} p{4cm} p{4cm} p{2cm}}
+\hline
+\textbf{Name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions} \\
+\hline
+Sound level & Microphone & decibels & High/Low Level \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+
+N/A
+
+\subsubsection{Environment Variables}
+
+keyOutput : {key.microphone}
+keyOutput : {key.decibels}
+
+\subsubsection{Assumptions}
+
+Surrounding sound levels are null compared to required input level.
+
+\subsubsection{Access Routine Semantics}
+
+\noindent \wss{accessProg}():
+\begin{itemize}
+\item transition: N/A 
+\item output: decibels
+\item exception: N/A
+\end{itemize}
+
+\subsubsection{Local Functions}
+\begin{itemize}
+\item sound level(float volume)
+\item sorting volume()
+\end{itemize}
+
+
+
 \section{MIS of Login Module} \label{Login Module}
 
 \subsection{Module}
