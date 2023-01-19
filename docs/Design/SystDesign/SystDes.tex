@@ -71,8 +71,10 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Date 1 & 1.0 & Notes\\
-Date 2 & 1.1 & Notes\\
+January 15 & 1.0 & Added Template \\
+January 16 & 1.1 & Added sections 1, 2, 3\\
+January 17 & 1.2 & Added sections 4, 5, 6\\
+January 18 & 1.3 & Added sections 7, 8, 9, 10, Appendices\\
 \bottomrule
 \end{tabularx}
 
@@ -552,12 +554,18 @@ Listed in order of high priority:
   
   
   \begin{enumerate}
-    \item \textbf{Limitations of the design} - Currently the product is quite bulky in terms of size it is atleast 6.5 cm in lenght, 6 cm in width and 3 cm in height. It might not seem like much but the final goal was to make it the size of a small watch instead of a large bulky object. It also cannot function for a long time, at most a day, the vibration motor and the microphone draw a significant amount of current. It also has sever limitations in terms of mantainabilty as once assembled it cannot be seperated.  If given enough resources we can go for a custom PCB with inbuilt bluetooth, microphone, motor, charging slot and LiPo support. This would make the overall design more efficient, both in terms of power and size. We can also also increase maintanbilty by changing the enclosure to a metal enclosure(insulated) with threaded inserts to hold all the components in place.       
-    \item \textbf{Other Solutions} - The first solution we thought was to use the microphone and processor of a phone to do the sound recording and the classification. It would then send a signal to the microcontroller if any distinct sounds were detected. The benifit this had was that the actual hardware could have been smaller and more compact. This had the drawback that the microphone might not be able to hear sounds accuratly as the phone might be inside someone's trousers or be far away from them (in the case of charging the phone). Also it relies heavily on the smartphone and having it work efficiently for all types of smartphones would not have been fesible. 
+    \item \textbf{Limitations of the design} 
+    
+    Currently the product is quite bulky in terms of size as it is at least 6.5cm in length, 6cm in width, and 3cm in height. It might not seem like much but the final goal was to make the product the size of a small watch instead of a large bulky object. Furthermore, the system cannot function for a long time (at most a day) because the vibration motor and the microphone draw a significant amount of current. Lastly, there are also severe limitations in terms of maintainabilty because once the product is assembled, it cannot be separated. 
+    
+    If given enough resources, a custom PCB with inbuilt bluetooth, microphone, motor, charging slot, and LiPo support can be acquired. This would make the overall design more efficient, both in terms of power and size. Furthermore, maintainabilty can be increased by changing the enclosure to an insulated metal enclosure with threaded inserts to hold all the components in place.       
+    \item \textbf{Other Solutions} 
+    
+    A potential design solution could have been to use the microphone and processor of a phone to do the sound recording and classification. It would then send a signal to the microcontroller if any distinct sounds were detected. Furthermore, the benefit of this is that the actual hardware could have been smaller and more compact. On another note, this solution has a drawback where the microphone might not be able to hear sounds accurately since the phone might be inside someone's trousers or be too far away from the user (i.e phone is charging). With the above in mind, this solution relies heavily on the smartphone, but having this design work efficiently for all phone types might not be feasible. 
 
-The second solution we thought was to use a microphone on the hardware and to then transmit the sound to the smartphone, have it process and classify it and then transmit the classifed signal back to the microcontroller. This does not have the disadvantage of the smartphone being stuck in trousers as the hardware microphone is used. An additional benifit is that the microcontroller can be less powerful and hence more power efficent. However, the major disadvantage id that the smartphone needs to be in range all the time.    
+    Another design solution would be to use the microphone on the hardware and to then transmit the sound to the smartphone. From there, the sound will be processed and classified before transmitting the classifed signal back to the microcontroller. With this in mind, this does not have the disadvantage of the smartphone being stuck in trousers as the microphone is near the user while the Synesthesia Wear bracelet is being worn. Lastly, an additional benefit is that the microcontroller can be less powerful and thus more power-efficient. However, the major disadvantage to this is that the smartphone needs to be in range all of the time.    
 
-The current design does all of the processing, recording and classification on the hardware. This results in a bit more bulky hardware. It only communicates with the smartphone when the user requires to update prefernces. This is the major advantage of this design, it can work independently (after the inital configuration) and does not have to rely on an external smartphone. This was the main reason we selected this design as we wanted a product that could be independent and self-sufficent. We also do not have to make classification software compatible with different smartphones and operating systems.   
+    In comparison, the current design does all of the processing, recording, and sound classification on the hardware itself which results in a bit more of a bulky bracelet. Furthermore, it only communicates with the smartphone when the user desires to update their preferences. Thus, this is a major advantage of this design because it can work independently (after initial configuration) and does not have to rely on an external smartphone. With this in mind, this was the main reason this design was selected since the product would be independent and self-sufficient.
   \end{enumerate}
   
   \end{appendices}
