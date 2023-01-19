@@ -269,19 +269,62 @@ The following requirements were taken from Synesthesia Wear's
 \end{table}
 
 \section{System Variables}
-
-\wss{Include this section for Mechatronics projects}
-
 \subsection{Monitored Variables}
+\begin{table}[H]
+  \centering
+  \caption{Monitored Variables Table}
+  \label{table:MonitoredVar Table} 
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{5cm}|p{5cm}|p{5cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Monitored Name} & \textcolor{white}{Monitored Type} & \textcolor{white}{Description}                                          \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902}   detectedSounds      & Sound &  Sounds in the environment are being monitored and collected via a microphone in the Synesthesia Wear bracelet. \\
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
 \subsection{Controlled Variables}
+\begin{table}[H]
+  \centering
+  \caption{Controlled Variables Table}
+  \label{table:ControlledVar Table} 
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{5cm}|p{5cm}|p{5cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Controlled Name} & \textcolor{white}{Controlled Type} & \textcolor{white}{Description}                                          \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902}    keyword(s)     & String/Word &  The keywords are selected, viewed, inputted, or changed via the Sound Configuration Settings on the Synesthesia Wear application. \\
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902}    feedback    &  Vibrations    &  The vibrations are controlled since they only occur once the detected and keyword sounds match to a certain degree.           \\
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902}    loginInfo    &  Strings/Words    &  The username and password of the users. This information can be viewed, set, and changed whenever the user desires.           \\
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
-\subsection{Constants Variables}
+
+\subsection{Constant Variables}
+\begin{table}[H]
+  \centering
+  \caption{Constant Variables Table}
+  \label{table:ConstantVar Table} 
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{5cm}|p{5cm}|p{5cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Constant Name} & \textcolor{white}{Constant Type} & \textcolor{white}{Description}                                          \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902}    power     & Power &  The power required from the battery to activate the Synesthesia Wear bracelet. \\
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902}    deviceOS     & Operating System &  The operating system of the device that has the Synesthesia Wear application installed. \\
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
 
 \section{User Interfaces}
-
-\wss{Design of user interface for software and hardware.  Attach an appendix if
-needed. Drawings, Sketches, Figma}
 
 \subsection {System Context}
 \begin{figure}[H]
