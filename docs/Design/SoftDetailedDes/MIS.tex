@@ -53,8 +53,7 @@ urlcolor=cyan          % color of external links
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Date 1 & 1.0 & Notes\\
-Date 2 & 1.1 & Notes\\
+18-01-23 & 1.0 & Added Content\\
 \bottomrule
 \end{tabularx}
 
@@ -64,7 +63,6 @@ Date 2 & 1.1 & Notes\\
 
 See SRS Documentation at  \href{https://github.com/jordanbierbrier/capstone/blob/main/docs/SRS/SRS.pdf}{\textit{SRS.pdf Document Link}}.
 
-\wss{Also add any additional symbols, abbreviations or acronyms}
 
 \newpage
 
@@ -87,8 +85,7 @@ found at \href{https://github.com/jordanbierbrier/capstone}{\textit{Team 26 Caps
 
 \section{Notation}
 
-\wss{You should describe your notation.  You can use what is below as
-  a starting point.}
+
 
 The structure of the MIS for modules comes from \citet{HoffmanAndStrooper1995},
 with the addition that template modules have been adapted from
@@ -203,7 +200,7 @@ Battery will always have some charge on it.
 
 \subsubsection{Access Routine Semantics}
 
-\noindent \wss{accessProg}():
+\noindent
 \begin{itemize}
 \item transition: N/A 
 \item output: Battery level
@@ -261,7 +258,7 @@ Surrounding sound levels are null compared to required input level.
 
 \subsubsection{Access Routine Semantics}
 
-\noindent \wss{accessProg}():
+\noindent
 \begin{itemize}
 \item transition: N/A 
 \item output: decibels
@@ -542,16 +539,229 @@ CLKINT: \{clk.interupt(sample time)\}
 Clock interupt is already set up to issue interupts every 1/(sample frequency) 
 
 \subsubsection{Access Routine Semantics}
+\newpage 
 
-\noindent updateData(SoundIN,CLKINT):
+\section{MIS of Output Signal Module} \label{Output Signal Module}
+\subsection{Module}
+Output Signal Module
+\subsection{Uses}
 \begin{itemize}
-\item transition: None
-\item output: if(CLKINT) then (SoundData = SoundData >> 1, SoundData[new] = SoundIN)
-\item exception: None 
+  \item Sound Classification Module
+  \end{itemize}
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+N/A
+
+\subsubsection{Exported Access Programs}
+
+\begin{center}
+\begin{tabular}{p{4cm} p{4cm} p{4cm} p{4cm}}
+\hline
+\textbf{Name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions} \\
+\hline
+onVolt & (Boolean, Class\_Id) &  & Null\_class\\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+
+current\_Volt: Integer of the current voltage being supplied to the motor
+
+\subsubsection{Environment Variables}
+
+N/A
+
+\subsubsection{Assumptions}
+
+We are assuming that when this module is called that the battery has sufficient charge to power the motor for the called upon number of requests
+
+\subsubsection{Access Routine Semantics}
+
+\noindent onVolt(Boolean onOFF, Class\_id Current):
+\begin{itemize}
+\item transition: Count = Current $\vert$ While count $!=$ 0 $\implies$ (current\_volt $\equiv$ 0 $\land$ onOFF) $\implies$ current\_Volt = 5 $\vert$ count $-=$ count $\vert$ current\_Volt = 0  
+\item output: None
+\item exception: Class\_id $\equiv$ Null 
+\end{itemize}
+
+\newpage
+
+
+\section{MIS of Bluetooth Connection Module} \label{Bluetooth Connection Module}
+\subsection{Module}
+Bluetooth Connection Module
+\subsection{Uses}
+N/A
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+N/A
+
+\subsubsection{Exported Access Programs}
+
+\begin{center}
+\begin{tabular}{p{4cm} p{4cm} p{4cm} p{4cm}}
+\hline
+\textbf{Name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions} \\
+\hline
+Find\_Device & Boolean onClick & Device\_ID Array & device\_NotFound\\
+Connect\_Device & (Boolean, onClick Device\_ID) &  & \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+
+\begin{itemize}
+  \item known\_Device: Device\_ID
+  \item Paired\_Device
 \end{itemize}
 
 
+\subsubsection{Environment Variables}
+
+N/A
+
+\subsubsection{Assumptions}
+
+We assume that the mobile device that the user has the application on has a bluetooth module.
+
+\subsubsection{Access Routine Semantics}
+
+\noindent Find\_Device(Boolean onClick):
+\begin{itemize}
+\item transition: (Onclick $\equiv$ True) $\implies$ Found\_Devices = {} $\implies$ Found\_Devices.Add(known\_Devices) $\implies$ Found\_Devices.Add(device\_id1) 
+\item output: Found\_Devices(known\_Device, device\_id1, device\_id2 … device\_idN)
+\item exception: Device\_NotFound 
+\end{itemize}
+
+\noindent Connect\_Device(Boolean onClick):
+\begin{itemize}
+\item transition: (Onclick $\equiv$ True) $\implies$ Paired\_Device $=$ device\_id2 
+\item output: None
+\item exception: None
+\end{itemize}
+
 \newpage
+
+
+
+\section{MIS of Profile Module} \label{profile Module}
+\subsection{Module}
+Profile Module
+\subsection{Uses}
+Login Module 
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+N/A
+
+\subsubsection{Exported Access Programs}
+
+\begin{center}
+\begin{tabular}{p{4cm} p{4cm} p{4cm} p{4cm}}
+\hline
+\textbf{Name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions} \\
+\hline
+Set\_First\_Name & String &  & Type\_Error \\
+\hline
+Set\_Last\_Name & String &  &  Type\_Error\\
+\hline
+Get\_First\_Name &  & String & Null\_Exception \\
+\hline
+Get\_Last\_Name &  & String & Null\_Exception \\
+\hline
+change\_Password & String &  & Type\_Error \\
+\hline
+Change\_Username & String &  &  Type\_Error\\
+\hline
+Get\_Username &  & String & Null\_Exception\\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+
+\begin{itemize}
+  \item first\_name
+  \item last\_name
+  \item password
+  \item username
+\end{itemize}
+
+
+\subsubsection{Environment Variables}
+
+key\_input(keyboard)
+
+\subsubsection{Assumptions}
+
+We are assuming that the user has either a touchscreen keyboard or an external keyboard.
+
+\subsubsection{Access Routine Semantics}
+
+\noindent Set\_first\_name(String Name):
+\begin{itemize}
+\item transition: first\_name = Name
+\item output: None
+\item exception: Type\_Error 
+\end{itemize}
+
+\noindent Set\_last\_name(String Name):
+\begin{itemize}
+\item transition: last\_name = Name
+\item output: None
+\item exception: Type\_Error 
+\end{itemize}
+
+\noindent Get\_first\_name():
+\begin{itemize}
+\item transition: None
+\item output: First\_name
+\item exception: Null\_Exception 
+\end{itemize}
+
+\noindent Get\_last\_name():
+\begin{itemize}
+\item transition: None
+\item output: last\_name
+\item exception: Null\_Exception 
+\end{itemize}
+
+
+\noindent Change\_password(String Name):
+\begin{itemize}
+\item transition: password = Name
+\item output: None
+\item exception: Type\_Error 
+\end{itemize}
+
+\noindent Change\_username(String Name):
+\begin{itemize}
+\item transition: username = Name
+\item output: None
+\item exception: Type\_Error 
+\end{itemize}
+
+\noindent Get\_username():
+\begin{itemize}
+\item transition: None
+\item output: username
+\item exception: Null\_Exception 
+\end{itemize}
+
+\newpage
+
+
 
 
 \bibliographystyle {plainnat}
@@ -559,6 +769,5 @@ Clock interupt is already set up to issue interupts every 1/(sample frequency)
 
 \section{Appendix} \label{Appendix}
 
-\wss{Extra information if required}
 
 \end{document}
