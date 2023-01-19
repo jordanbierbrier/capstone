@@ -124,7 +124,7 @@ described by giving their type signature followed by their specification.
 
 \section{Module Decomposition}
 
-The following table is taken directly from the Module Guide document for this project.
+The following table is taken directly from the \href{https://github.com/jordanbierbrier/capstone/blob/main/docs/Design/SoftArchitecture/MG.pdf}{\textit{Module Guide Document}} for this project.
 
 \begin{table}[h!]
 \centering
@@ -133,21 +133,20 @@ The following table is taken directly from the Module Guide document for this pr
 \textbf{Level 1} & \textbf{Level 2}\\
 \midrule
 
-{Hardware-Hiding} & ~ \\
+{Hardware-Hiding Module} & ~ \\
 \midrule
 
-\multirow{7}{0.3\textwidth}{Behaviour-Hiding} & Input Parameters\\
-& Output Format\\
-& Output Verification\\
-& Temperature ODEs\\
-& Energy Equations\\ 
-& Control Module\\
-& Specification Parameters Module\\
+\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & Login Module\\
+& Bluetooth connection Module\\
+& Keyword Selection Module\\
+& Output Signal Module\\
+& Profile Module\\ 
+& Battery Status Module\\
 \midrule
 
-\multirow{3}{0.3\textwidth}{Software Decision} & {Sequence Data Structure}\\
-& ODE Solver\\
-& Plotting\\
+\multirow{3}{0.3\textwidth}{Software Decision Module} & {Sound Classification Module}\\
+& Bluetooth Communication Module\\
+& Microphone Module\\
 \bottomrule
 
 \end{tabular}
