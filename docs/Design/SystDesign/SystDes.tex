@@ -250,6 +250,22 @@ For undesired events,
 \wss{Design of user interface for software and hardware.  Attach an appendix if
 needed. Drawings, Sketches, Figma}
 
+\subsection {System Context}
+\begin{figure}[H]
+  \includegraphics[clip,trim= 0cm 5cm 0cm 2cm,width=\textwidth,height=\textheight,keepaspectratio]{UserInterface.pdf}
+  \caption{User Interface Mobile}
+  \label{User Interface} 
+\end{figure}
+\begin{center}
+\begin{tabular}{c c}
+Record & Allows users to record new audio to be stored \\
+Alters & Notifies user of which alter and the timing \\
+New Recording & Alternative button to change a existing recording \\
+Recording Name & Name of stored recording \\
+Delete & Deletion of stored recording \\
+Home & To go back to main screen \\
+\end{tabular}
+\end{center}
 \section{Design of Mechanical Hardware}
 
 \wss{Most relevant for mechatronics projects}
@@ -267,14 +283,45 @@ circuit diagrams, etc}
 
 \section{Design of Communication Protocols}
 
-\wss{If appropriate}
+To avoid data being lost between the connect we will be using serial communication to communicate between the device and mobile app.
 
 \section{Timeline}
 
-\wss{Schedule of tasks and who is responsible}
+\begin{figure}[H]
+  \includegraphics[clip,trim= 0cm 10cm 0cm 2cm,width=\textwidth,height=\textheight,keepaspectratio]{Timeline.pdf}
+  \caption{Timeline}
+  \label{Timeline} 
+\end{figure}
 
-% \bibliographystyle {plainnat}
-% \bibliography{../../../refs/References}
+
+\subsection{Solder and Unit Testing}
+\begin{itemize}
+\item Connect and Test, Micro controller with vibrating motor.
+\item Use module "Start" as part of Arduino library to test the vibrating motor.
+\item Use module "Record" as part of Arduino library to test the microphone.
+\end{itemize}
+
+
+
+\subsection{Integrate Audio Processing}
+
+Listed in order of high priority:
+\begin{itemize}
+\item Create module "Bluetooth Connection", establish a successful connection
+\item Create module "Output Signal", what will be the output signal for each signal
+\item Create module "Sound Classification", category of sound produced
+\item Create module "Battery Status", indication of low battery status
+\item Create module "Microphone", collect the audio recording
+\end{itemize}
+
+\subsection{Mobile Application and Hardware Connection}
+
+\begin{itemize}
+\item Create module "Login", create a personalized login
+\item Create module "Keyword Selection", categorize the recordings
+\item Create module "Profile Module", load the user data
+\item Create module "Bluetooth Communication", communication integrator
+\end{itemize}
 
 \newpage{}
 
