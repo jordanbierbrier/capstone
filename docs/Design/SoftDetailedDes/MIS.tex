@@ -48,7 +48,7 @@ urlcolor=cyan          % color of external links
 
 \pagenumbering{roman}
 
-\section{Revision History}
+\section*{Revision History}
 
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
@@ -60,9 +60,9 @@ Date 2 & 1.1 & Notes\\
 
 ~\newpage
 
-\section{Symbols, Abbreviations and Acronyms}
+\section*{Symbols, Abbreviations and Acronyms}
 
-See SRS Documentation at \wss{give url}
+See SRS Documentation at  \href{https://github.com/jordanbierbrier/capstone/blob/main/docs/SRS/SRS.pdf}{\textit{SRS.pdf Document Link}}.
 
 \wss{Also add any additional symbols, abbreviations or acronyms}
 
@@ -157,32 +157,32 @@ The following table is taken directly from the \href{https://github.com/jordanbi
 \newpage
 ~\newpage
 
-\section{MIS of \wss{Module Name}} \label{Module} \wss{Use labels for
-  cross-referencing}
-
-\wss{You can reference SRS labels, such as R\ref{R_Inputs}.}
-
-\wss{It is also possible to use \LaTeX for hypperlinks to external documents.}
+\section{MIS of Login Module} \label{Module}
 
 \subsection{Module}
 
-\wss{Short name for the module}
+Login Type
 
 \subsection{Uses}
-
+N/A
 
 \subsection{Syntax}
 
 \subsubsection{Exported Constants}
+N/A
 
 \subsubsection{Exported Access Programs}
 
 \begin{center}
-\begin{tabular}{p{2cm} p{4cm} p{4cm} p{2cm}}
+\begin{tabular}{p{4cm} p{4cm} p{4cm} p{4cm}}
 \hline
 \textbf{Name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions} \\
 \hline
-\wss{accessProg} & - & - & - \\
+authorize & keyInput & Authorized & \\
+\hline
+login & keyInput &  & Not\_A\_Character \\
+\hline
+switchCue & keyInput &  & Not\_Cueable \\
 \hline
 \end{tabular}
 \end{center}
@@ -191,44 +191,111 @@ The following table is taken directly from the \href{https://github.com/jordanbi
 
 \subsubsection{State Variables}
 
-\wss{Not all modules will have state variables.  State variables give the module
-  a memory.}
+Authorized: Authorized is a boolean that is true when the correct credentials are entered and false otherwise.
 
 \subsubsection{Environment Variables}
 
-\wss{This section is not necessary for all modules.  Its purpose is to capture
-  when the module has external interaction with the environment, such as for a
-  device driver, screen interface, keyboard, file, etc.}
+keyInput: \{key.Enter, key.AlphabetCharacters, key.LeftClick\}
 
 \subsubsection{Assumptions}
 
-\wss{Try to minimize assumptions and anticipate programmer errors via
-  exceptions, but for practical purposes assumptions are sometimes appropriate.}
+The Synesthesia Wear application is successfully installed on the user's device and the login page has loaded onto the screen. 
 
 \subsubsection{Access Routine Semantics}
 
-\noindent \wss{accessProg}():
+\noindent switchCue(key.LeftClick):
 \begin{itemize}
-\item transition: \wss{if appropriate} 
-\item output: \wss{if appropriate} 
-\item exception: \wss{if appropriate} 
+\item transition: mouseLocation.navigate() 
+\item output: None
+\item exception: Not\_Cueable 
 \end{itemize}
 
-\wss{A module without environment variables or state variables is unlikely to
-  have a state transition.  In this case a state transition can only occur if
-  the module is changing the state of another module.}
+\noindent login(key.AlphabetCharacters):
+\begin{itemize}
+\item transition: username.addCharacter() or password.addCharacter()
+\item output: None
+\item exception: Not\_A\_Character 
+\end{itemize}
 
-\wss{Modules rarely have both a transition and an output.  In most cases you
-  will have one or the other.}
 
-\subsubsection{Local Functions}
-
-\wss{As appropriate} \wss{These functions are for the purpose of specification.
-  They are not necessarily something that is going to be implemented
-  explicitly.  Even if they are implemented, they are not exported; they only
-  have local scope.}
+\noindent authorize(key.Enter):
+\begin{itemize}
+\item transition: login.submit() 
+\item output: Authorized
+\item exception: None 
+\end{itemize}
 
 \newpage
+
+\section{MIS of Keyword Selection Module} \label{Module}
+\subsection{Module}
+Keyword Selection Type
+
+\subsection{Uses}
+\begin{itemize}
+  \item Profile Module
+  \item Bluetooth Communication Module
+  \end{itemize}
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+N/A
+
+\subsubsection{Exported Access Programs}
+
+\begin{center}
+\begin{tabular}{p{4cm} p{4cm} p{4cm} p{4cm}}
+\hline
+\textbf{Name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions} \\
+\hline
+save & keyInput & Saved & Mouse\_Not\_On\_Save\_Button\\
+\hline
+keyword & keyInput &  & Not\_A\_Character \\
+\hline
+switchCue & keyInput &  & Not\_Cueable \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+
+Saved: Saved is a boolean that is true when the ``Save'' button has been pressed and false otherwise.
+
+\subsubsection{Environment Variables}
+
+keyInput: \{key.AlphabetCharacters, key.LeftClick\}
+
+\subsubsection{Assumptions}
+
+The Synesthesia Wear application is successfully installed on the user's device, the user was able to log into the app, 
+and the sound configuration settings page is loaded onto the screen.
+
+\subsubsection{Access Routine Semantics}
+
+\noindent switchCue(key.LeftClick):
+\begin{itemize}
+\item transition: mouseLocation.navigate() 
+\item output: None
+\item exception: Not\_Cueable 
+\end{itemize}
+
+\noindent keyword(key.AlphabetCharacters):
+\begin{itemize}
+\item transition: keyword.addCharacter()
+\item output: None
+\item exception: Not\_A\_Character 
+\end{itemize}
+
+\noindent save(key.LeftClick):
+\begin{itemize}
+\item transition: keyword.save() 
+\item output: Saved
+\item exception: Mouse\_Not\_On\_Save\_Button 
+\end{itemize}
+
 
 \bibliographystyle {plainnat}
 \bibliography {../../../refs/References}
