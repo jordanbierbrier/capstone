@@ -228,6 +228,85 @@ The following table is taken directly from the \href{https://github.com/jordanbi
   explicitly.  Even if they are implemented, they are not exported; they only
   have local scope.}
 
+\section{MIS of Bluetooth Communication Module} \label{BTComuModule} 
+
+
+\subsection{Module}
+
+BTComuModule
+
+\subsection{Uses}
+
+None
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+DataTx:\{ BT.send()\}
+
+\subsubsection{Exported Access Programs}
+
+\begin{center}
+\begin{tabular}{p{3cm} p{4cm} p{3cm} p{3cm}}
+\hline
+\textbf{Name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions} \\
+\hline
+RecvNewClass & DataRx & - & Class\_Full \\
+\hline
+RmClass & DataRx & - & Class\_Empty \\
+\hline
+UpdatePref & DataRx & - & - \\
+\hline
+SendBattV & BattV & DataTx & - \\
+\hline
+
+\end{tabular}
+\end{center}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+
+None
+\subsubsection{Environment Variables}
+
+BattV: \{AnalogRead(BatteryVolt)\} \\
+DataRx: \{BT.recieve(T1),BT.recieve(T2),BT.recieve(T3)\}
+
+\subsubsection{Assumptions}
+
+Connection with the application is already establised. Bluetooth tries to automatically reconnect if the application is disconnected. 
+
+\subsubsection{Access Routine Semantics}
+
+\noindent RecvNewClass():
+\begin{itemize}
+\item transition: if(DataRx == T1) then addclass(dataRx) 
+\item output: None 
+\item exception: Class\_Full
+\end{itemize}
+
+\noindent RmClass():
+\begin{itemize}
+\item transition: if(DataRx == T2) then rmclass(dataRx)  
+\item output: None 
+\item exception: Class\_Empty 
+\end{itemize}
+
+\noindent UpdatePref():
+\begin{itemize}
+\item transition: if(DataRx == T3) then prefchange(DataRx.class,DataRx.pref)
+\item output: None
+\item exception: None 
+\end{itemize}
+
+\noindent SendBattV(BattV):
+\begin{itemize}
+\item transition: None 
+\item output: DataTx == BattV 
+\item exception:  
+\end{itemize}
+
 \newpage
 
 \bibliographystyle {plainnat}
