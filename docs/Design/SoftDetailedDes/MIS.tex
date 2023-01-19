@@ -157,7 +157,7 @@ The following table is taken directly from the \href{https://github.com/jordanbi
 \newpage
 ~\newpage
 
-\section{MIS of Login Module} \label{Module}
+\section{MIS of Login Module} \label{Login Module}
 
 \subsection{Module}
 
@@ -225,9 +225,9 @@ The Synesthesia Wear application is successfully installed on the user's device 
 \item exception: None 
 \end{itemize}
 
-\newpage
+\newpage 
 
-\section{MIS of Keyword Selection Module} \label{Module}
+\section{MIS of Keyword Selection Module} \label{Keyword Selection Module}
 \subsection{Module}
 Keyword Selection Type
 
@@ -296,11 +296,147 @@ and the sound configuration settings page is loaded onto the screen.
 \item exception: Mouse\_Not\_On\_Save\_Button 
 \end{itemize}
 
+\newpage
+
+\section{MIS of Bluetooth Communication Module} \label{BTComuModule} 
+
+
+\subsection{Module}
+
+BTComuModule
+
+\subsection{Uses}
+
+None
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+DataTx:\{ BT.send()\}
+
+\subsubsection{Exported Access Programs}
+
+\begin{center}
+\begin{tabular}{p{3cm} p{4cm} p{3cm} p{3cm}}
+\hline
+\textbf{Name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions} \\
+\hline
+RecvNewClass & DataRx & - & Class\_Full \\
+\hline
+RmClass & DataRx & - & Class\_Empty \\
+\hline
+UpdatePref & DataRx & - & - \\
+\hline
+SendBattV & BattV & DataTx & - \\
+\hline
+
+\end{tabular}
+\end{center}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+
+None
+\subsubsection{Environment Variables}
+
+BattV: \{AnalogRead(BatteryVolt)\} \\
+DataRx: \{BT.recieve(T1),BT.recieve(T2),BT.recieve(T3)\}
+
+\subsubsection{Assumptions}
+
+Connection with the application is already establised. Bluetooth tries to automatically reconnect if the application is disconnected. 
+
+\subsubsection{Access Routine Semantics}
+
+\noindent RecvNewClass():
+\begin{itemize}
+\item transition: if(DataRx == T1) then addclass(dataRx) 
+\item output: None 
+\item exception: Class\_Full
+\end{itemize}
+
+\noindent RmClass():
+\begin{itemize}
+\item transition: if(DataRx == T2) then rmclass(dataRx)  
+\item output: None 
+\item exception: Class\_Empty 
+\end{itemize}
+
+\noindent UpdatePref():
+\begin{itemize}
+\item transition: if(DataRx == T3) then prefchange(DataRx.class,DataRx.pref)
+\item output: None
+\item exception: None 
+\end{itemize}
+
+\noindent SendBattV(BattV):
+\begin{itemize}
+\item transition: None 
+\item output: DataTx == BattV 
+\item exception:  
+\end{itemize}
+
+\newpage
+
+\section{MIS of Microphone Module} \label{Microphone Module} 
+
+\subsection{Module}
+
+MicroMod
+
+\subsection{Uses}
+
+None
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+
+None 
+
+\subsubsection{Exported Access Programs}
+
+\begin{center}
+\begin{tabular}{p{2cm} p{4cm} p{4cm} p{2cm}}
+\hline
+\textbf{Name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions} \\
+\hline
+updateData & SoundIN,CLKINT & SoundData & - \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+
+SoundData - Array of sound inputs recorded at every sample interval
+
+\subsubsection{Environment Variables}
+
+SoundIN: \{ Digital.Read(Digital\_Microphone) \}\\
+CLKINT: \{clk.interupt(sample time)\}
+
+\subsubsection{Assumptions}
+
+Clock interupt is already set up to issue interupts every 1/(sample frequency) 
+
+\subsubsection{Access Routine Semantics}
+
+\noindent updateData(SoundIN,CLKINT):
+\begin{itemize}
+\item transition: None
+\item output: if(CLKINT) then (SoundData = SoundData >> 1, SoundData[new] = SoundIN)
+\item exception: None 
+\end{itemize}
+
+
+\newpage
+
 
 \bibliographystyle {plainnat}
 \bibliography {../../../refs/References}
-
-\newpage
 
 \section{Appendix} \label{Appendix}
 
