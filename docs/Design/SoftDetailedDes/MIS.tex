@@ -307,6 +307,59 @@ Connection with the application is already establised. Bluetooth tries to automa
 \item exception:  
 \end{itemize}
 
+\section{MIS of Microphone Module} \label{Module} 
+
+\subsection{Module}
+
+MicroMod
+
+\subsection{Uses}
+
+None
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+
+None 
+
+\subsubsection{Exported Access Programs}
+
+\begin{center}
+\begin{tabular}{p{2cm} p{4cm} p{4cm} p{2cm}}
+\hline
+\textbf{Name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions} \\
+\hline
+updateData & SoundIN,CLKINT & SoundData & - \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+
+SoundData - Array of sound inputs recorded at every sample interval
+
+\subsubsection{Environment Variables}
+
+SoundIN: \{ Digital.Read(Digital\_Microphone) \}\\
+CLKINT: \{clk.interupt(sample time)\}
+
+\subsubsection{Assumptions}
+
+Clock interupt is already set up to issue interupts every 1/(sample frequency) 
+
+\subsubsection{Access Routine Semantics}
+
+\noindent updateData(SoundIN,CLKINT):
+\begin{itemize}
+\item transition: None
+\item output: if(CLKINT) then (SoundData = SoundData >> 1, SoundData[new] = SoundIN)
+\item exception: None 
+\end{itemize}
+
+
 \newpage
 
 \bibliographystyle {plainnat}
