@@ -70,13 +70,14 @@ Synesthesia Wear goal is to create a wearable product that assists users with ce
 
 \subsection{Objectives}
 
-The objective of the document is to prove correctness of the system requirements and the system design documents by using system testing for adequate usability. Furthermore, it is often the case where software may have bugs that is then experienced by the end-users. So, the tests stated in the document will describe ways of mitigating those issues and thus ensuring the underlying logic for all subsystems. Lastly, the code and the circuitry being tested will incorporate the underlying logic that interacts with the database.
+The objective of the document is to prove correctness of the system requirements and the system design documents by using unit and system testing for adequate usability. Furthermore, it is often the case where software may have bugs that is then experienced by the end-users. So, the tests stated in the document will describe ways of mitigating those issues and thus ensuring the underlying logic for all subsystems. This will be completed by rigorous unit testing on the functional and non-functional requirements. Lastly, the code and the circuitry being tested will incorporate the underlying logic that interacts with the database.
 \subsection{Relevant Documentation}
 
 The relevant documents include:
 \begin{itemize}
 \item Hazard Analysis Document
 \item Software Requirements Specification Document
+\item Module Interface Specification Document
 
 \end{itemize}
 
@@ -1055,22 +1056,16 @@ Currently, there is no available data that can help validate the software.
   \end{longtable}
 \section{Unit Test Description}
 
-\wss{Reference your MIS and explain your overall philosophy for test case
-  selection.}  
-\wss{This section should not be filled in until after the MIS has
-  been completed.}
-
 \subsection{Unit Testing Scope}
 The scope of the unit testing will involve evaluating the microphone, bluetooth, 
 classification, feedback, noise filter, and interface modules to see if they adhere 
 to respective functional and non-functional requirements found in Synesthesia Wear’s 
-SRS document.
+\href{https://github.com/jordanbierbrier/capstone/blob/main/docs/SRS/SRS.pdf}{\textit{SRS Document}}.
+Furthermore, the modules of this section can be found in Synesthesia Wear's 
+\href{https://github.com/jordanbierbrier/capstone/blob/main/docs/Design/SoftDetailedDes/MIS.pdf}{\textit{MIS Document}}
+where information on their Uses, Syntax, and Semantics are explained in greater detail.
 
 \subsection{Tests for Functional Requirements}
-
-\wss{Most of the verification will be through automated unit testing.  If
-  appropriate specific modules can be verified by a non-testing based
-  technique.  That can also be documented in this section.}
 
 \subsubsection{Microphone Module}
 
@@ -1081,7 +1076,7 @@ SRS document.
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{UT1\\}
 
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
@@ -1105,7 +1100,7 @@ SRS document.
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{UT2\\}
 
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
@@ -1123,7 +1118,7 @@ SRS document.
     \hline
 \end{tabular}
 
-\item{test-id2\\}
+\item{UT3\\}
 
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
@@ -1148,7 +1143,7 @@ SRS document.
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{UT4\\}
 
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
@@ -1166,7 +1161,7 @@ SRS document.
     \hline
 \end{tabular}
 
-\item{test-id2\\}
+\item{UT5\\}
 
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
@@ -1191,7 +1186,7 @@ SRS document.
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{UT6\\}
 
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
@@ -1224,7 +1219,7 @@ SRS document.
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{UT7\\}
 
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
@@ -1242,7 +1237,7 @@ SRS document.
     \hline
 \end{tabular}
 
-\item{test-id2\\}
+\item{UT8\\}
 
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
@@ -1267,7 +1262,7 @@ SRS document.
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{UT9\\}
 
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
@@ -1285,7 +1280,7 @@ SRS document.
     \hline
 \end{tabular}
 
-\item{test-id2\\}
+\item{UT10\\}
 
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
@@ -1310,7 +1305,7 @@ SRS document.
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{UT11\\}
 
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
@@ -1335,7 +1330,7 @@ SRS document.
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{UT12\\}
 
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
@@ -1360,7 +1355,7 @@ SRS document.
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{UT13\\}
 
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
@@ -1386,7 +1381,7 @@ SRS document.
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{UT14\\}
 
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
@@ -1404,7 +1399,7 @@ SRS document.
     \hline
 \end{tabular}
 
-\item{test-id2\\}
+\item{UT15\\}
 
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
@@ -1422,7 +1417,7 @@ SRS document.
     \hline
 \end{tabular}
 
-\item{test-id3\\}
+\item{UT16\\}
 
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
@@ -1446,10 +1441,6 @@ SRS document.
 \subsection{Traceability Between Test Cases and Modules}
 
 \wss{Provide evidence that all of the modules have been considered.}
-				
-\bibliographystyle{plainnat}
-
-\bibliography{../../refs/References}
 
 \newpage
 
