@@ -68,12 +68,12 @@ This document ...
 
 \section{Functional Requirements Evaluation}
 
-\begin{longtable}{|p{1.2cm}|p{1cm}|p{2.3cm}|p{2cm}|p{2cm}|p{2cm}|p{1.2cm}|}
+\begin{longtable}{|p{1.1cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
   %\centering
   %\begin{tabular}{|p{1.5cm}|p{1cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{1.2cm}|}
   \hline
   \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
-  FRT1        & FR1, FR2     & Testing ability to differentiate sounds                                      & Five different sounds                             & Device produces five different feedbacks                    &                        & {\color[HTML]{32CB00} Pass}                        \\ \hline
+  FRT1        & FR1, FR2     & Testing ability to differentiate sounds                                     & Five different sounds                             & Device produces five different feedbacks                    &                        & {\color[HTML]{32CB00} Pass}                        \\ \hline
   FRT2        & FR1          & Testing in different environments                                            & Same sound in different environments              & Same feedback in all enviroments                            &                        & {\color[HTML]{FE0000} Fail}                        \\ \hline
   FRT3        & FR1          & Testing at different ranges                                                  & Same sound at specified distances                 & Same feedback at specified distances                        &                        & \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD} \\ \hline
   FRT4        & FR1          & Testing its ability to ignore ambient noise                                  & No input                                          & No output                                                   &                        &                                                    \\ \hline
@@ -104,6 +104,21 @@ This document ...
 This section will not be appropriate for every project.
 
 \section{Unit Testing}
+\begin{longtable}{|p{1.1cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
+  UT1        & test-id1     & Testing accuracy of the microphone to detect sounds                                      & 3 Different Sample Recordings                             & 3 Distinct Sample Recordings in memory buffer that match the inputs respectively                    &                        & {\color[HTML]{32CB00} Pass} \\ \hline
+  UT2?        & test-id1          & Testing bluetooth's ability to transfer digital sound recordings accurately                                         & Digital Sound Recording              & Same digital sound recording at the receiver                            &                        & {\color[HTML]{FE0000} Fail}                        \\ \hline
+  UT3        & test-id2          & Testing bluetooth's ability to send signals accurately                                                  & Sample classification signal asserted on software                 & Feedback signal asserted on hardware                        &                        & \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD} \\ \hline
+  UT4       & test-id1          & Testing classification module's ability to accurately categorize sound data  & Stored samples of sound data in the memory buffer              & Accurately classified Sound Data                          &                        &                                                    \\ \hline
+  UT5       & test-id2          & Testing classification module's ability to change its sound classification settings                                      & New Classification settings                                  & Classification settings have been changed on the app                    &                        &                                                    \\ \hline
+  UT6       & test-id1          & Testing feedback module's ability to transmit accurate feedback signals according to the settings  & Feedback signal is asserted              & Vibration detected in the bracelet that coincides with the feedback signal                          &                        &                                                    \\ \hline
+  UT7       & test-id1          & Testing bluetooth connection ability                                     & Enable bluetooth connection                                  & Bluetooth connection connected in under a minute                    &                        &                                                    \\ \hline
+  UT8       & test-id2          & Testing bluetooth connection's ability when devices go in and out of range                                      & Separate the connected devices 10 or more metres away, wait at least 5 seconds, then bring the devices closer together                                  & Bluetooth will disconnect and reconnect when devices are back in range to each other                    &                        &                                                    \\ \hline
+  UT9       & test-id1          & Testing noise filtering module's ability to remove noise from a sample sound                                      & Digital data with one or more sounds                                  & Same digital sound recording but with less noise                    &                        &                                                    \\ \hline
+  UT10       & test-id2          & Testing app interface's ability to respond quickly to a user input                                      & User input                                  & User Interface response within 1ms                    &                        &                                                    \\ \hline
+  UT11       & test-id3          & Testing app interface's ability to respond the same across different systems (Android, Windows, IOS)                                      & User Input                                  & Same User Interface response on all the different devices                    &                        &                                                    \\ \hline
+\end{longtable}
 
 \section{Changes Due to Testing}
 
