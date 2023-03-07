@@ -3,6 +3,8 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{hyperref}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{longtable}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -65,6 +67,29 @@ Date 2 & 1.1 & Notes\\
 This document ...
 
 \section{Functional Requirements Evaluation}
+
+\begin{longtable}{|p{1.2cm}|p{1cm}|p{2.3cm}|p{2cm}|p{2cm}|p{2cm}|p{1.2cm}|}
+  %\centering
+  %\begin{tabular}{|p{1.5cm}|p{1cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{1.2cm}|}
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
+  FRT1        & FR1, FR2     & Testing ability to differentiate sounds                                      & Five different sounds                             & Device produces five different feedbacks                    &                        & {\color[HTML]{32CB00} Pass}                        \\ \hline
+  FRT2        & FR1          & Testing in different environments                                            & Same sound in different environments              & Same feedback in all enviroments                            &                        & {\color[HTML]{FE0000} Fail}                        \\ \hline
+  FRT3        & FR1          & Testing at different ranges                                                  & Same sound at specified distances                 & Same feedback at specified distances                        &                        & \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD} \\ \hline
+  FRT4        & FR1          & Testing its ability to ignore ambient noise                                  & No input                                          & No output                                                   &                        &                                                    \\ \hline
+  FRT5        & FR2          & Testing its ability to classify correctly                                    & Different specified words                         & Feedback based on correct classification                    &                        &                                                    \\ \hline
+  FRT6        & FR2          & Testing variability in speech                                                & Same word said by four different people           & Same feedback for all                                       &                        &                                                    \\ \hline
+  FRT7        & FR2          & Testing its ability to ignore high amplitude random sounds                   & Random not specified sounds                       & No haptic feedback                                          &                        &                                                    \\ \hline
+  FRT8        & FR3          & Testing newly set classifications                                            & A newly set classification sound                  & The specified haptic feedback                               &                        &                                                    \\ \hline
+  FRT9        & FR3          & Testing removed classifications                                              & A removed classification sound                    & No feedback                                                 &                        &                                                    \\ \hline
+  FRT10       & FR3          & Testing reboot and memory retention                                          & Power switched on and off and test FRT5 run again & Feedback based on correct classification                    &                        &                                                    \\ \hline
+  FRT11       & FR4          & Testing haptic feedback with the device worn                                 & Specified sound                                   & Haptic feedback based on the sound's classification         &                        &                                                    \\ \hline
+  FRT12       & FR4          & Testing variability in haptic feedbacks                                      & Three different specified sounds                  & Different haptic feedbacks that convey the specified sounds &                        &                                                    \\ \hline
+  FRT13       & FR4          & Testing different wearable orientations                                      & FRT12 run on different orienations                & All orientations give consistent output                     &                        &                                                    \\ \hline
+  FRT14       & FR4          & Testing intensity of feedback wearing different clothes of varying thickness & FRT12 run on three different clothes              & All clothes give consistent results                         &                        &                                                    \\ \hline
+  FRT15       & FR5          & Testing real-time application of device                                      & Specified sound                                   & Correct classification within one second                    &                        &                                                    \\ \hline
+  %\end{tabular}
+\end{longtable}
 
 \section{Nonfunctional Requirements Evaluation}
 
