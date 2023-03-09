@@ -135,7 +135,7 @@ Synesthesia wear is designed with a mobile application which allows customizatio
   \hline
   \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}    & \textbf{Actual Result}                          & \textbf{Result}                                     \\ \hline
   NFRT11        & NFR3          & Check if you can configure an unrecognizable keyword              & unrecognizable keyword                          & Keyword not supported                      & Keyword not supported                         & {\color[HTML]{32CB00} Pass}                         \\ \hline
-  NFRT24        & NFR11         & Feed 6 samples 50 times each with randon noise added. Check if correctly classified 90 percent of the time           & Sound clips   & 90 percent correct classification        & 82 percent classification. See Figure \ref*{Histogram} in Appendix     & {\color[HTML]{FE0000} Fail}                           \\ \hline
+  NFRT24        & NFR11         & Feed 6 samples 50 times each with random noise added. Check if correctly classified 90 percent of the time           & Sound clips   & 90 percent correct classification        & 82 percent classification. See Figure \ref*{Histogram} in Appendix     & {\color[HTML]{FE0000} Fail}                           \\ \hline
   NFRT25        & NFR12         & Check the average battery life of the device by timing when 10 different device runs out of battery  & 10 fully charged devices   & Average battery life of 10 devices is more than 12 hours                   &                     &\cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}                          \\ \hline
   NFRT29        & NFR16         & Checking the durability of the device including material wear, battery etc & Device  & Lifetime of device should be 5 years&          & \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}                        \\ \hline
   \caption{Stress Nonfunctional Requirement Tests}
@@ -272,6 +272,20 @@ Furthermore, inapplicable tests from the VnVPlan were not included in the follow
 \end{longtable}
 
 \section{Changes Due to Testing}
+Test results marked as {\color[HTML]{FE0000} Fail} require revisions in future implementations. 
+\subsection{Changes Due to Functional Requirement Tests}
+\begin{itemize}
+  \item Add capability to detect sounds at greater distance (>15m)
+  \item Update sound detection performance to be more generalizable (i.e. detect sound from different individuals)
+\end{itemize}
+\subsection{Changes Due to Nonfunctional Requirement Tests}
+\begin{itemize}
+  \item Add 
+\end{itemize}
+\subsection{Changes Due to Unit Tests}
+\begin{itemize}
+  \item 
+\end{itemize}
 
 \section{Traceability Matrices}
 All of our tests can be traced back to either functional requirements, nonfunctional requirements and modules.
