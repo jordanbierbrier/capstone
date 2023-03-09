@@ -54,7 +54,7 @@ Synthesis wear is designed with a mobile application which allows users to toggl
 
 \section{Functional Requirements Evaluation}
 
-\begin{longtable}{|p{1.1cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
+\begin{longtable}{|p{1.4cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
   %\centering
   %\begin{tabular}{|p{1.5cm}|p{1cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{1.2cm}|}
   \hline
@@ -79,18 +79,76 @@ Synthesis wear is designed with a mobile application which allows users to toggl
 
 \section{Nonfunctional Requirements Evaluation}
 
-\subsection{Usability}
+\subsection{Manual}
+\begin{longtable}{|p{1.4cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
+  %\centering
+  %\begin{tabular}{|p{1.5cm}|p{1cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{1.2cm}|}
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
+  NFRT3        & NFR1          & Testing button functionality based on button colour                     & Open Application                 & Different coloured buttons perform different functionalities    & Buttons with similar colour performed similar functions                        & {\color[HTML]{32CB00} Pass}                        \\ \hline
+  NFRT6        & NFR1          & Testing usability, accessability, findability of application and device                     & N/A                              & Achieve average score of 8 from 10 participants (rated out of 10)                           &                       &  \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}                       \\ \hline
+  NFRT7        & NFR2          & Testing user interface's consistency in appearance                     & N/A                              & Achieve average score of 4 out of all questions from participants                       &                        & \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD} \\ \hline
+  NFRT12        & NFR4         & Testing ability to configure different keywords on application                    & Click keyword selection button   & Keyword configuration screen                                                   & Reached keyword configuration screen on application                     & {\color[HTML]{32CB00} Pass}                                                    \\ \hline
+  NFRT13        & NFR4         & Testing ability to select language of use on application                  & Preferred Language               & Application translated to preferred language                  &                        &           \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}                                         \\ \hline
+  NFRT14        & NFR4         & Testing ability to select language of use on already set-up device                      & Change Language                  & Application translated to chosen language                                      &                        &     \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}                                               \\ \hline
+  NFRT15        & NFR4         & Testing accuracy of translated languages on application                  & Team translates manuals          & Translated manuals                                          &                        &            \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}                                        \\ \hline
+  %\end{tabular}
+\end{longtable}
+
+\subsection{Stress}
 		
+\begin{longtable}{|p{1.4cm}|p{1.4cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
+  %\centering
+  %\begin{tabular}{|p{1.5cm}|p{1cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{1.2cm}|}
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}    & \textbf{Actual Result}                          & \textbf{Result}                                     \\ \hline
+  NFRT11        & NFR3          & Check if you can configure an unrecognizable keyword              & unrecognizable keyword                          & Keyword not supported                      & Keyword not supported                         & {\color[HTML]{32CB00} Pass}                         \\ \hline
+  NFRT24        & NFR11         & Feed 6 samples 20 times each with randon noise added. Check if correctly classified 90 percent of the time           & Sound clips   & 90 percent correct classification        & 82 percent classification     & {\color[HTML]{FE0000} Fail}                           \\ \hline
+  NFRT25        & NFR12         &         &   &                   &                     & {\color[HTML]{32CB00} Pass}                         \\ \hline
+  NFRT29        & NFR16         & &  & &         & {\color[HTML]{32CB00} Pass}                         \\ \hline
+ %\end{tabular}
+\end{longtable}
+
 \subsection{Performance}
 
-\subsection{etc.}
+
+\begin{longtable}{|p{1.4cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
+  %\centering
+  %\begin{tabular}{|p{1.5cm}|p{1cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{1.2cm}|}
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}    & \textbf{Actual Result}                          & \textbf{Result}                                     \\ \hline
+  NFRT1        & NFR1          & Checking what the initial state of application is.              & Open Application                          & Home Page of Application                      & Home Page of Application                        & {\color[HTML]{32CB00} Pass}                         \\ \hline
+  NFRT2        & NFR1          & Can users find the pairing button of the application.           & Open the Application, Click pair button   & User clicks pair button under 10 seconds      & Users found pairing buttons under 10 seconds    & {\color[HTML]{32CB00} Pass}                         \\ \hline
+  NFRT4        & NFR1          & Checking if application correctly goes to pairing page.         & Open the Application, Click pair button   & Pairing page of Application                   & Pairing page of Application                     & {\color[HTML]{32CB00} Pass}                         \\ \hline
+  NFRT5        & NFR1          & Checking if application correctly goes to keyword selection page.& Open the Application, Click keyword selection button.& Keyword Selection page of Application& Keyword Selection page of Application        & {\color[HTML]{32CB00} Pass}                         \\ \hline
+  NFRT8        & NFR3          & Check to see if the application connects to the device through bluetooth& Open application, click pair button on both device and application&Device pairs to Phone&Device Pairs to Phone                       & {\color[HTML]{32CB00} Pass}                        \\ \hline
+  NFRT16       & NFR5          & Checking if users can pair a device to phone in under 5 minutes  & Open application, click pair button on both device and application& 3/4 Users fully pair device in under 5 minutes& 4/4 Users pair device under 5 minutes&{\color[HTML]{32CB00} Pass}            \\ \hline
+  NFRT19       & NFR9          & A sound will be fed to the device that includes a keyword device should be able to provide feedback in under 1 second 8/10 times& Sound that includes a keyword&8/10 keywords detected in under 1 second& 9/10 Keywords detected&{\color[HTML]{32CB00} Pass}         \\ \hline
+  NFRT20       & NFR9          & Checking how fast the UI of application responds to user input   &User Input & Average of 100 inputs is under 1ms&                                                                                             & \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}  \\ \hline
+  NFRT21       & NFR9          & Checking that application can separately connect to 5 independent devices&Pairing button on both application and device& 5/5 devices pair in under 1 minute & All 5 paired in under 1 minute each              &{\color[HTML]{32CB00} Pass}                          \\ \hline           
+  NFRT30       & NFR17         & Let 10 people use device for 3 days record how many say it inhibits their lives &unpaired device and unopened application & 8/10 participants do not the device to inhibit their lives &                       &\cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}    \\ \hline           
+  NFRT32       & NFR17         & Check to see if users can install the application on IOS and Android& Click Install & installed application on IOS and Android&Installed on Android          &{\color[HTML]{FE0000} Fail}                                                       \\ \hline
+  %\end{tabular}
+\end{longtable}
+
+\subsection{Security}
+
+\begin{longtable}{|p{1.4cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
+  %\centering
+  %\begin{tabular}{|p{1.5cm}|p{1cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{1.2cm}|}
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}    & \textbf{Actual Result}                          & \textbf{Result}                                     \\ \hline
+  NFRT9        & NFR3          & Checking if application pairs to device that is not in pairing mode              & Click pair Button & Device not found & Device not found & {\color[HTML]{32CB00} Pass}                         \\ \hline
+  NFRT10        & NFR3          & Check if user can Login to application without a registered account           & Invalid Login Credintials   &  Account not found      & Account not found    & {\color[HTML]{32CB00} Pass}                         \\ \hline
+%\end{tabular}
+\end{longtable}
 	
 \section{Comparison to Existing Implementation}	
 
 This section will not be appropriate for every project.
 
 \section{Unit Testing}
-\begin{longtable}{|p{1.1cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
+\begin{longtable}{|p{1.4cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
   \hline
   \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
   UT1       &      & Testing accuracy of the microphone to detect sounds                                      & 3 Different Sample Recordings                             & 3 Distinct Sample Recordings in memory buffer that match the inputs respectively                    &     The detected sounds matched the input sounds                    & {\color[HTML]{32CB00} Pass} \\ \hline
