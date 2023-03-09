@@ -6,6 +6,7 @@
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{longtable}
 \usepackage{multirow}
+\usepackage{graphicx}
 \usepackage{float}
 \hypersetup{
     colorlinks,
@@ -186,8 +187,6 @@ Furthermore, inapplicable tests from the VnVPlan were not included in the follow
   \endfirsthead
   \endhead
   \hline
-  % {\color[HTML]{FE0000} Fail} 
-  % \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}
   \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
   UT1       &   M4, M9   & Testing accuracy of the microphone to detect sounds                                      & 3 Different Sample Recordings                             & 3 Distinct Sample Recordings in memory buffer that match the inputs respectively                    &     The detected sounds matched the input sounds                    & {\color[HTML]{32CB00} Pass} \\ \hline
   UT3       &   M8   & Testing bluetooth's ability to send signals accurately                                                  & Sample classification signal asserted on software                 & Feedback signal asserted on hardware                        &         According to the classification signal, the correct feedback signal was sent to the vibration motor               & {\color[HTML]{32CB00} Pass} \\ \hline
@@ -202,11 +201,6 @@ Furthermore, inapplicable tests from the VnVPlan were not included in the follow
 \end{longtable}
 
 \section{Changes Due to Testing}
-
-
-\section{Code Coverage}
-
-Code was reviewed by various group members before pushing to the repository. The functionality of the code was summarized to the other individual so that functionality was understood properly.
 
 \section{Traceability Matrices}
 All of our tests can be traced back to either functional requirements, nonfunctional requirements and modules.
@@ -284,10 +278,22 @@ All of our tests can be traced back to either functional requirements, nonfuncti
 \end{table}
 
 \newpage{}
+\section*{Appendix --- Test results}
+\subsection*{Response Time}
+\begin{figure}[H]
+  \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Responce_time.png}
+  \caption{Detection time for sound inputs}
+  \label{Response} 
+\end{figure}
+\subsection*{Model Accuracy Histogram}
+\begin{figure}[H]
+  \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{confidence_level.png}
+  \caption{Histogram of 50 testing runs}
+  \label{Histogram} 
+\end{figure}
 
-\section*{Appendix}
 
-\subsection*{Reflection}
+\section*{Appendix --- Reflection}
 
 
 
