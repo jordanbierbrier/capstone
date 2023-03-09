@@ -6,6 +6,7 @@
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{longtable}
 \usepackage{multirow}
+\usepackage{graphicx}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -254,6 +255,21 @@ Given our size of non-functional requirements, we have grouped some of the tests
 %\bibliography{../../refs/References}
 
 \newpage{}
+\section*{Appendix --- Test results}
+\subsection*{Model confusion matrix}
+\begin{figure}[]
+  \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{confusion_matrix.png}
+  \caption{Confusion matrix}
+  \label{ConfusionMatrix} 
+\end{figure}
+\subsection*{Histogram of 50 testing runs}
+\begin{figure}[]
+  \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{confidence_level.png}
+  \caption{Histogram}
+  \label{Histogram} 
+\end{figure}
+
+
 \section*{Appendix --- Reflection}
 
 The information in this section will be used to evaluate the team members on the
