@@ -5,6 +5,7 @@
 \usepackage{hyperref}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{longtable}
+\usepackage{multirow}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -209,12 +210,82 @@ Synesthesia wear is designed with a mobile application which allows customizatio
 
 Code was reviewed by various group members before pushing to the repository. The functionality of the code was summarized to the other individual so that functionality was understood properly.
 
-\section{Traceability Metrics} 
+\section{Traceability Matrices}
+All of our tests can be traced back to either functional requirements, nonfunctional requirements and modules.
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{|l|lllll|}
+  \hline
+  \textbf{Test}  & \multicolumn{5}{l|}{\textbf{Requirements}}                                                                                                                   \\ \hline
+                 & \multicolumn{1}{l|}{\textbf{FR1}} & \multicolumn{1}{l|}{\textbf{FR2}} & \multicolumn{1}{l|}{\textbf{FR3}} & \multicolumn{1}{l|}{\textbf{FR4}} & \textbf{FR5} \\ \hline
+  \textbf{FRT1}  & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
+  \textbf{FRT2}  & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
+  \textbf{FRT3}  & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
+  \textbf{FRT4}  & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
+  \textbf{FRT5}  & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
+  \textbf{FRT6}  & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
+  \textbf{FRT7}  & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
+  \textbf{FRT8}  & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             &              \\ \hline
+  \textbf{FRT9}  & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             &              \\ \hline
+  \textbf{FRT10} & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             &              \\ \hline
+  \textbf{FRT11} & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            &              \\ \hline
+  \textbf{FRT12} & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            &              \\ \hline
+  \textbf{FRT13} & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            &              \\ \hline
+  \textbf{FRT14} & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            &              \\ \hline
+  \textbf{FRT15} & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & X            \\ \hline
+  \end{tabular}
+  \caption{Traceability between functional requirement tests and functional requirements }
+  \label{tab:my-table}
+\end{table}
 
-- needs understanding stills
+Given our size of non-functional requirements, we have grouped some of the tests into test types for ease of understanding.
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{|l|l|}
+  \hline
+  \textbf{Test Cases}                         & \textbf{Requirements} \\ \hline
+  \multirow{3}{*}{Manual Non-functional}      & NFR1                  \\ \cline{2-2} 
+                                              & NFR2                  \\ \cline{2-2} 
+                                              & NFR4                  \\ \hline
+  \multirow{4}{*}{Stress Non-functional}      & NFR3                  \\ \cline{2-2} 
+                                              & NFR11                 \\ \cline{2-2} 
+                                              & NFR12                 \\ \cline{2-2} 
+                                              & NFR16                 \\ \hline
+  \multirow{6}{*}{Performance Non-Functional} & NFR1                  \\ \cline{2-2} 
+                                              & NFR3                  \\ \cline{2-2} 
+                                              & NFR5                  \\ \cline{2-2} 
+                                              & NFR9                  \\ \cline{2-2} 
+                                              & NFR9                  \\ \cline{2-2} 
+                                              & NFR17                 \\ \hline
+  Security Non-Functional                                   & NFR3                  \\ \hline
+  \end{tabular}
+  \caption{Traceability between test cases and non-functional requirements }
+  \label{tab:my-table}
+  \end{table}
 
-\bibliographystyle{plainnat}
-\bibliography{../../refs/References}
+    \begin{table}[h!]
+      \centering
+      \begin{tabular}{|p{2.5cm}|llllllllll|}
+      \hline
+      \textbf{Modules}                           & \multicolumn{10}{l|}{\textbf{Unit Tests}}                                                                                                                                                                                                                                                                                                  \\ \hline
+                                                 & \multicolumn{1}{l|}{\textbf{T1}} & \multicolumn{1}{l|}{\textbf{T3}} & \multicolumn{1}{l|}{\textbf{T4}} & \multicolumn{1}{l|}{\textbf{T5}} & \multicolumn{1}{l|}{\textbf{T6}} & \multicolumn{1}{l|}{\textbf{T9}} & \multicolumn{1}{l|}{\textbf{T10}} & \multicolumn{1}{l|}{\textbf{T11}} & \multicolumn{1}{l|}{\textbf{T15}} & \textbf{T16} \\ \hline
+      \textbf{Login Module M1}                   & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
+      \textbf{Bluetooth connection Module M2}    & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
+      \textbf{Keyword Selection Module M3}       & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
+      \textbf{Output Signal Module M4}           & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             &              \\ \hline
+      \textbf{Profile Module M5}                 & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            & X            \\ \hline
+      \textbf{Battery Status Module M6}          & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
+      \textbf{Sound Classification Module M7}    & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
+      \textbf{Bluetooth Communication Module M8} & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
+      \textbf{Microphone Module M9}              & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
+      \end{tabular}
+      \caption{Traceability between modules and unit tests.}
+      \label{tab:my-table}
+      \end{table}
+%\bibliographystyle{plainnat}
+%\bibliography{../../refs/References}
 
 \newpage{}
 \section*{Appendix --- Reflection}
