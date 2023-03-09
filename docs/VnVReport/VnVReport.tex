@@ -82,8 +82,7 @@ Synesthesia wear is designed with a mobile application which allows customizatio
 \section{Functional Requirements Evaluation}
 
 \begin{longtable}{|p{1.4cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
-  \caption{Functional Requirement Tests}
-  \label{functionalRequirementTests}
+
   \endfirsthead
   \endhead
   \hline
@@ -103,14 +102,15 @@ Synesthesia wear is designed with a mobile application which allows customizatio
   FRT13       & FR4          & Testing different wearable orientations                                      & FRT12 run on different orienations                & All orientations give consistent output                     &          The same feedback was present for any device orientation that was used              &                 {\color[HTML]{32CB00} Pass}                                   \\ \hline
   FRT14       & FR4          & Testing intensity of feedback wearing different clothes of varying thickness & FRT12 run on three different clothes              & All clothes give consistent results                         &          The thicker clothes lead to inconsistencies in feedback              &                      {\color[HTML]{FE0000} Fail}                              \\ \hline
   FRT15       & FR5          & Testing real-time application of device                                      & Specified sound                                   & Correct classification within one second                    &          Feedback had occurred within one second after an input sound had been said aloud              &                  {\color[HTML]{32CB00} Pass}                                  \\ \hline
+  \caption{Functional Requirement Tests}
+  \label{functionalRequirementTests}
 \end{longtable}
 
 \section{Nonfunctional Requirements Evaluation}
 
 \subsection{Manual}
 \begin{longtable}{|p{1.4cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
-  \caption{Manual Nonfunctional Requirement Tests}
-  \label{manualNonfunctionalRequirementTests}
+ 
   \endfirsthead
   \endhead
   \hline
@@ -122,31 +122,29 @@ Synesthesia wear is designed with a mobile application which allows customizatio
   NFRT13        & NFR4         & Testing ability to select language of use on application                  & Preferred Language               & Application translated to preferred language                  &                        &           \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}                                         \\ \hline
   NFRT14        & NFR4         & Testing ability to select language of use on already set-up device                      & Change Language                  & Application translated to chosen language                                      &                        &     \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}                                               \\ \hline
   NFRT15        & NFR4         & Testing accuracy of translated languages on application                  & Team translates manuals          & Translated manuals                                          &                        &            \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}                                        \\ \hline
-  %\end{tabular}
+  \caption{Manual Nonfunctional Requirement Tests}
+  \label{manualNonfunctionalRequirementTests}
 \end{longtable}
 
 \subsection{Stress}
 		
 \begin{longtable}{|p{1.4cm}|p{1.4cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
-  \caption{Stress Nonfunctional Requirement Tests}
-  \label{stressNonfunctionalRequirementTests}
+
   \endfirsthead
   \endhead
   \hline
   \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}    & \textbf{Actual Result}                          & \textbf{Result}                                     \\ \hline
   NFRT11        & NFR3          & Check if you can configure an unrecognizable keyword              & unrecognizable keyword                          & Keyword not supported                      & Keyword not supported                         & {\color[HTML]{32CB00} Pass}                         \\ \hline
-  NFRT24        & NFR11         & Feed 6 samples 20 times each with randon noise added. Check if correctly classified 90 percent of the time           & Sound clips   & 90 percent correct classification        & 82 percent classification     & {\color[HTML]{FE0000} Fail}                           \\ \hline
-  NFRT25        & NFR12         &         &   &                   &                     & {\color[HTML]{32CB00} Pass}                         \\ \hline
-  NFRT29        & NFR16         & &  & &         & {\color[HTML]{32CB00} Pass}                         \\ \hline
- %\end{tabular}
+  NFRT24        & NFR11         & Feed 6 samples 50 times each with randon noise added. Check if correctly classified 90 percent of the time           & Sound clips   & 90 percent correct classification        & 82 percent classification. See Figure \ref*{Histogram} in Appendix     & {\color[HTML]{FE0000} Fail}                           \\ \hline
+  NFRT25        & NFR12         & Check the average battery life of the device by timing when 10 different device runs out of battery  & 10 fully charged devices   & Average battery life of 10 devices is more than 12 hours                   &                     &\cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}                          \\ \hline
+  NFRT29        & NFR16         & Checking the durability of the device including material wear, battery etc & Device  & Lifetime of device should be 5 years&          & \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}                        \\ \hline
+  \caption{Stress Nonfunctional Requirement Tests}
+  \label{stressNonfunctionalRequirementTests}
 \end{longtable}
-
 \subsection{Performance}
 
 
 \begin{longtable}{|p{1.4cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
-  \caption{Performance Nonfunctional Requirement Tests}
-  \label{performanceNonfunctionalRequirementTests}
   \endfirsthead
   \endhead
   \hline
@@ -157,33 +155,104 @@ Synesthesia wear is designed with a mobile application which allows customizatio
   NFRT5        & NFR1          & Checking if application correctly goes to keyword selection page.& Open the Application, Click keyword selection button.& Keyword Selection page of Application& Keyword Selection page of Application        & {\color[HTML]{32CB00} Pass}                         \\ \hline
   NFRT8        & NFR3          & Check to see if the application connects to the device through bluetooth& Open application, click pair button on both device and application&Device pairs to Phone&Device Pairs to Phone                       & {\color[HTML]{32CB00} Pass}                        \\ \hline
   NFRT16       & NFR5          & Checking if users can pair a device to phone in under 5 minutes  & Open application, click pair button on both device and application& 3/4 Users fully pair device in under 5 minutes& 4/4 Users pair device under 5 minutes&{\color[HTML]{32CB00} Pass}            \\ \hline
-  NFRT19       & NFR9          & A sound will be fed to the device that includes a keyword device should be able to provide feedback in under 1 second 8/10 times& Sound that includes a keyword&8/10 keywords detected in under 1 second& 9/10 Keywords detected&{\color[HTML]{32CB00} Pass}         \\ \hline
+  NFRT19       & NFR9          & A sound will be fed to the device that includes a keyword device should be able to provide feedback in under 1 second 8/10 times& Sound that includes a keyword&8/10 keywords detected in under 1 second& 9/10 Keywords detected. See Figure \ref*{Response} in Appendix&{\color[HTML]{32CB00} Pass}         \\ \hline
   NFRT20       & NFR9          & Checking how fast the UI of application responds to user input   &User Input & Average of 100 inputs is under 1ms&                                                                                             & \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}  \\ \hline
   NFRT21       & NFR9          & Checking that application can separately connect to 5 independent devices&Pairing button on both application and device& 5/5 devices pair in under 1 minute & All 5 paired in under 1 minute each              &{\color[HTML]{32CB00} Pass}                          \\ \hline           
   NFRT30       & NFR17         & Let 10 people use device for 3 days record how many say it inhibits their lives &unpaired device and unopened application & 8/10 participants do not the device to inhibit their lives &                       &\cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}    \\ \hline           
   NFRT32       & NFR17         & Check to see if users can install the application on IOS and Android& Click Install & installed application on IOS and Android&Installed on Android          &{\color[HTML]{FE0000} Fail}                                                       \\ \hline
-  %\end{tabular}
+  \caption{Performance Nonfunctional Requirement Tests}
+  \label{performanceNonfunctionalRequirementTests}
 \end{longtable}
 
 \subsection{Security}
 
 \begin{longtable}{|p{1.4cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
-  \caption{Security Nonfunctional Requirement Tests}
-  \label{securityNonfunctionalRequirementTests}
   \endfirsthead
   \endhead
   \hline
   \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}    & \textbf{Actual Result}                          & \textbf{Result}                                     \\ \hline
   NFRT9        & NFR3          & Checking if application pairs to device that is not in pairing mode              & Click pair Button & Device not found & Device not found & {\color[HTML]{32CB00} Pass}                         \\ \hline
   NFRT10        & NFR3          & Check if user can Login to application without a registered account           & Invalid Login Credintials   &  Account not found      & Account not found    & {\color[HTML]{32CB00} Pass}                         \\ \hline
+  \caption{Security Nonfunctional Requirement Tests}
+  \label{securityNonfunctionalRequirementTests}
 \end{longtable}
+
+\subsection{Recovery}
+
+\begin{longtable}{|p{1.4cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
+  \endfirsthead
+  \endhead
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}    & \textbf{Actual Result}                          & \textbf{Result}                                     \\ \hline
+  NFRT18        & NFR8          & Check to see if a initially paired device will automatically repair when taken out of range than put back into range              & Take device in/out of range  & device should rapair 90 percent of the time   & device repaired 100 percent of the time    & {\color[HTML]{32CB00} Pass}                         \\ \hline
+  NFRT22        & NFR9          & Checking to see how long it takes a paired device to repair when brough back into range.             & place device back into range    & Average time of reconnection should be 10 seconds or less          & Average time was 6 seconds       & {\color[HTML]{32CB00} Pass}                         \\ \hline
+  \caption{Recovery Nonfunctional Requirement Tests}
+  \label{RecoveryNonfunctionalRequirementTests}
+\end{longtable}
+
+
+\subsection{Visual}
+
+\begin{longtable}{|p{1.4cm}|p{1.4cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
+  \endfirsthead
+  \endhead
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}    & \textbf{Actual Result}                          & \textbf{Result}                                     \\ \hline
+  NFRT17        &  NFR6         & people from different age groups will be shown icons found in application and asked if they can identify their meaning                   & N/A    & All 5 icons named by 3/4 participants of each age group    &    & \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}                         \\ \hline
+  NFRT23        &  NFR10        & Check if battery is visual on the final device             & N/A      & Battery should not be visible          & Battery is not visible       & {\color[HTML]{32CB00} Pass}                         \\ \hline
+  NFRT31        &  NFR17        & Check if the device is adjustable such that it fits on different sized wrists            & Adjust size      & Should fit wrists of size 6-8.5 inches          & Fits specified Wrist sizes       & {\color[HTML]{32CB00} Pass}                         \\ \hline
+  NFRT34        &  NFR25        & Check if the code has anything that would be offensive to any groups             & N/A      & There should not be anything offensive present          & Nothing that is offensive was found       & {\color[HTML]{32CB00} Pass}                         \\ \hline
+  \caption{Visual Nonfunctional Requirement Tests}
+  \label{VisualNonfunctionalRequirementTests}
+\end{longtable}
+
+
+\subsection{Load}
+
+\begin{longtable}{|p{1.4cm}|p{1.4cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
+
+  \endfirsthead
+  \endhead
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}    & \textbf{Actual Result}                          & \textbf{Result}                                     \\ \hline
+  NFRT26        & NFR12          & Device will be turned on for a duration of 5 hours during which keywords will be fed at randon time intervals. Test passes if device reacts at each interval                & Sound clips       & Device should react at each of teh 5 random intervals        & device reacts at 5/5 intervals      & {\color[HTML]{32CB00} Pass}                         \\ \hline
+  \caption{Load Nonfunctional Requirement Tests}
+  \label{LoadNonfunctionalRequirementTests}
+\end{longtable}
+
+\subsection{Regulation}
+
+\begin{longtable}{|p{1.4cm}|p{1.4cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
+
+  \endfirsthead
+  \endhead
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}    & \textbf{Actual Result}                          & \textbf{Result}                                     \\ \hline
+  NFRT35        & NFR26          & Team of lawyers will check if the project as a whole corresponds with all legal rulations and requirements.                & N/A         & Project follows all legal requirements           &          & \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}                        \\ \hline
+  \caption{Regulation Nonfunctional Requirement Tests}
+  \label{RegulationNonfunctionalRequirementTests}
+\end{longtable}
+
+\subsection{Upgrade}
+
+\begin{longtable}{|p{1.4cm}|p{1.4cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
+  \endfirsthead
+  \endhead
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}    & \textbf{Actual Result}                          & \textbf{Result}                                     \\ \hline
+  NFRT27        & NFR12          & Helper code will be used to check if application is currently up if application goes down the developers will recieve an email              & N/A         & Application should have a continous uptime of 1 year         &       & \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}                        \\ \hline
+  NFRT28        & NFR15          & Check if products supports up to 10 keywords 2 years after launch.              & 10 keywords         & product will support at minimum 10 keywords         &       & \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}                        \\ \hline
+  NFRT33        & NFR20          & Try and using the device 24 hours after a major update has been pushed to the application              & Input a sound         & Device should retain 100 percent functionality         &       & \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}                        \\ \hline
+  \caption{Upgrade Nonfunctional Requirement Tests}
+  \label{UpgradeNonfunctionalRequirementTests}
+\end{longtable}
+
 
 \section{Unit Testing}
 The following test cases were derived from the unit test section shown in Synesthesia Wear's \href{https://github.com/jordanbierbrier/capstone/blob/main/docs/VnVPlan/VnVPlan.pdf}{\textit{VnVPlan.pdf Document}} as well as the modules shown in the \href{https://github.com/jordanbierbrier/capstone/blob/main/docs/Design/SoftDetailedDes/MIS.pdf}{\textit{MIS.pdf Document}}.
 Furthermore, inapplicable tests from the VnVPlan were not included in the following table as they were not feasible with our current implementation.
 \begin{longtable}{|p{1.4cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
-  \caption{Unit Tests}
-  \label{unitTests}
+
   \endfirsthead
   \endhead
   \hline
@@ -198,6 +267,8 @@ Furthermore, inapplicable tests from the VnVPlan were not included in the follow
   UT11      &   M4   & Testing noise filtering module's ability to remove noise from a sample sound                                      & Digital data with one or more sounds                                  & Same digital sound recording but with less noise                    &          The output still had noise but notably less compared to the original sound file              &                    {\color[HTML]{32CB00} Pass}                                \\ \hline
   UT15      &   M5   & Testing app interface's ability to respond quickly to a user input                                      & User input                                  & User Interface response within 1ms                    &         The app was appropriately able to respond as soon as a button was clicked or an input was submitted               &                {\color[HTML]{32CB00} Pass}                                    \\ \hline
   UT16      &   M5   & Testing app interface's ability to respond the same across different systems (Android, Windows, IOS)                                      & User Input                                  & Same User Interface response on all the different devices                    &        N/A (The app has not yet been implemented on different IOS systems)                &                  \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} N/A}                                  \\ \hline
+  \caption{Unit Tests}
+  \label{unitTests}
 \end{longtable}
 
 \section{Changes Due to Testing}
@@ -206,8 +277,6 @@ Furthermore, inapplicable tests from the VnVPlan were not included in the follow
 All of our tests can be traced back to either functional requirements, nonfunctional requirements and modules.
 \begin{table}[H]
   \centering
-  \caption{Traceability between functional requirement tests and functional requirements }
-  \label{tab:my-table}
   \begin{tabular}{|l|lllll|}
   \hline
   \textbf{Test}  & \multicolumn{5}{l|}{\textbf{Requirements}}                                                                                                                   \\ \hline
@@ -228,6 +297,8 @@ All of our tests can be traced back to either functional requirements, nonfuncti
   \textbf{FRT14} & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            &              \\ \hline
   \textbf{FRT15} & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & X            \\ \hline
   \end{tabular}
+  \caption{Traceability between functional requirement tests and functional requirements }
+  \label{tab:my-table}
 \end{table}
 
 \noindent Given our size of non-functional requirements, we have grouped some of the tests into test types for ease of understanding.
@@ -235,8 +306,6 @@ All of our tests can be traced back to either functional requirements, nonfuncti
 % \usepackage{multirow}
 \begin{table}[H]
   \centering
-  \caption{Traceability between test cases and non-functional requirements }
-  \label{tab:my-table}
   \begin{tabular}{|l|l|}
   \hline
   \textbf{Test Cases}                         & \textbf{Requirements} \\ \hline
@@ -255,12 +324,12 @@ All of our tests can be traced back to either functional requirements, nonfuncti
                                               & NFR17                 \\ \hline
   Security Non-Functional                                   & NFR3                  \\ \hline
   \end{tabular}
+  \caption{Traceability between test cases and non-functional requirements }
+  \label{tab:my-table}
 \end{table}
 
 \begin{table}[H]
   \centering
-  \caption{Traceability between modules and unit tests.}
-  \label{tab:my-table}
   \begin{tabular}{|p{2.5cm}|llllllllll|}
   \hline
   \textbf{Modules}                           & \multicolumn{10}{l|}{\textbf{Unit Tests}}                                                                                                                                                                                                                                                                                                  \\ \hline
@@ -275,6 +344,8 @@ All of our tests can be traced back to either functional requirements, nonfuncti
   \textbf{Bluetooth Communication Module M8} & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
   \textbf{Microphone Module M9}              & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
   \end{tabular}
+  \caption{Traceability between modules and unit tests.}
+  \label{tab:my-table}
 \end{table}
 
 \newpage{}
