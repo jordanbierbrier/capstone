@@ -136,7 +136,7 @@ Synesthesia wear is designed with a mobile application which allows customizatio
   \endhead
   \hline
   \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}    & \textbf{Actual Result}                          & \textbf{Result}                                     \\ \hline
-  NFRT11        & NFR3          & Check if you can configure an unrecognizable keyword              & unrecognizable keyword                          & Keyword not supported                      & Keyword not supported                         & {\color[HTML]{32CB00} Pass}                         \\ \hline
+  NFRT11        & NFR3          & Check if you can configure an unrecognizable keyword              & Unreco-gnizable keyword                          & Keyword not supported                      & Keyword not supported                         & {\color[HTML]{32CB00} Pass}                         \\ \hline
   NFRT24        & NFR11         & Feed 6 samples 50 times each with random noise added. Check if correctly classified 90 percent of the time           & Sound clips   & 90 percent correct classification        & 82 percent classification. See Figure \ref*{Histogram} in Appendix     & {\color[HTML]{FE0000} Fail}                           \\ \hline
   NFRT25        & NFR12         & Check the average battery life of the device by timing when 10 different device runs out of battery  & 10 fully charged devices   & Average battery life of 10 devices is more than 12 hours                   &                     &\cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}                          \\ \hline
   NFRT29        & NFR16         & Checking the durability of the device including material wear, battery etc & Device  & Lifetime of device should be 5 years&          & \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}                        \\ \hline
@@ -361,7 +361,8 @@ All of our tests can be traced back to either functional requirements, nonfuncti
 \end{table}
 
 \newpage{}
-\section*{Appendix --- Test results}
+\section{Appendix}
+\subsection{Test Results}
 \subsection*{Response Time}
 \begin{figure}[H]
   \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Responce_time.png}
@@ -376,7 +377,7 @@ All of our tests can be traced back to either functional requirements, nonfuncti
 \end{figure}
 
 
-\section*{Appendix --- Reflection}
+\subsection{Reflection}
 
 After reviewing both the VnV Plan and the VnV Report, it is clear that there are numerous differences between the predicted outputs shown within the VnV plan and the experimental results found in the VnV report. For example, functional requirement test 3 (FRT3) had a 'fail' result in the VnV report compared to the VnV plan which had predicted the same haptic feedback at different distances. With this in mind, these kinds of differences indicate that some of the results were not part of the initial expectations and that the Synesthesia Wear team needs to work on finding ways to remove these inconsistencies to further improve and solidify the product. 
 
@@ -384,5 +385,8 @@ In another regard, some of the differences were found to be based on surveys whi
 
 With all this in mind, to improve upon the differences between the two documents, the team will collaboratively brainstorm ideas for fixes/solutions to inconsistent results and possibly try to come up with even more test cases such that it prevents undesirable results from occurring in the first place. For example, testing that invalid sounds are being blocked so that it prevents undesirable haptic feedback from occurring to begin with. Questions that would arise from this train of thought would be concerns like 'what would be considered an invalid keyword?'. Furthermore, thinking about the consequences for the test failures and what the back up plan would have to be in those situations. Lastly, trying to look for alternative options to get the desired output would also be something that needs to be considered.
 
+\subsection{Synthesis}
+To conduct our tests, data was required to be collected. Our functional requirement, nonfunctional requirement, and unit tests were carried out to determine the quality and effectiveness of our project. A majority of our tests passed, some were not able to be tested at this point in the development of our project. Additionally, a few tests failed. These are areas in which we will focus our next revision to improve. For example, we could make our sound classification model more robust, since the data we collected (experiments we ran) did not pass expected results. Overall, our goal is to have all of our test results as passes. 
 
 \end{document}
+
