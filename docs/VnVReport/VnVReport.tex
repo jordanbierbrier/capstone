@@ -7,6 +7,7 @@
 \usepackage{longtable}
 \usepackage{multirow}
 \usepackage{graphicx}
+\usepackage{float}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -29,36 +30,62 @@
 
 \pagenumbering{roman}
 
-\section{Revision History}
+\section*{Revision History}
 
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Date 1 & 1.0 & Notes\\
-Date 2 & 1.1 & Notes\\
+3/7/2023 & 1.0 & Added Section 1, 2, and 3 - Purpose, Scope, and Background\\
+3/7/2023 & 1.1 & Added Section 4 - Functional Requirements Evaluation\\
+3/7/2023 & 1.2 & Added Section 5 - Nonfunctional Requirements Evaluation\\
+3/8/2023 & 1.3 & Added Section 6 - Unit Testing\\
 \bottomrule
 \end{tabularx}
 
-~\newpage
+\newpage
+
+\tableofcontents
+
+\listoftables
+
+\newpage
+
+\section*{Symbols, Abbreviations and Acronyms}
+
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{l l} 
+  \toprule		
+  \textbf{symbol} & \textbf{description}\\
+  \midrule 
+  Age groups & (15-30, 31-50, 51-75, 75+)\\
+  \bottomrule
+\end{tabular}\\
+
+\newpage
+
+\pagenumbering{arabic}
 
 \section{Purpose}
 
-This VnV report's establishment is to support development of the product Synthesis Wear. The actions taken in the document are linked with testing to ensure reliability and robustness of the product for adequate detection of particular sounds.
+This VnV report's establishment is to support development of the product Synesthesia Wear. Furthermore, the actions taken in the document are linked with testing to ensure reliability and robustness of the product for adequate detection of particular sounds.
 
 \section{Scope}
 
-The focus of this document is on the output results of Synthesis Wear when given arbitrary input. We will using black box testing on important aspects of the output and input rather then how the results are generated. These tests will be based on certain implementations we have put into place to handle unexpected inputs.
+The focus of this document is on the output results of Synesthesia Wear when given arbitrary test inputs. Furthermore, black box testing will be used on important aspects of the output and input rather than how the results are being generated. Lastly, these tests will be based on certain implementations we have put into place to handle unexpected inputs.
 
 \section{Background} 
 
-Synthesis wear is designed with a mobile application which allows users to toggle certain sounds on and off to improve usability of the watch. This allows customization to occur right from the mobile. Synthesis wear will be able to detect key words and sound which are custom to the user, to help aid their hearing. This will help them focus on someone calling on their name, emergency situations and much more.
+Synesthesia wear is designed with a mobile application which allows customization to occur from their mobile devices and allows users to toggle certain sounds on and off to improve usability of the watch. Synesthesia wear will be able to detect key words and sounds that are customized to the users to aid them with their lack of hearing. As a result, this helps them know when someone is calling their name, during emergencies, and many other situations within their daily lives.
 
 
 \section{Functional Requirements Evaluation}
 
 \begin{longtable}{|p{1.4cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
-  %\centering
-  %\begin{tabular}{|p{1.5cm}|p{1cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{1.2cm}|}
+  \caption{Functional Requirement Tests}
+  \label{functionalRequirementTests}
+  \endfirsthead
+  \endhead
   \hline
   \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
   FRT1        & FR1, FR2     & Testing ability to differentiate sounds                                     & Five different sounds                             & Device produces five different feedbacks                    &                        & {\color[HTML]{32CB00} Pass}                        \\ \hline
@@ -76,15 +103,16 @@ Synthesis wear is designed with a mobile application which allows users to toggl
   FRT13       & FR4          & Testing different wearable orientations                                      & FRT12 run on different orienations                & All orientations give consistent output                     &                        &                                                    \\ \hline
   FRT14       & FR4          & Testing intensity of feedback wearing different clothes of varying thickness & FRT12 run on three different clothes              & All clothes give consistent results                         &                        &                                                    \\ \hline
   FRT15       & FR5          & Testing real-time application of device                                      & Specified sound                                   & Correct classification within one second                    &                        &                                                    \\ \hline
-  %\end{tabular}
 \end{longtable}
 
 \section{Nonfunctional Requirements Evaluation}
 
 \subsection{Manual}
 \begin{longtable}{|p{1.4cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
-  %\centering
-  %\begin{tabular}{|p{1.5cm}|p{1cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{1.2cm}|}
+  \caption{Manual Nonfunctional Requirement Tests}
+  \label{manualNonfunctionalRequirementTests}
+  \endfirsthead
+  \endhead
   \hline
   \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
   NFRT3        & NFR1          & Testing button functionality based on button colour                     & Open Application                 & Different coloured buttons perform different functionalities    & Buttons with similar colour performed similar functions                        & {\color[HTML]{32CB00} Pass}                        \\ \hline
@@ -100,8 +128,10 @@ Synthesis wear is designed with a mobile application which allows users to toggl
 \subsection{Stress}
 		
 \begin{longtable}{|p{1.4cm}|p{1.4cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
-  %\centering
-  %\begin{tabular}{|p{1.5cm}|p{1cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{1.2cm}|}
+  \caption{Stress Nonfunctional Requirement Tests}
+  \label{stressNonfunctionalRequirementTests}
+  \endfirsthead
+  \endhead
   \hline
   \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}    & \textbf{Actual Result}                          & \textbf{Result}                                     \\ \hline
   NFRT11        & NFR3          & Check if you can configure an unrecognizable keyword              & unrecognizable keyword                          & Keyword not supported                      & Keyword not supported                         & {\color[HTML]{32CB00} Pass}                         \\ \hline
@@ -115,8 +145,10 @@ Synthesis wear is designed with a mobile application which allows users to toggl
 
 
 \begin{longtable}{|p{1.4cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
-  %\centering
-  %\begin{tabular}{|p{1.5cm}|p{1cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{1.2cm}|}
+  \caption{Performance Nonfunctional Requirement Tests}
+  \label{performanceNonfunctionalRequirementTests}
+  \endfirsthead
+  \endhead
   \hline
   \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}    & \textbf{Actual Result}                          & \textbf{Result}                                     \\ \hline
   NFRT1        & NFR1          & Checking what the initial state of application is.              & Open Application                          & Home Page of Application                      & Home Page of Application                        & {\color[HTML]{32CB00} Pass}                         \\ \hline
@@ -136,41 +168,40 @@ Synthesis wear is designed with a mobile application which allows users to toggl
 \subsection{Security}
 
 \begin{longtable}{|p{1.4cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
-  %\centering
-  %\begin{tabular}{|p{1.5cm}|p{1cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{1.2cm}|}
+  \caption{Security Nonfunctional Requirement Tests}
+  \label{securityNonfunctionalRequirementTests}
+  \endfirsthead
+  \endhead
   \hline
   \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}    & \textbf{Actual Result}                          & \textbf{Result}                                     \\ \hline
   NFRT9        & NFR3          & Checking if application pairs to device that is not in pairing mode              & Click pair Button & Device not found & Device not found & {\color[HTML]{32CB00} Pass}                         \\ \hline
   NFRT10        & NFR3          & Check if user can Login to application without a registered account           & Invalid Login Credintials   &  Account not found      & Account not found    & {\color[HTML]{32CB00} Pass}                         \\ \hline
 %\end{tabular}
 \end{longtable}
-	
-\section{Comparison to Existing Implementation}	
-
-This section will not be appropriate for every project.
 
 \section{Unit Testing}
 \begin{longtable}{|p{1.4cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
+  \caption{Unit Tests}
+  \label{unitTests}
+  \endfirsthead
+  \endhead
   \hline
+  % {\color[HTML]{FE0000} Fail} 
+  % \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}
   \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
   UT1       &      & Testing accuracy of the microphone to detect sounds                                      & 3 Different Sample Recordings                             & 3 Distinct Sample Recordings in memory buffer that match the inputs respectively                    &     The detected sounds matched the input sounds                    & {\color[HTML]{32CB00} Pass} \\ \hline
-  UT2?      &      & Testing bluetooth's ability to transfer digital sound recordings accurately                                         & Digital Sound Recording              & Same digital sound recording at the receiver                            &                        & {\color[HTML]{FE0000} Fail}                        \\ \hline
-  UT3       &      & Testing bluetooth's ability to send signals accurately                                                  & Sample classification signal asserted on software                 & Feedback signal asserted on hardware                        &                        & \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD} \\ \hline
-  UT4       &      & Testing classification module's ability to accurately categorize sound data  & Stored samples of sound data in the memory buffer              & Accurately classified Sound Data                          &                        &                                                    \\ \hline
+  UT3       &      & Testing bluetooth's ability to send signals accurately                                                  & Sample classification signal asserted on software                 & Feedback signal asserted on hardware                        &         According to the classification signal, the correct feedback signal was sent to the vibration motor               & {\color[HTML]{32CB00} Pass} \\ \hline
+  UT4       &      & Testing classification module's ability to accurately categorize sound data  & Stored samples of sound data in the memory buffer              & Accurately classified Sound Data                          &         The classification of the input sound samples were accurately categorized with a confidence level of 85\% or more               &                   {\color[HTML]{32CB00} Pass}                                 \\ \hline
   UT5       &      & Testing classification module's ability to change its sound classification settings                                      & New Classification settings                                  & Classification settings have been changed on the app                    &       The settings displayed on the settings page match the newly inputted classification settings                 &       {\color[HTML]{32CB00} Pass}                                             \\ \hline
   UT6       &      & Testing feedback module's ability to transmit accurate feedback signals according to the settings  & Feedback signal is asserted              & Vibration detected in the bracelet that coincides with the feedback signal                          &      Vibration motor went off appropriately with respect to the settings configured on the app                        &   {\color[HTML]{32CB00} Pass}                    \\ \hline
   UT9       &      & Testing bluetooth connection ability                                     & Enable bluetooth connection                                  & Bluetooth connection connected in under a minute                    &         Bluetooth connection was established within 10 seconds               &             {\color[HTML]{32CB00} Pass}                                       \\ \hline
-  UT10      &      & Testing bluetooth connection's ability when devices go in and out of range                                      & Separate the connected devices 10 or more metres away, wait at least 5 seconds, then bring the devices closer together                                  & Bluetooth will disconnect and reconnect when devices are back in range to each other                    &                      &                                                   \\ \hline
+  UT10      &      & Testing bluetooth connection's ability when devices go in and out of range                                      & Separate the connected devices 10 or more metres away, wait at least 5 seconds, then bring the devices closer together                                  & Bluetooth will disconnect and reconnect when devices are back in range to each other                    &          Bluetooth was unable to automatically reconnect when devices went back in range            &                         {\color[HTML]{FE0000} Fail}                             \\ \hline
   UT11      &      & Testing noise filtering module's ability to remove noise from a sample sound                                      & Digital data with one or more sounds                                  & Same digital sound recording but with less noise                    &          The output still had noise but notably less compared to the original sound file              &                    {\color[HTML]{32CB00} Pass}                                \\ \hline
   UT15      &      & Testing app interface's ability to respond quickly to a user input                                      & User input                                  & User Interface response within 1ms                    &         The app was appropriately able to respond as soon as a button was clicked or an input was submitted               &                {\color[HTML]{32CB00} Pass}                                    \\ \hline
   UT16      &      & Testing app interface's ability to respond the same across different systems (Android, Windows, IOS)                                      & User Input                                  & Same User Interface response on all the different devices                    &        N/A (The app has not yet been implemented on different IOS systems)                &                  \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} N/A}                                  \\ \hline
 \end{longtable}
 
 \section{Changes Due to Testing}
-		
-\section{Trace to Requirements}
-		
-\section{Trace to Modules}		
 
 
 \section{Code Coverage}
@@ -179,8 +210,10 @@ Code was reviewed by various group members before pushing to the repository. The
 
 \section{Traceability Matrices}
 All of our tests can be traced back to either functional requirements, nonfunctional requirements and modules.
-\begin{table}[h!]
+\begin{table}[H]
   \centering
+  \caption{Traceability between functional requirement tests and functional requirements }
+  \label{tab:my-table}
   \begin{tabular}{|l|lllll|}
   \hline
   \textbf{Test}  & \multicolumn{5}{l|}{\textbf{Requirements}}                                                                                                                   \\ \hline
@@ -201,15 +234,15 @@ All of our tests can be traced back to either functional requirements, nonfuncti
   \textbf{FRT14} & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            &              \\ \hline
   \textbf{FRT15} & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & X            \\ \hline
   \end{tabular}
-  \caption{Traceability between functional requirement tests and functional requirements }
-  \label{tab:my-table}
 \end{table}
 
-Given our size of non-functional requirements, we have grouped some of the tests into test types for ease of understanding.
+\noindent Given our size of non-functional requirements, we have grouped some of the tests into test types for ease of understanding.
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
-\begin{table}[h!]
+\begin{table}[H]
   \centering
+  \caption{Traceability between test cases and non-functional requirements }
+  \label{tab:my-table}
   \begin{tabular}{|l|l|}
   \hline
   \textbf{Test Cases}                         & \textbf{Requirements} \\ \hline
@@ -228,31 +261,27 @@ Given our size of non-functional requirements, we have grouped some of the tests
                                               & NFR17                 \\ \hline
   Security Non-Functional                                   & NFR3                  \\ \hline
   \end{tabular}
-  \caption{Traceability between test cases and non-functional requirements }
-  \label{tab:my-table}
-  \end{table}
+\end{table}
 
-    \begin{table}[h!]
-      \centering
-      \begin{tabular}{|p{2.5cm}|llllllllll|}
-      \hline
-      \textbf{Modules}                           & \multicolumn{10}{l|}{\textbf{Unit Tests}}                                                                                                                                                                                                                                                                                                  \\ \hline
-                                                 & \multicolumn{1}{l|}{\textbf{T1}} & \multicolumn{1}{l|}{\textbf{T3}} & \multicolumn{1}{l|}{\textbf{T4}} & \multicolumn{1}{l|}{\textbf{T5}} & \multicolumn{1}{l|}{\textbf{T6}} & \multicolumn{1}{l|}{\textbf{T9}} & \multicolumn{1}{l|}{\textbf{T10}} & \multicolumn{1}{l|}{\textbf{T11}} & \multicolumn{1}{l|}{\textbf{T15}} & \textbf{T16} \\ \hline
-      \textbf{Login Module M1}                   & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
-      \textbf{Bluetooth connection Module M2}    & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
-      \textbf{Keyword Selection Module M3}       & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
-      \textbf{Output Signal Module M4}           & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             &              \\ \hline
-      \textbf{Profile Module M5}                 & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            & X            \\ \hline
-      \textbf{Battery Status Module M6}          & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
-      \textbf{Sound Classification Module M7}    & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
-      \textbf{Bluetooth Communication Module M8} & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
-      \textbf{Microphone Module M9}              & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
-      \end{tabular}
-      \caption{Traceability between modules and unit tests.}
-      \label{tab:my-table}
-      \end{table}
-%\bibliographystyle{plainnat}
-%\bibliography{../../refs/References}
+\begin{table}[H]
+  \centering
+  \caption{Traceability between modules and unit tests.}
+  \label{tab:my-table}
+  \begin{tabular}{|p{2.5cm}|llllllllll|}
+  \hline
+  \textbf{Modules}                           & \multicolumn{10}{l|}{\textbf{Unit Tests}}                                                                                                                                                                                                                                                                                                  \\ \hline
+                                              & \multicolumn{1}{l|}{\textbf{T1}} & \multicolumn{1}{l|}{\textbf{T3}} & \multicolumn{1}{l|}{\textbf{T4}} & \multicolumn{1}{l|}{\textbf{T5}} & \multicolumn{1}{l|}{\textbf{T6}} & \multicolumn{1}{l|}{\textbf{T9}} & \multicolumn{1}{l|}{\textbf{T10}} & \multicolumn{1}{l|}{\textbf{T11}} & \multicolumn{1}{l|}{\textbf{T15}} & \textbf{T16} \\ \hline
+  \textbf{Login Module M1}                   & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
+  \textbf{Bluetooth connection Module M2}    & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
+  \textbf{Keyword Selection Module M3}       & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
+  \textbf{Output Signal Module M4}           & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             &              \\ \hline
+  \textbf{Profile Module M5}                 & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            & X            \\ \hline
+  \textbf{Battery Status Module M6}          & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
+  \textbf{Sound Classification Module M7}    & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
+  \textbf{Bluetooth Communication Module M8} & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
+  \textbf{Microphone Module M9}              & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
+  \end{tabular}
+\end{table}
 
 \newpage{}
 \section*{Appendix --- Test results}
