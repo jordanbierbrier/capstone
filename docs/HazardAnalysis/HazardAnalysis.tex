@@ -8,6 +8,8 @@
 \usepackage{float}
 \usepackage{longtable}
 \usepackage{vcell}
+\usepackage{pdflscape}
+\usepackage{ulem}
 \usepackage[margin=1in]{geometry}
 \hypersetup{
     colorlinks=true,       % false: boxed links; true: colored links
@@ -34,19 +36,17 @@
 ~\newpage
 
 \pagenumbering{roman}
-
-\begin{table}[hp]
-\caption{Revision History} \label{TblRevisionHistory}
+\section*{Revision History}
 \begin{tabularx}{\textwidth}{llX}
 \toprule
 \textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
 \midrule
 10/19/22 & Jordan, Abdallah, Udeep & Worked on Sections 5 / General Editing\\
 10/14/22 & Azriel G. & Added sections 1, 2, and 3\\
+04/04/23 & Taranjit. & Updated Feedback And Formated Table\\
 ... & ... & ...\\
 \bottomrule
-\end{tabularx}
-\end{table}
+	\end{tabularx}
 
 ~\newpage
 
@@ -112,12 +112,15 @@ CA1. The battery will not need to be replaced during product lifespan.
 \\CA4. The microphone is not blocked and has full access to the environment. 
 
 \section{Failure Mode and Effect Analysis}
+\textcolor{red}{Put the table in landscape mode}
 \hspace*{-1cm}
+\begin{landscape}
 \begin{table}[H]
+\centering
     \caption{Wearable Device Failure Modes and Effects Analysis}
     \tiny	
     \hspace*{-2.2cm}
-    \begin{tabular}{| p{0.08\textwidth} | p{0.08\textwidth}  | p{0.12\textwidth} | p{0.145\textwidth} | p{0.17\textwidth} | p{0.195\textwidth} | p{0.07\textwidth} | p{0.07\textwidth} | p{0.05\textwidth} |}
+    \begin{tabular}{| p{0.1\textwidth} | p{0.1\textwidth}  | p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth} | p{0.07\textwidth} | p{0.07\textwidth} | p{0.05\textwidth} |}
     \hline
     
     \multicolumn{9}{|l|}{System: Wearable Device} \\
@@ -130,7 +133,7 @@ CA1. The battery will not need to be replaced during product lifespan.
 
      & & Battery overheats & 1.Device container can melt \newline 2.Battery can melt other components of wearable device \newline 3.Burn the user \newline 4.Damage future battery performance & 1.Device operates in temperatures outside the operating conditions of the battery \newline 2.Battery failure \newline 3.Excessive current draw \newline 4.Loose connections  & 1.Insure proper cooling or heat dissipation of the microcontroller \newline 2.Refer to H1-2 a \newline 3.Install a battery that can operate in the working conditions of the device \newline 4.refer to H1-1 b. & Total: 40 & SIR3 & H1-3 \\ \hline
 
-     Microphone & Sound detection & Sound is not detected & 1.Device is not able to perform the primary function & 1.Loose connections \newline 2.Microphone is damaged  & 1.Microcontroller can throw an error code in case of microphone disconnect \newline 2.User can check the microphone output on the app to see if it is functioning correctly & Total: 30  & IR6  & H2-1 \\ \cline{3-9}
+     Microphone & Sound detection & Sound is not detected & 1.\sout{Device is not able to perform the primary function}\textcolor{red}{Device is unable to recognize sounds}  & 1.Loose connections \newline 2.Microphone is damaged  & 1.Microcontroller can throw an error code in case of microphone disconnect \newline 2.User can check the microphone output on the app to see if it is functioning correctly & Total: 30  & IR6  & H2-1 \\ \cline{3-9}
 
      & & Sound is falsely detected & 1.Device functions incorrectly & 1.Loose connections \newline 2.Microphone is damaged & 1.Refer to H2-1.b & Total: 80 & IR6 & H2-2 \\ \hline
 
@@ -149,12 +152,15 @@ CA1. The battery will not need to be replaced during product lifespan.
     \end{tabular}
     \hspace*{-1cm}
     \end{table}
+    
 
 \newpage
 
 \begin{table}[H]
+
     \caption{Application Failure Modes and Effects Analysis}
     \scriptsize	
+    \centering
     \hspace*{-2.2cm}
     \begin{tabular}{| p{0.08\textwidth} | p{0.08\textwidth}  | p{0.12\textwidth} | p{0.145\textwidth} | p{0.17\textwidth} | p{0.19\textwidth} | p{0.05\textwidth} | p{0.07\textwidth} | p{0.05\textwidth} |}
      \hline
@@ -177,30 +183,36 @@ CA1. The battery will not need to be replaced during product lifespan.
     \hspace*{-1cm}
     \end{table}
 
+\end{landscape}
+
+
 \newpage 
 \section{Safety and Security Requirements}
 
-Bold statements are an extension of the SRS document safety requirements which should have been included in revision 1.
+\sout{Bold statements are an extension of the SRS document safety requirements which should have been included in revision 1.}
+
 
 \subsection{System Isolation Requirements}
 
-SIR1. Product is isolated from electrical components at contact locations.
-\\SIR2. Auto shut-off when electrical malfunction detected.
+SIR1. Product is isolated from electrical components at contact locations. \textcolor{red}{Using wire isolation material}
+\\SIR2. Auto shut-off when electrical malfunction detected. 
 \\SIR3. Product has sufficient heat dissipation such that all the electrical components stay in their working temperatures.
-\\SIR4. System can perform a hard reboot to reset all hardware components.
+\\SIR4. System can perform a hard reboot to reset all hardware components.  \textcolor{red}{The built in temperature control system within the Arduino}
 
 
 \subsection{Access Requirements}
 
-\textbf{ACR1.} Authorized users can access preferred vibration/sensitivity settings through application site.
-\\ACR2. Authorized users can retrain the device through application site. 
-\\ACR3. Users given error message if invalid inputs are inputted in application.
+ACR1. Authorized users can access preferred vibration/sensitivity settings through application site.
+\sout{\\ACR2. Authorized users can retrain the device through application site.}
+\textcolor{red}\\ACR2. Authorized users can retrain the device through application site.
+\\ACR3. Users given error message if invalid inputs are entered in application.
 
 \subsection{Integrity Requirements}
 
 IR1. Only required variables will be given access to change.
 \\IR2. Data will be accessible by authorized users.
-\\\textbf{IR3.} After synchronization, a copy of data is loaded to system application.  
+\sout{\\textbf{IR3.} After synchronization, a copy of data is loaded to system application.}
+\textcolor{red}{\\textbf{IR3.} After synchronization, a copy of the Arduino signal data is loaded to system application.}
 \\IR4. No pairs of modes allowed identical settings.
 \\IR5. Stored data overridden only at synchronization request.
 \\IR6. Application can detect if there is an issue with the microphone.
