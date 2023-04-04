@@ -30,6 +30,7 @@
 \usepackage{pdfpages}
 \usepackage{array}
 \usepackage{tikz}
+\usepackage{ulem}
 \usetikzlibrary{shapes, arrows, positioning}
 
 %\usepackage{refcheck}
@@ -160,11 +161,11 @@
 \midrule
 October 2, 2022 & 1.0 & Added Section 1 - Project Drivers\\
 
-October 3, 2022 & 2.0 & Added Section 2,3 - Functional and Non-Functional Requirements\\
+October 3, 2022 & 1.1 & Added Section 2,3 - Functional and Non-Functional Requirements\\
 
-October 4, 2022 & 3.0 & Added Section 4,5 - Monitor and Controlled Variables, Traceability  \\
-October 5, 2022 & 4.0 & Added Section 6 -  Project Issues \\
-October 6, 2022 & 5.0 & Added References -  Reflection Appendix \\
+October 4, 2022 & 1.2 & Added Section 4,5 - Monitor and Controlled Variables, Traceability  \\
+October 5, 2022 & 1.3 & Added Section 6 -  Project Issues \\
+October 6, 2022 & 1.4 & Added References -  Reflection Appendix \\
 \bottomrule
 \end{tabularx}
 
@@ -499,7 +500,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \rowcolor[rgb]{0.675,0.827,0.902} Description  & \begin{itemize}[leftmargin=*] 
     \item The UI will use consistent buttons, fonts, and color palette.
     \item The device will automatically begin the pairing process when button is pressed 
- \item Buttons on the UI should be easily identified and responsive.
+ \item Buttons on the UI should be easily identified. \sout{and responsive.}
  \end{itemize}  \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the device correctly communicate back.
@@ -724,7 +725,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \rowcolor[rgb]{0.675,0.827,0.902} Description  & \begin{itemize}[leftmargin=*] 
     \item Battery life of the device should last for 12 hours of use.
 \item Sound sensor should be listening for keywords at all times while the device is powered on.
-\item Application should have an uptime of 24 hours a day, 365 days a year.
+\item \sout{Application should have an uptime of 24 hours a day, 365 days a year.}
 \end{itemize}  \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that the device satisfies the above requirements.
@@ -982,9 +983,9 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \hline
   \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Description  & The device will filter out redundant external noise in order to improve the integrity of our signal processing.  \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Description  & The device will filter out redundant \textcolor{red}{high frequency} external noise in order to improve the integrity of our signal processing.  \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & N/A
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & \textcolor{red}{Reduce amplitude by 90\% for all frequencies higher than 1/4 of sampling frequency (16kHz). }
   \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & FR-1, FR-2, NFR-13, NFR-15                                                                  \\ 
@@ -1031,7 +1032,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{NFR-\arabic{NFR}}                                             \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Description  & \begin{itemize}[leftmargin=*] 
-    \item The product will only support English at launch but will strive to include more languages based on regions of purchase.
+    \item \sout{The product will only support English at launch but will strive to include more languages based on regions of purchase.}
     \item The application and the device will both have zero references pertaining to religions, ethinic groups or any cultures. 
     \end{itemize}  \\ 
   \hline
