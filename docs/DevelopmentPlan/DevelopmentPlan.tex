@@ -1,8 +1,9 @@
-\documentclass{article}
+\documentclass[12pt, titlepage]{article}
 
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{verbatim}
+\usepackage{ulem}
 \title{Development Plan\\\progname}
 
 \author{\authname}
@@ -13,24 +14,36 @@
 \input{../Common}
 
 \begin{document}
+\title{Development Plan: \progname} 
+\author{\authname}
+\date{\today}
+	
+\maketitle
 
-\begin{table}[hp]
-\caption{Revision History} \label{TblRevisionHistory}
-\begin{tabularx}{\textwidth}{llX}
-\toprule
-\textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
+\pagenumbering{roman}
+
+\section*{Revision History}
+
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-26.09.2022 & Jordan Bierbrier & Updated Technology Section\\
-26.09.2022 & Taranjit Lotey & Updated Workflow Plan Section\\
-26.09.2022 & Abraham Taha & Updated Major Milestones\\
-26.09.2022 & Udeep Shah & Inital commit\\
+9/26/2022 & 1.0 & Inital commit\\
+9/26/2022 & 1.1 & Updated Workflow Plan Section\\
+9/26/2022 & 1.2 & Updated Major Milestones\\
+9/26/2022 & 1.3 & Updated Technology Section\\
+4/4/2023 & 1.4 & Updated formatting and revised POC content\\
 \bottomrule
 \end{tabularx}
-\end{table}
 
 \newpage
 
-\maketitle
+\tableofcontents
+
+\listoffigures
+
+\listoftables
+
+\newpage
 
 \section{Team Meeting Plan}
 The team will meet in person on Wednesdays at 4:30pm on a weekly basis. These meetings will typically be done in person at Thode Library or in the capstone project room. However, additional meetings or daily checkups will be scheduled on a per-need basis depending on the status of the project and upcoming deliverables. Additional meetings may either be held in person or virtually through the use of the team’s Discord server.
@@ -94,9 +107,9 @@ Although we are split up into different roles, which are based on the workload a
 
 The major areas where the project could face issues include: 
 \begin{itemize}
-	\item \textbf{Sound recognition} - We might not be able to isolate or classify signals accurately. This is especially hard when there is a lot of background noise. 
+	\item \textbf{Sound recognition} - We might not be able to isolate or classify signals accurately. This is especially hard when there is a lot of background noise. \textcolor{red}{This is the hardest part of our project where we are likely to face issues or make certain compromises on. Our POC will focus mainly on achieving or testing the feasibility of different sound recognition methods.}
 	% \item \textbf{Vibration motor} - There is a risk of the motor not being powerful enough to get the user’s attention. This may seem easy to tackle by increasing the size and power of the motor but this issues a new issue of power consumption and size increase.
-	\item \textbf{Integration of hardware onto a small footprint} - This is the biggest risk with our project. We might not be able to fit all the components i.e the microcontroller, motor, microphone and battery in the small footprint that we desire. The reason why this is hard to tackle is that the smaller we go with our hardware, especially microcontroller and battery, the more cautious we have to be with power consumption and resource allocation. 
+	\item \textbf{Integration of hardware onto a small footprint} - \sout{This is the biggest risk with our project}. We might not be able to fit all the components i.e the microcontroller, motor, microphone and battery in the small footprint that we desire. \textcolor{red}{Though given the limited resources and our team's tight budget, this will be lightly considered.} \sout{The reason why this is hard to tackle is that the smaller we go with our hardware, especially microcontroller and battery, the more cautious we have to be with power consumption and resource allocation. }
 	\item \textbf{Bluetooth communication} - There is a  risk that we might not be able to implement the Bluetooth communication, especially with the amount of data we are sending.  
 	\item \textbf{User Application} - There is a risk that the application developed will not be cohesive with the functionality of the device. 
 \end{itemize} 
