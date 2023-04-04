@@ -166,6 +166,7 @@ October 3, 2022 & 1.1 & Added Section 2,3 - Functional and Non-Functional Requir
 October 4, 2022 & 1.2 & Added Section 4,5 - Monitor and Controlled Variables, Traceability  \\
 October 5, 2022 & 1.3 & Added Section 6 -  Project Issues \\
 October 6, 2022 & 1.4 & Added References -  Reflection Appendix \\
+April 4, 2023 & 1.5 & Updated for feedback and consistency \\
 \bottomrule
 \end{tabularx}
 
@@ -179,11 +180,11 @@ is a subset of the Volere template (Robertson and Robertson, 2012).
 \section{Project Drivers}
 
 \subsection{The Purpose of the Project}
-The purpose of this project is to create an inexpensive and non-intrusive hearing aid 
-bracelet that provides an alternate channel for sound recognition for our users in their 
-surroundings. First of all, Synesthesia Wear's main goal is to be able to provide an 
-improved quality of life for our users by instilling within them a sense of comfort 
-knowing that our bracelet can help alleviate their hearing difficulties in many environments. 
+The purpose of this project is to create an inexpensive and non-intrusive \sout{hearing aid bracelet} \textcolor{red}{wearable device} 
+that provides an alternate channel for sound recognition for our users in their 
+surroundings. \sout{First of all} \textcolor{red}{With this in mind}, Synesthesia Wear's main goal is to be able to provide an 
+improved \sout{quality of life} \textcolor{red}{auditory awareness} for our users by \sout{instilling within them a sense of comfort 
+knowing that our bracelet can help alleviate} \textcolor{red}{alleviating} their hearing difficulties in many environments. 
 For this project, there will be 3 main aspects that must be done for its overall completion. 
 The first one is to be able to design and create a small and lightweight bracelet that 
 is comfortable for our users to wear while encompassing all the hardware needed for 
@@ -199,7 +200,8 @@ detection settings for their bracelets.
 
 \subsubsection{The Customers}
 The customers of this project would be people in the general public who would want or 
-need an inexpensive and non-intrusive bracelet that helps with their hearing. Furthermore, 
+need an inexpensive and non-intrusive \sout{bracelet} \textcolor{red}{wearable device} that helps with their 
+\sout{hearing} \textcolor{red}{awareness in their surroundings}. Furthermore, 
 people who are in loud environments may want to purchase Synesthesia Wear as well since 
 hearing is likely obstructed and sound recognition through touch/vibration would be very 
 appealing.
@@ -207,7 +209,7 @@ appealing.
 \subsubsection{Other Stakeholders}
 The Developers:
 The developers of this project are the members of Strone. Our job is to develop a 
-bracelet that is capable of assisting in the sound recognition of users within their 
+\sout{bracelet} \textcolor{red}{wearable device} that is capable of assisting in the sound recognition of users within their 
 surroundings. Throughout this project's entirety, we will test and change/improve 
 aspects that we may deem necessary.
 
@@ -230,15 +232,15 @@ OS's would be unprofitable and wasteful to maintain.
   \tikzstyle{connector} = [draw, -latex']
   \node [terminator, fill=green!20] (start) {\textbf{Developers}};
   \node [data, fill=blue!20, right = 1.5cm of start] (app) {Application};
-  \node [data, fill=blue!20, below of=app] (bracelet) {Bracelet};
-  \node [decision, fill=blue!20, right = 1.5cm of app] (device) {Device};
-  \node [terminator, fill=green!20, right = 1.5cm of device] (user) {\textbf{User}};
+  \node [data, fill=blue!20, below of=app] (wearableDevice) {Wearable Device};
+  \node [decision, fill=blue!20, right = 1.5cm of app] (mobileDevice) {Mobile Device};
+  \node [terminator, fill=green!20, right = 1.5cm of mobileDevice] (user) {\textbf{User}};
   \path [connector] (start) -- (app);
-  \path [connector] (start) |- (bracelet);
-  \path [connector] (app) -- (bracelet); 
-  \path [connector] (device) -- (app);
-  \path [connector] (user) -- (device);
-  \path [connector] (user) |- (bracelet);
+  \path [connector] (start) |- (wearableDevice);
+  \path [connector] (app) -- (wearableDevice); 
+  \path [connector] (mobileDevice) -- (app);
+  \path [connector] (user) -- (mobileDevice);
+  \path [connector] (user) |- (wearableDevice);
   \end{tikzpicture}
   \caption{Implementation Environment}
 \end{figure}
@@ -250,24 +252,24 @@ IOS, Android, macOS, or Windows OS.
 
 \subsubsection{Anticipated Workplace Environment}
 There is no specific anticipated workplace environment for this product. Ideally, this 
-bracelet and corresponding app can be used anywhere so long as they have a device that 
+\sout{bracelet} \textcolor{red}{wearable device} and corresponding app can be used anywhere so long as they have a \textcolor{red}{mobile} device that 
 supports IOS, Android, macOS, or Windows OS.
 
 \subsubsection{Schedule Constraints}
 It has been decided that this project is to be completed by the week of April 5th, 2022.
-As a result, this project's scheduling will be executed over a timespan of a bit more 
-than 7 months.
+As a result, this project's scheduling will be executed over a timespan of a \sout{bit more 
+than} \textcolor{red}{little over} 7 months.
 
 \subsubsection{Budget Constraints}
 For this project, the budget has been dictated to be no more than \$750 from the entirety 
 of all group members. With this in mind, there is no issues with the application as all 
 software tools and resources are expected to use open-source material found online. Thus, 
 most/all of the budget will likely be spent towards designing and creating the lightweight, 
-non-intrusive, and comfortable bracelet.
+non-intrusive, and comfortable \sout{bracelet} \textcolor{red}{wearable device}.
 
 \subsubsection{Enterprise Constraints}
 The finished application will be available for anyone to use. However, the Synesthesia Wear 
-bracelet will need to be purchased as it costs money and time to buy all the components and 
+\sout{bracelet} \textcolor{red}{wearable device} will need to be purchased as it costs money and time to buy all the components and 
 build it. 
 
 \subsection{Naming Conventions and Terminology}
@@ -293,9 +295,9 @@ build it.
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} GL & Gitlab\\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Product & The bracelet and appliction being developed as a whole, in its finished state\\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Product & The \sout{bracelet} \textcolor{red}{wearable device} and appliction being developed as a whole, in its finished state\\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Project & The development of the bracelet and application\\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Project & The development of the \sout{bracelet} \textcolor{red}{wearable device} and application\\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Customer & The person(s) that will use the finished product\\ 
   \hline
@@ -1117,7 +1119,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
 
 \center
 
-\begin{tabular}{|p{3cm}|p{3cm}|p{6cm}|p{3cm}| }
+\begin{tabular}{|p{3cm}|p{4.5cm}|p{4.5cm}|p{3cm}| }
  \hline
  \multicolumn{4}{|c|}{Variables} \\
  \hline
@@ -1169,8 +1171,8 @@ The number of check marks within the Priority column in Figure \ref{PhaseDiagram
   \item \textbf{FR} The functional requirements that were stated above are likely to remain the same as they are fundamental to the creation of the product. If any functional requirement happens to change, it would only be a slight deviation from the current requirements.
   \item \textbf{NFR-9} This non-functional requirement is likely to change as the processing time depends on the microcontroller we use. Ideally, we would use a high-speed microcontroller, however, cost and size are trade offs here. As a result, the processing times may change.
   \item \textbf{NFR-12} The battery life may vary according to the size and cost of the battery. Additionally, power consumption from the microcontroller will have to be considered when calculating the battery life. After further research into batteries and power consumption, will we be able to adjust this non-functional requirement to see if 12 hours of use is feasible.
-  \item \textbf{NFR-14} this non-functional requirement may need to be adjusted to more or less keywords being able to detect. This is dependent on the size of memory the microcontroller has.
-  \item \textbf{NFR-21} this non-functional requirement may be changed to only interface with IOS mobile devices as we have limited development time.
+  \item \textbf{NFR-14} this non-functional requirement may need to be adjusted to more or less keywords being \sout{able to detect} \textcolor{red}{detected}. This is dependent on the size of memory the microcontroller has.
+  \item \textbf{NFR-21} this non-functional requirement may be changed to only interface with \sout{IOS} \textcolor{red}{Android} mobile devices as we have limited development time.
 \end{itemize}
 
 \subsection{Off-the-Shelf Solutions} 
@@ -1186,7 +1188,7 @@ The number of check marks within the Priority column in Figure \ref{PhaseDiagram
 \subsubsection{Reusable Components}
 \begin{itemize}
   \item Small scale motors
-  \item Speech recognition library, for example Google’s Speech application programming interface
+  \item Speech recognition library, for example Google's Speech application programming interface
   \item CNN model trained on speech recognition (pretrained weights included) 
   \item Small scale microcontroller
   \item Small scale microphone
