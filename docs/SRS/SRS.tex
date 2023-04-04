@@ -166,7 +166,7 @@ October 3, 2022 & 1.1 & Added Section 2,3 - Functional and Non-Functional Requir
 October 4, 2022 & 1.2 & Added Section 4,5 - Monitor and Controlled Variables, Traceability  \\
 October 5, 2022 & 1.3 & Added Section 6 -  Project Issues \\
 October 6, 2022 & 1.4 & Added References -  Reflection Appendix \\
-April 4, 2023 & 1.5 & Updated Section 2 - Functional requirements\\
+April 4, 2023 & 1.5 & Updated for feedback and consistency\\
 \bottomrule
 \end{tabularx}
 
@@ -359,7 +359,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & The device is able to pick up sounds in the environment of the user.  \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion                                              & The data received by the device shall match the sounds supplied to the device's surroundings .                       \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion                                              & The data received by the device shall match the sounds supplied \sout{to} \textcolor{red}{from} the device's surroundings .                       \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Dependencies                                           & N/A                                                                   \\ 
   \hline
@@ -378,7 +378,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & The device has to be able to correctly classify different sounds \textcolor{red}{that the user has specified. These sounds are limited to any distinct audible sounds whose time does not exceed 1 second}.   \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion                                              & Will compare test sounds and the device classifications shall match the true classification of the sounds.                         \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion                                              & \sout{Will compare} Test sounds and the device classifications \sout{shall} \textcolor{red}{should} match the \sout{true} \textcolor{red}{expected} classification of the sounds.                         \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Dependencies                                           &  FR-1, FR-4                                                                   \\ 
   \hline
@@ -394,9 +394,9 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \hline
   \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-\arabic{FR}}                                             \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & \textcolor{red}{The device has to be able to classify not specified sounds as random sounds.}   \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & \textcolor{red}{The device has to be able to classify unspecified sounds as random sounds.}   \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion                                              & Random sounds should have the highest confidence for the random classification which will exist as a classification even if no user specified classification exists                        \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion                                              & Random sounds should have the highest confidence for the random classification which will exist even if the user has not specified them        \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Dependencies                                           &  FR-2, FR-4                                                                   \\ 
   \hline
@@ -448,9 +448,9 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \hline
   \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-\arabic{FR}}                                             \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & The device has to be able to \textcolor{red}{communicate with Bluetooth in order to add, delete or modify} its classifications and their specifications.  \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & The device has to be able to \textcolor{red}{communicate via Bluetooth in order to add, delete or modify} its classifications and their specifications.  \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion                                              & The commands sent through Bluetooth shall make the intended changes in classification.                       \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion                                              & The commands sent through Bluetooth shall make the intended changes in \sout{classification} \textcolor{red}{the active settings of the device}.                       \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Dependencies                                           & FR-4                                                                  \\ 
   \hline
