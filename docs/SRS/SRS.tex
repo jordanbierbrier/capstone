@@ -166,7 +166,11 @@ October 3, 2022 & 1.1 & Added Section 2,3 - Functional and Non-Functional Requir
 October 4, 2022 & 1.2 & Added Section 4,5 - Monitor and Controlled Variables, Traceability  \\
 October 5, 2022 & 1.3 & Added Section 6 -  Project Issues \\
 October 6, 2022 & 1.4 & Added References -  Reflection Appendix \\
+<<<<<<< HEAD
 April 4, 2023 & 1.5 & Updated for feedback and consistency \\
+=======
+April 4, 2023 & 1.5 & Updated Section 2 - Functional requirements\\
+>>>>>>> d5ddada59b589d40057f7d7ea48783e690346353
 \bottomrule
 \end{tabularx}
 
@@ -359,7 +363,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & The device is able to pick up sounds in the environment of the user.  \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion                                              & The data received by the device shall match the sounds supplied to the device's surroundings.                       \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion                                              & The data received by the device shall match the sounds supplied to the device's surroundings .                       \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Dependencies                                           & N/A                                                                   \\ 
   \hline
@@ -376,11 +380,29 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \hline
   \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-\arabic{FR}}                                             \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & The device has to be able to classify different sounds.  \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & The device has to be able to correctly classify different sounds \textcolor{red}{that the user has specified. These sounds are limited to any distinct audible sounds whose time does not exceed 1 second}.   \\ 
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion                                              & Will compare test sounds and the device classifications shall match the true classification of the sounds.                         \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies                                           &  FR-1, FR-3                                                                   \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies                                           &  FR-1, FR-4                                                                   \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
+%FR3
+\stepcounter{FR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-\arabic{FR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & \textcolor{red}{The device has to be able to classify not specified sounds as random sounds.}   \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion                                              & Random sounds should have the highest confidence for the random classification which will exist as a classification even if no user specified classification exists                        \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies                                           &  FR-2, FR-4                                                                   \\ 
   \hline
   \end{tabular}
   \arrayrulecolor{black}
@@ -403,7 +425,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \arrayrulecolor{black}
 \end{table}
 \end{comment}
-%FR3
+%FR4
 \stepcounter{FR}
 \begin{table}[H]
   \centering
@@ -412,16 +434,34 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \hline
   \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-\arabic{FR}}                                             \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & The device has to be able to set or change its classification.  \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & The device has to be able to \textcolor{red}{store user defined classifications until any changes are made by the user}.  \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion                                              & The sound classifications shall match the sent classifications.                       \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion                                              & The device should be able to retain different user specified classifications until a user change command is asserted.                       \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies                                           & N/A                                                                  \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies                                           & FR-5                                                                 \\ 
   \hline
   \end{tabular}
   \arrayrulecolor{black}
 \end{table}
-%FR4
+%FR5
+\stepcounter{FR}
+\begin{table}[H]
+  \centering
+  \arrayrulecolor{white}
+  \begin{tabular}{|p{3cm}|p{11cm}|} 
+  \hline
+  \rowcolor[rgb]{0.071,0.49,0.698} \textcolor{white}{Requirement No} & \textcolor{white}{FR-\arabic{FR}}                                             \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Description                                            & The device has to be able to \textcolor{red}{communicate with Bluetooth in order to add, delete or modify} its classifications and their specifications.  \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion                                              & The commands sent through Bluetooth shall make the intended changes in classification.                       \\ 
+  \hline
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies                                           & FR-4                                                                  \\ 
+  \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+\end{table}
+%FR6
 \stepcounter{FR}
 \begin{table}[H]
   \centering
@@ -439,7 +479,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \end{tabular}
   \arrayrulecolor{black}
 \end{table}
-%FR5
+%FR7
 \stepcounter{FR}
 \begin{table}[H]
   \centering
@@ -559,7 +599,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & A sample group shall be able to change and manage their preferences.
   \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & FR-3                                                                 \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & FR-5                                                                 \\ 
   \hline
   \end{tabular}
   \arrayrulecolor{black}
@@ -666,7 +706,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that the device satisfies the above requirements.
   \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & FR-1, FR-2, FR-4, FR-5, NFR-3, NFR-8                                                                  \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & FR-1, FR-2, FR-6, FR-7, NFR-3, NFR-8                                                                  \\ 
   \hline
   \end{tabular}
   \arrayrulecolor{black}
@@ -708,7 +748,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that the device satisfies the above requirements.
   \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & FR-2, FR-5, NFR-9                                                                  \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & FR-2, FR-7, NFR-9                                                                  \\ 
   \hline
   \end{tabular}
   \arrayrulecolor{black}
@@ -1041,7 +1081,7 @@ a device that supports macOS, Windows OS, IOS, or Android OS.
   \rowcolor[rgb]{0.675,0.827,0.902} Fit Criterion & Check that all buttons of the UI and the device correctly communicate back.
   \\ 
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & FR-2, FR-3                                                                  \\ 
+  \rowcolor[rgb]{0.675,0.827,0.902} Dependencies  & FR-2, FR-4                                                                  \\ 
   \hline
   \end{tabular}
   \arrayrulecolor{black}
