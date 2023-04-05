@@ -3,6 +3,7 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{hyperref}
+\usepackage{ulem}
 \hypersetup{
     colorlinks,
     citecolor=blue,
@@ -88,11 +89,11 @@ The relevant documents include:
 
 The following project members are responsible for all procedures of the verification and validation:
 \begin{itemize}
-    \item Jordan Bierbrier 
-    \item Udeep Shah
-    \item Taranjit Lotey
-    \item Abraham Taha
-    \item Azriel Gingoyon
+    \item Jordan Bierbrier  - \textcolor{red}{Embedded Signal validation}
+    \item Udeep Shah - \textcolor{red}{Embedded validation}
+    \item Taranjit Lotey - \textcolor{red}{Application validation}
+    \item Abraham Taha - \textcolor{red}{Application validation}
+    \item Azriel Gingoyon - \textcolor{red}{Embedded Module validation}
 \end{itemize}
 
 \noindent Responsibilities include executing and writing tests.
@@ -118,7 +119,7 @@ The following shows our plans for reviewing the Design verification:
 \subsection{Implementation Verification Plan}
 The following plans indicate our Implementation verification plan:
 \begin{itemize}
-    \item \textbf{Static Analysis:} All test plans in sections 5 that have code will be using this.
+    \item \textbf{Static Analysis:} \textcolor{red}{ All test plans in sections 5 that have code will be using VSCode static analyser extension which reports bugs detected by the Clang Static Analyser.}
     \item \textbf{Code Inspection:} This will be used for all relevant test plans that incorporate code in section 5.
     \item \textbf{Non-functional Testing:} Test plans for Non-functional Requirements are written in detail within section 5.2 of this document.
 \end{itemize}
@@ -153,9 +154,9 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Refrences FR:} FR1 					
 
-\textbf{Initial State:} Powered on device with chosen classified keywords and no input signal
+\textbf{Initial State:} Powered on device with chosen classified keywords \textcolor{red}{"Jordan, Abraha, Azriel, Taran, John"} and no input signal
 					
-\textbf{Input:} Sound recordings containing 5 keywords
+\textbf{Input:} Sound recordings containing 5 keywords, in a quite environment
 					
 \textbf{Output:} Device produces 5 haptic feedback
 
@@ -487,6 +488,7 @@ Currently, there is no available data that can help validate the software.
 \textbf{How test will be performed:} Tester will add multiple keywords to the device. Following, the tester will input sound that matches the keyword and manually ensure each haptic feedback is different.
 
 
+
 \end{itemize}
 
 \subsection{Tests for Nonfunctional Requirements}
@@ -691,7 +693,7 @@ Currently, there is no available data that can help validate the software.
 					
 \textbf{How test will be performed:} Tester will also check to see if a user has the option to change preferred language on an already set-up device. This will also be manually checked and verified by the tester checking that the language has changed.
 
-\item{NFRT15}
+\item{NFRT15} \textcolor{red}{Won't be conducted}
 
 \textbf{Type:} Manual
 
@@ -971,7 +973,7 @@ Currently, there is no available data that can help validate the software.
 					
 \textbf{How test will be performed:} A diverse sample group (varying in religion, ethnicity, culture) will be told to examine the code and will be asked to provide any relative feedback about references pertaining to their cultures. If all participants do not find any references the test will be considered a pass. 
 
-\item{NFRT35}
+\item{NFRT35} \textcolor{red}{Won't be conducted}
 
 \textbf{Type:} Regulation Testing
 
@@ -985,8 +987,19 @@ Currently, there is no available data that can help validate the software.
 					
 \textbf{How test will be performed:} An independent team of lawyers will be used to check that the application, device, and the user manual all comply with their corresponding regulations (including licensing agreements). If the team does not find any issues then the test is considered a pass.
 
+\item{NFRT36} \textcolor{red}{Won't be conducted}
 
+\textbf{Type:} System Isolation Auto shut-off
 
+\textbf{Refrences} 
+					
+\textbf{Initial State:} Powered On
+					
+\textbf{Input/Condition:} N/A
+					
+\textbf{Output/Result:} N/A
+					
+\textbf{How test will be performed:} We will create an environment that will result in similar characteristics as rain in the outdoors.
 
 
 \end{itemize}
