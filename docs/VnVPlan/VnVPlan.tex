@@ -225,11 +225,11 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{Refrences FR:} FR2 					
+\textbf{References FR:} FR2 					
 
 \textbf{Initial State:} Powered on device with chosen classified keywords and no input signal 
 					
-\textbf{Input:} Sound clips
+\textbf{Input:} Sound clips \textcolor{red}{currently loaded onto device}
 					
 \textbf{Output:} Haptic feedback from device
 
@@ -243,13 +243,13 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{Refrences FR:} FR2 					
+\textbf{References FR:} FR2 					
 
-\textbf{Initial State:} Powered on device with chosen classified keywords and no input signal 
+\textbf{Initial State:} Powered on device with chosen classified keywords  \textcolor{red}{"Jordan"} and no input signal 
 					
-\textbf{Input:} Sound clips
+\textbf{Input:} Sound clips \textcolor{red}{currently loaded onto device}
 					
-\textbf{Output:} Haptic feedback from device
+\textbf{Output:} Haptic feedback from device 
 
 \textbf{Test Case Derivation:} Device should provide a haptic feedback when it detects a keyword.
 					
@@ -261,11 +261,11 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{Refrences FR:} FR2 					
+\textbf{References FR:} FR2 					
 
 \textbf{Initial State:} Powered on device with chosen classified keywords and no input signal 
 					
-\textbf{Input:} Sound clips
+\textbf{Input:} Sound clips \textcolor{red}{currently loaded onto device}
 					
 \textbf{Output:} Haptic feedback
 
@@ -279,7 +279,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{Refrences FR:} FR2 					
+\textbf{References FR:} FR2 					
 
 \textbf{Initial State:} Powered on device with chosen classified keywords and no input signal  
 					
@@ -287,9 +287,9 @@ Currently, there is no available data that can help validate the software.
 					
 \textbf{Output:} N/A
 
-\textbf{Test Case Derivation:} The soung recognition algorithim should be able to correctly classify similar words as not being the keyword and not provide a reaction.
+\textbf{Test Case Derivation:} The sound recognition algorithm should be able to correctly classify similar words as not being the keyword and not provide a reaction.
 					
-\textbf{How test will be performed:} Tester will input words that rhyme with keyword or sound similar to device can correctly classify as not the keyword
+\textbf{How test will be performed:} Tester will input words that rhyme with keyword or sound similar to the one currently testing and can correctly classify as not the keyword
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -297,7 +297,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{Refrences FR:} FR3 					
+\textbf{References FR:} FR3 					
 
 \textbf{Initial State:} Powered on device with classified keywords 
 					
@@ -307,7 +307,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Test Case Derivation:} Device should recognize the new keywords and correctly react to the new words.
 					
-\textbf{How test will be performed:} Tester will change the keyword classification of the device and input the sound clip with the newly set keyword. Tester will determine if the device correctly reacts to the spoken keyword.
+\textbf{How test will be performed:} Tester will change the keyword classification of the device and input the sound clip with the newly set keyword \textcolor{red}{such as a new name}. Tester will determine if the device correctly reacts to the spoken keyword.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -315,7 +315,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{Refrences FR:} FR3 					
+\textbf{References FR:} FR3 					
 
 \textbf{Initial State:} Powered on device with classified keywords
 					
@@ -325,7 +325,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Test Case Derivation:} Once a keyword is no longer classified the device should no longer provide an output for that keyword.
 					
-\textbf{How test will be performed:} Tester will change the keyword and then check to see that the prior set keyword no longer causes the device to react.
+\textbf{How test will be performed:} Tester will change the keyword /textcolor{red}{"Jordan"} and then check to see that the prior set keyword no longer causes the device to react.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -333,7 +333,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual 
 
-\textbf{Refrences FR:} FR3 					
+\textbf{References FR:} FR3 					
 
 \textbf{Initial State:} Powered on device with classified keywords
 					
@@ -351,7 +351,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{Refrences FR:} FR3 					
+\textbf{References FR:} FR3 					
 
 \textbf{Initial State:} Powered on device with no inputs
 					
@@ -361,7 +361,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Test Case Derivation:} As keywords are classified the device should now react to those chosen keywords.
 					
-\textbf{How test will be performed:}Tester will add x amount of classifications sequentially then input those x keywords (in any order) to see device correctly reacts to all keywords
+\textbf{How test will be performed:}Tester will add \textcolor{red}{ 3} new classifications sequentially then say those \textcolor{red}{3} keywords (in any order) to see device correctly reacts to all keywords
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -369,7 +369,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{Refrences FR:} FR3 					
+\textbf{References FR:} FR3 					
 
 \textbf{Initial State:} Powered on device with no inputs
 					
@@ -379,7 +379,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Test Case Derivation:} Device should still retain all chosen keywords in the event of a reboot or a power off.
 					
-\textbf{How test will be performed:} Tester will set the classification then reboot the device and check that the keywords are still correctly reacted to. 
+\textbf{How test will be performed:} Tester will set the classification then reboot the device and check that the \textcolor{red}{device is classification system is meeting correctness requirements}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -387,7 +387,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{Refrences FR:} FR4 					
+\textbf{References FR:} FR4 					
 
 \textbf{Initial State:} Powered on device with keyword classifications
 					
@@ -485,7 +485,7 @@ Currently, there is no available data that can help validate the software.
 					
 \textbf{Output:} Distinct haptic feedback for distint keywoords
 
-\textbf{Test Case Derivation:} Device should have compatability for five different keywords and should provide unique haptic feedback patterns for each of the keywords.
+\textbf{Test Case Derivation:} Device should have compatibility for five different keywords and should provide unique haptic feedback patterns for each of the keywords.
 					
 \textbf{How test will be performed:} Tester will add multiple keywords to the device. Following, the tester will input sound that matches the keyword and manually ensure each haptic feedback is different.
 
