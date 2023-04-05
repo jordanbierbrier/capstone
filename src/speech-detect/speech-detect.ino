@@ -24,7 +24,7 @@ Wearable device code
 // includes
 #include <PDM.h>
 
-#include <capstone26_inferencing.h>
+#include <Capstone26-project-2_inferencing.h>
 
 #include <ArduinoBLE.h>
 
