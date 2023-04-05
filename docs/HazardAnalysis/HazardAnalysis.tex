@@ -1,14 +1,15 @@
-\documentclass{article}
+\documentclass[12pt, titlepage]{article}
 
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{hyperref}
 \usepackage{pdflscape}
-\usepackage[longtable]{multirow}
+\usepackage[table,xcdraw]{xcolor}
 \usepackage{float}
 \usepackage{longtable}
+\usepackage{multirow}
+\usepackage{graphicx}
 \usepackage{vcell}
-\usepackage{pdflscape}
 \usepackage{ulem}
 \usepackage[margin=1in]{geometry}
 \hypersetup{
@@ -18,48 +19,61 @@
     filecolor=magenta,      % color of file links
     urlcolor=cyan           % color of external links
 }
-
-\title{Hazard Analysis\\\progname}
-
-\author{\authname}
-
-\date{}
+\usepackage[round]{natbib}
 
 \input{../Comments}
 \input{../Common}
 
 \begin{document}
 
+\title{Hazard Analysis: \progname} 
+\author{\authname}
+\date{\today}
+	
 \maketitle
-\thispagestyle{empty}
-
-~\newpage
 
 \pagenumbering{roman}
-\section*{Revision History}
-\begin{tabularx}{\textwidth}{llX}
-\toprule
-\textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
-\midrule
-10/19/22 & Jordan, Abdallah, Udeep & Worked on Sections 5 / General Editing\\
-10/14/22 & Azriel G. & Added sections 1, 2, and 3\\
-04/04/23 & Taranjit. & Updated Feedback And Formated Table\\
-... & ... & ...\\
-\bottomrule
-	\end{tabularx}
 
-~\newpage
+\section*{Revision History}
+
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+10/14/2022 & 1.0 & Added sections 1, 2, and 3\\
+10/19/2022 & 1.1 & Worked on Sections 5 / General Editing\\
+04/04/2023 & 1.2 & Updated according to Feedback and Formated Table\\
+\bottomrule
+\end{tabularx}
+
+\newpage
 
 \tableofcontents
 
-~\newpage
+\listoffigures
+
+\listoftables
+
+\newpage
+
+\section*{Symbols, Abbreviations and Acronyms}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{l l} 
+  \toprule		
+  \textbf{symbol} & \textbf{description}\\
+  \midrule 
+  Age groups & (15-30, 31-50, 51-75, 75+)\\
+  \bottomrule
+\end{tabular}\\
+
+\newpage
 
 \pagenumbering{arabic}
 
 \section{Introduction}
 This document is the hazard analysis for the entirety of Synesthesia Wear.
-For context, Synesthesia Wear is an inexpensive and non-intrusive hearing aid 
-wearable device with a purpose of improving quality of life by providing users with 
+For context, Synesthesia Wear is an inexpensive and non-intrusive \sout{hearing aid} 
+wearable device with a purpose of improving \sout{quality of life by providing users} \textcolor{red}{the users' auditory awareness} with 
 an alternate channel for sound recognition within their surroundings. Furthermore, 
 this wearable device will have a corresponding application that will be made to be 
 user-friendly so that users can easily access and configure their wearable devices to 
@@ -85,6 +99,7 @@ comprised of the following components:
         \item Microphone
         \item Microcontroller
         \item Bluetooth module
+        \item \textcolor{red}{Battery}
     \end{enumerate}
     \item The Application to be installed on the users' devices consists of:
     \begin{enumerate}
@@ -110,6 +125,7 @@ CA1. The battery will not need to be replaced during product lifespan.
 \\CA2. Signal input devices will be consistent with the results they produce.
 \\CA3. Software application failure will not diminish usage of product.
 \\CA4. The microphone is not blocked and has full access to the environment. 
+\\ \textcolor{red}{CA5. The device will be used in indoor conditions.}
 
 \section{Failure Mode and Effect Analysis}
 \textcolor{red}{Put the table in landscape mode}
@@ -210,8 +226,7 @@ ACR1. Authorized users can access preferred vibration/sensitivity settings throu
 
 IR1. Only required variables will be given access to change.
 \\IR2. Data will be accessible by authorized users.
-\sout{IR3} After synchronization, a copy of data is loaded to system application.}
-\textcolor{red}{IR3. After synchronization, a copy of the Arduino signal data is loaded to system application.}
+\\ IR3. After synchronization, a copy of \sout{data is loaded to system application.} \textcolor{red}{the Arduino signal data is loaded to system application.}
 \\IR4. No pairs of modes allowed identical settings.
 \\IR5. Stored data overridden only at synchronization request.
 \\IR6. Application can detect if there is an issue with the microphone.
