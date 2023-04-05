@@ -36,7 +36,8 @@
 11/2/2022 & 1.1 & Added Section 5 - System Test Description\\
 11/2/2022 & 1.2 & Added Section 4 - Plan\\
 11/2/2022 & 1.3 & Added Section 3 - General Information\\
-11/2/2022 & 1.3 & Added Section 2 and 7 - Symbols and Appendix\\
+11/2/2022 & 1.4 & Added Section 2 and 7 - Symbols and Appendix\\
+4/4/2023 & 1.5 & Updated for feedback and consistency\\
 \bottomrule
 \end{tabularx}
 
@@ -53,7 +54,7 @@
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{l l} 
   \toprule		
-  \textbf{symbol} & \textbf{description}\\
+  \textbf{Symbol} & \textbf{description}\\
   \midrule 
   Age groups & (15-30, 31-50, 51-75, 75+)\\
   \bottomrule
@@ -67,18 +68,19 @@
 
 \subsection{General Information}
 
-Synesthesia Wear goal is to create a wearable product that assists users with certain vocal tasks that need attention. These tasks can be generic or custom to the user as needed. Furthermore, the product will use signal processing to gather and analyze information to determine the best and most appropriate feedback (via vibrations) to send to the user. As a result, this gives users peace of mind knowing that if an important call is being directed towards them, Synesthesia Wear will be able to alert them.
+Synesthesia Wear's goal is to create a wearable \sout{product} \textcolor{red}{device} that \sout{assists users with certain vocal tasks that need attention. These tasks can be generic or custom to the user as needed.} \textcolor{red}{improves users' auditory awareness of their surroundings.} Furthermore, the product will use signal processing to gather and analyze information to determine the best and most appropriate feedback (via vibrations) to send to the user. As a result, this gives users peace of mind knowing that if \sout{an important call is being directed towards them} \textcolor{red}{their attention is ever required}, Synesthesia Wear will be able to alert them.
 
 \subsection{Objectives}
 
-The objective of the document is to prove correctness of the system requirements and the system design documents by using unit and system testing for adequate usability. Furthermore, it is often the case where software may have bugs that is then experienced by the end-users. So, the tests stated in the document will describe ways of mitigating those issues and thus ensuring the underlying logic for all subsystems. This will be completed by rigorous unit testing on the functional and non-functional requirements. Lastly, the code and the circuitry being tested will incorporate the underlying logic that interacts with the database.
+The objective of the document is to prove correctness of the \href{https://github.com/jordanbierbrier/capstone/blob/main/docs/SRS/SRS.pdf}{\textit{system requirements}} and the \href{https://github.com/jordanbierbrier/capstone/blob/main/docs/Design/SystDesign/SystDes.pdf}{\textit{system design}} documents by using unit and system testing for adequate usability. Furthermore, it is often the case where software may have bugs that is then experienced by the end-users. So, the tests stated in the document will describe ways of mitigating those issues and thus ensuring the underlying logic for all subsystems. This will be completed by rigorous unit testing on the functional and non-functional requirements. Lastly, the code and the circuitry being tested will incorporate the underlying logic that interacts with the database.
 \subsection{Relevant Documentation}
 
 The relevant documents include:
 \begin{itemize}
-\item Hazard Analysis Document
-\item Software Requirements Specification Document
-\item Module Interface Specification Document
+\item \href{https://github.com/jordanbierbrier/capstone/blob/main/docs/HazardAnalysis/HazardAnalysis.pdf}{\textit{Hazard Analysis Document}}
+\item \href{https://github.com/jordanbierbrier/capstone/blob/main/docs/SRS/SRS.pdf}{\textit{Software Requirements Specification Document}}
+\item \href{https://github.com/jordanbierbrier/capstone/blob/main/docs/Design/SystDesign/SystDes.pdf}{\textit{System Design Document}}
+\item \href{https://github.com/jordanbierbrier/capstone/blob/main/docs/Design/SoftDetailedDes/MIS.pdf}{\textit{Module Interface Specification Document}}
 
 \end{itemize}
 
@@ -152,17 +154,17 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{Refrences FR:} FR1 					
+\textbf{References FR:} FR1 					
 
-\textbf{Initial State:} Powered on device with chosen classified keywords \textcolor{red}{"Jordan, Abraha, Azriel, Taran, John"} and no input signal
+\textbf{Initial State:} Powered on device with chosen classified keywords \textcolor{red}{"Jordan, Abraham, Azriel, John"} and no input signal.
 					
-\textbf{Input:} Sound recordings containing 5 keywords, in a quite environment
+\textbf{Input:} Sound recordings containing 4 keywords, in a quiet environment.
 					
-\textbf{Output:} Device produces 5 haptic feedback
+\textbf{Output:} Device produces 4 haptic feedbacks
 
-\textbf{Test Case Derivation:} Device needs to react once per keyword therefore 5 keywords should give 5 reactions.
+\textbf{Test Case Derivation:} Device needs to react once per keyword therefore 4 keywords should give 4 reactions.
 					
-\textbf{How test will be performed:} Tester will input randomized sound clips into the device and the device will react 5 times for the 5 keywords found in the sound clips
+\textbf{How test will be performed:} Tester will input randomized sound clips into the device and the device will react 4 times for the 4 keywords found in the sound clips.
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -170,34 +172,34 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{Refrences FR:} FR1 					
+\textbf{References FR:} FR1 					
 
 \textbf{Initial State:} Powered on device with chosen classified keywords and no input signal 
 					
-\textbf{Input:} Sound clips in different environments of noise
+\textbf{Input:} Sound clips in different environments \textcolor{red}{(quiet room, busy library, quiet outdoors and a construction site)}
 					
 \textbf{Output:} Device produces haptic feedback
 
 \textbf{Test Case Derivation:} Device should be able to classify sound in different environments and still produce a reaction.
 					
-\textbf{How test will be performed:} Tester will input the same sound clips into the device in differing environments and manually check that the device reacts to the same amount of keywords in each environment 
+\textbf{How test will be performed:} Tester will input the same sound clips into the device in differing environments and manually check that the device reacts to the same amount of keywords in each environment. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item{FRT3}
 
 \textbf{Control:} Manual
 
-\textbf{Refrences FR:} FR1 					
+\textbf{References FR:} FR1 					
 
-\textbf{Initial State:} Powered on device with chosen classified keywords and no input signal 
+\textbf{Initial State:} Powered on device with chosen classified keywords and no input signal. 
 					
-\textbf{Input:} Sound clips of vocals recorded  
+\textbf{Input:} Sound clip with varying intensities. 
 					
-\textbf{Output:} Device produces haptic feedback at the different distances
+\textbf{Output:} Device produces haptic feedback at the different sound intensities. 
 
-\textbf{Test Case Derivation:} Device should still be capable of producing a reaction at specified distances.
+\textbf{Test Case Derivation:} Device should still be capable of producing a reaction even if the input signal is diminished.
 					
-\textbf{How test will be performed:}  Tester will play same sound at distances \textcolor{red}{ 1-5m away} from device and check if device picks up sound and reacts as determined
+\textbf{How test will be performed:}  Tester will play the same sound \textcolor{red}{with different intensities (45dB, 50dB, 60dB, 75dB)} at a distance of 0.5m away from device and check if device picks up sound and reacts.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -205,17 +207,17 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Automatic
 
-\textbf{Refrences FR:} FR1 					
+\textbf{References FR:} FR1 					
 
-\textbf{Initial State:} Powered on device with no input signal 
+\textbf{Initial State:} Powered on device with no input signal. 
 					
 \textbf{Input:} N/A
 					
-\textbf{Output:} Device should output nothing
+\textbf{Output:} Device should output nothing.
 
 \textbf{Test Case Derivation:} Because there is no input to the device there should also not be any output.
 					
-\textbf{How test will be performed:} Tester will keep device in a quiet environment and see if device reacts to no noise environments, exposing a false microphone input 
+\textbf{How test will be performed:} Tester will keep device in a quiet environment and see if device reacts to no noise environments, exposing a false microphone input. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -233,7 +235,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Test Case Derivation:} Device should be able to classify the input data even if there is noise in the input.
 					
-\textbf{How test will be performed:} Tester will input sound clips into the device while constant background noises are being played i.e with a ambient noise from a car in the background
+\textbf{How test will be performed:} Tester will input sound clips into the device while constant background noises are being played i.e with an ambient noise from a car in the background
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -403,7 +405,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{Refrences FR:} FR4 					
+\textbf{References FR:} FR4 					
 
 \textbf{Initial State:} Powered on device with keyword classifications
 					
@@ -421,7 +423,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{Refrences FR:} FR4 					
+\textbf{References FR:} FR4 					
 
 \textbf{Initial State:} Powered on device with keyword classifications
 					
@@ -439,7 +441,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{Refrences FR:} FR4 					
+\textbf{References FR:} FR4 					
 
 \textbf{Initial State:} Powered on device with keyword classifications
 					
@@ -457,7 +459,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual 
 
-\textbf{Refrences FR:} FR5 					
+\textbf{References FR:} FR5 					
 
 \textbf{Initial State:} Powered on device with keyword classifications
 					
@@ -475,7 +477,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{Refrences FR:} FR5 					
+\textbf{References FR:} FR5 					
 
 \textbf{Initial State:} Powered on device with no keyword classifications
 					
@@ -500,7 +502,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Performance
 
-\textbf{Refrences} NFR1
+\textbf{References} NFR1
 					
 \textbf{Initial State:} Unloaded Application
 					
@@ -514,7 +516,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Performance
 
-\textbf{Refrences} NFR1
+\textbf{References} NFR1
 					
 \textbf{Initial State:} Unloaded Application
 					
@@ -528,7 +530,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Manual
 
-\textbf{Refrences} NFR1
+\textbf{References} NFR1
 					
 \textbf{Initial State:} Unloaded Application
 					
@@ -543,7 +545,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Performance 
 
-\textbf{Refrences} NFR1
+\textbf{References} NFR1
 					
 \textbf{Initial State:} Open Application
 					
@@ -557,7 +559,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Performance
 
-\textbf{Refrences} NFR1
+\textbf{References} NFR1
 					
 \textbf{Initial State:} Open Application
 					
@@ -571,7 +573,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Manual
 
-\textbf{Refrences} NFR1
+\textbf{References} NFR1
 					
 \textbf{Initial State:} Turned off wearable device
 					
@@ -585,7 +587,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Manual
 
-\textbf{Refrences} NFR2
+\textbf{References} NFR2
 					
 \textbf{Initial State:} Opened Application
 					
@@ -599,7 +601,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Performance
 
-\textbf{Refrences} NFR3
+\textbf{References} NFR3
 					
 \textbf{Initial State:} Unopened Application, Unpaired device
 					
@@ -613,7 +615,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Security Test
 
-\textbf{Refrences} NFR3
+\textbf{References} NFR3
 					
 \textbf{Initial State:} Pairing Screen
 					
@@ -627,7 +629,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Security Test
 
-\textbf{Refrences} NFR3
+\textbf{References} NFR3
 					
 \textbf{Initial State:} Login page of application
 					
@@ -641,7 +643,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Stress Test
 
-\textbf{Refrences} NFR3
+\textbf{References} NFR3
 					
 \textbf{Initial State:} Keyword configuration page
 					
@@ -655,7 +657,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Manual
 
-\textbf{Refrences} NFR4
+\textbf{References} NFR4
 					
 \textbf{Initial State:} Application Home Screen
 					
@@ -669,7 +671,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Manual
 
-\textbf{Refrences} NFR4
+\textbf{References} NFR4
 					
 \textbf{Initial State:} Setup page
 					
@@ -683,7 +685,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Manual
 
-\textbf{Refrences} NFR4
+\textbf{References} NFR4
 					
 \textbf{Initial State:} Preferences Page
 					
@@ -697,7 +699,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Manual
 
-\textbf{Refrences} NFR4
+\textbf{References} NFR4
 					
 \textbf{Initial State:} Base user manual  
 					
@@ -711,7 +713,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Performance
 
-\textbf{Refrences} NFR5
+\textbf{References} NFR5
 					
 \textbf{Initial State:} Unopened application, turned off device
 					
@@ -725,7 +727,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Visual
 
-\textbf{Refrences} NFR6
+\textbf{References} NFR6
 					
 \textbf{Initial State:} Opened Application
 					
@@ -739,7 +741,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Recovery Testing
 
-\textbf{Refrences} NFR8
+\textbf{References} NFR8
 					
 \textbf{Initial State:} Paired device
 					
@@ -753,7 +755,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Performance
 
-\textbf{Refrences} NFR9
+\textbf{References} NFR9
 					
 \textbf{Initial State:} Device preconfigured with keywords
 					
@@ -767,7 +769,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Performance
 
-\textbf{Refrences} NFR9
+\textbf{References} NFR9
 					
 \textbf{Initial State:} Application home screen 
 					
@@ -781,7 +783,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Performance
 
-\textbf{Refrences} NFR9
+\textbf{References} NFR9
 					
 \textbf{Initial State:} Application pairing screen
 					
@@ -795,7 +797,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Recovery
 
-\textbf{Refrences} NFR9
+\textbf{References} NFR9
 					
 \textbf{Initial State:} Paired Devices
 					
@@ -809,7 +811,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Visual
 
-\textbf{Refrences} NFR10
+\textbf{References} NFR10
 					
 \textbf{Initial State:} Turned off device
 					
@@ -823,7 +825,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Stress Testing
 
-\textbf{Refrences} NFR11
+\textbf{References} NFR11
 					
 \textbf{Initial State:} Device with preconfigured keywords 
 					
@@ -837,7 +839,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Stress Test
 
-\textbf{Refrences} NFR12
+\textbf{References} NFR12
 					
 \textbf{Initial State:} Fully charged device
 					
@@ -851,7 +853,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Load Testing 
 
-\textbf{Refrences} NFR12
+\textbf{References} NFR12
 					
 \textbf{Initial State:} Powered on device with preconfigured keywords 
 					
@@ -865,7 +867,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Upgrade and Installation Test
 
-\textbf{Refrences} NFR12
+\textbf{References} NFR12
 					
 \textbf{Initial State:} Working Application
 					
@@ -879,7 +881,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Upgrade Testing
 
-\textbf{Refrences} NFR15
+\textbf{References} NFR15
 					
 \textbf{Initial State:} Application keyword selection page
 					
@@ -890,24 +892,24 @@ Currently, there is no available data that can help validate the software.
 \textbf{How test will be performed:} Testers will manually check if the product supports up to 10 keywords 2 years after the launch of the device.
 
 \item{NFRT29}
+\sout{\\
+\textbf{Type:} Visual and Stress Testing\\
 
-\textbf{Type:} Visual and Stress Testing
-
-\textbf{Refrences} NFR16
+\textbf{References} NFR16\\
 					
-\textbf{Initial State:} Turned off Device
+\textbf{Initial State:} Turned off Device\\
 					
-\textbf{Input/Condition:} N/A
+\textbf{Input/Condition:} N/A\\
 					
-\textbf{Output/Result:} N/A
+\textbf{Output/Result:} N/A\\
 					
 \textbf{How test will be performed:} Product will be stress tested by a team of testers. Stress tests can include battery drain/charge cycles, Material wear and tear, extensive microphone use etc. Based on results the device should be rated for a lifetime of 5 years for the tests to pass
-
+}
 \item{NFRT30}
 
 \textbf{Type:} Performance
 
-\textbf{Refrences} NFR17
+\textbf{References} NFR17
 					
 \textbf{Initial State:} Unpaired Device
 					
@@ -921,7 +923,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Visual
 
-\textbf{Refrences} NFR17
+\textbf{References} NFR17
 					
 \textbf{Initial State:} Turned off Device
 					
@@ -935,7 +937,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Performance and Installation Testing
 
-\textbf{Refrences} NFR17
+\textbf{References} NFR17
 					
 \textbf{Initial State:} Uninstalled Application
 					
@@ -949,7 +951,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Upgrade Test
 
-\textbf{Refrences} NFR20
+\textbf{References} NFR20
 					
 \textbf{Initial State:} Turned off device
 					
@@ -963,7 +965,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Visual
 
-\textbf{Refrences} NFR25
+\textbf{References} NFR25
 					
 \textbf{Initial State:} Unopened Application
 					
@@ -977,7 +979,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Regulation Testing
 
-\textbf{Refrences} NFR26
+\textbf{References} NFR26
 					
 \textbf{Initial State:} Ready to ship product
 					
@@ -991,7 +993,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} System Isolation Auto shut-off
 
-\textbf{Refrences} 
+\textbf{References} 
 					
 \textbf{Initial State:} Powered On
 					
