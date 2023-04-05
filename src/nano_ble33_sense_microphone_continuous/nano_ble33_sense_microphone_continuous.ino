@@ -43,7 +43,9 @@
 #include <PDM.h>
 
 //#include <speech-recognition_inferencing.h>
-#include <Capstone26-project-1_inferencing.h>
+//#include <Capstone26-project-1_inferencing.h> // { "Abraham", "Fire Alarm", "Jordan", "_noise", "_unknown" }
+#include <Capstone26-project-2_inferencing.h> // { "Abraham", "DrSmith", "Fire Alarm", "Jordan", "_noise", "_unknown" }
+
 
 #include <ArduinoBLE.h>
 
@@ -62,13 +64,16 @@ static signed short *sampleBuffer;
 static bool debug_nn = false; // Set this to true to see e.g. features generated from the raw signal
 static int print_results = -(EI_CLASSIFIER_SLICES_PER_MODEL_WINDOW);
 
-static int vibration_Type[5] = {0,1,2,3,4};
+static int vibration_Type[6] = {0,1,2,3,4,5};
 static const int led_pin = LED_BUILTIN;
 static const int VR = 3;
+
+float confidence_lev = 0.85;
 
 bool Abraham_on = false;
 bool Alarm_on = false;
 bool Jordan_on = false;
+bool Smith_on = false;
 
 
 BLEService ledService("180A"); // BLE LED Service
@@ -214,6 +219,34 @@ void vibration(int type){
       delay(1000);
       break;
     } 
+        case 5: 
+    {
+      digitalWrite(VR,HIGH);
+      digitalWrite(led_pin,HIGH); 
+      delay(200);
+      digitalWrite(VR,LOW);
+      digitalWrite(led_pin,LOW);
+      delay(200);
+      digitalWrite(VR,HIGH);
+      digitalWrite(led_pin,HIGH); 
+      delay(200);
+      digitalWrite(VR,LOW);
+      digitalWrite(led_pin,LOW);
+      delay(200);
+      digitalWrite(VR,HIGH);
+      digitalWrite(led_pin,HIGH); 
+      delay(200);
+      digitalWrite(VR,LOW);
+      digitalWrite(led_pin,LOW);
+      delay(200);
+      digitalWrite(VR,HIGH);
+      digitalWrite(led_pin,HIGH); 
+      delay(200);
+      digitalWrite(VR,LOW);
+      digitalWrite(led_pin,LOW);
+      delay(1000);
+      break;
+    }
 //    ei_printf("None");
   }
 }
@@ -245,10 +278,10 @@ void loop()
             case 02:
               Abraham_on = false;
               break;
-            case 03:
+            case 7:
               Alarm_on = true;
               break;
-            case 04:
+            case 8:
               Alarm_on = false;
               break;
             case 05:
@@ -257,7 +290,29 @@ void loop()
             case 06:
               Jordan_on = false;
               break;
+            case 03:
+              Smith_on = true;
+              break;
+            case 04:
+              Smith_on = false;
+              break;
+            case 80:
+              confidence_lev = 0.8;
+              break;
+            case 85:
+              confidence_lev = 0.85;
+              break;
+            case 90:
+              confidence_lev = 0.9;
+              break;
+            case 95:
+              confidence_lev = 0.95;
+              break;
+            case 98:
+              confidence_lev = 0.98;
+              break;
           }
+          return;
         }
     
         bool m = microphone_inference_record();
@@ -277,21 +332,24 @@ void loop()
             return;
         }
     
-        //{ "_noise", "_unknown", "abraham", "alarm", "jordan" } --> jordan
-
         // "Abraham", "Fire Alarm", "Jordan", "_noise", "_unknown"
+
+        // new!!! { "Abraham", "DrSmith", "Fire Alarm", "Jordan", "_noise", "_unknown" }
 
         
         //Turn on LED if "jordan" keyword is above threshold
-        if ((result.classification[0].value > 0.85) && Abraham_on){ //abraham - 1
+        if ((result.classification[0].value > confidence_lev) && Abraham_on){ //abraham - 1
           vibration(vibration_Type[2]);
         }
-        else if ((result.classification[1].value > 0.85) && Alarm_on){ //alarm - 3
+        else if ((result.classification[2].value > confidence_lev) && Alarm_on){ //alarm - 3
           vibration(vibration_Type[3]);
         }
-        else if ((result.classification[2].value > 0.85) && Jordan_on){ //jordan - 2 
+        else if ((result.classification[3].value > confidence_lev) && Jordan_on){ //jordan - 2 
           vibration(vibration_Type[4]);
-        } 
+        }
+        else if ((result.classification[1].value > confidence_lev) && Smith_on){ //smith - 2 
+          vibration(vibration_Type[5]);
+        }  
     
         if (++print_results >= (EI_CLASSIFIER_SLICES_PER_MODEL_WINDOW)) {
             // print the predictions
