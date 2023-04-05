@@ -3,6 +3,7 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{hyperref}
+\usepackage{float}
 \usepackage{ulem}
 \hypersetup{
     colorlinks,
@@ -27,7 +28,7 @@
 
 \pagenumbering{roman}
 
-\section*{Revision History}
+\section{Revision History}
 
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date } & {\bf Version} & {\bf Notes}\\
@@ -45,18 +46,16 @@
 
 \tableofcontents
 
-\listoffigures
-
 \listoftables
 
 \newpage
 
-\section*{Symbols, Abbreviations and Acronyms}
+\section{Symbols, Abbreviations and Acronyms}
 
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{l l} 
   \toprule		
-  \textbf{symbol} & \textbf{description}\\
+  \textbf{Symbol} & \textbf{description}\\
   \midrule 
   Age groups & (15-30, 31-50, 51-75, 75+)\\
   \bottomrule
@@ -156,17 +155,17 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{Refrences FR:} FR1 					
+\textbf{References FR:} FR2 					
 
-\textbf{Initial State:} Powered on device with chosen classified keywords \textcolor{red}{"Jordan, Abraha, Azriel, Taran, John"} and no input signal
+\textbf{Initial State:} Powered on device with chosen classified keywords \textcolor{red}{"Jordan, Abraham, Azriel, John"} and no input signal.
 					
-\textbf{Input:} Sound recordings containing 5 keywords, in a quiet environment.
+\textbf{Input:} Sound recordings containing 4 keywords is supplied to the device.
 					
-\textbf{Output:} Device produces 5 haptic feedback
+\textbf{Output:} Device is able to classify the keywords.
 
-\textbf{Test Case Derivation:} Device needs to react once per keyword therefore 5 keywords should give 5 reactions.
+\textbf{Test Case Derivation:} Device needs to react once per keyword therefore 4 keywords should give 4 reactions.
 					
-\textbf{How test will be performed:} Tester will input randomized sound clips into the device and the device will react 5 times for the 5 keywords found in the sound clips
+\textbf{How test will be performed:} Tester will input randomized digital sound clips into the device and the device will be able to classify the 4 keywords.
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -174,34 +173,34 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{Refrences FR:} FR1 					
+\textbf{References FR:} FR1, FR2, FR8 					
 
-\textbf{Initial State:} Powered on device with chosen classified keywords and no input signal 
+\textbf{Initial State:} Powered on device with a chosen classified keyword and no input signal 
 					
-\textbf{Input:} Sound clips in different environments \textcolor{red}{(quiet room, busy library, quiet outdoors and a construction site)}
+\textbf{Input:} The classified keyword is spoken in different environments \textcolor{red}{(quiet room, busy library, quiet outdoors and a construction site)}
 					
-\textbf{Output:} Device produces haptic feedback
+\textbf{Output:} Device is able to classify the keyword.
 
-\textbf{Test Case Derivation:} Device should be able to classify sound in different environments and still produce a reaction.
+\textbf{Test Case Derivation:} Device should be able to classify sound in different environments \sout{and still produce a reaction}.
 					
-\textbf{How test will be performed:} Tester will input the same sound clips into the device in differing environments and manually check that the device reacts to the same amount of keywords in each environment 
+\textbf{How test will be performed:} Tester will speak the \textcolor{red}{same keyword "Jordan"} into the device in differing environments and manually check that the device's output \sout{reacts to the same amount of keywords in each environment}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item{FRT3}
 
 \textbf{Control:} Manual
 
-\textbf{Refrences FR:} FR1 					
+\textbf{References FR:} FR1, FR8					
 
-\textbf{Initial State:} Powered on device with chosen classified keywords and no input signal 
+\textbf{Initial State:} Powered on device with chosen classified keywords and no input signal. 
 					
 \textbf{Input:} Sound clip with varying intensities. 
 					
-\textbf{Output:} Device produces haptic feedback at the different sound intensities. 
+\textbf{Output:} Device is able to classify the keyword at different sound intensities. 
 
 \textbf{Test Case Derivation:} Device should still be capable of producing a reaction even if the input signal is diminished.
 					
-\textbf{How test will be performed:}  Tester will play the same sound \textcolor{red}{with different intensities (45dB, 50dB, 60dB, 75dB)} at a distance of 0.5m away from device and check if device picks up sound and reacts
+\textbf{How test will be performed:}  Tester will play the same sound \textcolor{red}{with different intensities (45dB, 50dB, 60dB, 75dB)} at a distance of 0.5m away from device and check if device picks up sound.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -209,17 +208,17 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Automatic
 
-\textbf{Refrences FR:} FR1 					
+\textbf{References FR:} FR1 					
 
-\textbf{Initial State:} Powered on device with no input signal 
+\textbf{Initial State:} Powered on device with no input signal. 
 					
 \textbf{Input:} N/A
 					
-\textbf{Output:} Device should output nothing
+\textbf{Output:} Device should output nothing.
 
 \textbf{Test Case Derivation:} Because there is no input to the device there should also not be any output.
 					
-\textbf{How test will be performed:} Tester will keep device in a quiet environment and see if device reacts to no noise environments, exposing a false microphone input 
+\textbf{How test will be performed:} Tester will keep device in a quiet environment and see if device reacts to no noise environments, exposing a false microphone input. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -227,17 +226,17 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{References FR:} FR2 					
+\textbf{References FR:} FR2, FR8 					
 
 \textbf{Initial State:} Powered on device with chosen classified keywords and no input signal 
 					
-\textbf{Input:} Sound clips \textcolor{red}{currently loaded onto device}
+\textbf{Input:} Sound clips \textcolor{red}{induced with digital noise}
 					
-\textbf{Output:} Haptic feedback from device
+\textbf{Output:} Correct classifications
 
 \textbf{Test Case Derivation:} Device should be able to classify the input data even if there is noise in the input.
 					
-\textbf{How test will be performed:} Tester will input sound clips into the device while constant background noises are being played i.e with an ambient noise from a car in the background
+\textbf{How test will be performed:} Tester will load sound clips (induced with random noise) manually onto device. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -245,13 +244,13 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{References FR:} FR2 					
+\textbf{References FR:} FR1, FR2, FR6, FR7, FR8 					
 
-\textbf{Initial State:} Powered on device with chosen classified keywords  \textcolor{red}{"Jordan"} and no input signal 
+\textbf{Initial State:} Powered on device with chosen classified keyword  \textcolor{red}{"Jordan"} and no input signal. 
 					
-\textbf{Input:} Sound clips \textcolor{red}{currently loaded onto device}
+\textbf{Input:} The classified keyword \textcolor{red}{verbally spoken to the device}.
 					
-\textbf{Output:} Haptic feedback from device 
+\textbf{Output:} Haptic feedback from device. 
 
 \textbf{Test Case Derivation:} Device should provide a haptic feedback when it detects a keyword.
 					
@@ -263,11 +262,11 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{References FR:} FR2 					
+\textbf{References FR:} FR1, FR2, FR8 					
 
 \textbf{Initial State:} Powered on device with chosen classified keywords and no input signal 
 					
-\textbf{Input:} Sound clips \textcolor{red}{currently loaded onto device}
+\textbf{Input:}  \textcolor{red}{The classified keyword verbally spoken to the device by a male and a female around the age of 22}.
 					
 \textbf{Output:} Haptic feedback
 
@@ -281,7 +280,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{References FR:} FR2 					
+\textbf{References FR:} FR3, FR8 					
 
 \textbf{Initial State:} Powered on device with chosen classified keywords and no input signal  
 					
@@ -299,7 +298,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{References FR:} FR3 					
+\textbf{References FR:} FR2, FR3, FR4 					
 
 \textbf{Initial State:} Powered on device with classified keywords 
 					
@@ -317,7 +316,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{References FR:} FR3 					
+\textbf{References FR:} FR2, FR3, FR4 					
 
 \textbf{Initial State:} Powered on device with classified keywords
 					
@@ -353,7 +352,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{References FR:} FR3 					
+\textbf{References FR:} FR2, FR5 					
 
 \textbf{Initial State:} Powered on device with no inputs
 					
@@ -371,7 +370,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{References FR:} FR3 					
+\textbf{References FR:} FR4 					
 
 \textbf{Initial State:} Powered on device with no inputs
 					
@@ -381,7 +380,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Test Case Derivation:} Device should still retain all chosen keywords in the event of a reboot or a power off.
 					
-\textbf{How test will be performed:} Tester will set the classification then reboot the device and check that the \textcolor{red}{device is classification system is meeting correctness requirements}
+\textbf{How test will be performed:} Tester will set the classification then reboot the device and check that the \textcolor{red}{device is classification system is meeting correctness requirements}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -389,17 +388,17 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{References FR:} FR4 					
+\textbf{References FR:} FR6 					
 
 \textbf{Initial State:} Powered on device with keyword classifications
 					
-\textbf{Input:} Sound Clip
+\textbf{Input:} Trigger haptic feedback manually.
 					
 \textbf{Output:} Haptic Feedback
 
 \textbf{Test Case Derivation:} Haptic feedback should be outputted by the device when detecting a keyword.
 					
-\textbf{How test will be performed:} Tester will input a sound clip to the device which contains a keyword. The tester will be wearing the device and will manually ensure that the device provides haptic feedback. 
+\textbf{How test will be performed:} Tester will \textcolor{red}{trigger the haptic feedback manually} \sout{to the device which contains a keyword}. The tester will be wearing the device and will manually ensure that the device provides haptic feedback. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -407,7 +406,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{Refrences FR:} FR4 					
+\textbf{References FR:} FR6 					
 
 \textbf{Initial State:} Powered on device with keyword classifications
 					
@@ -425,7 +424,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{Refrences FR:} FR4 					
+\textbf{References FR:} FR6 					
 
 \textbf{Initial State:} Powered on device with keyword classifications
 					
@@ -443,7 +442,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{Refrences FR:} FR4 					
+\textbf{References FR:} FR6 					
 
 \textbf{Initial State:} Powered on device with keyword classifications
 					
@@ -461,7 +460,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual 
 
-\textbf{Refrences FR:} FR5 					
+\textbf{References FR:} FR1, FR2, FR7 					
 
 \textbf{Initial State:} Powered on device with keyword classifications
 					
@@ -479,13 +478,13 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Control:} Manual
 
-\textbf{Refrences FR:} FR5 					
+\textbf{References FR:} FR1, FR2, FR4, FR5, FR7 					
 
 \textbf{Initial State:} Powered on device with no keyword classifications
 					
 \textbf{Input:} Keyword classifications, Sound Clip
 					
-\textbf{Output:} Distinct haptic feedback for distint keywoords
+\textbf{Output:} Distinct haptic feedback for distinct keywords.
 
 \textbf{Test Case Derivation:} Device should have compatibility for five different keywords and should provide unique haptic feedback patterns for each of the keywords.
 					
@@ -504,7 +503,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Performance
 
-\textbf{Refrences} NFR1
+\textbf{References} NFR1
 					
 \textbf{Initial State:} Unloaded Application
 					
@@ -518,7 +517,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Performance
 
-\textbf{Refrences} NFR1
+\textbf{References} NFR1
 					
 \textbf{Initial State:} Unloaded Application
 					
@@ -532,7 +531,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Manual
 
-\textbf{Refrences} NFR1
+\textbf{References} NFR1
 					
 \textbf{Initial State:} Unloaded Application
 					
@@ -547,7 +546,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Performance 
 
-\textbf{Refrences} NFR1
+\textbf{References} NFR1
 					
 \textbf{Initial State:} Open Application
 					
@@ -561,7 +560,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Performance
 
-\textbf{Refrences} NFR1
+\textbf{References} NFR1
 					
 \textbf{Initial State:} Open Application
 					
@@ -571,11 +570,11 @@ Currently, there is no available data that can help validate the software.
 					
 \textbf{How test will be performed:} Tester will launch the application and check to see if clicking the keyword selector button proceeds the application from the homepage to the keyword configurations page.
 
-\item{NFRT6}
+\item{NFRT6 - \textcolor{red}{Out of scope}}
 
 \textbf{Type:} Manual
 
-\textbf{Refrences} NFR1
+\textbf{References} NFR1
 					
 \textbf{Initial State:} Turned off wearable device
 					
@@ -585,11 +584,11 @@ Currently, there is no available data that can help validate the software.
 					
 \textbf{How test will be performed:} A survey will be conducted to a group of 10 participants and they will rate the finish of the product out of 10, they will also rate the accessibility/findability of the buttons on a scale of 10. They will also be asked about the distinguishability of the charging port and its ease of use.  Answers will be averaged out and an average score of 8 will be considered a pass for the test. 
 
-\item{NFRT7}
+\item{NFRT7 - \textcolor{red}{Out of scope}}
 
 \textbf{Type:} Manual
 
-\textbf{Refrences} NFR2
+\textbf{References} NFR2
 					
 \textbf{Initial State:} Opened Application
 					
@@ -599,11 +598,11 @@ Currently, there is no available data that can help validate the software.
 					
 \textbf{How test will be performed:} The style requirements of the device/application will all be tested through a participant study where they will be asked the following questions see appendix 7.2.7. An average score of 4 out of all the questions from the participants will be considered a pass.
 
-\item{NFRT8}
+\item{NFRT8 - \textcolor{red}{Out of scope}}
 
 \textbf{Type:} Performance
 
-\textbf{Refrences} NFR3
+\textbf{References} NFR3, \textcolor{red}{NFR7}
 					
 \textbf{Initial State:} Unopened Application, Unpaired device
 					
@@ -617,7 +616,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Security Test
 
-\textbf{Refrences} NFR3
+\textbf{References} NFR3
 					
 \textbf{Initial State:} Pairing Screen
 					
@@ -627,25 +626,25 @@ Currently, there is no available data that can help validate the software.
 					
 \textbf{How test will be performed:} Tester will attempt to pair the device without pressing the pairing button on the device. Tester will then check to see if the application alerts the user that a device is not found.
 
-\item{NFRT10}
+\item{NFRT10 - \textcolor{red}{Removed due to design decisions}}
+\sout{
+\\\textbf{Type:} Security Test
 
-\textbf{Type:} Security Test
-
-\textbf{Refrences} NFR3
+\\\textbf{References} NFR3
 					
-\textbf{Initial State:} Login page of application
+\\\textbf{Initial State:} Login page of application
 					
-\textbf{Input/Condition:} Username and Password
+\\\textbf{Input/Condition:} Username and Password
 					
-\textbf{Output/Result:} Alert Message
+\\\textbf{Output/Result:} Alert Message
 					
-\textbf{How test will be performed:} Tester will attempt to log in with an unregistered account. Check to see that the program correctly identifies that the account does not exist and prompts the users to try again or register an account.
-
+\\\textbf{How test will be performed:} Tester will attempt to log in with an unregistered account. Check to see that the program correctly identifies that the account does not exist and prompts the users to try again or register an account.
+}
 \item{NFRT11}
 
 \textbf{Type:} Stress Test
 
-\textbf{Refrences} NFR3
+\textbf{References} NFR3
 					
 \textbf{Initial State:} Keyword configuration page
 					
@@ -659,7 +658,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Manual
 
-\textbf{Refrences} NFR4
+\textbf{References} NFR4
 					
 \textbf{Initial State:} Application Home Screen
 					
@@ -669,11 +668,11 @@ Currently, there is no available data that can help validate the software.
 					
 \textbf{How test will be performed:} Tester will check that the application has a page that allows the configuration of different keywords. This will be done manually and newly inputted keywords will be spoken and the appropriate reaction from the device will be recorded. 
 
-\item{NFRT13}
+\item{NFRT13 - \textcolor{red}{Out of scope}}
 
 \textbf{Type:} Manual
 
-\textbf{Refrences} NFR4
+\textbf{References} NFR4
 					
 \textbf{Initial State:} Setup page
 					
@@ -683,11 +682,11 @@ Currently, there is no available data that can help validate the software.
 					
 \textbf{How test will be performed:} Tester will check that the application prompts the user to choose a preferred language when setting up the device. This will be done by manually setting up a new device and visually checking if the prompt appears.
 
-\item{NFRT14}
+\item{NFRT14 - \textcolor{red}{Out of scope}}
 
 \textbf{Type:} Manual
 
-\textbf{Refrences} NFR4
+\textbf{References} NFR4
 					
 \textbf{Initial State:} Preferences Page
 					
@@ -697,11 +696,11 @@ Currently, there is no available data that can help validate the software.
 					
 \textbf{How test will be performed:} Tester will also check to see if a user has the option to change preferred language on an already set-up device. This will also be manually checked and verified by the tester checking that the language has changed.
 
-\item{NFRT15} \textcolor{red}{Won't be conducted}
+\item{NFRT15 - \textcolor{red}{Out of scope}} 
 
 \textbf{Type:} Manual
 
-\textbf{Refrences} NFR4
+\textbf{References} NFR4
 					
 \textbf{Initial State:} Base user manual  
 					
@@ -715,7 +714,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Performance
 
-\textbf{Refrences} NFR5
+\textbf{References} NFR5
 					
 \textbf{Initial State:} Unopened application, turned off device
 					
@@ -725,11 +724,11 @@ Currently, there is no available data that can help validate the software.
 					
 \textbf{How test will be performed:} Participants will be given device and application and timed to see if they can set up and use them within 5 minutes. This test will be conducted with 4 people from each age group, and will be considered pass if 3/4 participants from each age group can use the device within 5 minutes.
 
-\item{NFRT17}
+\item{NFRT17 - \textcolor{red}{Out of scope}}
 
 \textbf{Type:} Visual
 
-\textbf{Refrences} NFR6
+\textbf{References} NFR6
 					
 \textbf{Initial State:} Opened Application
 					
@@ -743,7 +742,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Recovery Testing
 
-\textbf{Refrences} NFR8
+\textbf{References} NFR8
 					
 \textbf{Initial State:} Paired device
 					
@@ -757,7 +756,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Performance
 
-\textbf{Refrences} NFR9
+\textbf{References} NFR9
 					
 \textbf{Initial State:} Device preconfigured with keywords
 					
@@ -771,7 +770,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Performance
 
-\textbf{Refrences} NFR9
+\textbf{References} NFR9
 					
 \textbf{Initial State:} Application home screen 
 					
@@ -785,7 +784,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Performance
 
-\textbf{Refrences} NFR9
+\textbf{References} NFR9
 					
 \textbf{Initial State:} Application pairing screen
 					
@@ -799,7 +798,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Recovery
 
-\textbf{Refrences} NFR9
+\textbf{References} NFR9
 					
 \textbf{Initial State:} Paired Devices
 					
@@ -813,7 +812,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Visual
 
-\textbf{Refrences} NFR10
+\textbf{References} NFR10
 					
 \textbf{Initial State:} Turned off device
 					
@@ -827,7 +826,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Stress Testing
 
-\textbf{Refrences} NFR11
+\textbf{References} NFR11
 					
 \textbf{Initial State:} Device with preconfigured keywords 
 					
@@ -837,11 +836,11 @@ Currently, there is no available data that can help validate the software.
 					
 \textbf{How test will be performed:} A sample set of different sounds (6 different types of sounds with each one supplied 20 times, each time with a random distortion added to make them all digitally different) will be run through a pre-configured classification set. If the output of the module is correct 90\% of the time, it is considered to be a pass.
 
-\item{NFRT25}
+\item{NFRT25 - \textcolor{red}{Out of scope}}
 
 \textbf{Type:} Stress Test
 
-\textbf{Refrences} NFR12
+\textbf{References} NFR12
 					
 \textbf{Initial State:} Fully charged device
 					
@@ -855,7 +854,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Load Testing 
 
-\textbf{Refrences} NFR12
+\textbf{References} NFR12
 					
 \textbf{Initial State:} Powered on device with preconfigured keywords 
 					
@@ -865,11 +864,11 @@ Currently, there is no available data that can help validate the software.
 					
 \textbf{How test will be performed:} Tester will power on the device for a duration of 5 hours. At 5 randomized time intervals throughout the 5 hours, the tester will insert a keyword and record whether or not the device reacts. Device should react at each interval for the test to be considered a pass.
 
-\item{NFRT27}
+\item{NFRT27 - \textcolor{red}{Out of scope}}
 
 \textbf{Type:} Upgrade and Installation Test
 
-\textbf{Refrences} NFR12
+\textbf{References} NFR12
 					
 \textbf{Initial State:} Working Application
 					
@@ -883,7 +882,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Upgrade Testing
 
-\textbf{Refrences} NFR15
+\textbf{References} NFR15
 					
 \textbf{Initial State:} Application keyword selection page
 					
@@ -893,25 +892,25 @@ Currently, there is no available data that can help validate the software.
 					
 \textbf{How test will be performed:} Testers will manually check if the product supports up to 10 keywords 2 years after the launch of the device.
 
-\item{NFRT29}
-\sout{\\
-\textbf{Type:} Visual and Stress Testing\\
+\item{NFRT29 - \textcolor{red}{Out of scope}}
 
-\textbf{Refrences} NFR16\\
+\textbf{Type:} Visual and Stress Testing
+
+\textbf{References} NFR16
 					
-\textbf{Initial State:} Turned off Device\\
+\textbf{Initial State:} Turned off Device
 					
-\textbf{Input/Condition:} N/A\\
+\textbf{Input/Condition:} N/A
 					
-\textbf{Output/Result:} N/A\\
+\textbf{Output/Result:} N/A
 					
 \textbf{How test will be performed:} Product will be stress tested by a team of testers. Stress tests can include battery drain/charge cycles, Material wear and tear, extensive microphone use etc. Based on results the device should be rated for a lifetime of 5 years for the tests to pass
-}
-\item{NFRT30}
+
+\item{NFRT30 - \textcolor{red}{Out of scope}}
 
 \textbf{Type:} Performance
 
-\textbf{Refrences} NFR17
+\textbf{References} NFR17
 					
 \textbf{Initial State:} Unpaired Device
 					
@@ -925,7 +924,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Visual
 
-\textbf{Refrences} NFR17
+\textbf{References} NFR17
 					
 \textbf{Initial State:} Turned off Device
 					
@@ -939,7 +938,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Performance and Installation Testing
 
-\textbf{Refrences} NFR17
+\textbf{References} NFR17
 					
 \textbf{Initial State:} Uninstalled Application
 					
@@ -949,11 +948,11 @@ Currently, there is no available data that can help validate the software.
 					
 \textbf{How test will be performed:} Testers will try to download the application and pair a device on both an IOS and Android device. If both the devices successfully download and pair then the test is considered a pass. 
 
-\item{NFRT33}
+\item{NFRT33 - \textcolor{red}{Out of scope}}
 
 \textbf{Type:} Upgrade Test
 
-\textbf{Refrences} NFR20
+\textbf{References} NFR20
 					
 \textbf{Initial State:} Turned off device
 					
@@ -967,7 +966,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Type:} Visual
 
-\textbf{Refrences} NFR25
+\textbf{References} NFR25
 					
 \textbf{Initial State:} Unopened Application
 					
@@ -977,11 +976,11 @@ Currently, there is no available data that can help validate the software.
 					
 \textbf{How test will be performed:} A diverse sample group (varying in religion, ethnicity, culture) will be told to examine the code and will be asked to provide any relative feedback about references pertaining to their cultures. If all participants do not find any references the test will be considered a pass. 
 
-\item{NFRT35} \textcolor{red}{Won't be conducted}
+\item{NFRT35 - \textcolor{red}{Out of scope}} 
 
 \textbf{Type:} Regulation Testing
 
-\textbf{Refrences} NFR26
+\textbf{References} NFR26
 					
 \textbf{Initial State:} Ready to ship product
 					
@@ -991,11 +990,30 @@ Currently, there is no available data that can help validate the software.
 					
 \textbf{How test will be performed:} An independent team of lawyers will be used to check that the application, device, and the user manual all comply with their corresponding regulations (including licensing agreements). If the team does not find any issues then the test is considered a pass.
 
-\item{NFRT36} \textcolor{red}{Won't be conducted}
+\item{NFRT36 - \textcolor{red}{Moved to safety requirements}} 
+\sout{\\
+\textbf{Type:} System Isolation Auto shut-off\\
 
-\textbf{Type:} System Isolation Auto shut-off
+\textbf{References} \\
+					
+\textbf{Initial State:} Powered On\\
+					
+\textbf{Input/Condition:} N/A\\
+					
+\textbf{Output/Result:} N/A\\
+					
+\textbf{How test will be performed:} We will create an environment that will result in similar characteristics as rain in the outdoors.
+}
 
-\textbf{Refrences} 
+\end{itemize}
+\subsection{\textcolor{red}{Tests for Safety requirements}}
+\textcolor{red}{Added new test cases for safety requirements}
+\begin{itemize}
+    \item{SRT1} 
+
+\textbf{Type:} Electrical system isolation
+
+\textbf{References} SIR1
 					
 \textbf{Initial State:} Powered On
 					
@@ -1003,36 +1021,203 @@ Currently, there is no available data that can help validate the software.
 					
 \textbf{Output/Result:} N/A
 					
-\textbf{How test will be performed:} We will create an environment that will result in similar characteristics as rain in the outdoors.
+\textbf{How test will be performed:} The device will be powered on and using a handheld multimeter will be checked for live current at all possible contact locations with the user's hand.
 
+\item{SRT2} 
+
+\textbf{Type:} System Auto shut-off
+
+\textbf{References} SIR2 
+					
+\textbf{Initial State:} Powered On
+					
+\textbf{Input/Condition:} Overvoltage supplied to VCC
+					
+\textbf{Output/Result:} Device shuts off
+					
+\textbf{How test will be performed:} We will create an environment that will result in similar characteristics as the circuit getting shorted or overvoltage.
+
+\item{SRT3} 
+
+\textbf{Type:} Device heat dissipation
+
+\textbf{References} SIR3 
+					
+\textbf{Initial State:} Powered On
+					
+\textbf{Input/Condition:} N/A
+					
+\textbf{Output/Result:} N/A
+					
+\textbf{How test will be performed:} The device will be powered on and using a thermocouple will be checked heat that is 5 degrees above the environment.
+
+\item{SRT4} 
+
+\textbf{Type:} Reboot capability
+
+\textbf{References} SIR4 
+					
+\textbf{Initial State:} Powered On
+					
+\textbf{Input/Condition:} Remove and reconnect the power
+					
+\textbf{Output/Result:} Reboot as required
+					
+\textbf{How test will be performed:} The device will be powered on, the power will be disconnected and reconnected without switching off the device. 
+
+\item{SRT5 - \textcolor{red}{Out of scope}} 
+
+\textbf{Type:} Application Testing
+
+\textbf{References} ACR1 
+					
+\textbf{Initial State:} Application opened 
+					
+\textbf{Input/Condition:} New vibration intensity changes
+					
+\textbf{Output/Result:} Vibration setting should be updated
+					
+\textbf{How test will be performed:} The device will be powered on connected to the application, then the user will try to update the vibration intensity. 
+
+\item{SRT6} 
+
+\textbf{Type:} Application Testing
+
+\textbf{References} ACR2 
+					
+\textbf{Initial State:} Application opened 
+					
+\textbf{Input/Condition:} Invalid user input
+					
+\textbf{Output/Result:} Error message
+					
+\textbf{How test will be performed:} The device will be powered on connected to the application, then the user will try to perform invalid operations on the application. The application should not break and instead should output an error message of invalid input. 
+
+\item{SRT7 - \textcolor{red}{Out of scope}} 
+
+\textbf{Type:} Application testing
+
+\textbf{References} ACR3 
+					
+\textbf{Initial State:} Unopened application installed on incompatible device. 
+					
+\textbf{Input/Condition:} Open application
+					
+\textbf{Output/Result:} Error message
+					
+\textbf{How test will be performed:} The tester will load the application on to a device that is not compatible. The application should show an error message that the device is not compatible.
+
+\item{SRT8} 
+
+\textbf{Type:} Communication testing
+
+\textbf{References} IR3 
+					
+\textbf{Initial State:} Opened application  
+					
+\textbf{Input/Condition:} Device connected with outdated settings
+					
+\textbf{Output/Result:} New settings are automatically updated on connection
+					
+\textbf{How test will be performed:} The tester will pair a device with outdated settings, the application should automatically sync with the device.
+ 
+\item{SRT9} 
+
+\textbf{Type:} Application testing
+
+\textbf{References} IR4 
+					
+\textbf{Initial State:} Opened application  
+					
+\textbf{Input/Condition:} Same vibration settings for two different classes
+					
+\textbf{Output/Result:} Error message
+					
+\textbf{How test will be performed:} The tester will try to have the same vibration setting for two different classifications. The device should pop up an error message that two classifications cannot have the same vibrations.
+
+\item{SRT10} 
+
+\textbf{Type:} Application Testing
+
+\textbf{References} IR5 
+					
+\textbf{Initial State:} Opened application with device connected  
+					
+\textbf{Input/Condition:}
+					
+\textbf{Output/Result:} No change in settings
+					
+\textbf{How test will be performed:} The tester will move around the application, but it should only send a sync request when there is a change in settings.
+
+\item{SRT11} 
+
+\textbf{Type:} Hardware testing
+
+\textbf{References} IR6 
+					
+\textbf{Initial State:} Powered device  
+					
+\textbf{Input/Condition:} Device supplied with extremely high intensity (90dB) sounds
+					
+\textbf{Output/Result:} Device does a continuous green flashing
+					
+\textbf{How test will be performed:} The tester will play a loud, sound the device should recognize its inability to classify correctly and alert the user.
+
+\item{SRT12} 
+
+\textbf{Type:} Application testing
+
+\textbf{References} IR7 
+					
+\textbf{Initial State:} Opened application with device connected    
+					
+\textbf{Input/Condition:} Application receives an incorrect Bluetooth transmission.
+					
+\textbf{Output/Result:} Application displays an error message. 
+					
+\textbf{How test will be performed:} The tester will manually send a false Bluetooth signal from the device. The application should reject it. 
+
+\item{SRT13} 
+
+\textbf{Type:} Communication testing
+
+\textbf{References} IR8 
+					
+\textbf{Initial State:} Powered device connected with the application    
+					
+\textbf{Input/Condition:} Application disconnected
+					
+\textbf{Output/Result:} Device vibrates  
+					
+\textbf{How test will be performed:} The tester will manually disconnect the device from the application, the device shall notice this and alert the user. 
 
 \end{itemize}
 
-\newpage
+
 \subsection{Traceability Between Test Cases and Requirements}
 
 \begin{longtable}{| p{.20\textwidth} | p{.50\textwidth} |} 
   \hline
   \textbf{Tests}    &   \textbf{Requirements} \\ \hline
-  FRT1 &  FR-1, NFR-12 \\ \hline          
-  FRT2 &  FR-1  \\ \hline
-  FRT3 &   FR-1, NFR-12, NFR-13 \\ \hline
+  FRT1 &  FR-2 \\ \hline          
+  FRT2 &  FR-1, FR-2, FR-8  \\ \hline
+  FRT3 &   FR-1, FR-8 \\ \hline
    FRT4 &   FR-1 \\ \hline
-   FRT5 &  FR-2  \\ \hline
-   FRT6 &  FR-2  \\ \hline
-  FRT7  &  FR-2  \\ \hline
-  FRT8 &  FR-2  \\ \hline
-  FRT9 &  FR-3, NFR-14, NFR-18  \\ \hline
-  FRT10 &  FR-3, NFR-18  \\ \hline
+   FRT5 &  FR-2, FR-8  \\ \hline
+   FRT6 &  FR-1, FR-2, FR-6, FR-7, FR-8  \\ \hline
+  FRT7  &  FR-1, FR-2, FR-8  \\ \hline
+  FRT8 &  FR-3, FR-8  \\ \hline
+  FRT9 &  FR-2, FR-3, FR-4  \\ \hline
+  FRT10 &  FR-2, FR-3, FR-4  \\ \hline
   FRT11 &  FR-3  \\ \hline
-  FRT12 &  FR-3, NFR-15  \\ \hline
-  FRT13 &  FR-3, NFR-14  \\ \hline
-  FRT14 &  FR-4, NFR-18, NFR-28  \\ \hline
-  FRT15 &  FR-4  \\ \hline
-  FRT16 &  FR-4  \\ \hline
-  FRT17 &  FR-4  \\ \hline
-  FRT18 &  FR-5  \\ \hline
-  FRT19 &  FR-5  \\ \hline
+  FRT12 &  FR-2, FR-5  \\ \hline
+  FRT13 &  FR-4  \\ \hline
+  FRT14 &  FR-6  \\ \hline
+  FRT15 &  FR-6  \\ \hline
+  FRT16 &  FR-6  \\ \hline
+  FRT17 &  FR-6  \\ \hline
+  FRT18 &  FR-1, FR-2, FR-7  \\ \hline
+  FRT19 &  FR-1, FR-2, FR-4, FR-5, FR-7  \\ \hline
   NFRT1 &  NFR-1  \\ \hline
   NFRT2 &  NFR-1  \\ \hline
   NFRT3 &  NFR-1  \\ \hline
@@ -1068,6 +1253,20 @@ Currently, there is no available data that can help validate the software.
   NFRT33 &  NFR-20  \\ \hline
   NFRT34 &  NFR-25  \\ \hline
   NFRT35 &   NFR-26, NFR-27 \\ \hline
+  SRT1 & SR1 \\ \hline
+  SRT2 & SR2 \\ \hline
+  SRT3 & SR3 \\ \hline
+  SRT4 & SR4 \\ \hline
+  SRT5 & ACR1 \\ \hline
+  SRT6 & ACR2 \\ \hline
+  SRT7 & ACR3 \\ \hline
+  SRT8 & IR3 \\ \hline
+  SRT9 & IR4 \\ \hline
+  SRT10 & IR5 \\ \hline
+  SRT11 & IR6 \\ \hline
+  SRT12 & IR7 \\ \hline
+  SRT13 & IR8 \\ \hline
+
   \caption{Traceability Between Test Cases and Requirements} % needs to go inside longtable environment
   \label{tab:myfirstlongtable}
   \end{longtable}
@@ -1086,16 +1285,13 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
 
 \subsubsection{Microphone Module}
 
-\wss{Include a blurb here to explain why the subsections below cover the module.
-  References to the MIS would be good.  You will want tests from a black box
-  perspective and from a white box perspective.  Explain to the reader how the
-  tests were selected.}
-
 \begin{enumerate}
 
-\item{UT1\\}
-
+\item{UT1}
+\begin{table}[!h]
+    \caption{UT1 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
+    
     \hline
     Type & Functional, Dynamic, and Manual. \\
     \hline
@@ -1110,15 +1306,17 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & 3 Different sample sounds will be supplied near the microphone. Will compare the output with expected output. The test succeeds if all the outputs match the expected outputs within some tolerance.     \\
     \hline
 \end{tabular}
-    
+\end{table}    
 \end{enumerate}
 
 \subsubsection{Bluetooth Module}
 
 \begin{enumerate}
 
-\item{UT2\\}
+\item{UT2}
 
+\begin{table}[H]
+    \caption{UT2 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Functional, Dynamic, and Manual. \\
@@ -1134,9 +1332,11 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & A large audio recording will be sent to the data buffer of the sender and send request will be asserted. The receiver should receive the data. The data will be compared manually to check if the test was passed.\\
     \hline
 \end{tabular}
+\end{table}
 
-\item{UT3\\}
-
+\item{UT3}
+\begin{table}[H]
+    \caption{UT3 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Functional, Dynamic, and Manual. \\
@@ -1152,7 +1352,7 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & A classification signal will be asserted manually in the software, its respective feedback signal needs to be asserted in the hardware for the test to pass.\\
     \hline
 \end{tabular}
-
+\end{table}
 \end{enumerate}
 
 
@@ -1160,8 +1360,9 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
 
 \begin{enumerate}
 
-\item{UT4\\}
-
+\item{UT4}
+\begin{table}[H]
+    \caption{UT4 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Functional, Dynamic, and Automatic. \\
@@ -1177,9 +1378,10 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & Sound data from the Microphone module testing will be used for this test. The classification code ingrained in the Synesthesia Wear app will automatically try to classify stored sound data in memory. The test succeeds if all outputs are classified under their expected categories.\\
     \hline
 \end{tabular}
-
-\item{UT5\\}
-
+\end{table}
+\item{UT5}
+\begin{table}[H]
+    \caption{UT5 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Functional, Dynamic, and Manual. \\
@@ -1195,7 +1397,7 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & New sound classification settings will be inputted into a menu on the Synesthesia Wear app and a save button will be used to preserve those settings. The test succeeds if after going back to the sound classification settings menu, the newly inputted settings are displayed.\\
     \hline
 \end{tabular}
-
+\end{table}
 \end{enumerate}
 
 
@@ -1203,8 +1405,9 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
 
 \begin{enumerate}
 
-\item{UT6\\}
-
+\item{UT6}
+\begin{table}[H]
+    \caption{UT6 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Functional, Dynamic, and Manual. \\
@@ -1220,24 +1423,18 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & A feedback signal pertaining to a particular classification is asserted, the output has to be equal to the set vibration specified by the classification. \\
     \hline
 \end{tabular}
-
+\end{table}
 \end{enumerate}
 
 \subsection{Tests for Nonfunctional Requirements}
-
-\wss{If there is a module that needs to be independently assessed for
-  performance, those test cases can go here.  In some projects, planning for
-  nonfunctional tests of units will not be that relevant.}
-
-\wss{These tests may involve collecting performance data from previously
-  mentioned functional tests.}
 
 \subsubsection{Microphone Module}
 
 \begin{enumerate}
 
-\item{UT7\\}
-
+\item{UT7}
+\begin{table}[H]
+    \caption{UT7 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Dynamic and Manual. \\
@@ -1253,9 +1450,10 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & 3 different sounds found online will be taken and played on some speakers that will project the sounds into the microphone. Taking the initial sound files and the sound data from the microphone, an online software tool will compare the sound data and measure their similarities/confidence level. The test succeeds if the similarities/confidence level is at least 95\%. \\
     \hline
 \end{tabular}
-
-\item{UT8\\}
-
+\end{table}
+\item{UT8}
+\begin{table}[H]
+    \caption{UT8 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Dynamic and Automatic. \\
@@ -1271,7 +1469,7 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & Random sounds will be inserted into the microphone. The sound buffer will be copied at the frequency of the sampling frequency into a file. The device has to be able to update the sound buffer continuously until the device is turned off to receive a conditional pass. For a complete pass, all the sound data has to have a distortion of less than 5\%. \\
     \hline
 \end{tabular}
-
+\end{table}
 \end{enumerate}
 
 
@@ -1279,8 +1477,9 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
 
 \begin{enumerate}
 
-\item{UT9\\}
-
+\item{UT9}
+\begin{table}[H]
+    \caption{UT9 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Dynamic and Manual. \\
@@ -1296,9 +1495,10 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & A new bluetooth device will be introduced to the hardware, on performing the bluetooth connection procedure the connection should be established within a minute for the test to pass. \\
     \hline
 \end{tabular}
-
-\item{UT10\\}
-
+\end{table}
+\item{UT10}
+\begin{table}[H]
+    \caption{UT10 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Dynamic and Manual. \\
@@ -1314,7 +1514,7 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & The device will be paired to the hardware initially, by taking the device out of range we will simulate abrupt interruption. It should automatically connect back when back in range, this should not take any longer than 10 seconds after the device is back in range. \\
     \hline
 \end{tabular}
-
+\end{table}
 \end{enumerate}
 
 
@@ -1322,8 +1522,9 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
 
 \begin{enumerate}
 
-\item{UT11\\}
-
+\item{UT11}
+\begin{table}[H]
+    \caption{UT11 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Dynamic and Automatic. \\
@@ -1339,7 +1540,7 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & After receiving sound data over bluetooth, Synesthesia Wear’s app will automatically send this data over to the corresponding device’s noise filtering hardware that will process and return a filtered version of the data. This test passes if it is clear that there is notably less noise in the filtered sound file compared to the original one. \\
     \hline
 \end{tabular}
-
+\end{table}
 \end{enumerate}
 
 
@@ -1347,8 +1548,9 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
 
 \begin{enumerate}
 
-\item{UT12\\}
-
+\item{UT12}
+\begin{table}[H]
+    \caption{UT12 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Dynamic and Automatic. \\
@@ -1364,7 +1566,7 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & A sample set of different sounds (6 different types of sounds with each one supplied 20 times, each time with a random distortion added to make them all digitally different) will be run through a pre-configured classification set. If the output of the module is correct 90\% of the time, it is considered to be a pass. \\
     \hline
 \end{tabular}
-
+\end{table}
 \end{enumerate}
 
 
@@ -1372,8 +1574,9 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
 
 \begin{enumerate}
 
-\item{UT13\\}
-
+\item{UT13}
+\begin{table}[H]
+    \caption{UT13 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Dynamic and Manual. \\
@@ -1389,7 +1592,7 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & A feedback signal pertaining to a particular classification is asserted such that the output has to be equal to the set vibration specified by the classification. A sample group of 5 will be asked to feel the vibration and then reply if said vibration was sufficient and non-intrusive. If 4 of the 5 answers are yes, the test is passed. \\
     \hline
 \end{tabular}
-
+\end{table}
 \end{enumerate}
 
 
@@ -1398,8 +1601,9 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
 
 \begin{enumerate}
 
-\item{UT14\\}
-
+\item{UT14}
+\begin{table}[H]
+    \caption{UT14 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Structural, Dynamic and Manual. \\
@@ -1415,9 +1619,10 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & A sample group of 5 people will have the opportunity to interact with the UI and device first. They will later be asked questions regarding certain features of the product. These questions are listed in the appendix. If a satisfying result is obtained over the sample group, then the test is passed. This test has multiple subsections where each can be passed or failed separately. \\
     \hline
 \end{tabular}
-
-\item{UT15\\}
-
+\end{table}
+\item{UT15}
+\begin{table}[H]
+    \caption{UT15 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Dynamic and Automatic. \\
@@ -1433,9 +1638,10 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & It will be too hard to measure the response time manually as most humans have a response time greater than 1ms. Hence this test will be done with the help of helper code which will calculate the time between a user input detected and a corresponding change in the UI. \\
     \hline
 \end{tabular}
-
-\item{UT16\\}
-
+\end{table}
+\item{UT16}
+\begin{table}[H]
+    \caption{UT16 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Dynamic and Manual. \\
@@ -1451,13 +1657,9 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & The UI will be installed on different systems (Android, Windows, IOS). If it is capable of all functionality within all the platforms, it receives a pass. \\
     \hline
 \end{tabular}
-
+\end{table}
 \end{enumerate}
 
-
-\subsection{Traceability Between Test Cases and Modules}
-
-\wss{Provide evidence that all of the modules have been considered.}
 
 \newpage
 
