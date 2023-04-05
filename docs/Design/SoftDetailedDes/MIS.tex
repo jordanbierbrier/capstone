@@ -19,6 +19,7 @@
 \usepackage[section]{placeins}
 \usepackage{caption}
 \usepackage{fullpage}
+\usepackage{ulem}
 
 \hypersetup{
 bookmarks=true,     % show bookmarks bar?
@@ -133,17 +134,17 @@ The following table is taken directly from the \href{https://github.com/jordanbi
 {Hardware-Hiding Module} & ~ \\
 \midrule
 
-\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & Login Module\\
-& Bluetooth connection Module\\
-& Keyword Selection Module\\
-& Output Signal Module\\
-& Profile Module\\ 
-& Battery Status Module\\
+\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & \sout{Login Module}\\
+& Bluetooth connection Module\textcolor{red}{M2}\\
+& Keyword Selection Module\textcolor{red}{M3}\\
+& Output Signal Module\textcolor{red}{M4}\\
+& Profile Module\textcolor{red}{M5}\\ 
+& Battery Status Module\textcolor{red}{M6}\\
 \midrule
 
-\multirow{3}{0.3\textwidth}{Software Decision Module} & {Sound Classification Module}\\
-& Bluetooth Communication Module\\
-& Microphone Module\\
+\multirow{3}{0.3\textwidth}{Software Decision Module} & {Sound Classification Module}\textcolor{red}{M7}\\
+& Bluetooth Communication Module\textcolor{red}{M8}\\
+& Microphone Module\textcolor{red}{M9}\\
 \bottomrule
 
 \end{tabular}
@@ -158,7 +159,7 @@ The following table is taken directly from the \href{https://github.com/jordanbi
 
 \subsection{Module}
 
-Battery Status
+\sout{Battery Status}
 
 \subsection{Uses}
 
@@ -217,11 +218,13 @@ Battery will always have some charge on it.
 
 \subsection{Module}
 
-Sound Classification
+Sound Classification \textcolor{red}{M7}
+\newline
+\textcolor{red}{Bluetooth communication M8}
 
 \subsection{Uses}
 
-Categorize detected sounds
+Categorize detected sounds 
 
 \subsection{Syntax}
 
@@ -249,8 +252,9 @@ N/A
 
 \subsubsection{Environment Variables}
 
-keyOutput : {key.microphone}
-keyOutput : {key.decibels}
+keyOutput : {key.microphone} \textcolor{red}{$\mathbb{N}$ }
+\newline
+keyOutput : {key.decibels} \textcolor{red}{$\mathbb{N}$}
 
 \subsubsection{Assumptions}
 
@@ -277,7 +281,7 @@ Surrounding sound levels are null compared to required input level.
 
 \subsection{Module}
 
-Login Type
+\sout{Login Type}
 
 \subsection{Uses}
 N/A
@@ -349,8 +353,8 @@ Keyword Selection Type
 
 \subsection{Uses}
 \begin{itemize}
-  \item Profile Module
-  \item Bluetooth Communication Module
+  \item Profile Module \textcolor{red}{M5}
+  \item Bluetooth Communication Module \textcolor{red}{M8}
   \end{itemize}
 
 \subsection{Syntax}
@@ -398,7 +402,7 @@ and the sound configuration settings page is loaded onto the screen.
 \item exception: Not\_Cueable 
 \end{itemize}
 
-\noindent keyword(key.AlphabetCharacters):
+\noindent keyword(key.AlphabetCharacters)\textcolor{red}{char}:
 \begin{itemize}
 \item transition: keyword.addCharacter()
 \item output: None
@@ -428,8 +432,7 @@ None
 \subsection{Syntax}
 
 \subsubsection{Exported Constants}
-DataTx:\{ BT.send()\}
-
+DataTx:\{ BT.send()\} 
 \subsubsection{Exported Access Programs}
 
 \begin{center}
@@ -456,8 +459,8 @@ SendBattV & BattV & DataTx & - \\
 None
 \subsubsection{Environment Variables}
 
-BattV: \{AnalogRead(BatteryVolt)\} \\
-DataRx: \{BT.recieve(T1),BT.recieve(T2),BT.recieve(T3)\}
+\sout{BattV: \{AnalogRead(BatteryVolt)\}}\\ 
+DataRx: \{BT.recieve(T1),BT.recieve(T2),BT.recieve(T3)\}\textcolor{red}{$\mathbb{N}$}
 
 \subsubsection{Assumptions}
 
@@ -486,7 +489,7 @@ Connection with the application is already establised. Bluetooth tries to automa
 \item exception: None 
 \end{itemize}
 
-\noindent SendBattV(BattV):
+\sout{\noindent SendBattV(BattV)}:
 \begin{itemize}
 \item transition: None 
 \item output: DataTx == BattV 
@@ -499,7 +502,8 @@ Connection with the application is already establised. Bluetooth tries to automa
 
 \subsection{Module}
 
-MicroMod
+MicroMod\\
+\textcolor{red}{Bluetooth Communication M9}
 
 \subsection{Uses}
 
@@ -531,14 +535,21 @@ SoundData - Array of sound inputs recorded at every sample interval
 
 \subsubsection{Environment Variables}
 
-SoundIN: \{ Digital.Read(Digital\_Microphone) \}\\
+SoundIN: \{ Digital.Read(Digital\_Microphone) \}\textcolor{red}{$\mathbb{R}$}\\
 CLKINT: \{clk.interupt(sample time)\}
 
 \subsubsection{Assumptions}
 
-Clock interupt is already set up to issue interupts every 1/(sample frequency) 
+Clock interrupt is already set up to issue interrupts every 1/(sample frequency) 
 
 \subsubsection{Access Routine Semantics}
+
+\begin{itemize}
+\item transition: N/A 
+\item output: decibels
+\item exception: N/A
+\end{itemize}
+
 \newpage 
 
 \section{MIS of Output Signal Module} \label{Output Signal Module}
@@ -546,7 +557,7 @@ Clock interupt is already set up to issue interupts every 1/(sample frequency)
 Output Signal Module
 \subsection{Uses}
 \begin{itemize}
-  \item Sound Classification Module
+  \item Sound Classification Module \textcolor{red}{M7}
   \end{itemize}
 
 \subsection{Syntax}
@@ -620,7 +631,7 @@ Connect\_Device & (Boolean, onClick Device\_ID) &  & \\
 \subsubsection{State Variables}
 
 \begin{itemize}
-  \item known\_Device: Device\_ID
+  \item known\_Device: Device\_ID \textcolor{red}{$\mathbb{N}$}
   \item Paired\_Device
 \end{itemize}
 
@@ -657,7 +668,7 @@ We assume that the mobile device that the user has the application on has a blue
 \subsection{Module}
 Profile Module
 \subsection{Uses}
-Login Module 
+\sout{Login Module}
 \subsection{Syntax}
 
 \subsubsection{Exported Constants}
