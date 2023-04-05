@@ -4,4 +4,4 @@ The folders and files for this project are as follows:
 
 1. `speech-detect` for Arduino code
 2. `Capstone26-project-2_inferencing` for header files
-3. `poc` which contains code from the Proof-of_Concept
+3. `poc` which contains code from the Proof-of-Concept
