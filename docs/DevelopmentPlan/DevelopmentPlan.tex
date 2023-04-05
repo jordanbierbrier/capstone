@@ -27,7 +27,7 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-9/26/2022 & 1.0 & Inital commit\\
+9/26/2022 & 1.0 & Initial commit\\
 9/26/2022 & 1.1 & Updated Workflow Plan Section\\
 9/26/2022 & 1.2 & Updated Major Milestones\\
 9/26/2022 & 1.3 & Updated Technology Section\\
@@ -74,7 +74,7 @@ Although we are split up into different roles, which are based on the workload a
 \textbf{Embedded Systems Developer Lead} - The role of this position is to create the software for the microcontroller.
 
 \subsection*{Azriel Gingoyon}
-\textbf{Hardware Developer} - The focus of this position is to handle and design all of the hardware components for the project.
+\textbf{Hardware Developer} - The focus of this position is to handle and design all the hardware components for the project.
 
 \subsection*{Taranjit Lotey}
 \textbf{Application Developer} - The role of this position is to assist in the creation of the application for the end user.
@@ -97,10 +97,10 @@ Although we are split up into different roles, which are based on the workload a
 	
 	\item We will also be using a pre-product branch giving the capability to test the functionality of referencing branches within each other before making a pull request into main.
 	
-	\item There will be a continuous integration (CI) test to see if the incoming changes are acceptable, by passing a linter check, for example. Furthermore, reviewers will be added to assess the changes and leave any comments which will be documented to review and store thought processes at that current stage of development. Once the CI test passes and the reviewers are satisfied with the changes, the reviewers can accept the changes and the branch can be merged into main. 
-	
-	\item We will track issues within GitHub using the Kanban board, which will reference the issue to a designated branch during the pull request. We can tag issues by priority (low, medium, high), by milestone (hardware, application, firmware, etc) and labels. Issues can be assigned to designated group members, and have reviewers to check up on status and work. 
-
+	\item \sout{There will be a continuous integration (CI) test to see if the incoming changes are acceptable, by passing a linter check, for example. Furthermore, reviewers will be added to assess the changes and leave any comments which will be documented to review and store thought processes at that current stage of development. Once the CI test passes and the reviewers are satisfied with the changes, the reviewers can accept the changes and the branch can be merged into main. 
+	}
+	\item \sout{We will track issues within GitHub using the Kanban board, which will reference the issue to a designated branch during the pull request. We can tag issues by priority (low, medium, high), by milestone (hardware, application, firmware, etc) and labels. Issues can be assigned to designated group members, and have reviewers to check up on status and work. 
+	}
 \end{itemize}
 
 \section{Proof of Concept Demonstration Plan}
@@ -123,9 +123,9 @@ We will also test out the sending and receiving of data using Bluetooth. Also, w
 
 \begin{itemize}
 	\item \textbf{Programming Languages} - C will be used for the embedded software on the microcontroller for the signal processing. A potential drawback of using C is that the libraries used for classification can be quite low level, making it difficult to integrate within our code. Although, by using C, we can assure that our code will be more efficient since it is programmed at a lower level. Additionally, Java will be used to create the application for the end user. It will be easy for our team members to review the C and Java code, since their syntax is quite similar.
-	\item \textbf{Integrated Development Environment (IDE)} - Visual Studio Code will be used for software development, and primarily for the application. A benefit of using Visual Studio Code is that it includes several extensions, such as linters and git tracking. To add, Eclipse will be used for embedded programming. A potential issue will be using different IDEs for software, although they are two separate modules.
+	\item \textbf{Integrated Development Environment (IDE)} - Visual Studio Code will be used for software development, and primarily for the application. A benefit of using Visual Studio Code is that it includes several extensions, such as linters and git tracking. \sout{To add, Eclipse will be used for embedded programming.} \textcolor{red}{Also, Android studio will be used for development of the android application.} A potential issue will be using different IDEs for software, although they are two separate modules.
 	\item \textbf{Linters} - Linters will be used to keep the code format consistent throughout our various modules. For C, we will use the Clang Format linter. For Java, we will use the Checkstyle linter.
-	\item \textbf{CI} - CI will be included within our project. We will apply the linter during the CI to see if there are any issues with the format or obvious errors. Additionally, the C code can be compiled and built during the CI. The latter CI step may be redundant, as you can build the C code locally, although this will be determined after it is tested.
+	\item \textbf{CI} - \sout{CI will be included within our project. We will apply the linter during the CI to see if there are any issues with the format or obvious errors. Additionally, the C code can be compiled and built during the CI. The latter CI step may be redundant, as you can build the C code locally, although this will be determined after it is tested.}
 	\item \textbf{Hardware} - Hardware that will be used include a microcontroller, analog-to-digital converter, microphone, motor, and a battery. The risks with the hardware components are finding small enough components that meet our goals. Additionally, we need to find a microcontroller with high enough processing power.
 	\item \textbf{Testing} - Unit tests will be conducted on the modules that are added to the project. Unit tests will be done in both C and in Java.
 \end{itemize}
