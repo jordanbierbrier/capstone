@@ -158,7 +158,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Initial State:} Powered on device with chosen classified keywords \textcolor{red}{"Jordan, Abraha, Azriel, Taran, John"} and no input signal
 					
-\textbf{Input:} Sound recordings containing 5 keywords, in a quite environment
+\textbf{Input:} Sound recordings containing 5 keywords, in a quiet environment.
 					
 \textbf{Output:} Device produces 5 haptic feedback
 
@@ -176,7 +176,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Initial State:} Powered on device with chosen classified keywords and no input signal 
 					
-\textbf{Input:} Sound clips in different environments
+\textbf{Input:} Sound clips in different environments \textcolor{red}{(quiet room, busy library, quiet outdoors and a construction site)}
 					
 \textbf{Output:} Device produces haptic feedback
 
@@ -193,13 +193,13 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Initial State:} Powered on device with chosen classified keywords and no input signal 
 					
-\textbf{Input:} Sound clips
+\textbf{Input:} Sound clip with varying intensities. 
 					
-\textbf{Output:} Device produces haptic feedback at the different distances
+\textbf{Output:} Device produces haptic feedback at the different sound intensities. 
 
-\textbf{Test Case Derivation:} Device should still be capable of producing a reaction at specified distances.
+\textbf{Test Case Derivation:} Device should still be capable of producing a reaction even if the input signal is diminished.
 					
-\textbf{How test will be performed:}  Tester will play same sound at specific distances away from device and check if device picks up sound and reacts
+\textbf{How test will be performed:}  Tester will play the same sound \textcolor{red}{with different intensities (45dB, 50dB, 60dB, 75dB)} at a distance of 0.5m away from device and check if device picks up sound and reacts
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -235,7 +235,7 @@ Currently, there is no available data that can help validate the software.
 
 \textbf{Test Case Derivation:} Device should be able to classify the input data even if there is noise in the input.
 					
-\textbf{How test will be performed:} Tester will input sound clips into the device while constant background noises are being played i.e with a ambient noise from a car in the background
+\textbf{How test will be performed:} Tester will input sound clips into the device while constant background noises are being played i.e with an ambient noise from a car in the background
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -892,19 +892,19 @@ Currently, there is no available data that can help validate the software.
 \textbf{How test will be performed:} Testers will manually check if the product supports up to 10 keywords 2 years after the launch of the device.
 
 \item{NFRT29}
+\sout{\\
+\textbf{Type:} Visual and Stress Testing\\
 
-\textbf{Type:} Visual and Stress Testing
-
-\textbf{Refrences} NFR16
+\textbf{Refrences} NFR16\\
 					
-\textbf{Initial State:} Turned off Device
+\textbf{Initial State:} Turned off Device\\
 					
-\textbf{Input/Condition:} N/A
+\textbf{Input/Condition:} N/A\\
 					
-\textbf{Output/Result:} N/A
+\textbf{Output/Result:} N/A\\
 					
 \textbf{How test will be performed:} Product will be stress tested by a team of testers. Stress tests can include battery drain/charge cycles, Material wear and tear, extensive microphone use etc. Based on results the device should be rated for a lifetime of 5 years for the tests to pass
-
+}
 \item{NFRT30}
 
 \textbf{Type:} Performance
