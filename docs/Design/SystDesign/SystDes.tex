@@ -26,12 +26,19 @@
 \usepackage{pdfpages}
 \usepackage{array}
 \usepackage{tikz}
+\usepackage{pdflscape}
 
 \usepackage{fullpage}
 \usepackage{multirow}
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{ulem}
+\usepackage[many]{tcolorbox}
+\newtcolorbox{cross}{blank,breakable,parbox=false,
+  overlay={\draw[red,line width=5pt] (interior.south west)--(interior.north east);
+    \draw[red,line width=5pt] (interior.north west)--(interior.south east);}}
+
 \usepackage[toc,page]{appendix}
 \hypersetup{
     colorlinks,
@@ -58,7 +65,7 @@
 
 \begin{document}
 
-\title{System Design for \progname{}} 
+\title{System Design: \progname{}} 
 \author{\authname}
 \date{\today}
 
@@ -75,6 +82,7 @@ January 15 & 1.0 & Added Template \\
 January 16 & 1.1 & Added sections 1, 2, 3\\
 January 17 & 1.2 & Added sections 4, 5, 6\\
 January 18 & 1.3 & Added sections 7, 8, 9, 10, Appendices\\
+April 5 & 1.4 & Updated for feedback and consistency\\
 \bottomrule
 \end{tabularx}
 
@@ -110,8 +118,8 @@ This section records information for easy reference.
 \pagenumbering{arabic}
 
 \section{Introduction}
-Synesthesia Wear is a wearable product that assists users with certain vocal tasks 
-that need attention. These tasks can be generic or custom to the user as needed. 
+Synesthesia Wear is a wearable \sout{product} \textcolor{red}{device} that \sout{assists users with certain vocal tasks 
+that need attention. These tasks can be generic or custom to the user as needed.} \textcolor{red}{improves users' auditory awareness of their surroundings.}
 Furthermore, the product will use signal processing to gather and analyze information 
 to determine the best and most appropriate feedback (via vibrations) to send to the 
 user. As a result, this gives the users peace of mind knowing that if their attention 
@@ -263,7 +271,7 @@ The following requirements were taken from Synesthesia Wear's
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902} Battery of the device should be shielded to prevent any direct contact with the user.           & Need to design/build/purchase a case around the bracelet where the battery will be stored to prevent damage and any contact between user and battery.\\
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902} The product dimensions should allow fitment on wrist of the user.           & Need to purchase and integrate a microcontroller with built-in modules (bluetooth, microphone, etc.) to reduce product dimensions as much as possible.\\
+  \rowcolor[rgb]{0.675,0.827,0.902} The product dimensions should allow fitment on wrist of the user.           & Need to purchase and integrate a \textcolor{red}{small} microcontroller with built-in modules (bluetooth, microphone, etc.) \sout{to reduce product dimensions} \textcolor{red}{such that the product dimensions are reduced} as much as possible.\\
   \hline
   \end{tabular}
   \arrayrulecolor{black}
@@ -300,7 +308,7 @@ The following requirements were taken from Synesthesia Wear's
   \hline
   \rowcolor[rgb]{0.675,0.827,0.902}    feedback    &  Vibrations    &  The vibrations are controlled since they only occur once the detected and keyword sounds match to a certain degree.           \\
   \hline
-  \rowcolor[rgb]{0.675,0.827,0.902}    loginInfo    &  Strings/Words    &  The username and password of the users. This information can be viewed, set, and changed whenever the user desires.           \\
+  \rowcolor[rgb]{0.675,0.827,0.902}    \sout{loginInfo} \textcolor{red}{(Design Decision was made to remove login aspects of the project)}    &  \sout{Strings/Words}    &  \sout{The username and password of the users. This information can be viewed, set, and changed whenever the user desires.}           \\
   \hline
   \end{tabular}
   \arrayrulecolor{black}
@@ -328,25 +336,42 @@ The following requirements were taken from Synesthesia Wear's
 \section{User Interfaces}
 
 \subsection {System Context}
+\begin{tikzpicture}
+  \node[inner sep=0] (image) at (0,0) {\includegraphics[clip,trim= 0cm 5cm 0cm 2cm,width=\textwidth,height=\textheight,keepaspectratio]{UserInterface.pdf}};
+  \draw[red,ultra thick] (image.south east) -- (image.north west);
+  \draw[red,ultra thick] (image.north east) -- (image.south west);
+  \draw[red,ultra thick] (image.south west) rectangle (image.north east);
+\end{tikzpicture}
+\begin{center}
+  \begin{tabular}{c c}
+  \sout{Record} & \sout{Allows users to record new audio to be stored} \\
+  \sout{Alters} & \sout{Notifies user of which alter and the timing} \\
+  \sout{New Recording} & \sout{Alternative button to change a existing recording} \\
+  \sout{Recording Name} & \sout{Name of stored recording} \\
+  \sout{Delete} & \sout{Deletion of stored recording} \\
+  \sout{Home} & \sout{To go back to main screen} \\
+  \end{tabular}
+\end{center}
+
 \begin{figure}[H]
-  \includegraphics[clip,trim= 0cm 5cm 0cm 2cm,width=\textwidth,height=\textheight,keepaspectratio]{UserInterface.pdf}
+  \includegraphics[clip,width=\textwidth,height=\textheight,keepaspectratio]{UserInterface2.pdf}
   \caption{User Interface Mobile}
   \label{User Interface} 
 \end{figure}
 \begin{center}
-\begin{tabular}{c c}
-Record & Allows users to record new audio to be stored \\
-Alters & Notifies user of which alter and the timing \\
-New Recording & Alternative button to change a existing recording \\
-Recording Name & Name of stored recording \\
-Delete & Deletion of stored recording \\
-Home & To go back to main screen \\
+  \begin{tabular}{l p{0.8\linewidth}}
+  \textcolor{red}{Home Page} & \textcolor{red}{Button that transitions to other features of the app}  \\
+  \textcolor{red}{Connect/Disconnect} & \textcolor{red}{Buttons that enable or disable the connection between app and hardware}  \\
+  \textcolor{red}{Back} & \textcolor{red}{Button that reverts the current page to the previous page}  \\
+  \textcolor{red}{Select Item} & \textcolor{red}{Drop down menu that provides a list of numbers for the minimum confidence level that the sound classification must adhere to}  \\
+  \textcolor{red}{Keyword} & \textcolor{red}{Keywords that are toggled on/off to enable/disable them in the sound classification of the device}  \\
 \end{tabular}
 \end{center}
 \newpage
 
 \section{Design of Mechanical Hardware}
-For our project there is limited mechanical hardware required. Most of the components are electrical componets. Regardless the non-electrical componets required are. 
+\sout{For our project there is limited mechanical hardware required. Most of the components are electrical componets. Regardless the non-electrical componets required are.}
+\textcolor{red}{For our project, most of the components are electrical components where there is some mechanical hardware required. With this in mind, the necessary non-electrical components are:}
 \begin{table}[H]
 \centering
 \caption{List of non-electrical components required}
@@ -361,18 +386,18 @@ S.No & Component        & Material & Link              & Cost  \\ \hline
 \end{table}
 
 \subsection{Base Enclosure}
-This is main housing for all the electrical componets. It houses the microcontroller, the vibration motor, the battery and the battery management system. It will be 3D printed using PLA as the Material. This housing also provides the additional abilityto attach 20 mm watch straps to it.
-Below are two isometric of the Base enclosure. 
+This is \textcolor{red}{the} main housing for all the electrical components. It houses the microcontroller, the vibration motor, the battery and the battery management system. It will be 3D printed using PLA as the Material. This housing also provides the additional ability to attach 20 mm watch straps to it.
+Below are two isometric \textcolor{red}{views} of the Base enclosure. 
 \begin{figure}[H]
   \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Base_ISO.png}
   \caption{Enclosure isometric figures}
   \label{EnclosureISO} 
 \end{figure}
-There are specifc slots for all the major componets like the microcontroller, vibration motor, battery, etc. There are also cutouts for the usb C charging port for the battery and a cutout for the battery enable switch. For a detailed drawing refer to the \hyperref[appendix:hardware:enclosureDWG]{Appendix}. The drawing does not show all the dimensions for clarity reasons but it does show the outer dimensions. An explosed diagram with all the components will be shown later in the section. 
+\noindent There are specifc slots for all the major \sout{componets} \textcolor{red}{components} like the microcontroller, vibration motor, battery, etc. There are also cutouts for the usb C charging port for the battery and a cutout for the battery enable switch. For a detailed drawing refer to the \hyperref[appendix:hardware:enclosureDWG]{Appendix}. The drawing does not show all the dimensions for clarity reasons but it does show the outer dimensions. An \sout{explosed} \textcolor{red}{exploded} diagram with all the components will be shown later in the section. 
  
 \subsection{Enclosure lid}
 This is the lid for the enclosure that was shown above. It will also be made in house on a 3D printer with PLA plastic. It will be secured to the enclosure using super glue once proper functioning of all the components is achieved. 
-Below is an isometric diagram for the lid.\\
+Below is an isometric \sout{diagram for} \textcolor{red}{view of} the lid.\\
 \begin{figure}[H]
   \vspace*{-0.5cm}
   \centering
@@ -381,16 +406,16 @@ Below is an isometric diagram for the lid.\\
   \caption{lid isometric figure}
   \label{Lid ISO} 
 \end{figure}
- For a detailed drawing refer to the \hyperref[appendix:hardware:lidDWG]{Appendix}. The drawing does not show all the dimensions for clarity reasons but it does show the outer dimensions.
+\noindent For a detailed drawing refer to the \hyperref[appendix:hardware:lidDWG]{Appendix}. The drawing does not show all the dimensions for clarity reasons but it does show the outer dimensions.
 
 \subsection{Watch straps}
-A pair of standard 20 mm watch straps will be aquired from external sources. For the material, we have selected silicone rubber as it would be the most durable along with it being cost effective. It is estimated to cost 16.99 CAD. This will attach to the base enclosure using standard 1.5 mm spring jumper lugs that come included with the watch straps. This should enable the user to have the device mounted on the user without the user having to carry it in the user's hand.
+A pair of standard 20 mm watch straps will be aquired from external sources. For the material, we have selected silicone rubber as it would be the most durable along with it being cost effective. It is estimated to cost 16.99 CAD. This will attach to the base enclosure using standard 1.5 mm spring jumper lugs that come included with the watch straps. This should enable the user to have the device mounted on \sout{the user} \textcolor{red}{their wrist} without the user having to carry it in \sout{the user's hand} \textcolor{red}{their hands}.
 
 \subsection{Super glue}
-Super glue will be used to secure most of the componets in place either directly or indirectly. For the lid it can be directly attached using super glue. However for the PCBs they have to be attached using plastic dowels with a lid and super glue. There are already holes placed in the enlosure for these fastners. The use of threaded fasterners was not used due to the difficulty of adding threads accuratly to the plastic enclosure. The disadvange of using the super glue along with the plastic dowels is that once secured they are permenent.   
+Super glue will be used to secure most of the componets in place either directly or indirectly. For the lid it can be directly attached using super glue. However\textcolor{red}{,} for the PCBs they have to be attached using plastic dowels with a lid and super glue. There are already holes placed in the enlosure for these \sout{fastners} \textcolor{red}{fasteners}. \sout{The use of threaded fasterners was} \textcolor{red}{Threaded fasteners were} not used due to the difficulty of adding threads \sout{accuratly} \textcolor{red}{accurately} to the plastic enclosure. The disadvange of using the super glue along with the plastic dowels is that once secured\textcolor{red}{,} they are permenent.   
 
 \subsection{Complete assembly}
-The entire hardware is enclosed between the enslosure and the lid. An isometric of the complete assembly is shown below. \\
+\sout{The entire hardware is enclosed} \textcolor{red}{All of the hardware is contained} between the enslosure and the lid. An isometric \textcolor{red}{view} of the complete assembly is shown below. \\
 \begin{figure}[H]
   \vspace*{-0.75cm}
   \centering
@@ -444,7 +469,7 @@ The entire electrical system can be split into 3 parts
   \item Vibration motor and related electrical components
 \end{itemize}
 
-\noindent The complete layout of the electrical componets are shown below, explanations for the components will come in the later sections.
+\noindent The complete layout of the electrical \sout{componets} \textcolor{red}{components} are shown below, explanations for the components will come in the later sections.
 \begin{figure}[H]
 \centering
   \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Schematic.png}
@@ -453,7 +478,7 @@ The entire electrical system can be split into 3 parts
 \end{figure}
 
 \subsection{Microcontroller}
-The microcontroller is responsible for most of the the application of the device. It will handle audio dectection, audio processing classification and bluetooth communication. The microcontroller selected is an arduino nano 33 BLE. This was selected as it is relatively compact with bluetooth and microphone already built into the device. It will be supplied by an external power source of 5V connected directly to the +5V and GND of the arduino. A digital pin (D3) will be used to control the vibration motor. Below is the schematic of the microcontroller.
+The microcontroller is responsible for most of the the application of the device. It will handle audio dectection, audio processing classification and bluetooth communication. The microcontroller selected is an Arduino nano 33 BLE. This was selected as it is relatively compact with bluetooth and microphone already built into the device. It will be supplied by an external power source of 5V connected directly to the +5V and GND of the Arduino. A digital pin (D3) will be used to control the vibration motor. Below is the schematic of the microcontroller.
  \begin{figure}[H]
 \centering
   \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{NanoSchematic.png}
@@ -462,7 +487,7 @@ The microcontroller is responsible for most of the the application of the device
 \end{figure}
 
 \subsection{Battery/Power System}
-The arduino will be powered by a 5 Volt battery system that can supply up to 1A of current. This should be well within the operating region of the arduino. The battery system consists of a 3.7 Volt 1000mAh  LiPo battery, a SparkFun LiPo Charger/Booster and a small slide switch. The 3.7 Volt LiPo was selected as it is small enough to fit within the design and has enough capacity for a day of usage. The SparkFun LiPo Charger/Booster is used to boost the voltage from 3.7 to 5 Volts as that is required by the arduino. It also provides the additional benifit of protecting the battery from high currents. The battery can also be charged using the usb C port on the SparkFun LiPo Charger/Booster. A switch will be soldered on to the enable pin of the charger/booster, this will provide a way to isolate the battery from the microcontroller and can act like a reset switch. The ardunio power input will have to be soldered onto the booster output connection. The battery can either be attached using a JST connector or can be soldered on. Below is the schematic for the battery system.   
+The Arduino will be powered by a 5 Volt battery system that can supply up to 1A of current. This should be well within the operating region of the Arduino. The battery system consists of a 3.7 Volt 1000mAh  LiPo battery, a SparkFun LiPo Charger/Booster and a small slide switch. The 3.7 Volt LiPo was selected as it is small enough to fit within the design and has enough capacity for a day of usage. The SparkFun LiPo Charger/Booster is used to boost the voltage from 3.7 to 5 Volts \sout{as} \textcolor{red}{since} that is required by the Arduino. It also provides the additional \sout{benifit} \textcolor{red}{benefit} of protecting the battery from high currents. The battery can also be charged using the usb C port on the SparkFun LiPo Charger/Booster. A switch will be soldered on to the enable pin of the charger/booster\sout{, this will} \textcolor{red}{to} provide a way to isolate the battery from the microcontroller and \sout{can} act like a reset switch. The Ardunio power input will have to be soldered onto the booster output connection. The battery can either be attached using a JST connector or can be soldered on. Below is the schematic for the battery system.   
  \begin{figure}[H]
 \centering
   \includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio]{BatterySchematic.png}
@@ -471,7 +496,7 @@ The arduino will be powered by a 5 Volt battery system that can supply up to 1A 
 \end{figure}
 
 \subsection{Vibration motor and related components}
-The user will be alerted using the vibration motor that is recessed into the enclosure. The vibration motor needs a significant amount of current that the digital output pin cannot supply. Hence the digital pin is just used as a enable pin and the current for the motor is drawn from the 5V pin. To achieve this a NPN transistor (PN2222) is used as a switch with the digital output pin being its enable. Resistors are also used to limit the current draw of the motor. A capacitor is used to protect from high current impluses and a diode is used to protect the arduino from backflow in case the motor stalls. The schematic for the circuit is given below. The components will be soldered together with little wires and heat shrink will be used over them to prevent shorts. The componets will be placed next to vibration motor right below the battery booster board. 
+The user will be alerted using the vibration motor that is recessed into the enclosure. The vibration motor needs a significant amount of current that the digital output pin cannot supply. Hence the digital pin is just used as an enable pin and the current for the motor is drawn from the 5V pin. To achieve this\textcolor{red}{,} an NPN transistor (PN2222) is used as a switch with the digital output pin being its \sout{enable} \textcolor{red}{enabler}. Resistors are also used to limit the current draw of the motor. A capacitor is used to protect from high current \sout{impluses} \textcolor{red}{impulses} and a diode is used to protect the Arduino from backflow in case the motor stalls. The schematic for the circuit is given below. The components will be soldered together with \sout{little} \textcolor{red}{some} wires \sout{and} \textcolor{red}{while} heat shrink will be used over them to prevent shorts. The \sout{componets} \textcolor{red}{components} will be placed next to \textcolor{red}{the} vibration motor \textcolor{red}{which is} right below the battery booster board. 
 
  \begin{figure}[H]
 \centering
@@ -494,17 +519,43 @@ With this in mind, the system was set up so that this same bluetooth module woul
 \end{figure}
 
 \section{Timeline}
+\begin{tikzpicture}
+  \node[inner sep=0] (image) at (0,0) {\includegraphics[clip,trim= 1cm 11.5cm 1cm 1.5cm,width=\textwidth,height=\textheight,keepaspectratio]{Timeline.pdf}};
+  \draw[red,ultra thick] (image.south east) -- (image.north west);
+  \draw[red,ultra thick] (image.north east) -- (image.south west);
+  \draw[red,ultra thick] (image.south west) rectangle (image.north east);
+\end{tikzpicture}
 
 \begin{figure}[H]
-  \includegraphics[clip,trim= 0cm 10cm 0cm 2cm,width=\textwidth,height=\textheight,keepaspectratio]{Timeline.pdf}
+  \includegraphics[clip,width=\textwidth,height=\textheight,keepaspectratio]{Timeline2.pdf}
   \caption{Timeline}
   \label{Timeline} 
 \end{figure}
 
+\begin{center}
+\begin{table}[H]
+  \caption{\textcolor{red}{STRONE Member Responsibilities}}
+  \centering
+  \begin{tabular}{|l|p{0.75\linewidth}|}
+  \hline
+  \textcolor{red}{Jordan Bierbrier} & \textcolor{red}{Sound classification module development: responsible for getting the machine learning model properly implemented and trained.}  \\
+  \hline
+  \textcolor{red}{Azriel Gingoyon} & \textcolor{red}{Sound classification module development: responsible for getting desirable sound recognition functionality integrated with the hardware}  \\
+  \hline
+  \textcolor{red}{Taranjit Lotey} & \textcolor{red}{Mobile App development: responsible for getting the application pages properly designed and implemented.}  \\
+  \hline
+  \textcolor{red}{Udeep Shah} & \textcolor{red}{Hardware Development: responsible for 3D printing as well as putting all of the hardware together.}  \\
+  \hline
+  \textcolor{red}{Abraham Taha} & \textcolor{red}{Mobile App Development: responsible for getting the bluetooth connection and application features working.}  \\
+  \hline
+  \end{tabular}
+\end{table}
+\end{center}
+
 
 \subsection{Solder and Unit Testing}
 \begin{itemize}
-\item Connect and Test, Micro controller with vibrating motor.
+\item Connect and test micro controller with vibrating motor.
 \item Use module "Start" as part of Arduino library to test the vibrating motor.
 \item Use module "Record" as part of Arduino library to test the microphone.
 \end{itemize}
@@ -517,7 +568,7 @@ Listed in order of high priority:
 \begin{itemize}
 \item Create module "Bluetooth Connection", establish a successful connection
 \item Create module "Output Signal", what will be the output signal for each signal
-\item Create module "Sound Classification", category of sound produced
+\item Create module "Sound Classification", \sout{category} \textcolor{red}{categories} of sound produced
 \item Create module "Battery Status", indication of low battery status
 \item Create module "Microphone", collect the audio recording
 \end{itemize}
@@ -525,9 +576,9 @@ Listed in order of high priority:
 \subsection{Mobile Application and Hardware Connection}
 
 \begin{itemize}
-\item Create module "Login", create a personalized login
+\item \sout{Create module "Login", create a personalized login} \textcolor{red}{(Design decision was made to remove Authentication/Login aspects of the project)}
 \item Create module "Keyword Selection", categorize the recordings
-\item Create module "Profile Module", load the user data
+\item \sout{Create module "Profile Module", load the user data}
 \item Create module "Bluetooth Communication", communication integrator
 \end{itemize}
 
