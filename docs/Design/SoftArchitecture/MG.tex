@@ -1,13 +1,25 @@
 \documentclass[12pt, titlepage]{article}
 
-\usepackage{fullpage}
+\usepackage{amsmath, mathtools}
+
 \usepackage[round]{natbib}
-\usepackage{multirow}
-\usepackage{booktabs}
-\usepackage{tabularx}
+\usepackage{amsfonts}
+\usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage{float}
+\usepackage{colortbl}
+\usepackage{xr}
 \usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{xfrac}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[section]{placeins}
+\usepackage{caption}
+\usepackage{fullpage}
+\usepackage{ulem}
 \hypersetup{
     colorlinks,
     citecolor=blue,
@@ -41,23 +53,32 @@
 
 \pagenumbering{roman}
 
-\section{Revision History}
+\section*{Revision History}
 
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-17-01-23 & 1.0 & Added Content\\
-18-01-23 & 1.1 & Added Graph\\
+1/17/2023 & 1.0 & Added Content\\
+1/18/2023 & 1.1 & Added Graph\\
+4/5/2023 & 1.2 & Updated for feedback and consistency\\
 \bottomrule
 \end{tabularx}
 
 \newpage
 
-\section{Reference Material}
+\tableofcontents
+
+\listoffigures
+
+\listoftables
+
+\newpage
+
+\section*{Reference Material}
 
 This section records information for easy reference.
 
-\subsection{Abbreviations and Acronyms}
+\subsection*{Abbreviations and Acronyms}
 
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{l l} 
@@ -79,14 +100,6 @@ This section records information for easy reference.
 
 \newpage
 
-\tableofcontents
-
-\listoftables
-
-\listoffigures
-
-\newpage
-
 \pagenumbering{arabic}
 
 \section{Introduction}
@@ -95,12 +108,12 @@ Decomposing a system into modules is a commonly accepted approach to developing
 software.  A module is a work assignment for a programmer or programming
 team~\citep{ParnasEtAl1984}.  We advocate a decomposition
 based on the principle of information hiding~\citep{Parnas1972a}.  This
-principle supports design for change, because the ``secrets'' that each module
+principle supports design for change because the ``secrets'' that each module
 hides represent likely future changes.  Design for change is valuable in SC,
 where modifications are frequent, especially during initial development as the
 solution space is explored.  
 
-Our design follows the rules layed out by \citet{ParnasEtAl1984}, as follows:
+\noindent Our design follows the rules layed out by \citet{ParnasEtAl1984}, as follows:
 \begin{itemize}
 \item System details that are likely to change independently should be the
   secrets of separate modules.
@@ -109,7 +122,7 @@ Our design follows the rules layed out by \citet{ParnasEtAl1984}, as follows:
   structures must obtain it by calling access programs belonging to that module.
 \end{itemize}
 
-After completing the first stage of the design, the Software Requirements
+\noindent After completing the first stage of the design \textcolor{red}{and} the Software Requirements
 Specification (SRS), the Module Guide (MG) is developed~\citep{ParnasEtAl1984}. The MG
 specifies the modular structure of the system and is intended to allow both
 designers and maintainers to easily identify the parts of the software.  The
@@ -129,7 +142,7 @@ potential readers of this document are as follows:
   decomposition, and flexibility of the design.
 \end{itemize}
 
-The rest of the document is organized as follows. Section
+\noindent The rest of the document is organized as follows. Section
 \ref{SecChange} lists the anticipated and unlikely changes of the software
 requirements. Section \ref{SecMH} summarizes the module decomposition that
 was constructed according to the likely changes. Section \ref{SecConnection}
@@ -159,10 +172,10 @@ change.
 \item[\refstepcounter{acnum} \actheacnum \label{ac1}:] Upgraded microcontroller to higher specifications (i.e. more RAM, better processor) will require revisions of the code.
 \item[\refstepcounter{acnum} \actheacnum \label{ac2}:] Sound recognition algorithm will likely improve / be more efficient over time (better algorithm).
 \item[\refstepcounter{acnum} \actheacnum \label{ac3}:] Code will be modified to run on IOS.
-\item[\refstepcounter{acnum} \actheacnum \label{ac4}:] More efficient battery.
+\item[\refstepcounter{acnum} \sout{\actheacnum} \label{ac4}:] \sout{More efficient battery.} \textcolor{red}{(Out of Scope)}
 \item[\refstepcounter{acnum} \actheacnum \label{ac5}:] Bluetooth handler may change with newer bluetooth implementations are adopted.
 \item[\refstepcounter{acnum} \actheacnum \label{ac6}:] Code adjusted for higher resolution microphone.
-\item[\refstepcounter{acnum} \actheacnum \label{ac7}:] Upgrading encryption algorithm for user login information.
+\item[\refstepcounter{acnum} \sout{\actheacnum} \label{ac7}:] \sout{Upgrading encryption algorithm for user login information.} \textcolor{red}{(Design Decision was made to remove project's authentication aspects)}
 \end{description}
 
 \subsection{Unlikely Changes} \label{SecUchange}
@@ -190,15 +203,15 @@ actually be implemented.
 
 \begin{description}
 \item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Hardware-Hiding Module
-\item [\refstepcounter{mnum} \mthemnum \label{mLogin}:] Login Module
-\item [\refstepcounter{mnum} \mthemnum \label{mBluetooth}:] Bluetooth Connection Module
-\item [\refstepcounter{mnum} \mthemnum \label{mKeyword}:] Keyword Selection Module
-\item [\refstepcounter{mnum} \mthemnum \label{mOutput}:] Output Signal Module
-\item [\refstepcounter{mnum} \mthemnum \label{mProfile}:] Profile Module
-\item [\refstepcounter{mnum} \mthemnum \label{mBattery}:] Battery Status Module
-\item [\refstepcounter{mnum} \mthemnum \label{mSound}:] Sound Classification Module
-\item [\refstepcounter{mnum} \mthemnum \label{mComm}:] Bluetooth Communication Module
-\item [\refstepcounter{mnum} \mthemnum \label{mMicrophone}:] Microphone Module
+\item [\refstepcounter{mnum} \sout{\mthemnum} \label{mLogin}:] \sout{Login Module} \textcolor{red}{(Design Decision was made to remove project's authentication aspects)}
+\item [\refstepcounter{mnum} \sout{\mthemnum} \textcolor{red}{M2} \label{mBluetooth}:] Bluetooth Connection Module
+\item [\refstepcounter{mnum} \sout{\mthemnum} \textcolor{red}{M3} \label{mKeyword}:] Keyword Selection Module
+\item [\refstepcounter{mnum} \sout{\mthemnum} \textcolor{red}{M4} \label{mOutput}:] Output Signal Module
+\item [\refstepcounter{mnum} \sout{\mthemnum} \label{mProfile}:] \sout{Profile Module}
+\item [\refstepcounter{mnum} \sout{\mthemnum} \label{mBattery}:] \sout{Battery Status Module} \textcolor{red}{(Out of Scope)}
+\item [\refstepcounter{mnum} \sout{\mthemnum} \textcolor{red}{M5} \label{mSound}:] Sound Classification Module
+\item [\refstepcounter{mnum} \sout{\mthemnum} \textcolor{red}{M6} \label{mComm}:] Bluetooth Communication Module
+\item [\refstepcounter{mnum} \sout{\mthemnum} \textcolor{red}{M7} \label{mMicrophone}:] Microphone Module
 \end{description}
 
 
@@ -208,23 +221,20 @@ actually be implemented.
 \toprule
 \textbf{Level 1} & \textbf{Level 2}\\
 \midrule
-
-{Hardware-Hiding Module} & ~ \\
+{Hardware-Hiding Module \textcolor{red}{(M1)}} & ~ \\
 \midrule
 
-\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module}
-& Login Module\\
-& Bluetooth connection module\\
-& Keyword Selection Module\\
-& Output Signal Module\\
-& Profile Module\\
-& Battery Status Module\\ 
+\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & \sout{Login Module} \textcolor{red}{(Design Decision - Removed)}\\
+& Bluetooth connection Module \textcolor{red}{(M2)}\\
+& Keyword Selection Module \textcolor{red}{(M3)}\\
+& Output Signal Module \textcolor{red}{(M4)}\\
+& \sout{Profile Module}\\ 
+& \sout{Battery Status Module} \textcolor{red}{(Out of Scope)}\\
 \midrule
 
-\multirow{3}{0.3\textwidth}{Software Decision Module} 
-& Sound Classification Module\\
-& Bluetooth Communication Module\\
-& Microphone Module\\
+\multirow{3}{0.3\textwidth}{Software Decision Module} & {Sound Classification Module} \textcolor{red}{(M5)}\\
+& Bluetooth Communication Module \textcolor{red}{(M6)}\\
+& Microphone Module \textcolor{red}{(M7)}\\
 \bottomrule
 
 \end{tabular}
@@ -277,42 +287,42 @@ to be implemented.
 \item[Implemented By:] --
 \end{description}
 
-\subsubsection{Login Module (\mref{mLogin})}
+\subsubsection{\sout{Login Module (\mref{mLogin})} \textcolor{red}{Design Decision - Removed}}
 \begin{description}
 \item[Secrets:] Login authentication algorithm and profile data. 
 \item[Services:] Login capabilities into the application.
 \item[Implemented By:] Synesthesia Wear
 \end{description}
 
-\subsubsection{Bluetooth Connection Module (\mref{mBluetooth})}
+\subsubsection{Bluetooth Connection Module \sout{(\mref{mBluetooth})} \textcolor{red}{(M2)}}
 \begin{description}
   \item[Secrets:] How the Bluetooth connection is established with the application.
   \item[Services:] Module is used to connect the application to the microcontroller on the wearable device. User clicks the pairing button and the application establishes a connection with an external device.
   \item[Implemented By:] Arduino Library and Android Studio Library
   \end{description}
 
-\subsubsection{Keyword Selection Module (\mref{mKeyword})}
+\subsubsection{Keyword Selection Module \sout{(\mref{mKeyword})} \textcolor{red}{(M3)}}
 \begin{description}
   \item[Secrets:] How the user’s keyword is communicated to the microcontroller/device and their profile data is updated.
   \item[Services:] Provides user with option of keyword selection and corresponding custom haptic feedback.
   \item[Implemented By:] Synesthesia Wear
   \end{description}
 
-\subsubsection{Output Signal Module (\mref{mOutput})}
+\subsubsection{Output Signal Module \sout{(\mref{mOutput})} \textcolor{red}{(M4)}}
 \begin{description}
   \item[Secrets:] How and when the microcontroller communicates with the vibration motor.
   \item[Services:] Provide haptic feedback to the user through the use of a vibration motor.
   \item[Implemented By:] Synesthesia Wear and Arduino Library
   \end{description}
 
-\subsubsection{Profile Module (\mref{mProfile})}
+\subsubsection{\sout{Profile Module (\mref{mProfile})}}
 \begin{description}
   \item[Secrets:] The database structure which contains the data for the users.
   \item[Services:] Allows users to login, logout, and update profile settings (keywords, age, name, date of registration).
   \item[Implemented By:] Synesthesia Wear
   \end{description}
 
-\subsubsection{Battery Status Module (\mref{mBattery})}
+\subsubsection{\sout{Battery Status Module (\mref{mBattery})} \textcolor{red}{(Out of Scope)}} 
 \begin{description}
   \item[Secrets:] Algorithm using voltage measurements to estimate the remaining battery life.
   \item[Services:] Displays remaining battery life of wearable device on the user application. Additionally, alerts user on application when battery below 10\% remaining life.
@@ -333,21 +343,21 @@ to be implemented.
 \item[Implemented By:] --
 \end{description}
 
-\subsubsection{Sound Classification Module (\mref{mSound})}
+\subsubsection{Sound Classification Module \sout{(\mref{mSound})} \textcolor{red}{(M5)}}
 \begin{description}
   \item[Secrets:] Algorithm used for sound classification. Additionally, filters out sound below specified intensity.
   \item[Services:] Provides output to vibration motor if keyword is classified.
   \item[Implemented By:] Synesthesia Wear and Arduino Library
   \end{description}
 
-\subsubsection{Bluetooth Communication Module (\mref{mComm})}
+\subsubsection{Bluetooth Communication Module \sout{(\mref{mComm})} \textcolor{red}{(M6)}}
 \begin{description}
   \item[Secrets:] Communication protocol using preexisting connection to communicate between application and microcontroller.
   \item[Services:] Updates microcontroller with selected keywords, feedback preferences, and battery voltage.
   \item[Implemented By:] Arduino Library and Android Studio Library
   \end{description}
 
-\subsubsection{Microphone Module (\mref{mMicrophone})}
+\subsubsection{Microphone Module \sout{(\mref{mMicrophone})} \textcolor{red}{(M7)}}
 \begin{description}
   \item[Secrets:] Method of converting analog signal to digital signal, and relaying this signal to the microcontroller processor.
   \item[Services:] Provides microcontroller with some of the input data.
@@ -365,17 +375,17 @@ requirements and between the modules and the anticipated changes.
 \centering
 \begin{tabular}{p{0.2\textwidth} p{0.6\textwidth}}
 \toprule
-\textbf{Req.} & \textbf{Modules}\\
+\textbf{Req.} & \textbf{Modules \textcolor{red}{(M2, M6 - Design Decision Removal; M7 - Out of Scope)}}\\
 \midrule
 
-R1 & \mref{mMicrophone}\\
-R2 & \mref{mSound}\\
-R3 & \mref{mLogin}, \mref{mBluetooth}, \mref{mKeyword}, \mref{mComm} \\
-R4 & \mref{mOutput}\\
-R5 & \mref{mSound}\\
-R6 & \mref{mBluetooth}\\
-R7 &  \mref{mLogin}, \mref{mProfile}\\
-R8 & \mref{mBluetooth}, \mref{mBattery}\\
+R1 & \sout{(\mref{mMicrophone})} \textcolor{red}{(M7)}\\
+R2 & \sout{(\mref{mSound})} \textcolor{red}{(M5)}\\
+R3 & \sout{\mref{mLogin},} \sout{(\mref{mBluetooth})} \textcolor{red}{(M2)}, \sout{(\mref{mKeyword})} \textcolor{red}{(M3)}, \sout{(\mref{mComm})} \textcolor{red}{(M6)} \\
+R4 & \sout{(\mref{mOutput})} \textcolor{red}{(M4)}\\
+R5 & \sout{(\mref{mSound})} \textcolor{red}{(M5)}\\
+R6 & \sout{(\mref{mBluetooth})} \textcolor{red}{(M2)}\\
+\sout{R7} &  \sout{\mref{mLogin}}, \sout{\mref{mProfile}}\\
+R8 & \sout{(\mref{mBluetooth})} \textcolor{red}{(M2)}\sout{, \mref{mBattery}}\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Requirements and Modules}
@@ -386,15 +396,15 @@ R8 & \mref{mBluetooth}, \mref{mBattery}\\
 \centering
 \begin{tabular}{p{0.2\textwidth} p{0.6\textwidth}}
 \toprule
-\textbf{AC} & \textbf{Modules}\\
+\textbf{AC} & \textbf{Modules \textcolor{red}{(M2, M6 - Design Decision Removal; M7 - Out of Scope)}}\\
 \midrule
-\acref{ac1} & \mref{mSound}, \mref{mMicrophone}\\
-\acref{ac2} & \mref{mSound}\\
-\acref{ac3} & \mref{mLogin}, \mref{mBluetooth}, \mref{mKeyword}, \mref{mProfile}, \mref{mBattery}\\
-\acref{ac4} & \mref{mBattery}\\
-\acref{ac5} & \mref{mBluetooth}, \mref{mComm}\\
-\acref{ac6} & \mref{mSound}, \mref{mMicrophone}\\
-\acref{ac7} & \mref{mLogin}\\
+\acref{ac1} & \sout{(\mref{mSound})} \textcolor{red}{(M5)}, \sout{(\mref{mMicrophone})} \textcolor{red}{(M7)}\\
+\acref{ac2} & \sout{(\mref{mSound})} \textcolor{red}{(M5)}\\
+\acref{ac3} & \sout{\mref{mLogin}}, \sout{(\mref{mBluetooth})} \textcolor{red}{(M2)}, \sout{(\mref{mKeyword})} \textcolor{red}{(M3)}, \sout{\mref{mProfile}}, \sout{\mref{mBattery}}\\
+\sout{\acref{ac4}} & \sout{\mref{mBattery}}\\
+\acref{ac5} & \sout{(\mref{mBluetooth})} \textcolor{red}{(M2)}, \sout{(\mref{mComm})} \textcolor{red}{(M6)}\\
+\acref{ac6} & \sout{(\mref{mSound})} \textcolor{red}{(M5)}, \sout{(\mref{mMicrophone})} \textcolor{red}{(M7)}\\
+\sout{\acref{ac7}} & \sout{\mref{mLogin}}\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Anticipated Changes and Modules}
