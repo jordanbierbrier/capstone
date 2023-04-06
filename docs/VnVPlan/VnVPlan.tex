@@ -46,6 +46,8 @@
 
 \tableofcontents
 
+\listoffigures
+
 \listoftables
 
 \newpage
@@ -1289,9 +1291,7 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
 
 \item{UT1}
 \begin{table}[!h]
-    \caption{UT1 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
-    
     \hline
     Type & Functional, Dynamic, and Manual. \\
     \hline
@@ -1306,6 +1306,7 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & 3 Different sample sounds will be supplied near the microphone. Will compare the output with expected output. The test succeeds if all the outputs match the expected outputs within some tolerance.     \\
     \hline
 \end{tabular}
+\caption{UT1 Description}
 \end{table}    
 \end{enumerate}
 
@@ -1314,9 +1315,7 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
 \begin{enumerate}
 
 \item{UT2}
-
 \begin{table}[H]
-    \caption{UT2 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Functional, Dynamic, and Manual. \\
@@ -1332,11 +1331,11 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & A large audio recording will be sent to the data buffer of the sender and send request will be asserted. The receiver should receive the data. The data will be compared manually to check if the test was passed.\\
     \hline
 \end{tabular}
+\caption{UT2 Description}
 \end{table}
 
 \item{UT3}
 \begin{table}[H]
-    \caption{UT3 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Functional, Dynamic, and Manual. \\
@@ -1352,6 +1351,7 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & A classification signal will be asserted manually in the software, its respective feedback signal needs to be asserted in the hardware for the test to pass.\\
     \hline
 \end{tabular}
+\caption{UT3 Description}
 \end{table}
 \end{enumerate}
 
@@ -1362,7 +1362,6 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
 
 \item{UT4}
 \begin{table}[H]
-    \caption{UT4 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Functional, Dynamic, and Automatic. \\
@@ -1378,10 +1377,11 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & Sound data from the Microphone module testing will be used for this test. The classification code ingrained in the Synesthesia Wear app will automatically try to classify stored sound data in memory. The test succeeds if all outputs are classified under their expected categories.\\
     \hline
 \end{tabular}
+\caption{UT4 Description}
 \end{table}
+
 \item{UT5}
 \begin{table}[H]
-    \caption{UT5 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Functional, Dynamic, and Manual. \\
@@ -1397,6 +1397,7 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & New sound classification settings will be inputted into a menu on the Synesthesia Wear app and a save button will be used to preserve those settings. The test succeeds if after going back to the sound classification settings menu, the newly inputted settings are displayed.\\
     \hline
 \end{tabular}
+\caption{UT5 Description}
 \end{table}
 \end{enumerate}
 
@@ -1407,7 +1408,6 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
 
 \item{UT6}
 \begin{table}[H]
-    \caption{UT6 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Functional, Dynamic, and Manual. \\
@@ -1423,6 +1423,7 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & A feedback signal pertaining to a particular classification is asserted, the output has to be equal to the set vibration specified by the classification. \\
     \hline
 \end{tabular}
+\caption{UT6 Description}
 \end{table}
 \end{enumerate}
 
@@ -1434,7 +1435,6 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
 
 \item{UT7}
 \begin{table}[H]
-    \caption{UT7 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Dynamic and Manual. \\
@@ -1450,10 +1450,11 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & 3 different sounds found online will be taken and played on some speakers that will project the sounds into the microphone. Taking the initial sound files and the sound data from the microphone, an online software tool will compare the sound data and measure their similarities/confidence level. The test succeeds if the similarities/confidence level is at least 95\%. \\
     \hline
 \end{tabular}
+\caption{UT7 Description}
 \end{table}
+
 \item{UT8}
 \begin{table}[H]
-    \caption{UT8 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Dynamic and Automatic. \\
@@ -1469,6 +1470,7 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & Random sounds will be inserted into the microphone. The sound buffer will be copied at the frequency of the sampling frequency into a file. The device has to be able to update the sound buffer continuously until the device is turned off to receive a conditional pass. For a complete pass, all the sound data has to have a distortion of less than 5\%. \\
     \hline
 \end{tabular}
+\caption{UT8 Description}
 \end{table}
 \end{enumerate}
 
@@ -1479,7 +1481,6 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
 
 \item{UT9}
 \begin{table}[H]
-    \caption{UT9 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Dynamic and Manual. \\
@@ -1495,10 +1496,11 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & A new bluetooth device will be introduced to the hardware, on performing the bluetooth connection procedure the connection should be established within a minute for the test to pass. \\
     \hline
 \end{tabular}
+\caption{UT9 Description}
 \end{table}
+
 \item{UT10}
 \begin{table}[H]
-    \caption{UT10 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Dynamic and Manual. \\
@@ -1514,6 +1516,7 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & The device will be paired to the hardware initially, by taking the device out of range we will simulate abrupt interruption. It should automatically connect back when back in range, this should not take any longer than 10 seconds after the device is back in range. \\
     \hline
 \end{tabular}
+\caption{UT10 Description}
 \end{table}
 \end{enumerate}
 
@@ -1524,7 +1527,6 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
 
 \item{UT11}
 \begin{table}[H]
-    \caption{UT11 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Dynamic and Automatic. \\
@@ -1540,6 +1542,7 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & After receiving sound data over bluetooth, Synesthesia Wear’s app will automatically send this data over to the corresponding device’s noise filtering hardware that will process and return a filtered version of the data. This test passes if it is clear that there is notably less noise in the filtered sound file compared to the original one. \\
     \hline
 \end{tabular}
+\caption{UT11 Description}
 \end{table}
 \end{enumerate}
 
@@ -1550,7 +1553,6 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
 
 \item{UT12}
 \begin{table}[H]
-    \caption{UT12 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Dynamic and Automatic. \\
@@ -1566,6 +1568,7 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & A sample set of different sounds (6 different types of sounds with each one supplied 20 times, each time with a random distortion added to make them all digitally different) will be run through a pre-configured classification set. If the output of the module is correct 90\% of the time, it is considered to be a pass. \\
     \hline
 \end{tabular}
+\caption{UT12 Description}
 \end{table}
 \end{enumerate}
 
@@ -1576,7 +1579,6 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
 
 \item{UT13}
 \begin{table}[H]
-    \caption{UT13 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Dynamic and Manual. \\
@@ -1592,6 +1594,7 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & A feedback signal pertaining to a particular classification is asserted such that the output has to be equal to the set vibration specified by the classification. A sample group of 5 will be asked to feel the vibration and then reply if said vibration was sufficient and non-intrusive. If 4 of the 5 answers are yes, the test is passed. \\
     \hline
 \end{tabular}
+\caption{UT13 Description}
 \end{table}
 \end{enumerate}
 
@@ -1603,7 +1606,6 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
 
 \item{UT14}
 \begin{table}[H]
-    \caption{UT14 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Structural, Dynamic and Manual. \\
@@ -1619,10 +1621,11 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & A sample group of 5 people will have the opportunity to interact with the UI and device first. They will later be asked questions regarding certain features of the product. These questions are listed in the appendix. If a satisfying result is obtained over the sample group, then the test is passed. This test has multiple subsections where each can be passed or failed separately. \\
     \hline
 \end{tabular}
+\caption{UT14 Description}
 \end{table}
+
 \item{UT15}
 \begin{table}[H]
-    \caption{UT15 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Dynamic and Automatic. \\
@@ -1638,10 +1641,11 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & It will be too hard to measure the response time manually as most humans have a response time greater than 1ms. Hence this test will be done with the help of helper code which will calculate the time between a user input detected and a corresponding change in the UI. \\
     \hline
 \end{tabular}
+\caption{UT15 Description}
 \end{table}
+
 \item{UT16}
 \begin{table}[H]
-    \caption{UT16 Description}
 \begin{tabular}{ |p{5cm}||p{7cm}| }
     \hline
     Type & Dynamic and Manual. \\
@@ -1657,6 +1661,7 @@ where information on their Uses, Syntax, and Semantics are explained in greater 
     How test will be performed & The UI will be installed on different systems (Android, Windows, IOS). If it is capable of all functionality within all the platforms, it receives a pass. \\
     \hline
 \end{tabular}
+\caption{UT16 Description}
 \end{table}
 \end{enumerate}
 
