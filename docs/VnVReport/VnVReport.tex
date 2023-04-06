@@ -137,7 +137,7 @@ Synesthesia wear is designed with a mobile application which allows customizatio
 
 \section{Nonfunctional Requirements Evaluation}
 
-\textcolor{red}{\subsection{Configure}}
+\subsection{Manual}
 \begin{longtable}{|p{1.4cm}|p{1.0cm}|p{2.5cm}|p{1.5cm}|p{2.2cm}|p{2cm}|p{1.2cm}|}
 
   \endfirsthead
@@ -336,6 +336,40 @@ Synesthesia wear is designed with a mobile application which allows customizatio
   NFRT33        & NFR20          & Try and using the device 24 hours after a major update has been pushed to the application              & Input a sound         & Device should retain 100 percent functionality         &       & \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}                        \\ \hline
   \caption{Upgrade Nonfunctional Requirement Tests}
   \label{UpgradeNonfunctionalRequirementTests}
+\end{longtable}
+
+\section{Safety Requirements Testing}
+
+\begin{longtable}{|p{1.4cm}|p{1.1cm}|p{2.5cm}|p{1.5cm}|p{2.2cm}|p{1.9cm}|p{1.2cm}|}
+
+  \endfirsthead
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
+
+  \endhead
+
+  \hline \multicolumn{7}{|r|}{Continued on next page} \\ \hline
+  \endfoot
+   
+  \endlastfoot
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
+
+  SRT1                              & SIR1         & The powered device will be checked for live current at all possible contact locations with the user’s hand. & Multimeter probe                                 & No live current                                              & No live current detected                  & {\color[HTML]{32CB00} Pass}             \\ \hline
+  SRT2                              & SIR2         & The device auto-shutoff feature will be checked, to protect against abnormal current characteristics.       & VCC connected to 10 volts                        & The controller detects it and isolates itself                & The controller was able to protect itself & {\color[HTML]{32CB00} Pass}             \\ \hline
+  SRT3                              & SR3          & Check if the powered device stays within the allocated temperatures.                                        & Thermocouple probe                               & Temperature difference is less than 5 degrees               & Temperature difference was 3 degrees      & {\color[HTML]{32CB00} Pass}             \\ \hline
+  SRT4                              & SR4                               & Check if the data and functionality of the device are retained if the power is cutoff abruptly.                                  & Power disconnected and connected                 & The device restarts correctly with any loss of functionality & The device restarted correctly            & {\color[HTML]{32CB00} Pass}             \\ \hline
+  SRT5                              & ACR1                              & Check if the user can update the intensity of the vibration device. Out of scope                                                 & N/A                                              & N/A                                                          & N/A                                       & {\color[HTML]{F8A102} TBD}             \\ \hline
+  SRT6                              & ACR2                              & Check if the application can handle invalid inputs and not break.                                                                & Invalid inputs                                   & No reaction                                                  & No reaction                               & {\color[HTML]{F8A102} TBD}             \\ \hline
+  SRT7                              & ACR3                              & Check if the application is able to alert the user if an incompatible device has been used. Out of scope                         & N/A                                              & N/A                                                          & N/A                                       & {\color[HTML]{F8A102} TBD}             \\ \hline
+  SRT8                              & IR3                               & Check if the device syncs automatically when it is connected to the application.                                                 & New connection                                   & Settings updated                                             & Settings updated                          & {\color[HTML]{F8A102} TBD}             \\ \hline
+  SRT9                              & IR4                               & Check if the application prevents the user from selecting the same vibration for two different classes.                          & Same vibration setting for two different classes & Error message                                                & Did not allow the change                  & {\color[HTML]{32CB00} Pass}            \\ \hline
+  SRT10                             & IR5                               & Check if the application tries to sync only when it needs to.                                                                    & Random application movement                      & No sync request until a change in settings                   & Correct output                            & {\color[HTML]{32CB00} Pass}             \\ \hline
+  SRT11                             & IR6                               & Check if the device can handle a sound of 90dB without breaking.                                                                 & 90 dB keyword sound                              & Correctly classified and retains functionality               & Correct classification                    & {\color[HTML]{32CB00} Pass}             \\ \hline
+  SRT12                             & IR7                               & Check if the application can handle incorrect Bluetooth signals.                                                                 & Corrupted Bluetooth transmission received        & Error message                                                & Does not make any change                  & {\color[HTML]{32CB00} Pass}             \\ \hline
+  SRT13                             & IR8                               & Check if the device will alert the user if the phone has been randomly disconnected.                                             & Abrupt disconnection                             & Haptic and visual feedback to the user                       & No output                                 & {\color[HTML]{FE0000} Fail}             \\ \hline
+  \caption{Safety Requirement Tests}
+  \label{tab:my-table}\\
 \end{longtable}
 
 
