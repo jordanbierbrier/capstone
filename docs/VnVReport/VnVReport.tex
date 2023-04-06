@@ -359,10 +359,10 @@ Synesthesia wear is designed with a mobile application which allows customizatio
   SRT2                              & SIR2         & The device auto-shutoff feature will be checked, to protect against abnormal current characteristics.       & VCC connected to 10 volts                        & The controller detects it and isolates itself                & The controller was able to protect itself & {\color[HTML]{32CB00} Pass}             \\ \hline
   SRT3                              & SR3          & Check if the powered device stays within the allocated temperatures.                                        & Thermocouple probe                               & Temperature difference is less than 5 degrees               & Temperature difference was 3 degrees      & {\color[HTML]{32CB00} Pass}             \\ \hline
   SRT4                              & SR4                               & Check if the data and functionality of the device are retained if the power is cutoff abruptly.                                  & Power disconnected and connected                 & The device restarts correctly with any loss of functionality & The device restarted correctly            & {\color[HTML]{32CB00} Pass}             \\ \hline
-  SRT5                              & ACR1                              & Check if the user can update the intensity of the vibration device. Out of scope                                                 & N/A                                              & N/A                                                          & N/A                                       & {\color[HTML]{F8A102} TBD}             \\ \hline
-  SRT6                              & ACR2                              & Check if the application can handle invalid inputs and not break.                                                                & Invalid inputs                                   & No reaction                                                  & No reaction                               & {\color[HTML]{F8A102} TBD}             \\ \hline
-  SRT7                              & ACR3                              & Check if the application is able to alert the user if an incompatible device has been used. Out of scope                         & N/A                                              & N/A                                                          & N/A                                       & {\color[HTML]{F8A102} TBD}             \\ \hline
-  SRT8                              & IR3                               & Check if the device syncs automatically when it is connected to the application.                                                 & New connection                                   & Settings updated                                             & Settings updated                          & {\color[HTML]{F8A102} TBD}             \\ \hline
+  SRT5                              & ACR1                              & Check if the user can update the intensity of the vibration device. \textcolor{red}{Out of scope}                                                 & N/A                                              & N/A                                                          & N/A                                       & {\color[HTML]{F8A102} TBD}             \\ \hline
+  SRT6                              & ACR2                              & Check if the application can handle invalid inputs and not break.                                                                & Invalid inputs                                   & No reaction                                                  & No reaction                               & {\color[HTML]{32CB00} Pass}               \\ \hline
+  SRT7                              & ACR3                              & Check if the application is able to alert the user if an incompatible device has been used. \textcolor{red}{Out of scope}                         & N/A                                              & N/A                                                          & N/A                                       & {\color[HTML]{F8A102} TBD}             \\ \hline
+  SRT8                              & IR3                               & Check if the device syncs automatically when it is connected to the application.                                                 & New connection                                   & Settings updated                                             & Settings updated                          & {\color[HTML]{32CB00} Pass}            \\ \hline
   SRT9                              & IR4                               & Check if the application prevents the user from selecting the same vibration for two different classes.                          & Same vibration setting for two different classes & Error message                                                & Did not allow the change                  & {\color[HTML]{32CB00} Pass}            \\ \hline
   SRT10                             & IR5                               & Check if the application tries to sync only when it needs to.                                                                    & Random application movement                      & No sync request until a change in settings                   & Correct output                            & {\color[HTML]{32CB00} Pass}             \\ \hline
   SRT11                             & IR6                               & Check if the device can handle a sound of 90dB without breaking.                                                                 & 90 dB keyword sound                              & Correctly classified and retains functionality               & Correct classification                    & {\color[HTML]{32CB00} Pass}             \\ \hline
@@ -429,58 +429,80 @@ Test results marked as {\color[HTML]{FE0000} Fail} require revisions in future i
 
 \section{Traceability Matrices}
 All of our tests can be traced back to either functional requirements, nonfunctional requirements and modules.
-\begin{table}[H]
-  \centering
-  \begin{tabular}{|l|lllll|}
+\begin{longtable}{| p{.20\textwidth} | p{.50\textwidth} |} 
   \hline
-  \textbf{Test}  & \multicolumn{5}{l|}{\textbf{Requirements}}                                                                                                                   \\ \hline
-                 & \multicolumn{1}{l|}{\textbf{FR1}} & \multicolumn{1}{l|}{\textbf{FR2}} & \multicolumn{1}{l|}{\textbf{FR3}} & \multicolumn{1}{l|}{\textbf{FR4}} & \textbf{FR5} \\ \hline
-  \textbf{FRT1}  & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
-  \textbf{FRT2}  & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
-  \textbf{FRT3}  & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
-  \textbf{FRT4}  & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
-  \textbf{FRT5}  & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
-  \textbf{FRT6}  & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
-  \textbf{FRT7}  & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
-  \textbf{FRT8}  & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             &              \\ \hline
-  \textbf{FRT9}  & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             &              \\ \hline
-  \textbf{FRT10} & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             &              \\ \hline
-  \textbf{FRT11} & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            &              \\ \hline
-  \textbf{FRT12} & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            &              \\ \hline
-  \textbf{FRT13} & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            &              \\ \hline
-  \textbf{FRT14} & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            &              \\ \hline
-  \textbf{FRT15} & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & X            \\ \hline
-  \end{tabular}
-  \caption{Traceability between functional requirement tests and functional requirements }
-  \label{tab:my-table}
-\end{table}
+  \textbf{Tests}    &   \textbf{Requirements} \\ \hline
+  FRT1 &  FR-2 \\ \hline          
+  FRT2 &  FR-1, FR-2, FR-8  \\ \hline
+  FRT3 &   FR-1, FR-8 \\ \hline
+   FRT4 &   FR-1 \\ \hline
+   FRT5 &  FR-2, FR-8  \\ \hline
+   FRT6 &  FR-1, FR-2, FR-6, FR-7, FR-8  \\ \hline
+  FRT7  &  FR-1, FR-2, FR-8  \\ \hline
+  FRT8 &  FR-3, FR-8  \\ \hline
+  FRT9 &  FR-2, FR-3, FR-4  \\ \hline
+  FRT10 &  FR-2, FR-3, FR-4  \\ \hline
+  FRT11 &  FR-3  \\ \hline
+  FRT12 &  FR-2, FR-5  \\ \hline
+  FRT13 &  FR-4  \\ \hline
+  FRT14 &  FR-6  \\ \hline
+  FRT15 &  FR-6  \\ \hline
+  FRT16 &  FR-6  \\ \hline
+  FRT17 &  FR-6  \\ \hline
+  FRT18 &  FR-1, FR-2, FR-7  \\ \hline
+  FRT19 &  FR-1, FR-2, FR-4, FR-5, FR-7  \\ \hline
+  NFRT1 &  NFR-1  \\ \hline
+  NFRT2 &  NFR-1  \\ \hline
+  NFRT3 &  NFR-1  \\ \hline
+  NFRT4 &  NFR-1  \\ \hline
+  NFRT5 &  NFR-1  \\ \hline
+  NFRT6 &  NFR-1  \\ \hline
+  NFRT7 &  NFR-2  \\ \hline
+  NFRT8 &  NFR-3  \\ \hline
+  NFRT9 &   NFR-3 \\ \hline
+  NFRT10 &  NFR-3  \\ \hline
+  NFRT11 &  NFR-3  \\ \hline
+  NFRT12 &  NFR-4, NFR-25  \\ \hline
+  NFRT13 &  NFR-4  \\ \hline
+  NFRT14 &  NFR-4  \\ \hline
+  NFRT15 &  NFR-4  \\ \hline
+  NFRT16 &  NFR-5, NFR-7  \\ \hline
+  NFRT17 &  NFR-6  \\ \hline
+  NFRT18 &  NFR-8  \\ \hline
+  NFRT19 &   NFR-9 \\ \hline
+  NFRT20 &  NFR-9  \\ \hline
+  NFRT21 &  NFR-9  \\ \hline
+  NFRT22&  NFR-9  \\ \hline
+  NFRT23 &  NFR-10  \\ \hline
+  NFRT24 &  NFR-11  \\ \hline
+  NFRT25 &  NFR-12  \\ \hline
+  NFRT26 &  NFR-12  \\ \hline
+  NFRT27 &  NFR-12  \\ \hline
+  NFRT28 &  NFR-15 \\ \hline
+  NFRT29 &   NFR-16 \\ \hline
+  NFRT30 &  NFR-17  \\ \hline
+  NFRT31 &   NFR-17 \\ \hline
+  NFRT32 &  NFR-17, NFR-21 \\ \hline
+  NFRT33 &  NFR-20  \\ \hline
+  NFRT34 &  NFR-25  \\ \hline
+  NFRT35 &   NFR-26, NFR-27 \\ \hline
+  SRT1 & SR1 \\ \hline
+  SRT2 & SR2 \\ \hline
+  SRT3 & SR3 \\ \hline
+  SRT4 & SR4 \\ \hline
+  SRT5 & ACR1 \\ \hline
+  SRT6 & ACR2 \\ \hline
+  SRT7 & ACR3 \\ \hline
+  SRT8 & IR3 \\ \hline
+  SRT9 & IR4 \\ \hline
+  SRT10 & IR5 \\ \hline
+  SRT11 & IR6 \\ \hline
+  SRT12 & IR7 \\ \hline
+  SRT13 & IR8 \\ \hline
 
-\noindent Given our size of non-functional requirements, we have grouped some of the tests into test types for ease of understanding.
-% Please add the following required packages to your document preamble:
-% \usepackage{multirow}
-\begin{table}[H]
-  \centering
-  \begin{tabular}{|l|l|}
-  \hline
-  \textbf{Test Cases}                         & \textbf{Requirements} \\ \hline
-  \multirow{3}{*}{Manual Non-functional}      & NFR1                  \\ \cline{2-2} 
-                                              & NFR2                  \\ \cline{2-2} 
-                                              & NFR4                  \\ \hline
-  \multirow{4}{*}{Stress Non-functional}      & NFR3                  \\ \cline{2-2} 
-                                              & NFR11                 \\ \cline{2-2} 
-                                              & NFR12                 \\ \cline{2-2} 
-                                              & NFR16                 \\ \hline
-  \multirow{6}{*}{Performance Non-Functional} & NFR1                  \\ \cline{2-2} 
-                                              & NFR3                  \\ \cline{2-2} 
-                                              & NFR5                  \\ \cline{2-2} 
-                                              & NFR9                  \\ \cline{2-2} 
-                                              & NFR9                  \\ \cline{2-2} 
-                                              & NFR17                 \\ \hline
-  Security Non-Functional                                   & NFR3                  \\ \hline
-  \end{tabular}
-  \caption{Traceability between test cases and non-functional requirements }
-  \label{tab:my-table}
-\end{table}
+  \caption{Traceability Between Test Cases and Requirements} % needs to go inside longtable environment
+  \label{tab:myfirstlongtable}
+  \end{longtable}
 
 \begin{table}[H]
   \centering
@@ -488,12 +510,12 @@ All of our tests can be traced back to either functional requirements, nonfuncti
   \hline
   \textbf{Modules}                           & \multicolumn{10}{l|}{\textbf{Unit Tests}}                                                                                                                                                                                                                                                                                                  \\ \hline
                                               & \multicolumn{1}{l|}{\textbf{T1}} & \multicolumn{1}{l|}{\textbf{T3}} & \multicolumn{1}{l|}{\textbf{T4}} & \multicolumn{1}{l|}{\textbf{T5}} & \multicolumn{1}{l|}{\textbf{T6}} & \multicolumn{1}{l|}{\textbf{T9}} & \multicolumn{1}{l|}{\textbf{T10}} & \multicolumn{1}{l|}{\textbf{T11}} & \multicolumn{1}{l|}{\textbf{T15}} & \textbf{T16} \\ \hline
-  \textbf{Login Module M1}                   & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
+  \textbf{\sout{Login Module M1}}                   & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
   \textbf{Bluetooth connection Module M2}    & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
   \textbf{Keyword Selection Module M3}       & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
   \textbf{Output Signal Module M4}           & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             &              \\ \hline
   \textbf{Profile Module M5}                 & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{X}            & X            \\ \hline
-  \textbf{Battery Status Module M6}          & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
+  \textbf{\sout{Battery Status Module M6}}          & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
   \textbf{Sound Classification Module M7}    & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
   \textbf{Bluetooth Communication Module M8} & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
   \textbf{Microphone Module M9}              & \multicolumn{1}{l|}{X}           & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{}            & \multicolumn{1}{l|}{X}            & \multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{}             &              \\ \hline
