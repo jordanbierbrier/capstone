@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background2"
+    tools:context=".LoginPage"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tv_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:textSize="50sp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="90dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="15dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/edittextbackground"
+        android:layout_centerInParent="true"
+        android:hint="Username"
+        android:id="@+id/logUsername"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/edittextbackground"
+        android:layout_marginTop="15dp"
+        android:hint="Enter Password"
+        android:layout_below="@id/logUsername"
+        android:inputType="textPassword"
+        android:id="@+id/logPassword"
+        />
+
+
+    <Button
+        android:id="@+id/logBtn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/logPassword"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/oval_btn"
+        android:text="Login" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/backBtn"/>
+
+</RelativeLayout>

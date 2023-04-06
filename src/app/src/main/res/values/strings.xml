@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">STRONE_V.0</string>
+    <string-array name="Keywords">
+        <item>Abraham</item>
+        <item>Jordan</item>
+        <item>Alarm</item>
+    </string-array>
+
+    <string name="select">Select Item</string>
+
+</resources>
