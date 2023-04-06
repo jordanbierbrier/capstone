@@ -148,10 +148,6 @@
 
 \pagenumbering{roman}
 
-\tableofcontents
-
-\pagebreak
-
 \section*{Revision History}
 
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
@@ -173,6 +169,31 @@ April 4, 2023 & 1.5 & Updated for feedback and consistency\\
 This document describes the requirements for Synthesia Wear.
 The template for the Software Requirements Specification (SRS)
 is a subset of the Volere template (Robertson and Robertson, 2012).
+
+\newpage
+
+\tableofcontents
+
+\listoffigures
+
+\listoftables
+
+\newpage
+
+\section*{Symbols, Abbreviations and Acronyms}
+
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{l l} 
+  \toprule		
+  \textbf{symbol} & \textbf{description}\\
+  \midrule 
+  Age groups & (15-30, 31-50, 51-75, 75+)\\
+  \bottomrule
+\end{tabular}\\
+
+\newpage
+
 \pagenumbering{arabic}
 
 \section{Project Drivers}
@@ -1292,7 +1313,7 @@ User Selection & If device is active & Mode Selection & What mode is required \\
 
 \noindent
 
-The number of check marks within the Priority column in Figure \ref{PhaseDiagram} corresponds to the level of priority. Three check marks has a higher priority than two, and two check marks has a higher priority than one check mark.
+The number of check marks within the Priority column \sout{in Figure \ref{PhaseDiagram}} corresponds to the level of priority. Three check marks has a higher priority than two, and two check marks has a higher priority than one check mark.
 
 
 \section{Project Issues}
