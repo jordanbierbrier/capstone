@@ -408,6 +408,7 @@ Furthermore, inapplicable tests from the VnVPlan were not included in the follow
 \section{Changes Due to Testing}
 Test results marked as {\color[HTML]{FE0000} Fail} require revisions in future implementations. 
 \subsection{Changes Due to Requirement Tests}
+\textcolor{red}{Due to FRT3, FRT6, FRT14 failing the following changes will need to be made so that they can improve the outcome of the tests for future device functionality. }
 \begin{itemize}
   \item Add capability to detect sounds at greater distance ($>$15m)
   \item Update sound detection model performance by being more generalizable (i.e. detect sound from different individuals)
@@ -418,6 +419,7 @@ Test results marked as {\color[HTML]{FE0000} Fail} require revisions in future i
 }
 \end{itemize}
 \subsection{Changes Due to Unit Tests}
+\textcolor{red}{Due to UT10 the feed sampling and auto connection will need to be further improved.}
 \begin{itemize}
   \item Add further bluetooth capability to reconnect device with mobile application after device goes in and
    out of range
@@ -426,6 +428,7 @@ Test results marked as {\color[HTML]{FE0000} Fail} require revisions in future i
   \item Allow for auto bluetooth connection
 }
 \end{itemize}
+
 
 \section{Traceability Matrices}
 All of our tests can be traced back to either functional requirements, nonfunctional requirements and modules.
