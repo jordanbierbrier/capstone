@@ -1,0 +1,174 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.strone_v0"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="32" />
+9-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.BLUETOOTH" />
+11-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:4:5-67
+11-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:4:22-65
+12    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+12-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:5:5-73
+12-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:5:22-71
+13    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+13-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:6:5-72
+13-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:6:22-70
+14    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+14-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:7:5-75
+14-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:7:22-73
+15    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+15-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:8:5-80
+15-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:8:22-78
+16    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+16-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:9:5-78
+16-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:9:22-76
+17    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+17-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:10:5-84
+17-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:10:22-82
+18
+19    <uses-feature android:name="android.hardware.bluetooth_le" />
+19-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:11:5-65
+19-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:11:19-63
+20
+21    <application
+21-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:13:5-71:19
+22        android:allowBackup="true"
+22-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:14:9-35
+23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+23-->[androidx.core:core:1.8.0] C:\Users\abrah\.gradle\caches\transforms-3\87a796fe63836d99a2198ac6a6284cb3\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
+24        android:dataExtractionRules="@xml/data_extraction_rules"
+24-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:15:9-65
+25        android:debuggable="true"
+26        android:fullBackupContent="@xml/backup_rules"
+26-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:16:9-54
+27        android:icon="@mipmap/ic_launcher"
+27-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:17:9-43
+28        android:label="@string/app_name"
+28-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:18:9-41
+29        android:roundIcon="@mipmap/ic_launcher_round"
+29-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:19:9-54
+30        android:supportsRtl="true"
+30-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:20:9-35
+31        android:testOnly="true"
+32        android:theme="@style/Theme.STRONE_V0" >
+32-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:21:9-47
+33        <activity
+33-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:23:9-29:20
+34            android:name="com.example.strone_v0.KeywordPage"
+34-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:24:13-40
+35            android:exported="false" >
+35-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:25:13-37
+36            <meta-data
+36-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:26:13-28:36
+37                android:name="android.app.lib_name"
+37-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:27:17-52
+38                android:value="" />
+38-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:28:17-33
+39        </activity>
+40        <activity
+40-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:30:9-36:20
+41            android:name="com.example.strone_v0.PairingPage"
+41-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:31:13-40
+42            android:exported="false" >
+42-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:32:13-37
+43            <meta-data
+43-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:26:13-28:36
+44                android:name="android.app.lib_name"
+44-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:27:17-52
+45                android:value="" />
+45-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:28:17-33
+46        </activity>
+47        <activity
+47-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:37:9-43:20
+48            android:name="com.example.strone_v0.HomePage"
+48-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:38:13-37
+49            android:exported="false" >
+49-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:39:13-37
+50            <meta-data
+50-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:26:13-28:36
+51                android:name="android.app.lib_name"
+51-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:27:17-52
+52                android:value="" />
+52-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:28:17-33
+53        </activity>
+54        <activity
+54-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:44:9-50:20
+55            android:name="com.example.strone_v0.RegisterPage"
+55-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:45:13-41
+56            android:exported="false" >
+56-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:46:13-37
+57            <meta-data
+57-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:26:13-28:36
+58                android:name="android.app.lib_name"
+58-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:27:17-52
+59                android:value="" />
+59-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:28:17-33
+60        </activity>
+61        <activity
+61-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:51:9-57:20
+62            android:name="com.example.strone_v0.LoginPage"
+62-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:52:13-38
+63            android:exported="false" >
+63-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:53:13-37
+64            <meta-data
+64-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:26:13-28:36
+65                android:name="android.app.lib_name"
+65-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:27:17-52
+66                android:value="" />
+66-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:28:17-33
+67        </activity>
+68        <activity
+68-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:58:9-70:20
+69            android:name="com.example.strone_v0.MainActivity"
+69-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:59:13-41
+70            android:exported="true" >
+70-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:60:13-36
+71            <intent-filter>
+71-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:61:13-65:29
+72                <action android:name="android.intent.action.MAIN" />
+72-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:62:17-69
+72-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:62:25-66
+73
+74                <category android:name="android.intent.category.LAUNCHER" />
+74-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:64:17-77
+74-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:64:27-74
+75            </intent-filter>
+76
+77            <meta-data
+77-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:26:13-28:36
+78                android:name="android.app.lib_name"
+78-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:27:17-52
+79                android:value="" />
+79-->C:\Users\abrah\AndroidStudioProjects\STRONE_V0\app\src\main\AndroidManifest.xml:28:17-33
+80        </activity>
+81
+82        <provider
+82-->[androidx.emoji2:emoji2:1.2.0] C:\Users\abrah\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+83            android:name="androidx.startup.InitializationProvider"
+83-->[androidx.emoji2:emoji2:1.2.0] C:\Users\abrah\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+84            android:authorities="com.example.strone_v0.androidx-startup"
+84-->[androidx.emoji2:emoji2:1.2.0] C:\Users\abrah\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+85            android:exported="false" >
+85-->[androidx.emoji2:emoji2:1.2.0] C:\Users\abrah\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+86            <meta-data
+86-->[androidx.emoji2:emoji2:1.2.0] C:\Users\abrah\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+87                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+87-->[androidx.emoji2:emoji2:1.2.0] C:\Users\abrah\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+88                android:value="androidx.startup" />
+88-->[androidx.emoji2:emoji2:1.2.0] C:\Users\abrah\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+89            <meta-data
+89-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\abrah\.gradle\caches\transforms-3\0ce9e5f033589fdf0ab757f82f7808ec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+90                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+90-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\abrah\.gradle\caches\transforms-3\0ce9e5f033589fdf0ab757f82f7808ec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+91                android:value="androidx.startup" />
+91-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\abrah\.gradle\caches\transforms-3\0ce9e5f033589fdf0ab757f82f7808ec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+92        </provider>
+93    </application>
+94
+95</manifest>

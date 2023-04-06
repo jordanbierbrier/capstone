@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background2"
+    tools:context=".HomePage"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tv_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome Dr. Smith"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="90dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="By clicking the pairing button down below the application will automatically detect your device. The keyword selection button underneath will allow you to toggle your desired keywords!"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="15dp"/>
+
+    <Button
+        android:id="@+id/temp1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/oval_btn"
+        android:text="Pair Device"
+        app:backgroundTint="#FFFF"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/temp2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/temp1"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:background="@drawable/oval_btn"
+        app:backgroundTint="#FFFF"
+        android:text="Keyword Selection" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HomePage"
+        android:textColor="@color/black"
+        app:backgroundTint="#FFFF"
+        android:id="@+id/logoutBtn"/>
+
+</RelativeLayout>

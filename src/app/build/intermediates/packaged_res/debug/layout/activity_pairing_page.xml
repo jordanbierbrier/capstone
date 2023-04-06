@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background2"
+    tools:context=".PairingPage"
+    android:padding="20dp">
+
+
+    <TextView
+        android:id="@+id/tv_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pairing Guide"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:textSize="50sp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="90dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="124dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="150dp"
+        android:textColor="@color/white"
+        android:id="@+id/logView"/>
+
+    <Button
+        android:id="@+id/connectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="400dp"
+        android:textColor="@color/black"
+        android:background="@drawable/oval_btn"
+        android:text="Connect" />
+
+    <Button
+        android:id="@+id/disconnectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/connectButton"
+        android:layout_centerInParent="true"
+        android:textColor="@color/black"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/oval_btn"
+        android:text="Disconnect" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Back"
+        android:id="@+id/backBtn"/>
+
+</RelativeLayout>

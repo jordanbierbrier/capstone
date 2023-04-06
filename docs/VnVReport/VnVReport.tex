@@ -8,6 +8,7 @@
 \usepackage{multirow}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{ulem}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -39,6 +40,7 @@
 3/7/2023 & 1.1 & Added Section 4 - Functional Requirements Evaluation\\
 3/7/2023 & 1.2 & Added Section 5 - Nonfunctional Requirements Evaluation\\
 3/8/2023 & 1.3 & Added Section 6 - Unit Testing\\
+4/4/2023 & 1.4 & Updated for final rev\\
 \bottomrule
 \end{tabularx}
 
@@ -80,13 +82,38 @@ The focus of this document is on the output results of Synesthesia Wear when giv
 
 Synesthesia wear is designed with a mobile application which allows customization to occur from their mobile devices and allows users to toggle certain sounds on and off to improve usability of the watch. Synesthesia wear will be able to detect key words and sounds that are customized to the users to aid them with their lack of hearing. As a result, this helps them know when someone is calling their name, during emergencies, and many other situations within their daily lives.
 
+\section{Verification Plan}
+\subsection{SRS Verification Plan}
+\begin{itemize}
+  \item \textbf{Review by teammates:} \textcolor{red}{The SRS was reviewed by teammates working in groups of two. This was done in groups so that teammates can discuss between each other to verify and validate our SRS. This also helped to iron out the previous issues and feedback we had received from our peers.}
+  \item \textbf{Review by stakeholders:} \textcolor{red}{The key functional requirements and some key non-functional requirements were discussed with external stakeholders. Some non-functional requirements were not discussed as they were not deemed to be important. 
+  The external stakeholders that were consulted for our project were Dr. Martin von. Mohrenschildt and Katherine Hesson-Bolton. Both offered valuable information for our project. Dr. Martin von. Mohrenschildt was consulted at the start and the middle of the project while Katherine Hesson-Bolton was consulted throughout the project. 
+  } 
+\end{itemize}
+
+\subsection{Design Verification Plan}
+\begin{itemize}
+  \item \textbf{Review by teammates:} \textcolor{red}{The design was reviewed by all the teammates together in a library meeting room. The feedback from our peers and the initial design goals were considered.}
+  \item \textbf{Review by stakeholders:} \textcolor{red}{The design was also reviewed by our professor and our TAs during revision 0 demonstration. A lot of feedback about our design was received then, which has resulted in a couple of changes in key areas of our project. 
+  } 
+\end{itemize}
 
 \section{Functional Requirements Evaluation}
 
-\begin{longtable}{|p{1.4cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
+\begin{longtable}{|p{1.2cm}|p{0.9cm}|p{2.5cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
 
   \endfirsthead
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
+
   \endhead
+
+  \hline \multicolumn{7}{|r|}{Continued on next page} \\ \hline
+  \endfoot
+   
+\endlastfoot
+
+
   \hline
   \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
   FRT1        & FR1, FR2     & Testing ability to differentiate sounds                                     & Five different sounds                             & Device produces five different feedbacks                    &           Vibration motor was able to produce different feedbacks when configured with 5 different feedback settings              & {\color[HTML]{32CB00} Pass}                        \\ \hline
@@ -111,10 +138,18 @@ Synesthesia wear is designed with a mobile application which allows customizatio
 \section{Nonfunctional Requirements Evaluation}
 
 \subsection{Manual}
-\begin{longtable}{|p{1.4cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
- 
+\begin{longtable}{|p{1.4cm}|p{1.0cm}|p{2.5cm}|p{1.5cm}|p{2.2cm}|p{2cm}|p{1.2cm}|}
+
   \endfirsthead
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
+
   \endhead
+
+  \hline \multicolumn{7}{|r|}{Continued on next page} \\ \hline
+  \endfoot
+   
+\endlastfoot
   \hline
   \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
   NFRT3        & NFR1          & Testing button functionality based on button colour                     & Open Application                 & Different coloured buttons perform different functionalities    & Buttons with similar colour performed similar functions                        & {\color[HTML]{32CB00} Pass}                        \\ \hline
@@ -130,10 +165,18 @@ Synesthesia wear is designed with a mobile application which allows customizatio
 
 \subsection{Stress}
 		
-\begin{longtable}{|p{1.4cm}|p{1.4cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
+\begin{longtable}{|p{1.4cm}|p{1.1cm}|p{2.5cm}|p{1.5cm}|p{2.2cm}|p{1.9cm}|p{1.2cm}|}
 
   \endfirsthead
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
+
   \endhead
+
+  \hline \multicolumn{7}{|r|}{Continued on next page} \\ \hline
+  \endfoot
+   
+\endlastfoot
   \hline
   \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}    & \textbf{Actual Result}                          & \textbf{Result}                                     \\ \hline
   NFRT11        & NFR3          & Check if you can configure an unrecognizable keyword              & Unreco-gnizable keyword                          & Keyword not supported                      & Keyword not supported                         & {\color[HTML]{32CB00} Pass}                         \\ \hline
@@ -146,16 +189,25 @@ Synesthesia wear is designed with a mobile application which allows customizatio
 \subsection{Performance}
 
 
-\begin{longtable}{|p{1.4cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
+\begin{longtable}{|p{1.4cm}|p{1.1cm}|p{2.5cm}|p{1.5cm}|p{2.2cm}|p{1.9cm}|p{1.2cm}|}
+
   \endfirsthead
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
+
   \endhead
+
+  \hline \multicolumn{7}{|r|}{Continued on next page} \\ \hline
+  \endfoot
+   
+\endlastfoot
   \hline
   \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}    & \textbf{Actual Result}                          & \textbf{Result}                                     \\ \hline
   NFRT1        & NFR1          & Checking what the initial state of application is.              & Open Application                          & Home Page of Application                      & Home Page of Application                        & {\color[HTML]{32CB00} Pass}                         \\ \hline
   NFRT2        & NFR1          & Can users find the pairing button of the application.           & Open the Application, Click pair button   & User clicks pair button under 10 seconds      & Users found pairing buttons under 10 seconds    & {\color[HTML]{32CB00} Pass}                         \\ \hline
   NFRT4        & NFR1          & Checking if application correctly goes to pairing page.         & Open the Application, Click pair button   & Pairing page of Application                   & Pairing page of Application                     & {\color[HTML]{32CB00} Pass}                         \\ \hline
   NFRT5        & NFR1          & Checking if application correctly goes to keyword selection page.& Open the Application, Click keyword selection button.& Keyword Selection page of Application& Keyword Selection page of Application        & {\color[HTML]{32CB00} Pass}                         \\ \hline
-  NFRT8        & NFR3          & Check to see if the application connects to the device through bluetooth& Open application, click pair button on both device and application&Device pairs to Phone&Device Pairs to Phone                       & {\color[HTML]{32CB00} Pass}                        \\ \hline
+ \sout{NFRT8}       & NFR3          & Check to see if the application connects to the device through bluetooth \textcolor{red}{out of scope} & Open application, click pair button on both device and application&Device pairs to Phone&Device Pairs to Phone                       & {\color[HTML]{32CB00} Pass}                        \\ \hline
   NFRT16       & NFR5          & Checking if users can pair a device to phone in under 5 minutes  & Open application, click pair button on both device and application& 3/4 Users fully pair device in under 5 minutes& 4/4 Users pair device under 5 minutes&{\color[HTML]{32CB00} Pass}            \\ \hline
   NFRT19       & NFR9          & A sound will be fed to the device that includes a keyword device should be able to provide feedback in under 1 second 8/10 times& Sound that includes a keyword&8/10 keywords detected in under 1 second& 9/10 Keywords detected. See Figure \ref*{Response} in Appendix&{\color[HTML]{32CB00} Pass}         \\ \hline
   NFRT20       & NFR9          & Checking how fast the UI of application responds to user input   &User Input & Average of 100 inputs is under 1ms&                                                                                             & \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}  \\ \hline
@@ -166,11 +218,21 @@ Synesthesia wear is designed with a mobile application which allows customizatio
   \label{performanceNonfunctionalRequirementTests}
 \end{longtable}
 
+\newpage
 \subsection{Security}
 
-\begin{longtable}{|p{1.4cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
+\begin{longtable}{|p{1.4cm}|p{1.1cm}|p{2.5cm}|p{1.5cm}|p{2.2cm}|p{1.9cm}|p{1.2cm}|}
+
   \endfirsthead
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
+
   \endhead
+
+  \hline \multicolumn{7}{|r|}{Continued on next page} \\ \hline
+  \endfoot
+
+  \endlastfoot
   \hline
   \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}    & \textbf{Actual Result}                          & \textbf{Result}                                     \\ \hline
   NFRT9        & NFR3          & Checking if application pairs to device that is not in pairing mode              & Click pair Button & Device not found & Device not found & {\color[HTML]{32CB00} Pass}                         \\ \hline
@@ -181,9 +243,18 @@ Synesthesia wear is designed with a mobile application which allows customizatio
 
 \subsection{Recovery}
 
-\begin{longtable}{|p{1.4cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
+\begin{longtable}{|p{1.4cm}|p{1.1cm}|p{2.5cm}|p{1.5cm}|p{2.2cm}|p{1.9cm}|p{1.2cm}|}
+
   \endfirsthead
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
+
   \endhead
+
+  \hline \multicolumn{7}{|r|}{Continued on next page} \\ \hline
+  \endfoot
+   
+  \endlastfoot
   \hline
   \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}    & \textbf{Actual Result}                          & \textbf{Result}                                     \\ \hline
   NFRT18        & NFR8          & Check to see if a initially paired device will automatically repair when taken out of range than put back into range              & Take device in/out of range  & device should rapair 90 percent of the time   & device repaired 100 percent of the time    & {\color[HTML]{32CB00} Pass}                         \\ \hline
@@ -195,9 +266,18 @@ Synesthesia wear is designed with a mobile application which allows customizatio
 
 \subsection{Visual}
 
-\begin{longtable}{|p{1.4cm}|p{1.4cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
+\begin{longtable}{|p{1.4cm}|p{1.1cm}|p{2.5cm}|p{1.5cm}|p{2.2cm}|p{1.9cm}|p{1.2cm}|}
+
   \endfirsthead
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
+
   \endhead
+
+  \hline \multicolumn{7}{|r|}{Continued on next page} \\ \hline
+  \endfoot
+   
+  \endlastfoot
   \hline
   \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}    & \textbf{Actual Result}                          & \textbf{Result}                                     \\ \hline
   NFRT17        &  NFR6         & people from different age groups will be shown icons found in application and asked if they can identify their meaning                   & N/A    & All 5 icons named by 3/4 participants of each age group    &    & \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}                         \\ \hline
@@ -211,7 +291,7 @@ Synesthesia wear is designed with a mobile application which allows customizatio
 
 \subsection{Load}
 
-\begin{longtable}{|p{1.4cm}|p{1.4cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
+\begin{longtable}{|p{1.4cm}|p{1.1cm}|p{2.5cm}|p{1.5cm}|p{2.2cm}|p{1.9cm}|p{1.2cm}|}
 
   \endfirsthead
   \endhead
@@ -224,7 +304,7 @@ Synesthesia wear is designed with a mobile application which allows customizatio
 
 \subsection{Regulation}
 
-\begin{longtable}{|p{1.4cm}|p{1.4cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
+\begin{longtable}{|p{1.4cm}|p{1.1cm}|p{2.5cm}|p{1.5cm}|p{2.2cm}|p{1.9cm}|p{1.2cm}|}
 
   \endfirsthead
   \endhead
@@ -237,9 +317,18 @@ Synesthesia wear is designed with a mobile application which allows customizatio
 
 \subsection{Upgrade}
 
-\begin{longtable}{|p{1.4cm}|p{1.4cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
+\begin{longtable}{|p{1.4cm}|p{1.1cm}|p{2.5cm}|p{1.5cm}|p{2.2cm}|p{1.9cm}|p{1.2cm}|}
+
   \endfirsthead
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
+
   \endhead
+
+  \hline \multicolumn{7}{|r|}{Continued on next page} \\ \hline
+  \endfoot
+   
+  \endlastfoot
   \hline
   \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}    & \textbf{Actual Result}                          & \textbf{Result}                                     \\ \hline
   NFRT27        & NFR12          & Helper code will be used to check if application is currently up if application goes down the developers will recieve an email              & N/A         & Application should have a continous uptime of 1 year         &       & \cellcolor[HTML]{FFFFFF}{\color[HTML]{F8A102} TBD}                        \\ \hline
@@ -249,14 +338,57 @@ Synesthesia wear is designed with a mobile application which allows customizatio
   \label{UpgradeNonfunctionalRequirementTests}
 \end{longtable}
 
+\section{Safety Requirements Testing}
+
+\begin{longtable}{|p{1.4cm}|p{1.1cm}|p{2.5cm}|p{1.5cm}|p{2.2cm}|p{1.9cm}|p{1.2cm}|}
+
+  \endfirsthead
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
+
+  \endhead
+
+  \hline \multicolumn{7}{|r|}{Continued on next page} \\ \hline
+  \endfoot
+   
+  \endlastfoot
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
+
+  SRT1                              & SIR1         & The powered device will be checked for live current at all possible contact locations with the user’s hand. & Multimeter probe                                 & No live current                                              & No live current detected                  & {\color[HTML]{32CB00} Pass}             \\ \hline
+  SRT2                              & SIR2         & The device auto-shutoff feature will be checked, to protect against abnormal current characteristics.       & VCC connected to 10 volts                        & The controller detects it and isolates itself                & The controller was able to protect itself & {\color[HTML]{32CB00} Pass}             \\ \hline
+  SRT3                              & SR3          & Check if the powered device stays within the allocated temperatures.                                        & Thermocouple probe                               & Temperature difference is less than 5 degrees               & Temperature difference was 3 degrees      & {\color[HTML]{32CB00} Pass}             \\ \hline
+  SRT4                              & SR4                               & Check if the data and functionality of the device are retained if the power is cutoff abruptly.                                  & Power disconnected and connected                 & The device restarts correctly with any loss of functionality & The device restarted correctly            & {\color[HTML]{32CB00} Pass}             \\ \hline
+  SRT5                              & ACR1                              & Check if the user can update the intensity of the vibration device. Out of scope                                                 & N/A                                              & N/A                                                          & N/A                                       & {\color[HTML]{F8A102} TBD}             \\ \hline
+  SRT6                              & ACR2                              & Check if the application can handle invalid inputs and not break.                                                                & Invalid inputs                                   & No reaction                                                  & No reaction                               & {\color[HTML]{F8A102} TBD}             \\ \hline
+  SRT7                              & ACR3                              & Check if the application is able to alert the user if an incompatible device has been used. Out of scope                         & N/A                                              & N/A                                                          & N/A                                       & {\color[HTML]{F8A102} TBD}             \\ \hline
+  SRT8                              & IR3                               & Check if the device syncs automatically when it is connected to the application.                                                 & New connection                                   & Settings updated                                             & Settings updated                          & {\color[HTML]{F8A102} TBD}             \\ \hline
+  SRT9                              & IR4                               & Check if the application prevents the user from selecting the same vibration for two different classes.                          & Same vibration setting for two different classes & Error message                                                & Did not allow the change                  & {\color[HTML]{32CB00} Pass}            \\ \hline
+  SRT10                             & IR5                               & Check if the application tries to sync only when it needs to.                                                                    & Random application movement                      & No sync request until a change in settings                   & Correct output                            & {\color[HTML]{32CB00} Pass}             \\ \hline
+  SRT11                             & IR6                               & Check if the device can handle a sound of 90dB without breaking.                                                                 & 90 dB keyword sound                              & Correctly classified and retains functionality               & Correct classification                    & {\color[HTML]{32CB00} Pass}             \\ \hline
+  SRT12                             & IR7                               & Check if the application can handle incorrect Bluetooth signals.                                                                 & Corrupted Bluetooth transmission received        & Error message                                                & Does not make any change                  & {\color[HTML]{32CB00} Pass}             \\ \hline
+  SRT13                             & IR8                               & Check if the device will alert the user if the phone has been randomly disconnected.                                             & Abrupt disconnection                             & Haptic and visual feedback to the user                       & No output                                 & {\color[HTML]{FE0000} Fail}             \\ \hline
+  \caption{Safety Requirement Tests}
+  \label{tab:my-table}\\
+\end{longtable}
+
 
 \section{Unit Testing}
 The following test cases were derived from the unit test section shown in Synesthesia Wear's \href{https://github.com/jordanbierbrier/capstone/blob/main/docs/VnVPlan/VnVPlan.pdf}{\textit{VnVPlan.pdf Document}} as well as the modules shown in the \href{https://github.com/jordanbierbrier/capstone/blob/main/docs/Design/SoftDetailedDes/MIS.pdf}{\textit{MIS.pdf Document}}.
-Furthermore, inapplicable tests from the VnVPlan were not included in the following table as they were not feasible with our current implementation.
-\begin{longtable}{|p{1.4cm}|p{1cm}|p{3cm}|p{1.5cm}|p{2.5cm}|p{2cm}|p{1.2cm}|}
+Furthermore, inapplicable tests from the VnVPlan were not included in the following table as they were not feasible with our current implementation. \textcolor{red}{To make the unit tests applicable we will make improvements to the sound classification module and bluetooth communication} 
+
+\begin{longtable}{|p{1.4cm}|p{1.1cm}|p{2.5cm}|p{1.5cm}|p{2.2cm}|p{1.9cm}|p{1.2cm}|}
 
   \endfirsthead
+  \hline
+  \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
+
   \endhead
+
+  \hline \multicolumn{7}{|r|}{Continued on next page} \\ \hline
+  \endfoot
+   
+  \endlastfoot
   \hline
   \textbf{Id} & \textbf{Ref} & \textbf{Description}                                                         & \textbf{Input}                                    & \textbf{Expected Result}                                    & \textbf{Actual Result} & \textbf{Result}                                    \\ \hline
   UT1       &   M4, M9   & Testing accuracy of the microphone to detect sounds                                      & 3 Different Sample Recordings                             & 3 Distinct Sample Recordings in memory buffer that match the inputs respectively                    &     The detected sounds matched the input sounds                    & {\color[HTML]{32CB00} Pass} \\ \hline
@@ -276,14 +408,27 @@ Furthermore, inapplicable tests from the VnVPlan were not included in the follow
 \section{Changes Due to Testing}
 Test results marked as {\color[HTML]{FE0000} Fail} require revisions in future implementations. 
 \subsection{Changes Due to Requirement Tests}
+\textcolor{red}{Due to FRT3, FRT6, FRT14 failing the following changes will need to be made so that they can improve the outcome of the tests for future device functionality. }
 \begin{itemize}
   \item Add capability to detect sounds at greater distance ($>$15m)
-  \item Update sound detection model performance by being more generalizable (i.e. detect sound from different individuals) and have higher accuracy
+  \item Update sound detection model performance by being more generalizable (i.e. detect sound from different individuals)
+  \textcolor{red}{
+  \item Increase accuracy by adding sound clips with various environmental sounds.
+  \item Change the confidence level of sound detection
+  \item Intensity of haptic feedback
+}
 \end{itemize}
 \subsection{Changes Due to Unit Tests}
+\textcolor{red}{Due to UT10 the feed sampling and auto connection will need to be further improved.}
 \begin{itemize}
-  \item Add further bluetooth capability to reconnect device with mobile application after device goes in and out of range
+  \item Add further bluetooth capability to reconnect device with mobile application after device goes in and
+   out of range
+\textcolor{red}{
+  \item Increase sensitivity of microphone
+  \item Allow for auto bluetooth connection
+}
 \end{itemize}
+
 
 \section{Traceability Matrices}
 All of our tests can be traced back to either functional requirements, nonfunctional requirements and modules.
